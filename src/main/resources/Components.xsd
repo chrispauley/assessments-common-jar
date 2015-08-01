@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!-- 	<xsd:element name="Communication" type="CommunicationABIEType" /> -->
+<!-- 	<xsd:complexType name="CommunicationABIEType"> -->
+<!-- 		<xsd:sequence> -->
+<!-- 			<xsd:element name="ChannelCode" type="ChannelCodeType" -->
+<!-- 				minOccurs="0" /> -->
+<!-- 			<xsd:element ref="UseCode" minOccurs="0" /> -->
+			<!-- <xsd:choice> -->
+			<!-- <xsd:sequence> -->
+			<!-- <xsd:element ref="oa:CountryDialing" minOccurs="0"/> -->
+			<!-- <xsd:element ref="oa:AreaDialing" minOccurs="0"/> -->
+			<!-- <xsd:element ref="oa:DialNumber" minOccurs="0"/> -->
+			<!-- <xsd:element ref="oa:Extension" minOccurs="0"/> -->
+			<!-- <xsd:element ref="oa:Access" minOccurs="0"/> -->
+			<!-- </xsd:sequence> -->
+			<!-- <xsd:element ref="Address" minOccurs="0"/> -->
+			<!-- <xsd:sequence> -->
+			<!-- <xsd:element ref="oa:URI" minOccurs="0"/> -->
+			<!-- <xsd:element ref="oa:HTMLPreferredIndicator" minOccurs="0"/> -->
+			<!-- </xsd:sequence> -->
+			<!-- <xsd:element ref="oa:Text" minOccurs="0" maxOccurs="unbounded"/> -->
+			<!-- </xsd:choice> -->
+<!-- 			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0" /> -->
+<!-- 		</xsd:sequence> -->
+<!-- 		<xsd:attribute name="sequence" type="xsd:positiveInteger" /> -->
+		<!-- <xsd:attribute name="preferredIndicator" type="oa:IndicatorType"/> -->
+		<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup"/> -->
+<!-- 	</xsd:complexType> -->
+
+	<xsd:simpleType name="ChannelCodeType">
+		<xsd:annotation>
+			<xsd:documentation />
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Telephone" />
+			<xsd:enumeration value="MobileTelephone" />
+			<xsd:enumeration value="Fax" />
+			<xsd:enumeration value="Email" />
+			<xsd:enumeration value="InstantMessage" />
+			<xsd:enumeration value="Web" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:element name="UseCode" type="UseCodeType" />
+
+	<xsd:simpleType name="UseCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code classifying a designated use associated with
+				a contact method. For example, whether a telephone or email address
+				is one
+				for business communications or one primarily for personal use.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Personal" />
+			<xsd:enumeration value="Business" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+<!-- 	<xsd:complexType name="PartyType"> -->
+<!-- 		<xsd:sequence> -->
+<!-- 			<xsd:element name="PartyID" type="xsd:string" /> -->
+<!-- 			<xsd:element name="PartyLegalID" type="xsd:string" -->
+<!-- 				maxOccurs="unbounded" /> -->
+<!-- 			<xsd:element name="PartyTaxID" type="xsd:integer" /> -->
+<!-- 			<xsd:element name="PartyName" type="xsd:string" /> -->
+<!-- 			<xsd:element name="PartyReportingIDs" type="xsd:string" /> -->
+<!-- 			<xsd:element name="Communication" type="CommunicationABIEType" /> -->
+<!-- 			<xsd:element name="PersonContact" type="xsd:string" -->
+<!-- 				maxOccurs="unbounded" /> -->
+<!-- 		</xsd:sequence> -->
+<!-- 	</xsd:complexType> -->
+<!-- 	<xsd:simpleType name="URIType"> -->
+<!-- 		<xsd:restriction base="xsd:anyURI" /> -->
+<!-- 	</xsd:simpleType> -->
+<!-- 	<xsd:complexType name="UserAreaType"> -->
+<!-- 		<xsd:sequence> -->
+<!-- 			<xsd:any namespace="##any" processContents="lax" minOccurs="0" -->
+<!-- 				maxOccurs="unbounded" /> -->
+<!-- 		</xsd:sequence> -->
+<!-- 	</xsd:complexType> -->
+<!-- 		<xsd:complexType name="NameType"> -->
+<!-- 		<xsd:simpleContent> -->
+<!-- 			<xsd:extension base="xsd:string"> -->
+<!-- 				<xsd:attribute name="sequence" type="xsd:integer"/> -->
+<!-- 				<xsd:attribute name="sequenceName" type="xsd:string"/> -->
+<!-- 			</xsd:extension> -->
+<!-- 		</xsd:simpleContent> -->
+<!-- 	</xsd:complexType> -->
+
+		<xsd:complexType name="SequencedTextType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="sequence" type="xsd:integer"/>
+				<xsd:attribute name="sequenceName" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+<!-- 	<xsd:element name="Address" type="AddressBaseType"/> -->
+	<xsd:complexType name="AddressBaseType" >
+		<xsd:sequence>
+			<xsd:element name="ID" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="FormatCode" type="xsd:normalizedString" minOccurs="0"/>
+<!-- 			<xsd:element name="AttentionOfName" type="NameType" minOccurs="0" maxOccurs="unbounded"/> -->
+<!-- 			<xsd:element name="CareOfName"  type="NameType" minOccurs="0" maxOccurs="unbounded"/> -->
+			<xsd:choice>
+				<xsd:element name="AddressLine" type="SequencedTextType" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:sequence>
+					<xsd:element name="LineOne" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="LineTwo" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="LineThree" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="LineFour" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="LineFive" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element name="BuildingNumber" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="BuildingName" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="StreetName" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Unit" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="Floor" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="PostOfficeBox" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="DeliveryPointCode" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:choice>
+			<xsd:element name="CitySubDivisionName" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CityName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CountrySubDivisionCode" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CountryCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PostalCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Status" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Preference" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+<!-- 		<xsd:attribute name="languageCode" type="LanguageCodeContentType" use="optional"/> -->
+		<xsd:attribute name="type" type="xsd:normalizedString"/>
+	</xsd:complexType>
+<!-- 	<xsd:complexType name="AddressType"> -->
+<!-- 		<xsd:complexContent> -->
+<!-- 			<xsd:extension base="AddressBaseType"> -->
+<!-- 				<xsd:sequence> -->
+<!-- 					<xsd:element ref="UserArea" minOccurs="0"/> -->
+<!-- 				</xsd:sequence> -->
+<!--  				<xsd:attributeGroup ref="EffectiveDateAttributeGroup"/>  -->
+<!-- 				<xsd:attribute name="currentAddressIndicator" type="oa:IndicatorType"/> -->
+<!-- 			</xsd:extension> -->
+<!-- 		</xsd:complexContent> -->
+<!-- 	</xsd:complexType>	 -->
+	
+<!-- 		<xsd:group name="DocumentIDGroup"> -->
+<!-- 		<xsd:sequence> -->
+<!-- 			<xsd:element name="DocumentID" type="IdentifierType" /> -->
+<!-- 			<xsd:element name="AlternateDocumentID" minOccurs="0" -->
+<!-- 				maxOccurs="unbounded" /> -->
+<!-- 		</xsd:sequence> -->
+<!-- 	</xsd:group> -->
+<!-- 		<xsd:complexType name="IdentifierType"> -->
+<!-- 		<xsd:simpleContent> -->
+<!-- 			<xsd:extension base="xsd:normalizedString"> -->
+<!-- 				<xsd:attribute name="schemeID" type="xsd:normalizedString" -->
+<!-- 					use="optional" /> -->
+<!-- 				<xsd:attribute name="schemeName" type="xsd:string" -->
+<!-- 					use="optional" /> -->
+<!-- 				<xsd:attribute name="schemeAgencyID" type="xsd:normalizedString" -->
+<!-- 					use="optional"/> -->
+<!-- 				<xsd:attribute name="schemeAgencyName" type="xsd:string" -->
+<!-- 					use="optional"/> -->
+<!-- 				<xsd:attribute name="schemeVersionID" type="xsd:normalizedString" -->
+<!-- 					use="optional"/> -->
+<!-- 				<xsd:attribute name="schemeDataURI" type="xsd:anyURI" -->
+<!-- 					use="optional"/> -->
+<!-- 				<xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional"/> -->
+<!-- 			</xsd:extension> -->
+<!-- 		</xsd:simpleContent> -->
+<!-- 	</xsd:complexType> -->
+	
+	<xsd:complexType name="PackageBaseType">
+		<xsd:annotation>
+			<xsd:documentation>The term "Package" is used in the contexts of Screening and Assessment (and possibly other HR service areas) to describe a set of component services that are marketed and can be ordered as a unit. Such orders generally are accomplished by referencing the associated "Package ID". In some cases, individual component services also may be ordered using a so-called "a la carte" approach. This base type is extended appropriately so it can be used both in the context of Assessment and Screening catalogs. The catalogs may reflect an assessment or screening provider's general offerings to the business community or the catalogs may contain a subset of offerings that have been designed or specified for a particular customer. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ID" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This is the "Package ID" that would be used to order a set of screening or assessment services.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The name or terse descriptive label by which the package is referred.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ParentGroupID" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A reference from a child package to one or more associated parent entity. This is used to express an "is a part of" relationship by reference. This approach is used in a number of places within the HR-XML as an alternative to placement of one entity within the other's hierarchy. The use of the ParentGroupID reference is a more flexible and light-weight alternative to recursive structures and deeply nested hierarchies.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PackageTypeCode" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PartyReportingIDs" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>This is a repeating ID set used to pass along identifiers that are used for reporting, filtering, accounting, cost center identification, and similar purposes. In a typical scenario, these might be specified by a customer to a supplier and then reported back by the supplier within collaborations as specified by the Customer.   The agencyRoleCode and schemeAgencyID attributes available on PartyReportingIDs can be used to specify the role (Customer, Requester, Supplier) and identity of the party that controls the ID set. This is intended as a flexible means to associate various reporting IDs with a package. For example, a customer and supplier might agree to use the PartyReportIDGroup as a way to index Packages by the customer's employee or organizational groups with which they are associated or to which they pertain.
+Example: 
+                agencyRoleCode = Customer
+                schemeAgencyID = Acme Corp. Inc.
+                schemeID = Acme Employee Group ID
+                                    ID = HR Manager and Compliance
+                                    ID = Hiring Manager			
+			                        ID = Recruiter
+			                        ID = Learning-Knowledge Management
+			</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ServiceAvailabilityCode" type="ServiceAvailabilityCodeEnumType" minOccurs="0"/>
+			<xsd:element name="PackageCost" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+		<xsd:simpleType name="ServiceAvailabilityCodeEnumType">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Available">
+				<xsd:annotation>
+					<xsd:documentation>Indicates that a service is currently available to be ordered, purchased, utilitized, etc.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Unavailable">
+				<xsd:annotation>
+					<xsd:documentation>Indicates that a service is unavailable.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TemporarilyUnavailable">
+				<xsd:annotation>
+					<xsd:documentation>Indicates that the service is temporarily unavailable.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>	
+	
+	<xsd:element name="AssessmentApplicability" type="AssessmentApplicabilityType"/>
+	<xsd:complexType name="AssessmentApplicabilityType">
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="AssessmentTypeCode" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A set of codes broadly classifying the type of assessment or the principal target of what is assessed. This is an HR-XML Open List. Note that detailed information regarding specific competencies targeted or measured by the assessment would be referenced within AssessedCompetency.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AssessedCompetency" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Provides information about what competencies are measured by the test instrument or evaluation process.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="JobCategoryCode" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A code used to classify the job category (or categories) to which the assessment applies.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CareerLevelCode" minOccurs="0"/>
+			<xsd:element name="ApplicableRegion" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>A set of information broadly describing the region(s) where the assessment is applicable or available. For example, a test may have only been validated within a particular geographical area and associated cultural context (e.g., North America). A test associated with a license or certification could be localized (e.g., US, California, Orange County).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AvailableLanguageCode" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+		<xsd:simpleType name="AssessmentTypeCodeEnumType">
+		<xsd:annotation>
+			<xsd:documentation>A set of codes broadly classifying the type of assessment or the principal target of what is assessed.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Knowledge"/>
+			<xsd:enumeration value="Skill"/>
+			<xsd:enumeration value="Ability"/>
+			<xsd:enumeration value="Psychometric"/>
+			<xsd:enumeration value="CertificationOrLicense"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

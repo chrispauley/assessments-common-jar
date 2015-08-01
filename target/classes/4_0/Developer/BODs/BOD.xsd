@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+
+
+
+   Schema agency: 	Open Applications Group 
+
+
+   OAGIS® Revision:    OAGIS Platform 1_2  
+   Date:               09 June 2008 
+   Copyright 1997-2011, All Rights Reserved 
+
+  	
+   Copyright (C) Open Applications Group (1997-2011). All Rights Reserved.
+  
+  
+   This is an OAGIS® BOD XML Schema (XSD) Definition.
+
+   License information for this file is provided in the file **OAGi License Agreement.txt** that is provided with this download package.
+
+   For support, more information, or to report implementation bugs, please contact the Open Applications Group at oagis@openapplications.org.
+    
+   XML Schema 
+     
+    Name: /OAGi_Business_Process_Integration_Platform/org_openapplications_platform/Release/Nouns/BOD.xsd
+-->
+		
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns="http://www.openapplications.org/oagis/9" 
+targetNamespace="http://www.openapplications.org/oagis/9" elementFormDefault="qualified">
+        <!-- <xsd:include schemaLocation="../Common/OAGi/Components/Components.xsd"/> -->
+        <xsd:element name="BOD" type="BODType">
+                <xsd:annotation>
+                        <xsd:documentation source="http://www.openapplications.org/platform/1">The outcome of processing a specific BOD. Describes overall/summary outcome, plus the outcome of processing each noun of the BOD. Includes noun-specific error and/or warning messaages encountered during processing. May include summary and/or roll-up messages at the BOD level.</xsd:documentation>
+                </xsd:annotation>
+        </xsd:element>
+
+        <xsd:complexType name="ApplicationAreaType">
+		<xsd:sequence>
+			<xsd:element name="Sender" minOccurs="0"/>
+			<xsd:element name="Receiver" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CreationDateTime" type="xsd:date"/>
+			<xsd:element name="Signature" minOccurs="0"/>
+			<xsd:element name="BODID" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="UserArea" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SenderType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">Identifies the sender of the given BOD instance</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="LogicalID" minOccurs="0"/>
+			<xsd:element name="ComponentID" minOccurs="0"/>
+			<xsd:element name="TaskID" minOccurs="0"/>
+			<xsd:element name="ReferenceID" minOccurs="0"/>
+			<xsd:element name="ConfirmationCode" minOccurs="0"/>
+			<xsd:element name="AuthorizationID" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReceiverType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">Identifies the intended receiver of the given BOD instance.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="LogicalID" minOccurs="0"/>
+			<xsd:element name="ComponentID" minOccurs="0"/>
+			<xsd:element name="ID" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SignatureType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">Allows any digital Signatures to be added to the Instance of the BOD Instance in order to sign for any portion of the BOD content.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:any namespace="##any" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="qualifyingAgencyId" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	
+	<xsd:group name="FreeFormTextGroup">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">Common Free Form Text elements that occur together.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Description" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Note" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:group>
+	
+	<xsd:element name="ApplicationArea" type="ApplicationAreaType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">Provides the information that an application may need to know in order to communicate in an integration of two or more business applications. The ApplicationArea is used at the applications layer of communication. While the integration frameworks web services and middleware provide the communication layer that OAGIS operates on top of.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OriginalApplicationArea" type="ApplicationAreaType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">A copy of the ApplicationArea for the original BOD that was processed. Present either as additional reference information, or for use in identifying the BOD in situations where a BODReference is not known.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Sender" type="SenderType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">Identifies characteristics and control identifiers that relate to the application that created the Business Object Document.  The sender area can indicate the logical location of the application and/or database server, the application, and the task that was processing to create the BOD.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Receiver" type="ReceiverType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">Identifies the intended receiver of the given BOD instance.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Signature" type="SignatureType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">If the BOD is to be signed the signature element is included, otherwise it is not.
+Signature supports any digital signature that maybe used by an implementation of OAGIS. The qualifyingAgency identifies the agency that provided the format for the signature.
+
+This element supports any digital signature specification that is available today and in the future. This is accomplished by not actually defining the content but by allowing the implementation to specify the digital signature to be used via an external XML Schema namespace declaration. The Signature element is defined to have any content from any other namespace. 
+
+This allows the user to carry a digital signature in the xml instance of a BOD. The choice of which digital signature to use is left up to the user and their integration needs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+        <xsd:complexType name="BODType">
+                <xsd:annotation>
+                        <xsd:documentation source="http://www.openapplications.org/platform/1">The outcome of processing a specific BOD. Describes overall/summary outcome, plus the outcome of processing each noun of the BOD. Includes noun-specific error and/or warning messaages encountered during processing. May include summary and/or roll-up messages at the BOD level.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:sequence>
+                        <xsd:annotation>
+                                <xsd:documentation source="http://www.openapplications.org/platform/1">OriginalApplicationArea is deprecated from the BOD of the ConfirmBOD, the OriginalApplicationArea should be used off of the Confirm Verb.</xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:element name="OriginalApplicationArea" type="ApplicationAreaType" minOccurs="0">
+                                <xsd:annotation>
+                                        <xsd:documentation source="http://www.openapplications.org/platform/1">A copy of the ApplicationArea for the original BOD that was processed. Present either as additional reference information, or for use in identifying the BOD in situations where a BODReference is not known.</xsd:documentation>
+                                        <xsd:documentation source="http://www.openapplications.org/platform/1">A copy of the ApplicationArea for the original BOD that was processed. Present either as additional reference information, or for use in identifying the BOD in situations where a BODReference is not known.</xsd:documentation>
+                                </xsd:annotation>
+                        </xsd:element>
+                        <xsd:group ref="FreeFormTextGroup" minOccurs="0"/>
+                        <xsd:element name="BODFailureMessage" minOccurs="0"/>
+                        <xsd:element name="BODSuccessMessage" minOccurs="0"/>
+                        <xsd:element name="PartialBODFailureMessage" minOccurs="0"/>
+                        <xsd:element name="UserArea" minOccurs="0"/>
+                </xsd:sequence>
+        </xsd:complexType>
+</xsd:schema>

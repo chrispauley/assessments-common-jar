@@ -1,0 +1,10 @@
+{
+   "CustomerParty" : {
+      "PartyTaxID" : {
+         "value" : "id01"
+      },
+      "PartyName" : "",
+      "UserArea" : {
+      }
+   }
+}

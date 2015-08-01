@@ -1,0 +1,14 @@
+{
+ "AssessmentCatalog": {
+      "DocumentId": "001",
+      "DocumentSequence": 1,
+       "CustomerParty" : "customer_001",
+       "SupplierParty": "supplier_002",
+       "RequesterParty": "requestor_001",
+       "AssessmentPackage": {},
+       "UserArea": {},
+       "@languageCode": "EN",
+       "@EffectiveDate": "2015-06-08",
+        "@VersionID": "4.0"
+  } 
+}

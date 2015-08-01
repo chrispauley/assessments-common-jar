@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessAssessmentOrder systemEnvironmentCode="dev" releaseID="4.0" languageCode="en-US">
+   <ApplicationArea>
+      <BODID>bodId</BODID>
+   </ApplicationArea>
+   <DataArea>
+      <AssessmentOrder majorVersionID="4.0">
+         <documentID>docId</documentID>
+         <DocumentSequence>1</DocumentSequence>
+         <SupplierParty>
+            <PartyID>supplierID</PartyID>
+            <PartyName>SupplierPartyName</PartyName>
+         </SupplierParty>
+         <RequesterParty>
+            <PartyID>requestorID</PartyID>
+            <PartyName>RequestorPartyName</PartyName>
+         </RequesterParty>
+         <PackageID>packageId_01</PackageID>
+         <ComparisonGroupID>new_hire</ComparisonGroupID>
+         <AssessmentRequesterName>Chris Pauley</AssessmentRequesterName>
+         <AssessmentSubject>
+            <PersonName>Joe Smith</PersonName>
+            <Communication>cell: (215)555-5555</Communication>
+         </AssessmentSubject>
+         <RedirectURL>http://hropen.org</RedirectURL>
+      </AssessmentOrder>
+   </DataArea>
+</ProcessAssessmentOrder>
