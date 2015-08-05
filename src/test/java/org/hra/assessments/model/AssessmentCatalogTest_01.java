@@ -1,7 +1,5 @@
 package org.hra.assessments.model;
 
-import org.hra.model.bod.*;
-
 import java.math.BigInteger;
 
 import junit.framework.TestCase;
@@ -14,18 +12,21 @@ public class AssessmentCatalogTest_01 extends TestCase {
 
 	private AssessmentCatalogType createAssessmentCatalogType() {
 		AssessmentCatalogType ac = new AssessmentCatalogType();
-		ac.setCustomerParty(this.createPartyType("SupplierParty"));
-
+		ac.setDocumentID("documentId_01");
+		ac.setDocumentSequence(BigInteger.valueOf(1));
+		ac.setCustomerParty(this.createPartyType("CustomerParty", "value01"));
+		ac.setSupplierParty(this.createPartyType("SupplierParty", "value02") );
+		ac.setInvitationByPartyCode("invitationPartyCodeGoesHere");
 		return ac;
 	}
 
-	private PartyType createPartyType(String partyType){
+	private PartyType createPartyType(String partyType, String value){
 		PartyType pt = new PartyType();
 		pt.setPartyName(partyType);
 		IdentifierType id = new IdentifierType();
-		id.setValue("id01");
-		pt.setPartyTaxID(id);
-		pt.setUserArea(new UserAreaType());
+		id.setValue(value);
+//		pt.setPartyTaxID(id);
+//		pt.setUserArea(new UserAreaType());
 		return pt;
 	}
 	public void test_SaveAll() {

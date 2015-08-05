@@ -3,7 +3,7 @@
       "PartyTaxID" : {
          "value" : "id01"
       },
-      "PartyName" : "",
+      "PartyName" : "SupplierParty",
       "UserArea" : {
       }
    }

@@ -1,5 +1,4 @@
 package org.hra.assessments.model;
-import org.hra.model.bod.*;
 
 import java.math.BigInteger;
 
@@ -68,9 +67,9 @@ public class AssessmentOrderJSONTest_uc_01 extends TestCase {
     public void testReadAssessmentOrderJSONType_XML()
     {
     	AssessmentOrderJSONHelper helper = new AssessmentOrderJSONHelper();
-//    	String filename = "testProcessAssessmentOrder_01.xml";
-//    	AssessmentOrderJSON pao = helper.readAssessmentOrderJSONXML(filename);
-//    	AssessmentOrderJSONHelper.showAssessmentOrderJSONTypeXML(pao);
+    	String filename = "test01.xml";
+    	AssessmentOrderJSONType pao = helper.readAssessmentOrderJSONType_XML(filename);
+    	helper.showAssessmentOrderJSONType_XML(pao);
         assertTrue(true);
     }
     

@@ -1,5 +1,4 @@
 package org.hra.assessments.model;
-import org.hra.model.bod.*;
 
 import java.math.BigInteger;
 

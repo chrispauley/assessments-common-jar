@@ -192,10 +192,10 @@
 							</schemaIncludes>
 							<bindingDirectory>src/main/resources</bindingDirectory>
 							<bindingIncludes>
-								<!-- <include>src/main/resources/Assessments.xjb</include> -->
+								<include>src/main/resources/Assessments.xjb</include>
 								<!-- <include>Assessments/UnqualifiedDataTypes.xjb</include> -->
 							</bindingIncludes>
-							<generatePackage>org.hra.model.bod</generatePackage>
+							<generatePackage>org.hra.assessments.model</generatePackage>
 							<generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
 							<clearOutPutDir>false</clearOutPutDir>
 						</configuration>
