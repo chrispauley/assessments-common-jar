@@ -4,7 +4,7 @@
 	attributeFormDefault="unqualified">
 <!-- <xsd:import namespace="http://www.openapplications.org/oagis/9"  -->
 <!-- schemaLocation="org_openapplications_platform/1_2/Common/OAGi/Components/Meta.xsd"/>  -->
-       	
+       	<xsd:include schemaLocation="Components.xsd" />
 
 	<xsd:element name="ProcessAssessmentOrder">
 		<xsd:complexType>
@@ -96,12 +96,7 @@
 			<xsd:element name="AssessmentOrder" type="AssessmentOrderType" />
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="UserAreaType">
-		<xsd:sequence>
-			<xsd:any namespace="##any" processContents="lax" minOccurs="0"
-				maxOccurs="unbounded" />
-		</xsd:sequence>
-	</xsd:complexType>
+
 	<xsd:complexType name="BasePartyType">
 		<xsd:sequence>
 			<xsd:element name="PartyID" type="IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
@@ -132,25 +127,6 @@
 <!-- 		</xsd:complexContent> -->
 <!-- 	</xsd:complexType> -->
 	
-	<xsd:complexType name="IdentifierType">
-		<xsd:simpleContent>
-			<xsd:extension base="xsd:normalizedString">
-				<xsd:attribute name="schemeID" type="xsd:normalizedString"
-					use="optional" />
-				<xsd:attribute name="schemeName" type="xsd:string"
-					use="optional" />
-				<xsd:attribute name="schemeAgencyID" type="xsd:normalizedString"
-					use="optional"/>
-				<xsd:attribute name="schemeAgencyName" type="xsd:string"
-					use="optional"/>
-				<xsd:attribute name="schemeVersionID" type="xsd:normalizedString"
-					use="optional"/>
-				<xsd:attribute name="schemeDataURI" type="xsd:anyURI"
-					use="optional"/>
-				<xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional"/>
-			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
 	
 	<xsd:element name="AssessmentSubject" type="AssessmentSubjectType"/>
 	<xsd:complexType name="AssessmentSubjectType">

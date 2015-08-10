@@ -1,10 +1,23 @@
 {
+   "DocumentID" : "documentId_01",
+   "AlternateDocumentID" : [ "alternateId-01", "alternateId-02", "alternateId-03" ],
+   "DocumentSequence" : 1,
    "CustomerParty" : {
-      "PartyTaxID" : {
-         "value" : "id01"
-      },
-      "PartyName" : "SupplierParty",
-      "UserArea" : {
+      "PartyName" : "CustomerParty"
+   },
+   "SupplierParty" : {
+      "PartyName" : "SupplierParty"
+   },
+   "RequesterParty" : {
+      "PartyName" : "RequestorParty"
+   },
+   "AssessmentPackage" : {
+      "Name" : "Package1 Name",
+      "ServiceAvailabilityCode" : "Available",
+      "PackageCost" : "cost?",
+      "AssessmentApplicability" : {
+         "Description" : [ "Description for AssessmentApplicability" ],
+         "AssessmentTypeCode" : [ "ABILITY", "KNOWLEDGE" ]
       }
    }
 }
