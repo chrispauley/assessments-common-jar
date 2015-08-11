@@ -1,23 +1,57 @@
 {
-   "DocumentID" : "documentId_01",
-   "AlternateDocumentID" : [ "alternateId-01", "alternateId-02", "alternateId-03" ],
-   "DocumentSequence" : 1,
-   "CustomerParty" : {
-      "PartyName" : "CustomerParty"
-   },
-   "SupplierParty" : {
-      "PartyName" : "SupplierParty"
-   },
-   "RequesterParty" : {
-      "PartyName" : "RequestorParty"
-   },
-   "AssessmentPackage" : {
-      "Name" : "Package1 Name",
-      "ServiceAvailabilityCode" : "Available",
-      "PackageCost" : "cost?",
-      "AssessmentApplicability" : {
-         "Description" : [ "Description for AssessmentApplicability" ],
-         "AssessmentTypeCode" : [ "ABILITY", "KNOWLEDGE" ]
+   "AssessmentCatalog" : {
+      "DocumentID" : "documentId_01",
+      "AlternateDocumentID" : [ "alternateId-01", "alternateId-02", "alternateId-03" ],
+      "DocumentSequence" : 1,
+      "CustomerParty" : {
+         "PartyName" : "CustomerParty"
+      },
+      "SupplierParty" : {
+         "PartyName" : "SupplierParty"
+      },
+      "RequesterParty" : {
+         "PartyName" : "RequestorParty"
+      },
+      "AssessmentPackage" : {
+         "ID" : [ "package-001" ],
+         "Name" : "Package1 Name",
+         "Description" : [ "Package Description" ],
+         "ParentGroupID" : [ "Hiring Manager" ],
+         "PackageTypeCode" : [ "typeCode1" ],
+         "PartyReportingIDs" : [ "Manager-001" ],
+         "ServiceAvailabilityCode" : "Available",
+         "PackageCost" : "cost?",
+         "AssessmentApplicability" : {
+            "Description" : [ "Description for AssessmentApplicability" ],
+            "AssessmentTypeCode" : [ "ABILITY", "KNOWLEDGE" ],
+            "AssessedCompetency" : [ {
+               "CompetencyName" : "CompetencyName One"
+            } ]
+         },
+         "AssessmentAdministration" : {
+            "Description" : [ "This is an online test." ],
+            "ProctoredAssessmentIndicator" : true,
+            "TimeEnforcedIndicator" : true,
+            "TestDuration" : {
+               "property" : "prop 1",
+               "value" : "value of mt"
+            },
+            "AssessmentDeliveryCode" : [ {
+            }, {
+               "schedulingRequiredIndicator" : true,
+               "value" : "Code1"
+            } ]
+         },
+         "AssessmentFulfillment" : {
+            "Description" : [ "Description of Fulfillment" ],
+            "EffectivePeriodDescription" : [ {
+               "property" : "prop 1",
+               "value" : "value of mt"
+            } ],
+            "ScoreProfileName" : [ "Profile1", "Profile2" ],
+            "ReportLanguageCode" : [ "en-US", "fr-CA" ],
+            "UserArea" : "{}" 
+         }
       }
    }
 }

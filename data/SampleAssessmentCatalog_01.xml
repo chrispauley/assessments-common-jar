@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DocumentID>documentId_01</DocumentID><AlternateDocumentID>alternateId-01</AlternateDocumentID><AlternateDocumentID>alternateId-02</AlternateDocumentID><AlternateDocumentID>alternateId-03</AlternateDocumentID><DocumentSequence>1</DocumentSequence><CustomerParty>
-   <PartyName>CustomerParty</PartyName>
-</CustomerParty><SupplierParty>
-   <PartyName>SupplierParty</PartyName>
-</SupplierParty><RequesterParty>
-   <PartyName>RequestorParty</PartyName>
-</RequesterParty><AssessmentPackage>
-   <Name>Package1 Name</Name>
-   <ServiceAvailabilityCode>Available</ServiceAvailabilityCode>
-   <PackageCost>cost?</PackageCost>
-   <AssessmentApplicability>
-      <Description>Description for AssessmentApplicability</Description>
-      <AssessmentTypeCode>ABILITY</AssessmentTypeCode>
-      <AssessmentTypeCode>KNOWLEDGE</AssessmentTypeCode>
-   </AssessmentApplicability>
-</AssessmentPackage>
+<AssessmentCatalog>
+   <DocumentID>documentId_01</DocumentID>
+   <AlternateDocumentID>alternateId-01</AlternateDocumentID>
+   <AlternateDocumentID>alternateId-02</AlternateDocumentID>
+   <AlternateDocumentID>alternateId-03</AlternateDocumentID>
+   <DocumentSequence>1</DocumentSequence>
+   <CustomerParty>
+      <PartyName>CustomerParty</PartyName>
+   </CustomerParty>
+   <SupplierParty>
+      <PartyName>SupplierParty</PartyName>
+   </SupplierParty>
+   <RequesterParty>
+      <PartyName>RequestorParty</PartyName>
+   </RequesterParty>
+   <AssessmentPackage>
+      <ID>package-001</ID>
+      <Name>Package1 Name</Name>
+      <Description>Package Description</Description>
+      <ParentGroupID>Hiring Manager</ParentGroupID>
+      <PackageTypeCode>typeCode1</PackageTypeCode>
+      <PartyReportingIDs>Manager-001</PartyReportingIDs>
+      <ServiceAvailabilityCode>Available</ServiceAvailabilityCode>
+      <PackageCost>cost?</PackageCost>
+      <AssessmentApplicability>
+         <Description>Description for AssessmentApplicability</Description>
+         <AssessmentTypeCode>ABILITY</AssessmentTypeCode>
+         <AssessmentTypeCode>KNOWLEDGE</AssessmentTypeCode>
+         <AssessedCompetency>
+            <CompetencyName>CompetencyName One</CompetencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <Description>This is an online test.</Description>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration property="prop 1">value of mt</TestDuration>
+         <AssessmentDeliveryCode/>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">Code1</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>Description of Fulfillment</Description>
+         <EffectivePeriodDescription property="prop 1">value of mt</EffectivePeriodDescription>
+         <ScoreProfileName>Profile1</ScoreProfileName>
+         <ScoreProfileName>Profile2</ScoreProfileName>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+         <ReportLanguageCode>fr-CA</ReportLanguageCode>
+         <UserArea>{}</UserArea>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+</AssessmentCatalog>

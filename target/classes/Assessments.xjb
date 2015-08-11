@@ -1,0 +1,37 @@
+<jxb:bindings version="1.0"
+xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+jxb:extensionBindingPrefixes="xjc">
+	<annotation>
+		<appinfo>
+			<jaxb:globalBindings>
+				<xjc:simple />
+			</jaxb:globalBindings>
+		</appinfo>
+	</annotation>
+	<!-- <jxb:bindings schemaLocation="org_hr-xml/4_0/Developer/BODs/BOD.xsd">
+	<jxb:schemaBindings>
+	<jxb:package name="org.hros.assessments.model"/>
+	</jxb:schemaBindings>
+	</jxb:bindings> -->
+	<jxb:bindings schemaLocation="ProcessAssessmentOrder.xsd">
+		<jxb:schemaBindings>
+			<jxb:package name="org.hros.assessments.model"/>
+		</jxb:schemaBindings>
+	</jxb:bindings>
+	<jxb:bindings schemaLocation="AssessmentCatalog.xsd">
+		<jxb:schemaBindings>
+			<jxb:package name="org.hros.assessments.model"/>
+		</jxb:schemaBindings>
+		<jxb:globalBindings>
+			<xjc:simple/>
+		</jxb:globalBindings>
+		<jxb:schemaBindings>
+			<jaxb:bindings node="//xsd:complexType[@name='AssessmentCatalogType']">
+				<jaxb:class name="AssessmentCatalog"/>
+			</jaxb:bindings>
+		</jxb:schemaBindings>
+	</jxb:bindings>
+
+</jxb:bindings>

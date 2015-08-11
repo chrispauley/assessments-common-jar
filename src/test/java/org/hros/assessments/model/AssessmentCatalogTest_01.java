@@ -17,7 +17,7 @@ import org.hros.assessments.model.SpecifiedCompetencyType;
 import junit.framework.TestCase;
 
 public class AssessmentCatalogTest_01 extends TestCase {
-	
+
 	static final String FILENAME = "SampleAssessmentCatalog_01";
 
 	public AssessmentCatalogTest_01(String name) {
@@ -31,14 +31,57 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ac.getAlternateDocumentID().add("alternateId-02");
 		ac.getAlternateDocumentID().add("alternateId-03");
 		ac.setDocumentSequence(BigInteger.valueOf(1));
-		ac.setCustomerParty(this.createPartyType("CustomerParty", "customer name"));
-		ac.setSupplierParty(this.createPartyType("SupplierParty", "supplier name") );
-		ac.setRequesterParty(this.createPartyType("RequestorParty", "Requestor Name"));
-		ac.setAssessmentPackage(this.createAssessmentPackage("Package1 Name", "cost?"));
-//		ac.getAssessmentPackage().setAssessmentApplicability(createAssessmentApplicabilityType());
-		
-
+		ac.setCustomerParty(this.createPartyType("CustomerParty",
+				"customer name"));
+		ac.setSupplierParty(this.createPartyType("SupplierParty",
+				"supplier name"));
+		ac.setRequesterParty(this.createPartyType("RequestorParty",
+				"Requestor Name"));
+		ac.setAssessmentPackage(this.createAssessmentPackage("Package1 Name",
+				"cost?"));
+		ac.getAssessmentPackage().setAssessmentApplicability(
+				createAssessmentApplicabilityType());
+		ac.getAssessmentPackage().setAssessmentAdministration(
+				createAssessmentAdministrationType());
+		ac.getAssessmentPackage().setAssessmentFulfillment(createAssessmentFulfillment());
 		return ac;
+	}
+
+	private AssessmentFulfillmentType createAssessmentFulfillment() {
+		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
+		af.getDescription().add("Description of Fulfillment");
+		
+		MeasureTextType mt = new MeasureTextType();
+		mt.setProperty("prop 1");
+		mt.setValue("value of mt");
+		af.getEffectivePeriodDescription().add(mt);
+		
+		af.getScoreProfileName().add("Profile1");
+		af.getScoreProfileName().add("Profile2");
+		
+		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
+		af.getReportLanguageCode().add(LanguageCodeEnumType.FR_CA);
+		af.setUserArea(new UserAreaType());
+		af.getUserArea().getAny().add("{}");
+		
+		return af;
+	}
+
+	private AssessmentAdministrationType createAssessmentAdministrationType() {
+		AssessmentAdministrationType a = new AssessmentAdministrationType();
+		a.getDescription().add("This is an online test.");
+		a.setProctoredAssessmentIndicator(Boolean.TRUE);
+		a.setTimeEnforcedIndicator(Boolean.TRUE);
+		MeasureTextType mt = new MeasureTextType();
+		mt.setProperty("prop 1");
+		mt.setValue("value of mt");
+		a.setTestDuration(mt);
+		a.getAssessmentDeliveryCode().add(new AssessmentDeliveryCodeType());
+		AssessmentDeliveryCodeType adc = new AssessmentDeliveryCodeType();
+		adc.setValue("Code1");
+		adc.setSchedulingRequiredIndicator(Boolean.TRUE);
+		a.getAssessmentDeliveryCode().add(adc);
+		return a;
 	}
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType() {
@@ -63,7 +106,6 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		return null;
 	}
 
-
 	private ScoreNumericType createNumericScore() {
 		ScoreNumericType sn = new ScoreNumericType();
 		sn.setScoreNumericCode(new BigDecimal(70));
@@ -73,30 +115,36 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		return null;
 	}
 
-	private AssessmentPackageType createAssessmentPackage(String name, String cost){
+	private AssessmentPackageType createAssessmentPackage(String name,
+			String cost) {
 		AssessmentPackageType ap = new AssessmentPackageType();
 		ap.setName(name);
 		ap.setPackageCost(cost);
 		ap.setServiceAvailabilityCode(ServiceAvailabilityCodeEnumType.AVAILABLE);
+		ap.getDescription().add("Package Description");
+		ap.getID().add("package-001");
+		ap.getPackageTypeCode().add("typeCode1");
+		ap.getParentGroupID().add("Hiring Manager");
+		ap.getPartyReportingIDs().add("Manager-001");
+		
 		return ap;
 	}
-	
-	private PartyType createPartyType(String partyName, String value){
+
+	private PartyType createPartyType(String partyName, String value) {
 		PartyType pt = new PartyType();
 		pt.setPartyName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-//		pt.setPartyTaxID(id);
-//		pt.setUserArea(new UserAreaType());
+		// pt.setPartyTaxID(id);
+		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}
-	
+
 	public void test_SaveAll() {
 		AssessmentCatalogType ac = this.createAssessmentCatalogType();
 		AssessmentCatalogHelper.writeXML(ac, FILENAME + ".xml");
 		System.out.println("\n====JSON====");
-		AssessmentCatalogHelper
-				.writeJson(ac, FILENAME + ".json");
+		AssessmentCatalogHelper.writeJson(ac, FILENAME + ".json");
 		assertTrue(true);
 	}
 

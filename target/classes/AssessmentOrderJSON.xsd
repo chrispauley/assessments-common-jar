@@ -2,6 +2,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	elementFormDefault="unqualified"
 	attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="Components.xsd" />
 	<xsd:element name="AssessmentOrderJSON" type="AssessmentOrderJSONType">
 
 	</xsd:element>
