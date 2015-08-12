@@ -30,6 +30,10 @@
          <AssessedCompetency>
             <CompetencyName>CompetencyName One</CompetencyName>
          </AssessedCompetency>
+         <JobCategoryCode listID="SOC" listAgencyID="BLS" listAgencyName="Bureau of Labor Statistics" listName="Standard Occupational Classification System" listVersionID="2010" name="Computer Programmer" languageID="en-US" listURI="http://www.bls.gov/soc/2010" listSchemeURI="http://bls.gov/soc">15-1131</JobCategoryCode>
+         <JobCategoryCode listID="ISCO" listAgencyID="ILO" listAgencyName="International Labour Organization" listName="International Standard Classification of Occupations" listVersionID="ISCO-08" name="Software and applications developers and analysts" languageID="en-US">251</JobCategoryCode>
+         <JobCategoryCode listID="NOC" listAgencyID="ILO" listAgencyName="Government of Canada" listName="National Occupational Classification" listVersionID="2011" name="Computer Programmer" languageID="fr-CA">2174</JobCategoryCode>
+         <CareerLevelCode name="name">Mid-Career</CareerLevelCode>
       </AssessmentApplicability>
       <AssessmentAdministration>
          <Description>This is an online test.</Description>

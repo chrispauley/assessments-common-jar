@@ -90,9 +90,69 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.ABILITY);
 		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.KNOWLEDGE);
 		aa.getAssessedCompetency().add(createSpecifiedCompetencyType());
+		
+		aa.getJobCategoryCode().add(addSOCJobCategoryCode("Computer Programmer","15-1131"));
+		aa.getJobCategoryCode().add(addISCOJobCategoryCode("Software and applications developers and analysts","251"));
+		aa.getJobCategoryCode().add(addNOCJobCategoryCode("Computer Programmer","2174"));
+		
+		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Career"));
 		return aa;
 	}
 
+
+
+	private CodeType createCareerLevelCode(String name, String value) {
+		CodeType ct = new CodeType();
+		ct.setName(name);
+		ct.setValue(value);
+		return ct;
+	}
+
+	private CodeType addSOCJobCategoryCode(String name, String value) {
+		CodeType ct = new CodeType();
+		ct.setName(name);
+		ct.setValue(value);
+		ct.setListID("SOC");
+		ct.setLanguageID("en-US");
+		ct.setListName("Standard Occupational Classification System");
+		ct.setListAgencyID("BLS");
+		ct.setListAgencyName("Bureau of Labor Statistics");
+		ct.setListSchemeURI("http://bls.gov/soc");
+		ct.setListURI("http://www.bls.gov/soc/2010");
+		ct.setListVersionID("2010");
+		return ct;
+	}
+
+	private CodeType addISCOJobCategoryCode(String name, String value) {
+		CodeType ct = new CodeType();
+		ct.setName(name);
+		ct.setValue(value);
+		ct.setListID("ISCO");
+		ct.setLanguageID("en-US");
+		ct.setListName("International Standard Classification of Occupations");
+		ct.setListAgencyID("ILO");
+		ct.setListAgencyName("International Labour Organization");
+//		ct.setListSchemeURI("http://bls.gov/soc");
+//		ct.setListURI("http://www.bls.gov/soc/2010");
+		ct.setListVersionID("ISCO-08");
+		return ct;
+	}
+	
+	private CodeType addNOCJobCategoryCode(String name, String value) {
+		CodeType ct = new CodeType();
+		ct.setName(name);
+		ct.setValue(value);
+		ct.setListID("NOC");
+		ct.setLanguageID("fr-CA");
+		ct.setListName("National Occupational Classification");
+		ct.setListAgencyID("ILO");
+		ct.setListAgencyName("Government of Canada");
+//		ct.setListSchemeURI("http://bls.gov/soc");
+//		ct.setListURI("http://www.bls.gov/soc/2010");
+		ct.setListVersionID("2011");
+		return ct;
+	}
+	
 	private SpecifiedCompetencyType createSpecifiedCompetencyType() {
 		SpecifiedCompetencyType ct = new SpecifiedCompetencyType();
 		ct.setCompetencyName("CompetencyName One");
