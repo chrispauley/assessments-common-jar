@@ -4,6 +4,7 @@
 	attributeFormDefault="unqualified">
 	<xsd:include schemaLocation="Components.xsd" />
 	<xsd:include schemaLocation="CodeLists.xsd" />
+	<xsd:include schemaLocation="AssessmentOrder.xsd" />
 
 	<xsd:element name="ProcessAssessmentOrder">
 		<xsd:complexType>
@@ -45,116 +46,14 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:element name="AssessmentOrder" type="AssessmentOrderType" />
-	<xsd:complexType name="AssessmentOrderType">
-		<xsd:sequence>
-			<xsd:element name="documentID" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="DocumentSequence" type="xsd:positiveInteger"
-				minOccurs="0" />
-			<xsd:element name="CustomerParty" type="PartyType"
-				minOccurs="0" />
-			<xsd:element name="SupplierParty" type="PartyType"
-				minOccurs="0" />
-			<xsd:element name="RequesterParty" type="PartyType"
-				minOccurs="0" />
-			<xsd:element name="InvitationByPartyCode" type="InvitationByPartyCodeEnumType"
-				minOccurs="0" />
-			<xsd:element name="PackageID" type="IdentifierType" />
-			<xsd:element name="ComparisonGroupID" type="IdentifierType"
-				minOccurs="0" maxOccurs="unbounded" />
-
-			<xsd:element name="AssessmentRequesterName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="AssessmentSubject" type="AssessmentSubjectType"
-				minOccurs="0" />
-			<!-- <xsd:element ref="AssessmentLanguageCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="AssessmentResultLanguageCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="AssessmentAccess" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="TestLocationID" minOccurs="0"/> -->
-			<xsd:element name="RedirectURL" type="URIType" minOccurs="0" />
-			<xsd:element name="UserArea" type="UserAreaType"
-				minOccurs="0" />
-		</xsd:sequence>
-		<xsd:attribute name="majorVersionID" type="xsd:string"
-			use="optional" />
-		<xsd:attribute name="minorVersionID" type="xsd:string"
-			use="optional" />
-	</xsd:complexType>
 
 	<!-- xmlns:oa="http://www.openapplications.org/oagis/9" -->
 
 
-	<xsd:group name="DocumentIDGroup">
-		<xsd:sequence>
-			<xsd:element name="DocumentID" type="IdentifierType" />
-			<xsd:element name="AlternateDocumentID" minOccurs="0"
-				maxOccurs="unbounded" />
-		</xsd:sequence>
-	</xsd:group>
-	<!-- <xsd:complexType name="IdentifierType"> -->
-	<!-- <xsd:complexContent> -->
-	<!-- <xsd:extension base="IdentifierType"> -->
-	<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup" /> -->
-	<!-- </xsd:extension> -->
-	<!-- </xsd:complexContent> -->
-	<!-- </xsd:complexType> -->
 
 
-	<xsd:element name="AssessmentSubject" type="AssessmentSubjectType" />
-	<xsd:complexType name="AssessmentSubjectType">
-		<xsd:sequence>
-			<xsd:element name="SubjectID" type="IdentifierType"
-				minOccurs="0" />
-			<xsd:element name="PersonLegalID" type="IdentifierType"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PersonName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="Communication" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
-			<!-- <xsd:element ref="RaceCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="EthnicityCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="NationalityCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="PrimaryLanguageCode" minOccurs="0"/> -->
-			<!-- <xsd:element ref="BirthDate" minOccurs="0"/> -->
-			<!-- <xsd:element ref="oa:AgeMeasure" minOccurs="0"/> -->
-			<!-- <xsd:element ref="GenderCode" minOccurs="0"/> -->
-			<!-- <xsd:element ref="DisabilityIndicator" minOccurs="0"/> -->
-			<!-- <xsd:element ref="DisabilityTypeCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="AccomodationTypeCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="MilitaryStatusCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="InternalCandidateIndicator" minOccurs="0"/> -->
-			<xsd:element name="UserArea" type="UserAreaType"
-				minOccurs="0" />
-		</xsd:sequence>
-	</xsd:complexType>
 
-	<xsd:complexType name="CommunicationABIEType">
-		<xsd:sequence>
-			<!-- <xsd:element ref="ChannelCode" minOccurs="0"/> -->
-			<!-- <xsd:element ref="UseCode" minOccurs="0"/> -->
-			<!-- <xsd:choice> -->
-			<!-- <xsd:sequence> -->
-			<!-- <xsd:element ref="oa:CountryDialing" minOccurs="0"/> -->
-			<!-- <xsd:element ref="oa:AreaDialing" minOccurs="0"/> -->
-			<!-- <xsd:element ref="oa:DialNumber" minOccurs="0"/> -->
-			<!-- <xsd:element ref="oa:Extension" minOccurs="0"/> -->
-			<!-- <xsd:element ref="oa:Access" minOccurs="0"/> -->
-			<!-- </xsd:sequence> -->
-			<!-- <xsd:element ref="Address" minOccurs="0"/> -->
-			<!-- <xsd:sequence> -->
-			<!-- <xsd:element ref="oa:URI" minOccurs="0"/> -->
-			<!-- <xsd:element ref="oa:HTMLPreferredIndicator" minOccurs="0"/> -->
-			<!-- </xsd:sequence> -->
-			<!-- <xsd:element ref="oa:Text" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- </xsd:choice> -->
-			<xsd:element name="UserArea" type="UserAreaType"
-				minOccurs="0" />
-		</xsd:sequence>
-		<xsd:attribute name="sequence" type="xsd:positiveInteger" />
-		<!-- <xsd:attribute name="preferredIndicator" type="oa:IndicatorType"/> -->
-		<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup"/> -->
-	</xsd:complexType>
+
 
 	<xsd:element name="BOD" type="BODType">
 		<xsd:annotation>
@@ -328,61 +227,6 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:element name="AssessmentOrderJSON" type="AssessmentOrderJSONType" />
-
-	<xsd:complexType name="AssessmentOrderJSONType">
-		<xsd:sequence>
-			<xsd:element name="ClientID" type="xsd:string" minOccurs="0" />
-			<xsd:element name="ClientPwd" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="CustomerName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="AssessmentID" type="xsd:string" />
-			<xsd:element name="JobTitleID" type="xsd:string" />
-			<xsd:element name="FirstName" type="xsd:string" />
-			<xsd:element name="LastName" type="xsd:string" />
-			<xsd:element name="Email" type="xsd:string" />
-			<xsd:element name="ExternalApplicationID" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="ExternalPersonID" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="ExternalJobReqID" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="OrderID" type="xsd:string" minOccurs="0" />
-			<xsd:element name="ReturnURL" type="URIType" minOccurs="0" />
-
-			<xsd:element name="DocumentSequence" type="xsd:positiveInteger"
-				minOccurs="0" />
-			<xsd:element name="PackageID" type="IdentifierType" />
 
 
-			<xsd:element name="RedirectURL" type="URIType" minOccurs="0" />
-			<!-- <xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/> -->
-		</xsd:sequence>
-
-		<xsd:attribute name="majorVersionID" type="xsd:string"
-			use="optional" />
-		<xsd:attribute name="minorVersionID" type="xsd:string"
-			use="optional" />
-		<xsd:attribute name="systemEnvironmentCode" type="xsd:string"
-			default="Development" />
-		<xsd:attribute name="releaseID" type="xsd:string"
-			default="4.0" />
-		<xsd:attribute name="languageCode" type="xsd:string"
-			use="optional" default="en" />
-
-	</xsd:complexType>
-
-	<!-- <xsd:element name="AssessmentCatalog" type="AssessmentCatalogType" 
-		/> -->
-	<!-- <xsd:complexType name="AssessmentCatalogType"> -->
-	<!-- <xsd:sequence> -->
-	<!-- <xsd:element name="DocumentID" type="xsd:string"/> -->
-	<!-- <xsd:element name="AlternateDocumentID" type="xsd:string" maxOccurs="unbounded"/> -->
-	<!-- <xsd:element name="DocumentSequence" type="xsd:integer"/> -->
-	<!-- <xsd:element name="CustomerParty" type="PartyType"/> -->
-	<!-- <xsd:element name="SupplierParty" type="PartyType"/> -->
-	<!-- <xsd:element name="RequesterParty" type="PartyType"/> -->
-	<!-- </xsd:sequence> -->
-	<!-- </xsd:complexType> -->
 </xsd:schema>

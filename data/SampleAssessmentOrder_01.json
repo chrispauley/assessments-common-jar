@@ -1,0 +1,89 @@
+{
+   "documentID" : "documentId_01",
+   "DocumentSequence" : 1,
+   "CustomerParty" : {
+      "PartyName" : "customer name",
+      "PartyReportingIDs" : [ {
+         "value" : "partyReportingID"
+      } ],
+      "Communication" : [ {
+         "sequence" : 1,
+         "UseCode" : "Personal",
+         "DialNumber" : "+01 (215)-555-0123"
+      }, {
+         "ChannelCode" : "MobileTelephone",
+         "UseCode" : "Personal",
+         "DialNumber" : "(215)555-5678"
+      } ]
+   },
+   "SupplierParty" : {
+      "PartyName" : "ATS Supplier, Inc.",
+      "PartyReportingIDs" : [ {
+         "value" : "partyReportingID"
+      } ],
+      "Communication" : [ {
+         "sequence" : 1,
+         "UseCode" : "Business",
+         "DialNumber" : "+01 (800)-555-9876"
+      } ],
+      "PersonContact" : [ {
+         "PersonName" : {
+            "FormattedName" : "John Jones",
+            "PreferredSalutationCode" : "Mr."
+         }
+      } ]
+   },
+   "RequesterParty" : {
+      "PartyName" : "RequestorParty",
+      "PartyReportingIDs" : [ {
+         "value" : "partyReportingID"
+      } ],
+      "Communication" : [ {
+         "UseCode" : "Business",
+         "DialNumber" : "+01 (215)-555-0123"
+      }, {
+         "ChannelCode" : "MobileTelephone",
+         "UseCode" : "Personal",
+         "DialNumber" : "(215)555-5678"
+      } ]
+   },
+   "AssessmentSubject" : {
+      "SubjectID" : {
+         "value" : "candidate_001"
+      },
+      "PersonLegalID" : [ {
+         "value" : "legal_id"
+      } ],
+      "PersonName" : "Chris Pauley",
+      "Communication" : [ {
+         "ChannelCode" : "Telephone",
+         "UseCode" : "Personal",
+         "DialNumber" : "(215)555-1234"
+      }, {
+         "ChannelCode" : "Telephone",
+         "UseCode" : "Business",
+         "DialNumber" : "(800)555-1234"
+      }, {
+         "ChannelCode" : "MobileTelephone",
+         "UseCode" : "Personal",
+         "DialNumber" : "(215)555-5678"
+      }, {
+         "sequence" : 4,
+         "ChannelCode" : "InstantMessage",
+         "UseCode" : "Personal",
+         "Access" : "chris.candidate"
+      }, {
+         "sequence" : 5,
+         "Address" : {
+            "type" : "Delivery Address",
+            "LineOne" : "This is Line One",
+            "LineTwo" : "Line two",
+            "BuildingName" : "Blg 1",
+            "StreetName" : "Broad Street",
+            "CityName" : "Philadelphia",
+            "CountryCode" : "US",
+            "PostalCode" : "19020-2222"
+         }
+      } ]
+   }
+}

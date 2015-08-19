@@ -22,11 +22,11 @@ public class AssessmentOrderJSONTest_uc_01 extends TestCase {
 		
 		AssessmentOrderType ao = new AssessmentOrderType();
 		
-		aoj.setClientID("cliend-id-001");
-		aoj.setClientPwd("509FGJHG999");
-		aoj.setCustomerName("ClientNameGoesHere");
-		aoj.setAssessmentID("AId-00001");
-		aoj.setJobTitleID("jobTitle");
+//		aoj.setClientID("cliend-id-001");
+//		aoj.setClientPwd("509FGJHG999");
+//		aoj.setCustomerName("ClientNameGoesHere");
+//		aoj.setAssessmentID("AId-00001");
+//		aoj.setJobTitleID("jobTitle");
 		aoj.setFirstName("Chris");
 		aoj.setLastName("Pauley");
 		aoj.setEmail("myemail@gmail.com");

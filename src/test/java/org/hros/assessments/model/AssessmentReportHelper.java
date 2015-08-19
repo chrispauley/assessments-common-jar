@@ -11,14 +11,14 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import org.eclipse.persistence.jaxb.MarshallerProperties;
-import org.hros.assessments.model.AssessmentOrderType;
+import org.hros.assessments.model.AssessmentReportType;
 import org.hros.assessments.model.ProcessAssessmentOrder;
 
 public class AssessmentReportHelper {
 
-	public static void writeXML(AssessmentOrderType ac, String filename){
+	public static void writeXML(AssessmentReportType ac, String filename){
 		try {
-			JAXBContext context = JAXBContext.newInstance(AssessmentOrderType.class);
+			JAXBContext context = JAXBContext.newInstance(AssessmentReportType.class);
 			Marshaller marshaller = context.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			
@@ -34,9 +34,9 @@ public class AssessmentReportHelper {
 		}
 	}
 	
-	public static void writeJson(AssessmentOrderType ac, String filename){
+	public static void writeJson(AssessmentReportType ac, String filename){
 		try {
-			JAXBContext context = JAXBContext.newInstance(AssessmentOrderType.class);
+			JAXBContext context = JAXBContext.newInstance(AssessmentReportType.class);
 			Marshaller marshaller = context.createMarshaller();
 			marshaller.setProperty(MarshallerProperties.MEDIA_TYPE, "application/json");
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -53,10 +53,10 @@ public class AssessmentReportHelper {
 		}
 	}
 	
-	public static void showJSON(AssessmentOrderType ac) {
+	public static void showJSON(AssessmentReportType ac) {
 		JAXBContext context;
 		try {
-			context = JAXBContext.newInstance(AssessmentOrderType.class);
+			context = JAXBContext.newInstance(AssessmentReportType.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(MarshallerProperties.MEDIA_TYPE, "application/json");
 //			m.setProperty("eclipslink.json.include-root", true);
@@ -67,7 +67,7 @@ public class AssessmentReportHelper {
 		}
 	}
 	
-	public static void showXML(AssessmentOrderType ac) {
+	public static void showXML(AssessmentReportType ac) {
 		JAXBContext context;
 		try {
 			context = JAXBContext.newInstance(ProcessAssessmentOrder.class);
@@ -79,15 +79,15 @@ public class AssessmentReportHelper {
 		}
 	}
 	
-	public AssessmentOrderType readXML(String filename){
-		AssessmentOrderType aoj = null;
+	public AssessmentReportType readXML(String filename){
+		AssessmentReportType aoj = null;
 		try { 
-			JAXBContext context = JAXBContext.newInstance(AssessmentOrderType.class);
+			JAXBContext context = JAXBContext.newInstance(AssessmentReportType.class);
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			
 			File f = new File("./data/" + filename);
 			
-			aoj = (AssessmentOrderType) unmarshaller.unmarshal(f);
+			aoj = (AssessmentReportType) unmarshaller.unmarshal(f);
 			
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
@@ -96,17 +96,17 @@ public class AssessmentReportHelper {
 		return aoj;		
 	}
 		
-	public AssessmentOrderType readJSON(String filename){
-		AssessmentOrderType aoj = null;
+	public AssessmentReportType readJSON(String filename){
+		AssessmentReportType aoj = null;
 		try {
-			JAXBContext context = JAXBContext.newInstance(AssessmentOrderType.class);
+			JAXBContext context = JAXBContext.newInstance(AssessmentReportType.class);
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			unmarshaller.setProperty("eclipselink.media-type", "application/json");
 	        unmarshaller.setProperty("eclipselink.json.include-root", true);
 			
 			File f = new File("./data/" + filename);
 			
-			aoj = (AssessmentOrderType) unmarshaller.unmarshal(f);
+			aoj = (AssessmentReportType) unmarshaller.unmarshal(f);
 			
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block

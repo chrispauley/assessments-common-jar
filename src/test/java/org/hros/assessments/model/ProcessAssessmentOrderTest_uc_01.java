@@ -61,7 +61,7 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 	private AssessmentSubjectType createAssessmentSubject(){
 		AssessmentSubjectType ast = new AssessmentSubjectType();
 		ast.setPersonName("Joe Smith");
-		ast.getCommunication().add("cell: (215)555-5555");
+//		ast.getCommunication().add("cell: (215)555-5555");
 		return ast;
 	}
 	
