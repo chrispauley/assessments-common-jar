@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="unqualified"
+	attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="Components.xsd" />
+	<xsd:include schemaLocation="CodeLists.xsd" />
+	<xsd:element name="AssessmentReport" type="AssessmentReportType">
+
+	</xsd:element>
+	
+	<xsd:complexType name="AssessmentReportType">
+		<xsd:sequence>
+			<xsd:element name="DocumentID" type="xsd:string" />
+			<xsd:element name="AlternateDocumentID" type="xsd:string" maxOccurs="unbounded" />
+			<xsd:element name="DocumentSequence" type="xsd:integer" />
+			<xsd:element name="CustomerParty" type="PartyType" />
+			<xsd:element name="SupplierParty" type="PartyType" />
+			<xsd:element name="RequesterParty" type="PartyType" />
+			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>		
+		</xsd:sequence>
+		
+		<xsd:attribute name="majorVersionID" type="xsd:string" use="optional" />
+		<xsd:attribute name="minorVersionID" type="xsd:string" use="optional" />
+	    <xsd:attribute name="systemEnvironmentCode" type="xsd:string" default="Development" />
+		<xsd:attribute name="releaseID" type="xsd:string" default="4.0" />
+		<xsd:attribute name="languageCode" type="xsd:string" use="optional" default="en" />
+
+	</xsd:complexType>
+	
+
+
+
+</xsd:schema>

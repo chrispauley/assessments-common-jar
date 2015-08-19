@@ -13,17 +13,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AssessmentCatalogType complex type.
+ * <p>Java class for AssessmentReportType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AssessmentCatalogType"&gt;
+ * &lt;complexType name="AssessmentReportType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -33,9 +34,13 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="CustomerParty" type="{}PartyType"/&gt;
  *         &lt;element name="SupplierParty" type="{}PartyType"/&gt;
  *         &lt;element name="RequesterParty" type="{}PartyType"/&gt;
- *         &lt;element name="AssessmentPackage" type="{}AssessmentPackageType"/&gt;
  *         &lt;element name="UserArea" type="{}UserAreaType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
+ *       &lt;attribute name="majorVersionID" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="minorVersionID" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="systemEnvironmentCode" type="{http://www.w3.org/2001/XMLSchema}string" default="Development" /&gt;
+ *       &lt;attribute name="releaseID" type="{http://www.w3.org/2001/XMLSchema}string" default="4.0" /&gt;
+ *       &lt;attribute name="languageCode" type="{http://www.w3.org/2001/XMLSchema}string" default="en" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -44,17 +49,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "AssessmentCatalogType", propOrder = {
+@XmlType(name = "AssessmentReportType", propOrder = {
     "documentID",
     "alternateDocumentID",
     "documentSequence",
     "customerParty",
     "supplierParty",
     "requesterParty",
-    "assessmentPackage",
     "userArea"
 })
-public class AssessmentCatalogType {
+public class AssessmentReportType {
 
     @XmlElement(name = "DocumentID", required = true)
     protected String documentID;
@@ -68,10 +72,18 @@ public class AssessmentCatalogType {
     protected PartyType supplierParty;
     @XmlElement(name = "RequesterParty", required = true)
     protected PartyType requesterParty;
-    @XmlElement(name = "AssessmentPackage", required = true)
-    protected AssessmentPackageType assessmentPackage;
     @XmlElement(name = "UserArea")
     protected UserAreaType userArea;
+    @XmlAttribute(name = "majorVersionID")
+    protected String majorVersionID;
+    @XmlAttribute(name = "minorVersionID")
+    protected String minorVersionID;
+    @XmlAttribute(name = "systemEnvironmentCode")
+    protected String systemEnvironmentCode;
+    @XmlAttribute(name = "releaseID")
+    protected String releaseID;
+    @XmlAttribute(name = "languageCode")
+    protected String languageCode;
 
     /**
      * Gets the value of the documentID property.
@@ -223,30 +235,6 @@ public class AssessmentCatalogType {
     }
 
     /**
-     * Gets the value of the assessmentPackage property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link AssessmentPackageType }
-     *     
-     */
-    public AssessmentPackageType getAssessmentPackage() {
-        return assessmentPackage;
-    }
-
-    /**
-     * Sets the value of the assessmentPackage property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link AssessmentPackageType }
-     *     
-     */
-    public void setAssessmentPackage(AssessmentPackageType value) {
-        this.assessmentPackage = value;
-    }
-
-    /**
      * Gets the value of the userArea property.
      * 
      * @return
@@ -268,6 +256,138 @@ public class AssessmentCatalogType {
      */
     public void setUserArea(UserAreaType value) {
         this.userArea = value;
+    }
+
+    /**
+     * Gets the value of the majorVersionID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMajorVersionID() {
+        return majorVersionID;
+    }
+
+    /**
+     * Sets the value of the majorVersionID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMajorVersionID(String value) {
+        this.majorVersionID = value;
+    }
+
+    /**
+     * Gets the value of the minorVersionID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMinorVersionID() {
+        return minorVersionID;
+    }
+
+    /**
+     * Sets the value of the minorVersionID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMinorVersionID(String value) {
+        this.minorVersionID = value;
+    }
+
+    /**
+     * Gets the value of the systemEnvironmentCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSystemEnvironmentCode() {
+        if (systemEnvironmentCode == null) {
+            return "Development";
+        } else {
+            return systemEnvironmentCode;
+        }
+    }
+
+    /**
+     * Sets the value of the systemEnvironmentCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSystemEnvironmentCode(String value) {
+        this.systemEnvironmentCode = value;
+    }
+
+    /**
+     * Gets the value of the releaseID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReleaseID() {
+        if (releaseID == null) {
+            return "4.0";
+        } else {
+            return releaseID;
+        }
+    }
+
+    /**
+     * Sets the value of the releaseID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setReleaseID(String value) {
+        this.releaseID = value;
+    }
+
+    /**
+     * Gets the value of the languageCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLanguageCode() {
+        if (languageCode == null) {
+            return "en";
+        } else {
+            return languageCode;
+        }
+    }
+
+    /**
+     * Sets the value of the languageCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLanguageCode(String value) {
+        this.languageCode = value;
     }
 
 }

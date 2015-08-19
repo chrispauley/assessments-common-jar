@@ -1562,4 +1562,23 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 			</xsd:enumeration>
 		</xsd:restriction>
 	</xsd:simpleType>	
+	
+
+	<xsd:simpleType name="InvitationByPartyCodeEnumType">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Customer">
+				<xsd:annotation>
+					<xsd:documentation>Indicates that a service is currently available
+						to be ordered, purchased, utilitized, etc.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Supplier">
+				<xsd:annotation>
+					<xsd:documentation>Indicates that a service is unavailable.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>		
 </xsd:schema>

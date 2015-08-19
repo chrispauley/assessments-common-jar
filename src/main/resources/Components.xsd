@@ -517,6 +517,48 @@
 		</xsd:sequence>
 	</xsd:complexType>
 	
+        <xsd:simpleType name="URIType">
+                <xsd:restriction base="xsd:anyURI"/>
+        </xsd:simpleType>
+<!-- 	<xsd:complexType name="UserAreaType"> -->
+<!-- 		<xsd:sequence> -->
+<!-- 			<xsd:any namespace="##any" processContents="lax" minOccurs="0" -->
+<!-- 				maxOccurs="unbounded" /> -->
+<!-- 		</xsd:sequence> -->
+<!-- 	</xsd:complexType> -->
+
+
+	
+	<xsd:complexType name="PartyType">
+		<xsd:complexContent>
+			<xsd:extension base="BasePartyType">
+				<xsd:sequence>
+					<xsd:element name="UserArea" type="UserAreaType"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+
+
+	<xsd:complexType name="BasePartyType">
+		<xsd:sequence>
+			<xsd:element name="PartyID" type="IdentifierType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="PartyLegalID" type="IdentifierType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="PartyTaxID" type="IdentifierType"
+				minOccurs="0" />
+			<xsd:element name="PartyName" type="xsd:string" />
+			<xsd:element name="PartyReportingIDs" type="IdentifierType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<!-- <xsd:element ref="Communication" minOccurs="0" maxOccurs="unbounded"/> -->
+			<!-- <xsd:element ref="PersonContact" minOccurs="0" maxOccurs="unbounded"/> -->
+		</xsd:sequence>
+		<!-- <xsd:attribute name="agencyRoleCode" type="AgencyRoleCodeContentType" 
+			use="optional"/> -->
+	</xsd:complexType>
 
 
 </xsd:schema>

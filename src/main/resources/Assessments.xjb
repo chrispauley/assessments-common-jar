@@ -33,5 +33,14 @@ jxb:extensionBindingPrefixes="xjc">
 			</jaxb:bindings>
 		</jxb:schemaBindings>
 	</jxb:bindings>
-
+	<jxb:bindings schemaLocation="AssessmentOrder.xsd">
+		<jxb:schemaBindings>
+			<jxb:package name="org.hros.assessments.model"/>
+		</jxb:schemaBindings>
+	</jxb:bindings>
+	<jxb:bindings schemaLocation="AssessmentReport.xsd">
+		<jxb:schemaBindings>
+			<jxb:package name="org.hros.assessments.model"/>
+		</jxb:schemaBindings>
+	</jxb:bindings>	
 </jxb:bindings>

@@ -1,7 +1,0 @@
-The following training courses are available for the Assessments Specification, via the HR-XML website.
-
-
--XML Basics: https://hr-xml.site-ym.com/store/view_product.asp?id=1347999
--HR-XML Common Components: https://hr-xml.site-ym.com/store/view_product.asp?id=1351737
--OAGIS Business Documents: https://hr-xml.site-ym.com/store/view_product.asp?id=1351800
--HR-XML Assessments Specifications: https://hr-xml.site-ym.com/store/view_product.asp?id=1805316

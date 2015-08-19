@@ -14,31 +14,44 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for UseCodeType.
+ * <p>Java class for InvitationByPartyCodeEnumType.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="UseCodeType"&gt;
+ * &lt;simpleType name="InvitationByPartyCodeEnumType"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}normalizedString"&gt;
- *     &lt;enumeration value="Personal"/&gt;
- *     &lt;enumeration value="Business"/&gt;
+ *     &lt;enumeration value="Customer"/&gt;
+ *     &lt;enumeration value="Supplier"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
  * </pre>
  * 
  */
-@XmlType(name = "UseCodeType")
+@XmlType(name = "InvitationByPartyCodeEnumType")
 @XmlEnum
-public enum UseCodeType {
+public enum InvitationByPartyCodeEnumType {
 
-    @XmlEnumValue("Personal")
-    PERSONAL("Personal"),
-    @XmlEnumValue("Business")
-    BUSINESS("Business");
+
+    /**
+     * Indicates that a service is currently available
+     * 						to be ordered, purchased, utilitized, etc.
+     * 					
+     * 
+     */
+    @XmlEnumValue("Customer")
+    CUSTOMER("Customer"),
+
+    /**
+     * Indicates that a service is unavailable.
+     * 					
+     * 
+     */
+    @XmlEnumValue("Supplier")
+    SUPPLIER("Supplier");
     private final String value;
 
-    UseCodeType(String v) {
+    InvitationByPartyCodeEnumType(String v) {
         value = v;
     }
 
@@ -46,8 +59,8 @@ public enum UseCodeType {
         return value;
     }
 
-    public static UseCodeType fromValue(String v) {
-        for (UseCodeType c: UseCodeType.values()) {
+    public static InvitationByPartyCodeEnumType fromValue(String v) {
+        for (InvitationByPartyCodeEnumType c: InvitationByPartyCodeEnumType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
