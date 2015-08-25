@@ -20,6 +20,7 @@ public class AssessmentReportTest_01 extends TestCase {
 	private AssessmentReportType createAssessmentReportType() {
 		AssessmentReportType ar = new AssessmentReportType();
 		ar.setDocumentID("documentId_01");
+		ar.getAlternateDocumentID().add("AssessmentOrder: 20150820_001");
 		
 		ar.setDocumentSequence(BigInteger.valueOf(1));
 		ar.setCustomerParty(this.createPartyType("CustomerParty",
@@ -29,8 +30,8 @@ public class AssessmentReportTest_01 extends TestCase {
 		ar.setRequesterParty(this.createPartyType("RequestorParty",
 				"Requestor Name"));
 		ar.setLanguageCode("en-US");
-
-		AssessmentSubjectType as = this.createAssessmentSubject();
+		ar.setAssessmentSubject(AssessmentSubjectHelper.CreateAssessmentSubject());
+		
 		return ar;
 	}
 

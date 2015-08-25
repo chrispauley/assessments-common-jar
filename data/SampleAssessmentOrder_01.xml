@@ -1,74 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<documentID>documentId_01</documentID><DocumentSequence>1</DocumentSequence><CustomerParty>
-   <PartyName>customer name</PartyName>
-   <PartyReportingIDs>partyReportingID</PartyReportingIDs>
-   <Communication sequence="1">
-      <UseCode>Personal</UseCode>
-      <DialNumber>+01 (215)-555-0123</DialNumber>
-   </Communication>
-   <Communication>
-      <ChannelCode>MobileTelephone</ChannelCode>
-      <UseCode>Personal</UseCode>
-      <DialNumber>(215)555-5678</DialNumber>
-   </Communication>
-</CustomerParty><SupplierParty>
-   <PartyName>ATS Supplier, Inc.</PartyName>
-   <PartyReportingIDs>partyReportingID</PartyReportingIDs>
-   <Communication sequence="1">
-      <UseCode>Business</UseCode>
-      <DialNumber>+01 (800)-555-9876</DialNumber>
-   </Communication>
-   <PersonContact>
-      <PersonName>
-         <FormattedName>John Jones</FormattedName>
-         <PreferredSalutationCode>Mr.</PreferredSalutationCode>
-      </PersonName>
-   </PersonContact>
-</SupplierParty><RequesterParty>
-   <PartyName>RequestorParty</PartyName>
-   <PartyReportingIDs>partyReportingID</PartyReportingIDs>
-   <Communication>
-      <UseCode>Business</UseCode>
-      <DialNumber>+01 (215)-555-0123</DialNumber>
-   </Communication>
-   <Communication>
-      <ChannelCode>MobileTelephone</ChannelCode>
-      <UseCode>Personal</UseCode>
-      <DialNumber>(215)555-5678</DialNumber>
-   </Communication>
-</RequesterParty><AssessmentSubject>
-   <SubjectID>candidate_001</SubjectID>
-   <PersonLegalID>legal_id</PersonLegalID>
-   <PersonName>Chris Pauley</PersonName>
-   <Communication>
-      <ChannelCode>Telephone</ChannelCode>
-      <UseCode>Personal</UseCode>
-      <DialNumber>(215)555-1234</DialNumber>
-   </Communication>
-   <Communication>
-      <ChannelCode>Telephone</ChannelCode>
-      <UseCode>Business</UseCode>
-      <DialNumber>(800)555-1234</DialNumber>
-   </Communication>
-   <Communication>
-      <ChannelCode>MobileTelephone</ChannelCode>
-      <UseCode>Personal</UseCode>
-      <DialNumber>(215)555-5678</DialNumber>
-   </Communication>
-   <Communication sequence="4">
-      <ChannelCode>InstantMessage</ChannelCode>
-      <UseCode>Personal</UseCode>
-      <Access>chris.candidate</Access>
-   </Communication>
-   <Communication sequence="5">
-      <Address type="Delivery Address">
-         <LineOne>This is Line One</LineOne>
-         <LineTwo>Line two</LineTwo>
-         <BuildingName>Blg 1</BuildingName>
-         <StreetName>Broad Street</StreetName>
-         <CityName>Philadelphia</CityName>
-         <CountryCode>US</CountryCode>
-         <PostalCode>19020-2222</PostalCode>
-      </Address>
-   </Communication>
-</AssessmentSubject>
+<AssessmentOrder>
+   <documentID>documentId_01</documentID>
+   <DocumentSequence>1</DocumentSequence>
+   <CustomerParty>
+      <PartyName>customer name</PartyName>
+      <PartyReportingIDs>partyReportingID</PartyReportingIDs>
+      <Communication sequence="1">
+         <UseCode>Personal</UseCode>
+         <DialNumber>+01 (215)-555-0123</DialNumber>
+      </Communication>
+      <Communication>
+         <ChannelCode>MobileTelephone</ChannelCode>
+         <UseCode>Personal</UseCode>
+         <DialNumber>(215)555-5678</DialNumber>
+      </Communication>
+   </CustomerParty>
+   <SupplierParty>
+      <PartyName>ATS Supplier, Inc.</PartyName>
+      <PartyReportingIDs>partyReportingID</PartyReportingIDs>
+      <Communication sequence="1">
+         <UseCode>Business</UseCode>
+         <DialNumber>+01 (800)-555-9876</DialNumber>
+      </Communication>
+      <PersonContact>
+         <PersonName>
+            <FormattedName>John Jones</FormattedName>
+            <PreferredSalutationCode>Mr.</PreferredSalutationCode>
+         </PersonName>
+      </PersonContact>
+   </SupplierParty>
+   <RequesterParty>
+      <PartyName>RequestorParty</PartyName>
+      <PartyReportingIDs>partyReportingID</PartyReportingIDs>
+      <Communication>
+         <UseCode>Business</UseCode>
+         <DialNumber>+01 (215)-555-0123</DialNumber>
+      </Communication>
+      <Communication>
+         <ChannelCode>MobileTelephone</ChannelCode>
+         <UseCode>Personal</UseCode>
+         <DialNumber>(215)555-5678</DialNumber>
+      </Communication>
+   </RequesterParty>
+   <PackageID>package_123</PackageID>
+   <AssessmentSubject>
+      <SubjectID>candidate_001</SubjectID>
+      <PersonLegalID>legal_id</PersonLegalID>
+      <PersonName>Chris Pauley</PersonName>
+      <Communication>
+         <ChannelCode>Telephone</ChannelCode>
+         <UseCode>Personal</UseCode>
+         <DialNumber>(215)555-1234</DialNumber>
+      </Communication>
+      <Communication>
+         <ChannelCode>Telephone</ChannelCode>
+         <UseCode>Business</UseCode>
+         <DialNumber>(800)555-1234</DialNumber>
+      </Communication>
+      <Communication>
+         <ChannelCode>MobileTelephone</ChannelCode>
+         <UseCode>Personal</UseCode>
+         <DialNumber>(215)555-5678</DialNumber>
+      </Communication>
+      <Communication sequence="4">
+         <ChannelCode>InstantMessage</ChannelCode>
+         <UseCode>Personal</UseCode>
+         <Access>chris.candidate</Access>
+      </Communication>
+      <Communication sequence="5">
+         <Address type="Delivery Address">
+            <LineOne>This is Line One</LineOne>
+            <LineTwo>Line two</LineTwo>
+            <BuildingName>Blg 1</BuildingName>
+            <StreetName>Broad Street</StreetName>
+            <CityName>Philadelphia</CityName>
+            <CountryCode>US</CountryCode>
+            <PostalCode>19020-2222</PostalCode>
+         </Address>
+      </Communication>
+   </AssessmentSubject>
+   <AssessmentAccess>
+      <ID>assessmentAccessID</ID>
+      <AccessCredentials>
+         <UserID>User_01</UserID>
+         <AccessCredential>
+            <AccessCredentialValue>login123</AccessCredentialValue>
+         </AccessCredential>
+      </AccessCredentials>
+   </AssessmentAccess>
+</AssessmentOrder>

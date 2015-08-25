@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentReport languageCode="en-US">
+   <DocumentID>documentId_01</DocumentID>
+   <AlternateDocumentID>AssessmentOrder: 20150820_001</AlternateDocumentID>
+   <DocumentSequence>1</DocumentSequence>
+   <CustomerParty>
+      <PartyName>CustomerParty</PartyName>
+   </CustomerParty>
+   <SupplierParty>
+      <PartyName>SupplierParty</PartyName>
+   </SupplierParty>
+   <RequesterParty>
+      <PartyName>RequestorParty</PartyName>
+   </RequesterParty>
+</AssessmentReport>

@@ -1,0 +1,17 @@
+{
+   "AssessmentReport" : {
+      "languageCode" : "en-US",
+      "DocumentID" : "documentId_01",
+      "AlternateDocumentID" : [ "AssessmentOrder: 20150820_001" ],
+      "DocumentSequence" : 1,
+      "CustomerParty" : {
+         "PartyName" : "CustomerParty"
+      },
+      "SupplierParty" : {
+         "PartyName" : "SupplierParty"
+      },
+      "RequesterParty" : {
+         "PartyName" : "RequestorParty"
+      }
+   }
+}

@@ -1,6 +1,5 @@
 package org.hros.assessments.model;
 
-
 import java.math.BigInteger;
 
 import org.hros.assessments.model.IdentifierType;
@@ -19,17 +18,49 @@ public class AssessmentOrderTest_01 extends TestCase {
 	private AssessmentOrderType createAssessmentOrderType() {
 		AssessmentOrderType ac = new AssessmentOrderType();
 		ac.setDocumentID("documentId_01");
-		
+
 		ac.setDocumentSequence(BigInteger.valueOf(1));
+		ac.setPackageID(createPackageId("package_123"));
 		ac.setCustomerParty(this.createCustomerParty("CustomerParty",
 				"customer name"));
-		ac.setSupplierParty(this.createSupplierParty("John Jones",
+		ac.setSupplierParty(this.createSupplierParty("John Jones", "Mr.",
 				"ATS Supplier, Inc."));
 		ac.setRequesterParty(this.createRequestorParty("RequestorParty",
 				"Requestor Name"));
 		ac.setAssessmentSubject(this.createAssessmentSubject());
-		
+
+		ac.getAssessmentAccess().add(createAssessmentAccess());
 		return ac;
+	}
+
+	private IdentifierType createPackageId(String packageId) {
+		IdentifierType pi = new IdentifierType();
+		pi.setValue(packageId);
+		return pi;
+	}
+
+	private AssessmentAccessType createAssessmentAccess() {
+		AssessmentAccessType aat = new AssessmentAccessType();
+		aat.setID("assessmentAccessID");
+		aat.setAccessCredentials(createLoginInformation());
+		return aat;
+	}
+
+	private LoginInformationType createLoginInformation() {
+		LoginInformationType li = new LoginInformationType();
+		li.setUserID("User_01");
+		li.getAccessCredential().add(createAccessCredentials());
+		return li;
+	}
+
+	private AccessCredentialType createAccessCredentials() {
+		AccessCredentialType act = new AccessCredentialType();
+		// CodeType ct = new CodeType();
+		// ct.setName("password");
+		// ct.setValue("the+password_value");
+		// act.setAccessCredentialTypeCode(ct);
+		act.setAccessCredentialValue("login123");
+		return act;
 	}
 
 	private PartyType createRequestorParty(String partyName, String string2) {
@@ -48,25 +79,25 @@ public class AssessmentOrderTest_01 extends TestCase {
 		return com;
 	}
 
-	private PartyType createSupplierParty(String contactName, String partyName) {
+	private PartyType createSupplierParty(String contactName, String salutation, String partyName) {
 		PartyType pt = new PartyType();
 		pt.setPartyName(partyName);
-		pt.getPersonContact().add(createSupplierContact(contactName));
+		pt.getPersonContact().add(createSupplierContact(contactName, salutation));
 		pt.getPartyReportingIDs().add(createIdentifier("partyReportingID"));
 		pt.getCommunication().add(createSupplierPartyCommunication());
 		return pt;
 	}
 
-	private PersonContactType createSupplierContact(String contactName) {
+	private PersonContactType createSupplierContact(String contactName, String salutation) {
 		PersonContactType pc = new PersonContactType();
-		pc.setPersonName(createPersonName(contactName));
+		pc.setPersonName(createPersonName(contactName, salutation));
 		return pc;
 	}
 
-	private PersonNameType createPersonName(String fullname) {
+	private PersonNameType createPersonName(String fullname, String salutation) {
 		PersonNameType pn = new PersonNameType();
 		pn.setFormattedName(fullname);
-		pn.setPreferredSalutationCode("Mr.");
+		pn.setPreferredSalutationCode(salutation);
 		return pn;
 	}
 
@@ -101,7 +132,8 @@ public class AssessmentOrderTest_01 extends TestCase {
 		as.setSubjectID(createIdentifier("candidate_001"));
 		as.getPersonLegalID().add(this.createIdentifier("legal_id"));
 		as.getCommunication().add(createCommunicationABIE_HomePhone());
-		as.getCommunication().add(createCommunicationABIE_WorkPhone("(800)555-1234"));
+		as.getCommunication().add(
+				createCommunicationABIE_WorkPhone("(800)555-1234"));
 		as.getCommunication().add(createCommunicationABIE_MobilePhone());
 		as.getCommunication().add(createCommunicationABIE_IM_Address());
 		as.getCommunication().add(createCommunicationABIE_Work_Address());
@@ -117,9 +149,9 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private AddressBaseType createWorkAddress() {
 		AddressBaseType ab = new AddressBaseType();
-//		ab.getAddressLine().add(createSequencedTextType(1, "Line 1"));
-//		ab.getAddressLine().add(createSequencedTextType(2, "Line 2"));
-//		ab.getAddressLine().add(createSequencedTextType(3, "Line 3"));
+		// ab.getAddressLine().add(createSequencedTextType(1, "Line 1"));
+		// ab.getAddressLine().add(createSequencedTextType(2, "Line 2"));
+		// ab.getAddressLine().add(createSequencedTextType(3, "Line 3"));
 		ab.setLineOne("This is Line One");
 		ab.setLineTwo("Line two");
 		ab.setBuildingName("Blg 1");
@@ -152,43 +184,45 @@ public class AssessmentOrderTest_01 extends TestCase {
 		com.setChannelCode(ChannelCodeType.TELEPHONE);
 		com.setDialNumber("(215)555-1234");
 		com.setUseCode(UseCodeType.PERSONAL);
-//		com.setSequence(BigInteger.valueOf(1));
+		// com.setSequence(BigInteger.valueOf(1));
 		return com;
 	}
-	
-	private CommunicationABIEType createCommunicationABIE_WorkPhone(String dialNumber) {
+
+	private CommunicationABIEType createCommunicationABIE_WorkPhone(
+			String dialNumber) {
 		CommunicationABIEType com = new CommunicationABIEType();
 		com.setChannelCode(ChannelCodeType.TELEPHONE);
 		com.setDialNumber(dialNumber);
 		com.setUseCode(UseCodeType.BUSINESS);
-//		com.setSequence(BigInteger.valueOf(2));
+		// com.setSequence(BigInteger.valueOf(2));
 		return com;
 	}
-	
+
 	private CommunicationABIEType createCommunicationABIE_MobilePhone() {
 		CommunicationABIEType com = new CommunicationABIEType();
 		com.setChannelCode(ChannelCodeType.MOBILE_TELEPHONE);
 		com.setDialNumber("(215)555-5678");
 		com.setUseCode(UseCodeType.PERSONAL);
-//		com.setSequence(BigInteger.valueOf(3));
+		// com.setSequence(BigInteger.valueOf(3));
 		return com;
-	}	
+	}
 
 	private IdentifierType createIdentifier(String value) {
 		IdentifierType it = new IdentifierType();
 		it.setValue(value);
 		return it;
 	}
-//
-//	private PartyType createPartyType(String partyName, String value) {
-//		PartyType pt = new PartyType();
-//		pt.setPartyName(partyName);
-//		IdentifierType id = new IdentifierType();
-//		id.setValue(value);
-//		// pt.setPartyTaxID(id);
-//		// pt.setUserArea(new UserAreaType());
-//		return pt;
-//	}
+
+	//
+	// private PartyType createPartyType(String partyName, String value) {
+	// PartyType pt = new PartyType();
+	// pt.setPartyName(partyName);
+	// IdentifierType id = new IdentifierType();
+	// id.setValue(value);
+	// // pt.setPartyTaxID(id);
+	// // pt.setUserArea(new UserAreaType());
+	// return pt;
+	// }
 
 	public void test_SaveAll() {
 		AssessmentOrderType obj = this.createAssessmentOrderType();

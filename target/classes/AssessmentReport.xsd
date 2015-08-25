@@ -16,6 +16,8 @@
 			<xsd:element name="CustomerParty" type="PartyType" />
 			<xsd:element name="SupplierParty" type="PartyType" />
 			<xsd:element name="RequesterParty" type="PartyType" />
+			<xsd:element name="AssessmentSubject" type="AssessmentSubjectType" />
+			<xsd:element name="AssessmentResult" type="AssessmentResultType" />
 			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>		
 		</xsd:sequence>
 		
