@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DocumentID>documentId_01</DocumentID><AlternateDocumentID>alternateId-01</AlternateDocumentID><AlternateDocumentID>alternateId-02</AlternateDocumentID><AlternateDocumentID>alternateId-03</AlternateDocumentID><DocumentSequence>1</DocumentSequence><CustomerParty>
+<DocumentID>documentId_02</DocumentID><AlternateDocumentID>alternateId-04</AlternateDocumentID><AlternateDocumentID>alternateId-05</AlternateDocumentID><DocumentSequence>1</DocumentSequence><CustomerParty>
    <PartyName>CustomerParty</PartyName>
 </CustomerParty><SupplierParty>
    <PartyName>SupplierParty</PartyName>
 </SupplierParty><RequesterParty>
    <PartyName>RequestorParty</PartyName>
 </RequesterParty><AssessmentPackage>
-   <ID>package-001</ID>
-   <Name>Package1 Name</Name>
+   <ID>package-002</ID>
+   <Name>Package2 Name</Name>
    <Description>Package Description</Description>
    <ParentGroupID>Hiring Manager</ParentGroupID>
    <PackageTypeCode>typeCode1</PackageTypeCode>
    <PartyReportingIDs>Manager-001</PartyReportingIDs>
    <ServiceAvailabilityCode>Available</ServiceAvailabilityCode>
-   <PackageCost>cost?</PackageCost>
+   <PackageCost>$250.00</PackageCost>
    <AssessmentApplicability>
       <Description>Description for AssessmentApplicability</Description>
       <AssessmentTypeCode>ABILITY</AssessmentTypeCode>

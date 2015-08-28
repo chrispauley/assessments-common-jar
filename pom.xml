@@ -185,12 +185,12 @@
 
 							<schemaDirectory>src/main/resources</schemaDirectory>
 							<schemaIncludes>
-								<include>ProcessAssessmentOrder.xsd</include>
+								<include>AssessmentCatalog.xsd</include>
+								<include>AssessmentReport.xsd</include>
+								<include>AssessmentOrder.xsd</include>
 								<include>ProcessAssessmentOrderJSON.xsd</include>
 								<include>Components.xsd</include>
-								<include>AssessmentCatalog.xsd</include>
 <!-- 								<include>AssessmentOrder.xsd</include> -->
-								<include>AssessmentReport.xsd</include>
 							</schemaIncludes>
 							<bindingDirectory>src/main/resources</bindingDirectory>
 							<bindingIncludes>

@@ -81,10 +81,17 @@
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
+		
 		<xsd:attribute name="majorVersionID" type="xsd:string"
 			use="optional" />
 		<xsd:attribute name="minorVersionID" type="xsd:string"
 			use="optional" />
+		<xsd:attribute name="systemEnvironmentCode" type="xsd:string"
+			default="Development" />
+		<xsd:attribute name="releaseID" type="xsd:string"
+			default="4.0" />
+		<xsd:attribute name="languageCode" type="xsd:string"
+			use="optional" default="en" />
 	</xsd:complexType>
 
 

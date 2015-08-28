@@ -34,7 +34,7 @@ public class AssessmentOrderJSONTest_uc_01 extends TestCase {
 		aoj.setExternalJobReqID("ExtJobReqId8763874638");
 		aoj.setOrderID("orderid-0001");
 		aoj.setReturnURL("https://api.ats_world.com/rest/assessments/orderid-0001");
-		ao.setDocumentID("00001");
+//		ao.setDocumentID("00001");
 		
 		
 		return aoj;

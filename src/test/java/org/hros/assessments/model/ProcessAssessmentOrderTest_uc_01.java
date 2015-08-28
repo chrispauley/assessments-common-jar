@@ -34,7 +34,7 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 		AssessmentOrderType ao = new AssessmentOrderType();
 		
 		
-		ao.setDocumentID("docId");
+		ao.setDocumentID(new IdentifierType());
 		ao.setDocumentSequence(BigInteger.valueOf(1));
 		ao.setMajorVersionID("4.0");
 		PartyType requestorParty = this.createPartyType("RequestorPartyName");

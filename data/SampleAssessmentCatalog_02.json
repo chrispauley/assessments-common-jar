@@ -1,0 +1,89 @@
+{
+   "DocumentID" : "documentId_02",
+   "AlternateDocumentID" : [ "alternateId-04", "alternateId-05" ],
+   "DocumentSequence" : 1,
+   "CustomerParty" : {
+      "PartyName" : "CustomerParty"
+   },
+   "SupplierParty" : {
+      "PartyName" : "SupplierParty"
+   },
+   "RequesterParty" : {
+      "PartyName" : "RequestorParty"
+   },
+   "AssessmentPackage" : {
+      "ID" : [ "package-002" ],
+      "Name" : "Package2 Name",
+      "Description" : [ "Package Description" ],
+      "ParentGroupID" : [ "Hiring Manager" ],
+      "PackageTypeCode" : [ "typeCode1" ],
+      "PartyReportingIDs" : [ "Manager-001" ],
+      "ServiceAvailabilityCode" : "Available",
+      "PackageCost" : "$250.00",
+      "AssessmentApplicability" : {
+         "Description" : [ "Description for AssessmentApplicability" ],
+         "AssessmentTypeCode" : [ "ABILITY", "KNOWLEDGE" ],
+         "AssessedCompetency" : [ {
+            "CompetencyName" : "CompetencyName One"
+         } ],
+         "JobCategoryCode" : [ {
+            "listID" : "SOC",
+            "listAgencyID" : "BLS",
+            "listAgencyName" : "Bureau of Labor Statistics",
+            "listName" : "Standard Occupational Classification System",
+            "listVersionID" : "2010",
+            "name" : "Computer Programmer",
+            "languageID" : "en-US",
+            "listURI" : "http://www.bls.gov/soc/2010",
+            "listSchemeURI" : "http://bls.gov/soc",
+            "value" : "15-1131"
+         }, {
+            "listID" : "ISCO",
+            "listAgencyID" : "ILO",
+            "listAgencyName" : "International Labour Organization",
+            "listName" : "International Standard Classification of Occupations",
+            "listVersionID" : "ISCO-08",
+            "name" : "Software and applications developers and analysts",
+            "languageID" : "en-US",
+            "value" : "251"
+         }, {
+            "listID" : "NOC",
+            "listAgencyID" : "ILO",
+            "listAgencyName" : "Government of Canada",
+            "listName" : "National Occupational Classification",
+            "listVersionID" : "2011",
+            "name" : "Computer Programmer",
+            "languageID" : "fr-CA",
+            "value" : "2174"
+         } ],
+         "CareerLevelCode" : {
+            "name" : "name",
+            "value" : "Mid-Career"
+         }
+      },
+      "AssessmentAdministration" : {
+         "Description" : [ "This is an online test." ],
+         "ProctoredAssessmentIndicator" : true,
+         "TimeEnforcedIndicator" : true,
+         "TestDuration" : {
+            "property" : "prop 1",
+            "value" : "value of mt"
+         },
+         "AssessmentDeliveryCode" : [ {
+         }, {
+            "schedulingRequiredIndicator" : true,
+            "value" : "Code1"
+         } ]
+      },
+      "AssessmentFulfillment" : {
+         "Description" : [ "Description of Fulfillment" ],
+         "EffectivePeriodDescription" : [ {
+            "property" : "prop 1",
+            "value" : "value of mt"
+         } ],
+         "ScoreProfileName" : [ "Profile1", "Profile2" ],
+         "ReportLanguageCode" : [ "en-US", "fr-CA" ],
+         "UserArea" : "{}" 
+      }
+   }
+}

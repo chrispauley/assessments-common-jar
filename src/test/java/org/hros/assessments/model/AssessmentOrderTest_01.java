@@ -17,7 +17,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private AssessmentOrderType createAssessmentOrderType() {
 		AssessmentOrderType ac = new AssessmentOrderType();
-		ac.setDocumentID("documentId_01");
+		ac.setDocumentID(this.createIdentifier("documentId_01"));
 
 		ac.setDocumentSequence(BigInteger.valueOf(1));
 		ac.setPackageID(createPackageId("package_123"));
@@ -55,10 +55,10 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private AccessCredentialType createAccessCredentials() {
 		AccessCredentialType act = new AccessCredentialType();
-		// CodeType ct = new CodeType();
-		// ct.setName("password");
-		// ct.setValue("the+password_value");
-		// act.setAccessCredentialTypeCode(ct);
+		 CodeType ct = new CodeType();
+		 ct.setName("password");
+		 ct.setValue("the+password_value");
+		 act.setAccessCredentialTypeCode(ct);
 		act.setAccessCredentialValue("login123");
 		return act;
 	}
