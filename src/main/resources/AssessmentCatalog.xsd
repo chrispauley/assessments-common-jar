@@ -1,34 +1,45 @@
 <?xml version="1.0"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<xsd:include schemaLocation="Components.xsd" />
-<xsd:include schemaLocation="ProcessAssessmentOrder.xsd" />
+	<xsd:include schemaLocation="Components.xsd" />
+	<xsd:include schemaLocation="ProcessAssessmentOrder.xsd" />
 	<xsd:element name="AssessmentCatalog" type="AssessmentCatalogType" />
 	<xsd:complexType name="AssessmentCatalogType">
 		<xsd:sequence>
 			<xsd:element name="DocumentID" type="xsd:string" />
-			<xsd:element name="AlternateDocumentID" type="xsd:string" maxOccurs="unbounded" />
+			<xsd:element name="AlternateDocumentID" type="xsd:string"
+				maxOccurs="unbounded" />
 			<xsd:element name="DocumentSequence" type="xsd:integer" />
 			<xsd:element name="CustomerParty" type="PartyType" />
 			<xsd:element name="SupplierParty" type="PartyType" />
 			<xsd:element name="RequesterParty" type="PartyType" />
-			<xsd:element name="AssessmentPackage" type="AssessmentPackageType" />	
-			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>		
+			<xsd:element name="AssessmentPackage" type="AssessmentPackageType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="UserArea" type="UserAreaType"
+				minOccurs="0" />
 		</xsd:sequence>
+		<xsd:attribute name="majorVersionID" type="xsd:string"
+			use="optional" />
+		<xsd:attribute name="minorVersionID" type="xsd:string"
+			use="optional" />
 	</xsd:complexType>
 
-	<xsd:element name="AssessmentPackage" type="AssessmentPackageType"/>
+	<xsd:element name="AssessmentPackage" type="AssessmentPackageType" />
 	<xsd:complexType name="AssessmentPackageType">
 		<xsd:complexContent>
 			<xsd:extension base="PackageBaseType">
 				<xsd:sequence>
-					<xsd:element name="AssessmentApplicability" type="AssessmentApplicabilityType" minOccurs="0"/>
-					<xsd:element name="AssessmentAdministration" type="AssessmentAdministrationType" minOccurs="0"/>
-					<xsd:element name="AssessmentFulfillment" type="AssessmentFulfillmentType" minOccurs="0"/>
-					<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>
+					<xsd:element name="AssessmentApplicability" type="AssessmentApplicabilityType"
+						minOccurs="0" />
+					<xsd:element name="AssessmentAdministration" type="AssessmentAdministrationType"
+						minOccurs="0" />
+					<xsd:element name="AssessmentFulfillment" type="AssessmentFulfillmentType"
+						minOccurs="0" />
+					<xsd:element name="UserArea" type="UserAreaType"
+						minOccurs="0" />
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
+
 
 </xsd:schema>
