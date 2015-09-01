@@ -11,7 +11,7 @@
    "RequesterParty" : {
       "PartyName" : "RequestorParty"
    },
-   "AssessmentPackage" : {
+   "AssessmentPackage" : [ {
       "ID" : [ "package-001" ],
       "Name" : "Package1 Name",
       "Description" : [ "Package Description" ],
@@ -85,5 +85,5 @@
          "ReportLanguageCode" : [ "en-US", "fr-CA" ],
          "UserArea" : "{}" 
       }
-   }
+   } ]
 }

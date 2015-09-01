@@ -749,7 +749,7 @@
 		<xsd:sequence>
 			<xsd:element name="ScoreNumeric" type="ScoreNumericType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ScoreText" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="ScoreText" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>

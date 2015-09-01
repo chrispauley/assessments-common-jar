@@ -1,0 +1,190 @@
+{
+   "DocumentID" : "AW_UseCase_004",
+   "AlternateDocumentID" : [ "ProcessAssessmentCatalog_Example_1", "usecase_004" ],
+   "DocumentSequence" : 2,
+   "SupplierParty" : {
+      "PartyTaxID" : {
+         "value" : "PSI_Example_Only"
+      },
+      "PartyName" : "SupplierParty"
+   },
+   "AssessmentPackage" : [ {
+      "ID" : [ "EAS1" ],
+      "Name" : "Employee Aptitude Survey Test #1 - Verbal Comprehension",
+      "Description" : [ "Employee Aptitude Survey Test #1 - Verbal Comprehension measures the ability to understand written words and the ideas associated with them. The test taker selects the synonym for a designated word from the four possibilities presented. This test is comprised of 30 multiple choice items and has a 5 minute time limit. It is designed to assess verbal ability." ],
+      "ParentGroupID" : [ "EAS" ],
+      "AssessmentApplicability" : {
+         "Description" : [ "skills" ],
+         "AssessmentTypeCode" : [ "SKILL" ],
+         "AssessedCompetency" : [ {
+            "CompetencyID" : [ {
+               "value" : "A1"
+            }, {
+               "value" : "A2"
+            } ],
+            "CompetencyName" : "Verbal Comprehension",
+            "ProficiencyLevel" : {
+               "ScoreNumeric" : [ {
+                  "minimumScoreNumeric" : 0,
+                  "maximumScoreNumeric" : 100,
+                  "scoreNumericCode" : 70,
+                  "interval" : 100
+               } ]
+            }
+         }, {
+            "CompetencyID" : [ {
+               "value" : "E1"
+            }, {
+               "value" : "E2"
+            } ],
+            "CompetencyName" : "Verbal Comprehension",
+            "ProficiencyLevel" : {
+               "ScoreText" : [ "Mid-Level" ]
+            }
+         } ],
+         "JobCategoryCode" : [ {
+            "value" : "Professional"
+         } ],
+         "CareerLevelCode" : {
+            "value" : "Executive"
+         },
+         "ApplicableRegion" : [ {
+            "CountryCode" : "MX"
+         } ],
+         "AvailableLanguageCode" : [ "ES" ]
+      },
+      "AssessmentAdministration" : {
+         "Description" : [ "This is a time enforced assessment" ],
+         "ProctoredAssessmentIndicator" : false,
+         "TimeEnforcedIndicator" : true,
+         "TestDuration" : {
+            "property" : "minutes",
+            "value" : "10"
+         },
+         "AssessmentDeliveryCode" : [ {
+            "schedulingRequiredIndicator" : false,
+            "value" : "online"
+         }, {
+            "schedulingRequiredIndicator" : true,
+            "value" : "fax"
+         } ]
+      },
+      "AssessmentFulfillment" : {
+         "ScoreProfileName" : [ "PET Profile 1" ],
+         "ReportLanguageCode" : [ "en-US" ]
+      }
+   }, {
+      "ID" : [ "PET" ],
+      "Name" : "Professional Employment Test",
+      "Description" : [ "The Professional Employment Test (PET) is designed to assess the cognitive abilities that are important for the successfulperformance of work behaviors in professional occupations. It is comprised of 40 multiple choice items with an 80 minute time limit. Questions on the PET focus upon data interpretation, reasoning, quantitative problem solving, and reading comprehension. The PET is intended for use in the selection of personnel for professional, administrative, and managerial occupations." ],
+      "AssessmentApplicability" : {
+         "AssessedCompetency" : [ {
+            "CompetencyID" : [ {
+               "value" : "C1"
+            }, {
+               "value" : "C2"
+            } ],
+            "CompetencyName" : "Verbal Comprehension",
+            "ProficiencyLevel" : {
+               "ScoreText" : [ "Mid-Level" ]
+            }
+         }, {
+            "CompetencyID" : [ {
+               "value" : "E1"
+            }, {
+               "value" : "E2"
+            } ],
+            "CompetencyName" : "Quantitative Problem Solving",
+            "ProficiencyLevel" : {
+               "ScoreText" : [ "Mid-Level" ]
+            }
+         } ],
+         "JobCategoryCode" : [ {
+            "value" : "Professional"
+         } ],
+         "CareerLevelCode" : {
+            "value" : "Executive"
+         },
+         "ApplicableRegion" : [ {
+            "CountryCode" : "MX"
+         } ],
+         "AvailableLanguageCode" : [ "ES" ]
+      },
+      "AssessmentAdministration" : {
+         "Description" : [ "This is a time enforced assessment" ],
+         "ProctoredAssessmentIndicator" : false,
+         "TimeEnforcedIndicator" : true,
+         "TestDuration" : {
+            "property" : "minutes",
+            "value" : "10"
+         },
+         "AssessmentDeliveryCode" : [ {
+            "schedulingRequiredIndicator" : false,
+            "value" : "online"
+         }, {
+            "schedulingRequiredIndicator" : true,
+            "value" : "fax"
+         } ]
+      },
+      "AssessmentFulfillment" : {
+         "ScoreProfileName" : [ "PET Profile 1" ],
+         "ReportLanguageCode" : [ "fr-FR" ]
+      }
+   }, {
+      "ID" : [ "SureHire" ],
+      "Name" : "SureHire",
+      "Description" : [ "SureHire® is an instrument that is specifically designed to measure the competencies necessary for job success in a retail environment. Comprised of 50 multiple-choice items, it can becompleted by most applicants in 25 minutes or less. SureHire® affordsa broad understanding of potential employees by assessing both problemsolving skills (such as making change and following written procedures)as well as attitudes toward work and customer service." ],
+      "AssessmentApplicability" : {
+         "AssessedCompetency" : [ {
+            "CompetencyID" : [ {
+               "value" : "C1"
+            }, {
+               "value" : "C2"
+            } ],
+            "CompetencyName" : "Verbal Comprehension",
+            "ProficiencyLevel" : {
+               "ScoreText" : [ "Mid-Level" ]
+            }
+         }, {
+            "CompetencyID" : [ {
+               "value" : "F1"
+            } ],
+            "CompetencyName" : "Problem Solving"
+         }, {
+            "CompetencyID" : [ {
+               "value" : "G1"
+            } ],
+            "CompetencyName" : "Work Orientation"
+         } ],
+         "JobCategoryCode" : [ {
+            "listID" : "Job Industry",
+            "value" : "Retail"
+         } ],
+         "ApplicableRegion" : [ {
+            "CountryCode" : "FR"
+         }, {
+            "CountryCode" : "US"
+         } ],
+         "AvailableLanguageCode" : [ "EN_US" ]
+      },
+      "AssessmentAdministration" : {
+         "ProctoredAssessmentIndicator" : false,
+         "TimeEnforcedIndicator" : true,
+         "TestDuration" : {
+            "property" : "minutes",
+            "value" : "10"
+         },
+         "AssessmentDeliveryCode" : [ {
+            "schedulingRequiredIndicator" : true,
+            "value" : "online"
+         }, {
+            "schedulingRequiredIndicator" : true,
+            "value" : "fax"
+         } ]
+      },
+      "AssessmentFulfillment" : {
+         "ScoreProfileName" : [ "SureHire Result Profile" ],
+         "ReportLanguageCode" : [ "fr-FR" ]
+      }
+   } ]
+}

@@ -37,13 +37,8 @@ public class AssessmentCatalogTest_01 extends TestCase {
 				"supplier name"));
 		ac.setRequesterParty(this.createPartyType("RequestorParty",
 				"Requestor Name"));
-		ac.setAssessmentPackage(this.createAssessmentPackage("Package1 Name",
+		ac.getAssessmentPackage().add(this.createAssessmentPackage("Package1 Name",
 				"cost?"));
-		ac.getAssessmentPackage().setAssessmentApplicability(
-				createAssessmentApplicabilityType());
-		ac.getAssessmentPackage().setAssessmentAdministration(
-				createAssessmentAdministrationType());
-		ac.getAssessmentPackage().setAssessmentFulfillment(createAssessmentFulfillment());
 		return ac;
 	}
 
@@ -186,7 +181,12 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ap.getPackageTypeCode().add("typeCode1");
 		ap.getParentGroupID().add("Hiring Manager");
 		ap.getPartyReportingIDs().add("Manager-001");
-		
+
+		ap.setAssessmentApplicability(
+				createAssessmentApplicabilityType());
+		ap.setAssessmentAdministration(
+				createAssessmentAdministrationType());
+		ap.setAssessmentFulfillment(createAssessmentFulfillment());		
 		return ap;
 	}
 

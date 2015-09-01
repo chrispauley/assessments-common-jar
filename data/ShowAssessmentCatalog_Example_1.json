@@ -1,61 +1,59 @@
 {
-   "AssessmentCatalog" : {
-      "DocumentID" : "AW_02",
-      "AlternateDocumentID" : [ "ShowAssessmentCatalog_Example_1" ],
-      "DocumentSequence" : 2,
-      "SupplierParty" : {
-         "PartyTaxID" : {
-            "value" : "PSI_Example_Only"
-         },
-         "PartyName" : "SupplierParty"
+   "DocumentID" : "AW_UseCase_003",
+   "AlternateDocumentID" : [ "ShowAssessmentCatalog_Example_1", "usecase_003" ],
+   "DocumentSequence" : 2,
+   "SupplierParty" : {
+      "PartyTaxID" : {
+         "value" : "PSI_Example_Only"
       },
-      "AssessmentPackage" : {
-         "ID" : [ "EAS1" ],
-         "Name" : "Employee Aptitude Survey Test #1 - Verbal Comprehension",
-         "Description" : [ "Employee Aptitude Survey Test #1 - Verbal Comprehension measures the ability to understand written words and the ideas associated with them. The test taker selects the synonym for a designated word from the four possibilities presented. This test is comprised of 30 multiple choice items and has a 5 minute time limit. It is designed to assess verbal ability." ],
-         "ParentGroupID" : [ "EAS" ],
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "CompetencyID" : [ {
-                  "value" : "A2"
-               } ],
-               "CompetencyName" : "Verbal Comprehension"
+      "PartyName" : "SupplierParty"
+   },
+   "AssessmentPackage" : [ {
+      "ID" : [ "EAS1" ],
+      "Name" : "Employee Aptitude Survey Test #1 - Verbal Comprehension",
+      "Description" : [ "Employee Aptitude Survey Test #1 - Verbal Comprehension measures the ability to understand written words and the ideas associated with them. The test taker selects the synonym for a designated word from the four possibilities presented. This test is comprised of 30 multiple choice items and has a 5 minute time limit. It is designed to assess verbal ability." ],
+      "ParentGroupID" : [ "EAS" ],
+      "AssessmentApplicability" : {
+         "AssessedCompetency" : [ {
+            "CompetencyID" : [ {
+               "value" : "A2"
             } ],
-            "JobCategoryCode" : [ {
-               "listID" : "Functional Area",
-               "value" : "Sales"
-            } ],
-            "CareerLevelCode" : {
-               "value" : "Mid-Level"
-            },
-            "ApplicableRegion" : [ {
-               "CountryCode" : "US"
-            }, {
-               "CountryCode" : "CA"
-            }, {
-               "CountryCode" : "MX"
-            } ],
-            "AvailableLanguageCode" : [ "EN_US", "FR_CA", "ES" ]
+            "CompetencyName" : "Verbal Comprehension"
+         } ],
+         "JobCategoryCode" : [ {
+            "listID" : "Functional Area",
+            "value" : "Sales"
+         } ],
+         "CareerLevelCode" : {
+            "value" : "Mid-Level"
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
-               "property" : "minutes",
-               "value" : "5"
-            },
-            "AssessmentDeliveryCode" : [ {
-               "schedulingRequiredIndicator" : true,
-               "value" : "online"
-            }, {
-               "schedulingRequiredIndicator" : true,
-               "value" : "telephone"
-            } ]
+         "ApplicableRegion" : [ {
+            "CountryCode" : "US"
+         }, {
+            "CountryCode" : "CA"
+         }, {
+            "CountryCode" : "MX"
+         } ],
+         "AvailableLanguageCode" : [ "EN_US", "FR_CA", "ES" ]
+      },
+      "AssessmentAdministration" : {
+         "ProctoredAssessmentIndicator" : true,
+         "TimeEnforcedIndicator" : true,
+         "TestDuration" : {
+            "property" : "minutes",
+            "value" : "5"
          },
-         "AssessmentFulfillment" : {
-            "ScoreProfileName" : [ "EAS1" ],
-            "ReportLanguageCode" : [ "en-US" ]
-         }
+         "AssessmentDeliveryCode" : [ {
+            "schedulingRequiredIndicator" : true,
+            "value" : "online"
+         }, {
+            "schedulingRequiredIndicator" : true,
+            "value" : "telephone"
+         } ]
+      },
+      "AssessmentFulfillment" : {
+         "ScoreProfileName" : [ "EAS1" ],
+         "ReportLanguageCode" : [ "en-US" ]
       }
-   }
+   } ]
 }

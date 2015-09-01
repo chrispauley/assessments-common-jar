@@ -33,12 +33,7 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 		ac.setSupplierParty(this.createPartyType("SupplierParty",
 				"PSI_Example_Only"));
 		
-		ac.setAssessmentPackage(this.createAssessmentPackage("Employee Aptitude Survey Test #1 - Verbal Comprehension"));
-		ac.getAssessmentPackage().setAssessmentApplicability(
-				createAssessmentApplicabilityType());
-		ac.getAssessmentPackage().setAssessmentAdministration(
-				createAssessmentAdministrationType());
-		ac.getAssessmentPackage().setAssessmentFulfillment(createAssessmentFulfillment());
+		ac.getAssessmentPackage().add(this.createAssessmentPackage("Employee Aptitude Survey Test #1 - Verbal Comprehension"));
 		return ac;
 	}
 
@@ -152,7 +147,12 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 				"This test is comprised of 30 multiple choice items and has a 5 " +
 		        "minute time limit. It is designed to assess verbal ability.");
 		ap.getID().add("EAS1");
-		ap.getParentGroupID().add("EAS");		
+		ap.getParentGroupID().add("EAS");	
+		ap.setAssessmentApplicability(
+				createAssessmentApplicabilityType());
+		ap.setAssessmentAdministration(
+				createAssessmentAdministrationType());
+		ap.setAssessmentFulfillment(createAssessmentFulfillment());		
 		return ap;
 	}
 
