@@ -1,0 +1,23 @@
+{
+   "LoginInformation" : {
+      "UserID" : "candidate1",
+      "AccessCredentials" : [ {
+         "AccessCredential" : {
+            "name" : "password",
+            "value" : "value_goes_here"
+         }
+      }, {
+         "AccessCredential" : {
+            "listName" : "oAuth2",
+            "name" : "MAC",
+            "value" : "14197230929s0df90s09d"
+         }
+      }, {
+         "AccessCredential" : {
+            "listName" : "oAuth2",
+            "name" : "Bearer",
+            "value" : "abcdef"
+         }
+      } ]
+   }
+}

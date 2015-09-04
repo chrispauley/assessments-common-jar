@@ -22,12 +22,18 @@ public class BOD_Test extends TestCase {
 //    	System.out.println("1");
     	bod.setOriginalApplicationArea(new ApplicationAreaType());
     	bod.getOriginalApplicationArea().setBODID("bod id");
-    	bod.getOriginalApplicationArea().setUserArea(new UserAreaType());
+    	bod.getOriginalApplicationArea().setUserArea(createUserAreaType());
     	bod.getDescription().add("Description goes here");
     	this.showJSON(bod);
         assertTrue(true);
     }	
     
+	private UserAreaType createUserAreaType() {
+		UserAreaType ua = new UserAreaType();
+		ua.getAny().add("This is the user area");
+		return ua;
+	}
+
 	private void showJSON(BODType bod) {
 		JAXBContext context;
 		try {

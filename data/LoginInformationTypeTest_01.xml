@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoginInformation>
+   <UserID>candidate1</UserID>
+   <AccessCredentials>
+      <AccessCredential name="password">value_goes_here</AccessCredential>
+   </AccessCredentials>
+   <AccessCredentials>
+      <AccessCredential listName="oAuth2" name="MAC">14197230929s0df90s09d</AccessCredential>
+   </AccessCredentials>
+   <AccessCredentials>
+      <AccessCredential listName="oAuth2" name="Bearer">abcdef</AccessCredential>
+   </AccessCredentials>
+</LoginInformation>

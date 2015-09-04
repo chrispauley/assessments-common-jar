@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssessmentOrder>
-   <documentID>documentId_01</documentID>
+   <DocumentID>documentId_01</DocumentID>
    <DocumentSequence>1</DocumentSequence>
    <CustomerParty>
       <PartyName>customer name</PartyName>
@@ -83,9 +83,16 @@
       <ID>assessmentAccessID</ID>
       <AccessCredentials>
          <UserID>User_01</UserID>
-         <AccessCredential>
+         <AccessCredentials>
+            <AccessCredentialTypeCode name="password">the+password_value</AccessCredentialTypeCode>
             <AccessCredentialValue>login123</AccessCredentialValue>
-         </AccessCredential>
+         </AccessCredentials>
       </AccessCredentials>
    </AssessmentAccess>
+   <RedirectURL>
+      <URI>http://www.ats-company.com/app/v2/assessmentreport?DocumentID=documentId_01&amp;PackageID=package_123&amp;auth_token=637jke723</URI>
+      <TimeOut>10</TimeOut>
+      <StatusCode>200</StatusCode>
+      <Message>Click here when you are done.</Message>
+   </RedirectURL>
 </AssessmentOrder>

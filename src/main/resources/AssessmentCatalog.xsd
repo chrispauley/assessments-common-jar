@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<xsd:include schemaLocation="Components.xsd" />
-	<xsd:include schemaLocation="ProcessAssessmentOrder.xsd" />
+	<xsd:include schemaLocation="Fields.xsd" />
+<!-- 	<xsd:include schemaLocation="ProcessAssessmentOrder.xsd" /> -->
 	<xsd:element name="AssessmentCatalog" type="AssessmentCatalogType" />
 	<xsd:complexType name="AssessmentCatalogType">
 		<xsd:sequence>
@@ -17,10 +18,11 @@
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
-		<xsd:attribute name="majorVersionID" type="xsd:string"
-			use="optional" />
-		<xsd:attribute name="minorVersionID" type="xsd:string"
-			use="optional" />
+		<xsd:attribute name="majorVersionID" type="xsd:string" use="optional" />
+		<xsd:attribute name="minorVersionID" type="xsd:string" use="optional" />
+	    <xsd:attribute name="systemEnvironmentCode" type="xsd:string" default="Development" />
+		<xsd:attribute name="releaseID" type="xsd:string" default="4.0" />
+		<xsd:attribute name="languageCode" type="xsd:string" use="optional" default="en" />
 	</xsd:complexType>
 
 	<xsd:element name="AssessmentPackage" type="AssessmentPackageType" />

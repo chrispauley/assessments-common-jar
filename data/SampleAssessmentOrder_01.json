@@ -1,6 +1,8 @@
 {
    "AssessmentOrder" : {
-      "documentID" : "documentId_01",
+      "DocumentID" : {
+         "value" : "documentId_01"
+      },
       "DocumentSequence" : 1,
       "CustomerParty" : {
          "PartyName" : "customer name",
@@ -94,10 +96,20 @@
          "ID" : "assessmentAccessID",
          "AccessCredentials" : {
             "UserID" : "User_01",
-            "AccessCredential" : [ {
+            "AccessCredentials" : [ {
+               "AccessCredentialTypeCode" : {
+                  "name" : "password",
+                  "value" : "the+password_value"
+               },
                "AccessCredentialValue" : "login123"
             } ]
          }
-      } ]
+      } ],
+      "RedirectURL" : {
+         "URI" : "http://www.ats-company.com/app/v2/assessmentreport?DocumentID=documentId_01&PackageID=package_123&auth_token=637jke723",
+         "TimeOut" : 10,
+         "StatusCode" : "200",
+         "Message" : "Click here when you are done."
+      }
    }
 }

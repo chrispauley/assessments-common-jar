@@ -27,7 +27,7 @@ public class AssessmentSubjectHelper {
 
 	private static CommunicationABIEType createCommunicationABIE_IM_Address() {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.INSTANT_MESSAGE);
+		com.setChannelCode(ChannelCodeEnumType.INSTANT_MESSAGE);
 		com.setAccess("chris.candidate");
 		com.setUseCode(UseCodeType.PERSONAL);
 		com.setSequence(BigInteger.valueOf(4));
@@ -36,7 +36,7 @@ public class AssessmentSubjectHelper {
 
 	private static CommunicationABIEType createCommunicationABIE_HomePhone() {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.TELEPHONE);
+		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
 		com.setDialNumber("(215)555-1234");
 		com.setUseCode(UseCodeType.PERSONAL);
 		// com.setSequence(BigInteger.valueOf(1));
@@ -46,7 +46,7 @@ public class AssessmentSubjectHelper {
 	private static CommunicationABIEType createCommunicationABIE_WorkPhone(
 			String dialNumber) {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.TELEPHONE);
+		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
 		com.setDialNumber(dialNumber);
 		com.setUseCode(UseCodeType.BUSINESS);
 		// com.setSequence(BigInteger.valueOf(2));
@@ -78,7 +78,7 @@ public class AssessmentSubjectHelper {
 
 	private static CommunicationABIEType createCommunicationABIE_MobilePhone() {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.MOBILE_TELEPHONE);
+		com.setChannelCode(ChannelCodeEnumType.MOBILE_TELEPHONE);
 		com.setDialNumber("(215)555-5678");
 		com.setUseCode(UseCodeType.PERSONAL);
 		// com.setSequence(BigInteger.valueOf(3));

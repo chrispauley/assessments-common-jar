@@ -12,7 +12,6 @@ import javax.xml.bind.Unmarshaller;
 
 import org.eclipse.persistence.jaxb.MarshallerProperties;
 import org.hros.assessments.model.AssessmentReportType;
-import org.hros.assessments.model.ProcessAssessmentOrder;
 
 public class AssessmentReportHelper {
 
@@ -70,7 +69,7 @@ public class AssessmentReportHelper {
 	public static void showXML(AssessmentReportType ac) {
 		JAXBContext context;
 		try {
-			context = JAXBContext.newInstance(ProcessAssessmentOrder.class);
+			context = JAXBContext.newInstance(AssessmentReportType.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			m.marshal(ac, System.out);

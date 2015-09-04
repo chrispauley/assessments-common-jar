@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<xsd:include schemaLocation="CodeLists.xsd" />
+	<xsd:include schemaLocation="Fields.xsd" />
 
 
 	<xsd:complexType name="CommunicationABIEType">
 		<xsd:sequence>
-			<xsd:element name="ChannelCode" type="ChannelCodeType"
+			<xsd:element name="ChannelCode" type="ChannelCodeEnumType"
 				minOccurs="0" />
 			<xsd:element name="UseCode" type="UseCodeType" minOccurs="0" />
 			<xsd:choice>
@@ -536,7 +537,7 @@
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
-		<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup"/> -->
+		<xsd:attributeGroup ref="EffectiveDateAttributeGroup" />
 	</xsd:complexType>
 
 	<xsd:element name="AssessmentSubject" type="AssessmentSubjectType" />
@@ -589,23 +590,34 @@
 				<xsd:annotation>
 					<xsd:documentation source="http://www.hr-xml.org"
 						xml:lang="en">A means of contacting the assessment subject. Repeatable
-						for
-						each type of contact method.
+						for each type of contact method.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<!-- <xsd:element ref="RaceCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="EthnicityCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="NationalityCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="PrimaryLanguageCode" minOccurs="0"/> -->
-			<!-- <xsd:element ref="BirthDate" minOccurs="0"/> -->
-			<!-- <xsd:element ref="oa:AgeMeasure" minOccurs="0"/> -->
-			<!-- <xsd:element ref="GenderCode" minOccurs="0"/> -->
-			<!-- <xsd:element ref="DisabilityIndicator" minOccurs="0"/> -->
-			<!-- <xsd:element ref="DisabilityTypeCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="AccomodationTypeCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="MilitaryStatusCode" minOccurs="0" maxOccurs="unbounded"/> -->
-			<!-- <xsd:element ref="InternalCandidateIndicator" minOccurs="0"/> -->
+			<xsd:element name="RaceCode" type="CodeType" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element name="EthnicityCode" type="CodeType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="NationalityCode" type="CodeType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="PrimaryLanguageCode" type="LanguageCodeEnumType"
+				minOccurs="0" />
+			<xsd:element name="BirthDate" type="FormattedDateTimeType"
+				minOccurs="0" />
+			<xsd:element name="AgeMeasure" type="MeasureType"
+				minOccurs="0" />
+			<xsd:element name="GenderCode" type="GenderCodeEnumType"
+				minOccurs="0" />
+			<xsd:element name="DisabilityIndicator" type="EffectiveDatedIndicatorType"
+				minOccurs="0" />
+			<xsd:element name="DisabilityTypeCode" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element name="AccomodationTypeCode" type="CodeType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="MilitaryStatusCode" type="StatusCodeType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="InternalCandidateIndicator" type="IndicatorType"
+				minOccurs="0" />
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
@@ -749,7 +761,8 @@
 		<xsd:sequence>
 			<xsd:element name="ScoreNumeric" type="ScoreNumericType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ScoreText" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="ScoreText" type="xsd:string"
+				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
@@ -788,7 +801,7 @@
 	<xsd:complexType name="ScoreType">
 		<xsd:complexContent>
 			<xsd:extension base="BaseScoreType">
-				<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup"/> -->
+				<xsd:attributeGroup ref="EffectiveDateAttributeGroup" />
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -823,8 +836,9 @@
 				</xsd:attribute>
 			</xsd:extension>
 		</xsd:simpleContent>
-
 	</xsd:complexType>
+
+
 	<xsd:simpleType name="IndicatorType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">
@@ -845,27 +859,27 @@
 
 
 
-	<xsd:complexType name="CodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="xsd:normalizedString">
-				<xsd:attribute name="listID" type="xsd:normalizedString"
-					use="optional" />
-				<xsd:attribute name="listAgencyID" type="xsd:normalizedString"
-					use="optional" />
-				<xsd:attribute name="listAgencyName" type="xsd:string"
-					use="optional" />
-				<xsd:attribute name="listName" type="xsd:string" use="optional" />
-				<xsd:attribute name="listVersionID" type="xsd:normalizedString"
-					use="optional" />
-				<xsd:attribute name="name" type="xsd:string" use="optional" />
-				<xsd:attribute name="languageID" type="xsd:language"
-					use="optional" />
-				<xsd:attribute name="listURI" type="xsd:anyURI" use="optional" />
-				<xsd:attribute name="listSchemeURI" type="xsd:anyURI"
-					use="optional" />
-			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
+	<!-- <xsd:complexType name="CodeType"> -->
+	<!-- <xsd:simpleContent> -->
+	<!-- <xsd:extension base="xsd:normalizedString"> -->
+	<!-- <xsd:attribute name="listID" type="xsd:normalizedString" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listAgencyID" type="xsd:normalizedString" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listAgencyName" type="xsd:string" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listName" type="xsd:string" use="optional" /> -->
+	<!-- <xsd:attribute name="listVersionID" type="xsd:normalizedString" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="name" type="xsd:string" use="optional" /> -->
+	<!-- <xsd:attribute name="languageID" type="xsd:language" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listURI" type="xsd:anyURI" use="optional" /> -->
+	<!-- <xsd:attribute name="listSchemeURI" type="xsd:anyURI" -->
+	<!-- use="optional" /> -->
+	<!-- </xsd:extension> -->
+	<!-- </xsd:simpleContent> -->
+	<!-- </xsd:complexType> -->
 
 	<xsd:complexType name="LoginInformationType">
 		<xsd:annotation>
@@ -948,6 +962,30 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
+	<xsd:element name="RedirectURL" type="RedirectURLType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.openapplications.org/platform/1">The RedirectURL can be
+				used to indicate a URL to which the Requesting application can be
+				re-directed once the session initiated by this connection is
+				completed. The session completion event is not recorded in this
+				transaction.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+
+	<xsd:complexType name="RedirectURLType">
+		<xsd:sequence>
+			<xsd:element name="URI" type="URIType" minOccurs="0" />
+			<xsd:element name="TimeOut" type="xsd:positiveInteger"
+				minOccurs="0" />
+			<xsd:element name="StatusCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="Message" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+		<xsd:attributeGroup ref="EffectiveDateAttributeGroup" />
+	</xsd:complexType>
+
 	<xsd:simpleType name="URIType">
 		<xsd:restriction base="xsd:anyURI" />
 	</xsd:simpleType>
@@ -991,28 +1029,6 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:element name="FormattedDateTime" type="FormattedDateTimeType" />
-	<xsd:simpleType name="FormattedDateTimeType">
-		<xsd:annotation>
-			<xsd:documentation>This is formatted representation of a date, which
-				may be specified as a date, date/time, year, or year/month.
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:union memberTypes="DateType YearMonthDateType YearDateType DateTimeType" />
-	</xsd:simpleType>
-
-	<xsd:simpleType name="YearDateType">
-		<xsd:restriction base="xsd:gYear" />
-	</xsd:simpleType>
-	<xsd:simpleType name="YearMonthDateType">
-		<xsd:restriction base="xsd:gYearMonth" />
-	</xsd:simpleType>
-	<xsd:simpleType name="DateType">
-		<xsd:restriction base="xsd:date" />
-	</xsd:simpleType>
-	<xsd:simpleType name="DateTimeType">
-		<xsd:restriction base="xsd:dateTime" />
-	</xsd:simpleType>
 
 	<xsd:group name="DocumentIDGroup">
 		<xsd:sequence>

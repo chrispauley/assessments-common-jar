@@ -12,7 +12,6 @@ import javax.xml.bind.Unmarshaller;
 
 import org.eclipse.persistence.jaxb.MarshallerProperties;
 import org.hros.assessments.model.AssessmentCatalogType;
-import org.hros.assessments.model.ProcessAssessmentOrder;
 
 public class AssessmentCatalogHelper {
 
@@ -70,7 +69,7 @@ public class AssessmentCatalogHelper {
 	public static void showXML(AssessmentCatalogType ac) {
 		JAXBContext context;
 		try {
-			context = JAXBContext.newInstance(ProcessAssessmentOrder.class);
+			context = JAXBContext.newInstance(AssessmentCatalogType.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			m.marshal(ac, System.out);

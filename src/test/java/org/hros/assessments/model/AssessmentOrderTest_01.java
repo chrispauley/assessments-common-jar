@@ -30,7 +30,19 @@ public class AssessmentOrderTest_01 extends TestCase {
 		ac.setAssessmentSubject(this.createAssessmentSubject());
 
 		ac.getAssessmentAccess().add(createAssessmentAccess());
+		ac.setRedirectURL(createRedirectURL());
 		return ac;
+	}
+
+	private RedirectURLType createRedirectURL() {
+		RedirectURLType ru = new RedirectURLType();
+		ru.setTimeOut(BigInteger.valueOf(10));
+		ru.setMessage("Click here when you are done.");
+		ru.setURI("http://www.ats-company.com/app/v2/assessmentreport?DocumentID=documentId_01&PackageID=package_123&auth_token=637jke723");
+		ru.setStatusCode("200");
+		ru.setValidFrom("20150904");
+		ru.setValidTo("20150930");
+		return ru;
 	}
 
 	private IdentifierType createPackageId(String packageId) {
@@ -172,7 +184,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private CommunicationABIEType createCommunicationABIE_IM_Address() {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.INSTANT_MESSAGE);
+		com.setChannelCode(ChannelCodeEnumType.INSTANT_MESSAGE);
 		com.setAccess("chris.candidate");
 		com.setUseCode(UseCodeType.PERSONAL);
 		com.setSequence(BigInteger.valueOf(4));
@@ -181,7 +193,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private CommunicationABIEType createCommunicationABIE_HomePhone() {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.TELEPHONE);
+		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
 		com.setDialNumber("(215)555-1234");
 		com.setUseCode(UseCodeType.PERSONAL);
 		// com.setSequence(BigInteger.valueOf(1));
@@ -191,7 +203,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 	private CommunicationABIEType createCommunicationABIE_WorkPhone(
 			String dialNumber) {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.TELEPHONE);
+		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
 		com.setDialNumber(dialNumber);
 		com.setUseCode(UseCodeType.BUSINESS);
 		// com.setSequence(BigInteger.valueOf(2));
@@ -200,7 +212,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private CommunicationABIEType createCommunicationABIE_MobilePhone() {
 		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeType.MOBILE_TELEPHONE);
+		com.setChannelCode(ChannelCodeEnumType.MOBILE_TELEPHONE);
 		com.setDialNumber("(215)555-5678");
 		com.setUseCode(UseCodeType.PERSONAL);
 		// com.setSequence(BigInteger.valueOf(3));
