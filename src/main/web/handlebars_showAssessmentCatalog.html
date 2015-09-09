@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ShowAssessmentCatalog</title>
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/handlebars-v3.0.3.js"></script>
+		<script type="text/javascript">
+			$("document").ready(function() {
+
+				var partyTemplate = $("#displayPartyType").html();
+				var packageTemplate = $("#displayPackageTemplate").html();
+
+				var ptRenderer = Handlebars.compile(partyTemplate);
+				var pkgRenderer = Handlebars.compile(packageTemplate);
+				$.getJSON("../../../data/SampleAssessmentCatalog_01.json", function(data) {
+					console.log("getJSON");
+					var ac = data;
+					var supplierPartyResult = ptRenderer(ac.AssessmentCatalog.SupplierParty);
+					$("#container2").html(supplierPartyResult);
+
+					var requestorPartyResult = ptRenderer(ac.AssessmentCatalog.RequesterParty);
+					$("#container3").html(requestorPartyResult);
+
+					var customerPartyResult = ptRenderer(ac.AssessmentCatalog.CustomerParty);
+					$("#container4").html(customerPartyResult);
+
+					console.log(ac.AssessmentCatalog);
+					var packageResult = pkgRenderer(ac.AssessmentCatalog);
+					$("#packageContainer").html(packageResult);
+				});
+			});
+		</script>
+		</head>
+		<body>
+        <script type="text/x-handlebars-template" id="displayPartyType">
+			<div class="col-xs-4">
+			<div><span>TypeParty: </span><span>{{PartyName}}</span></div>
+			<div><span>PartyTaxID: </span><span>{{PartyTaxID.value}}</span></div>
+			{{#each PersonContact}}
+			<div><span>PersonContact: </span><span>{{PersonName.FormattedName}}</span></div>
+			{{/each}}
+			{{#each Communication}}
+			<div><span>{{ChannelCode}}: </span><span>{{DialNumber}}</span></div>
+			{{/each}}
+			</div> <!-- col-xs-4 -->
+
+		</script> 
+        <script type="text/x-handlebars-template" id="displayPackageTemplate">
+			{{#each AssessmentPackage}}
+			<div class="row">
+		 <div class="col-xs-4">	{{#each AssessmentPackage.ID}}<p> {{AssessmentPackage.ID}}</p> {{/each}}</div>
+			<div><span>Name: </span><span>{{Name}}</span></div>
+			<div><span>Description: </span><span>{{Description}}</span></div>
+			</div> 
+			{{/each}} 
+		</script>
+        <h1>ShowAssessmentCatalog</h1>
+        <h3>This example displays the json data</h3>
+
+        <!-- This is the container where the templates will be instantiated -->
+        <div class="container-fluid" id="container">
+          <div class="row">
+            <div id="container2"></div>
+            <div id="container3"></div>
+            <div id="container4"></div>
+          </div>
+          <div class="row"> 
+            <!-- row --> 
+            <hr>
+          </div>
+          <!-- container-fluid -->
+          <hr/>
+          <div id="packageContainer" class="container-fluid"></div>
+          <!-- packageContainer --> 
+          
+        </div>
+</body>
+</html>

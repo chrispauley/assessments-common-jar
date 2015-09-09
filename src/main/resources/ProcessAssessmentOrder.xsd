@@ -4,6 +4,7 @@
 	attributeFormDefault="unqualified">
 	<xsd:include schemaLocation="Components.xsd" />
 	<xsd:include schemaLocation="CodeLists.xsd" />
+	<xsd:include schemaLocation="Fields.xsd" />
 	<xsd:include schemaLocation="AssessmentOrder.xsd" />
 
 	<xsd:element name="ProcessAssessmentOrder">

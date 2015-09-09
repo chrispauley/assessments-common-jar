@@ -31,34 +31,105 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ac.getAlternateDocumentID().add("alternateId-02");
 		ac.getAlternateDocumentID().add("alternateId-03");
 		ac.setDocumentSequence(BigInteger.valueOf(1));
-		ac.setCustomerParty(this.createPartyType("CustomerParty",
-				"customer name"));
-		ac.setSupplierParty(this.createPartyType("SupplierParty",
-				"supplier name"));
-		ac.setRequesterParty(this.createPartyType("RequestorParty",
-				"Requestor Name"));
-		ac.getAssessmentPackage().add(this.createAssessmentPackage("Package1 Name",
-				"cost?"));
+		ac.setCustomerParty(this.createCustomerParty());
+		ac.setSupplierParty(this.createSupplierParty());
+		ac.setRequesterParty(this.createRequestorParty());
+		ac.getAssessmentPackage().add(
+				this.createAssessmentPackage("Package1 Name", "cost?"));
 		return ac;
+	}
+
+	private PartyType createCustomerParty() {
+		PartyType pt = new PartyType();
+		pt.setPartyName("CustomerParty");
+		IdentifierType id = new IdentifierType();
+		id.setValue("Amazing Software, Inc.");
+		pt.setPartyTaxID(id);
+		pt.setUserArea(new UserAreaType());
+		pt.getPersonContact().add(createCustomerPersonContact());
+		pt.getCommunication().add(this.createCustomerCommunicationType());
+		return pt;
+	}
+
+	private CommunicationABIEType createCustomerCommunicationType() {
+		CommunicationABIEType ct = new CommunicationABIEType();
+		ct.setChannelCode(ChannelCodeEnumType.TELEPHONE);
+		ct.setDialNumber("888-555-9876");
+		return ct;
+	}
+
+	private PersonContactType createCustomerPersonContact() {
+		PersonContactType pc = new PersonContactType();
+		PersonNameType pn = new PersonNameType();
+		pn.setLegalName("Patel");
+		pn.setFormattedName("Vijay Patel");
+		pc.setPersonName(pn);
+		return pc;
+	}
+
+	private PartyType createRequestorParty() {
+		PartyType pt = new PartyType();
+		pt.setPartyName("RequestorParty");
+		IdentifierType id = new IdentifierType();
+		id.setValue("Software Engineering Placement, Inc.");
+		pt.setPartyTaxID(id);
+		pt.setUserArea(new UserAreaType());
+		pt.getPersonContact().add(createRequestorPersonContact());
+		return pt;
+	}
+
+	private PersonContactType createRequestorPersonContact() {
+		PersonContactType pc = new PersonContactType();
+		PersonNameType pn = new PersonNameType();
+		pn.setFormattedName("Lynn Jones");
+		pc.setPersonName(pn);
+		return pc;
+	}
+
+	private PartyType createSupplierParty() {
+		PartyType pt = new PartyType();
+		pt.setPartyName("SupplierParty");
+		IdentifierType id = new IdentifierType();
+		id.setValue("Assessment World");
+		pt.setPartyTaxID(id);
+		pt.setUserArea(new UserAreaType());
+		pt.getPersonContact().add(createSupplierPersonContact());
+		pt.getCommunication().add(createSupplierCommunicationType());
+		return pt;
+	}
+
+	private CommunicationABIEType createSupplierCommunicationType() {
+		CommunicationABIEType ct = new CommunicationABIEType();
+		ct.setChannelCode(ChannelCodeEnumType.TELEPHONE);
+		ct.setDialNumber("800-555-1234");
+		return ct;
+	}
+
+	private PersonContactType createSupplierPersonContact() {
+		PersonContactType pc = new PersonContactType();
+		PersonNameType pn = new PersonNameType();
+		pn.setFormattedName("Johanna Smith");
+		pc.setPersonName(pn);
+		return pc;
 	}
 
 	private AssessmentFulfillmentType createAssessmentFulfillment() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
 		af.getDescription().add("Description of Fulfillment");
-		
+
 		MeasureTextType mt = new MeasureTextType();
 		mt.setProperty("prop 1");
 		mt.setValue("value of mt");
 		af.getEffectivePeriodDescription().add(mt);
-		
+
 		af.getScoreProfileName().add("Profile1");
 		af.getScoreProfileName().add("Profile2");
-		
+
 		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
 		af.getReportLanguageCode().add(LanguageCodeEnumType.FR_CA);
 		af.setUserArea(new UserAreaType());
 		af.getUserArea().getAny().add("{}");
-		
+
 		return af;
 	}
 
@@ -85,16 +156,19 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.ABILITY);
 		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.KNOWLEDGE);
 		aa.getAssessedCompetency().add(createSpecifiedCompetencyType());
-		
-		aa.getJobCategoryCode().add(addSOCJobCategoryCode("Computer Programmer","15-1131"));
-		aa.getJobCategoryCode().add(addISCOJobCategoryCode("Software and applications developers and analysts","251"));
-		aa.getJobCategoryCode().add(addNOCJobCategoryCode("Computer Programmer","2174"));
-		
+
+		aa.getJobCategoryCode().add(
+				addSOCJobCategoryCode("Computer Programmer", "15-1131"));
+		aa.getJobCategoryCode().add(
+				addISCOJobCategoryCode(
+						"Software and applications developers and analysts",
+						"251"));
+		aa.getJobCategoryCode().add(
+				addNOCJobCategoryCode("Computer Programmer", "2174"));
+
 		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Career"));
 		return aa;
 	}
-
-
 
 	private CodeType createCareerLevelCode(String name, String value) {
 		CodeType ct = new CodeType();
@@ -127,12 +201,12 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ct.setListName("International Standard Classification of Occupations");
 		ct.setListAgencyID("ILO");
 		ct.setListAgencyName("International Labour Organization");
-//		ct.setListSchemeURI("http://bls.gov/soc");
-//		ct.setListURI("http://www.bls.gov/soc/2010");
+		// ct.setListSchemeURI("http://bls.gov/soc");
+		// ct.setListURI("http://www.bls.gov/soc/2010");
 		ct.setListVersionID("ISCO-08");
 		return ct;
 	}
-	
+
 	private CodeType addNOCJobCategoryCode(String name, String value) {
 		CodeType ct = new CodeType();
 		ct.setName(name);
@@ -142,12 +216,12 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ct.setListName("National Occupational Classification");
 		ct.setListAgencyID("ILO");
 		ct.setListAgencyName("Government of Canada");
-//		ct.setListSchemeURI("http://bls.gov/soc");
-//		ct.setListURI("http://www.bls.gov/soc/2010");
+		// ct.setListSchemeURI("http://bls.gov/soc");
+		// ct.setListURI("http://www.bls.gov/soc/2010");
 		ct.setListVersionID("2011");
 		return ct;
 	}
-	
+
 	private SpecifiedCompetencyType createSpecifiedCompetencyType() {
 		SpecifiedCompetencyType ct = new SpecifiedCompetencyType();
 		ct.setCompetencyName("CompetencyName One");
@@ -182,11 +256,9 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ap.getParentGroupID().add("Hiring Manager");
 		ap.getPartyReportingIDs().add("Manager-001");
 
-		ap.setAssessmentApplicability(
-				createAssessmentApplicabilityType());
-		ap.setAssessmentAdministration(
-				createAssessmentAdministrationType());
-		ap.setAssessmentFulfillment(createAssessmentFulfillment());		
+		ap.setAssessmentApplicability(createAssessmentApplicabilityType());
+		ap.setAssessmentAdministration(createAssessmentAdministrationType());
+		ap.setAssessmentFulfillment(createAssessmentFulfillment());
 		return ap;
 	}
 
@@ -197,7 +269,16 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		id.setValue(value);
 		// pt.setPartyTaxID(id);
 		// pt.setUserArea(new UserAreaType());
+		pt.getPersonContact().add(createPersonContact());
 		return pt;
+	}
+
+	private PersonContactType createPersonContact() {
+		PersonContactType pc = new PersonContactType();
+		PersonNameType pn = new PersonNameType();
+		pn.setFormattedName("Formatted Person Name");
+		pc.setPersonName(pn);
+		return pc;
 	}
 
 	public void test_SaveAll() {

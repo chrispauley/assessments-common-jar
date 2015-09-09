@@ -1,46 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DocumentID>documentId_01</DocumentID><AlternateDocumentID>alternateId-01</AlternateDocumentID><AlternateDocumentID>alternateId-02</AlternateDocumentID><AlternateDocumentID>alternateId-03</AlternateDocumentID><DocumentSequence>1</DocumentSequence><CustomerParty>
-   <PartyName>CustomerParty</PartyName>
-</CustomerParty><SupplierParty>
-   <PartyName>SupplierParty</PartyName>
-</SupplierParty><RequesterParty>
-   <PartyName>RequestorParty</PartyName>
-</RequesterParty><AssessmentPackage>
-   <ID>package-001</ID>
-   <Name>Package1 Name</Name>
-   <Description>Package Description</Description>
-   <ParentGroupID>Hiring Manager</ParentGroupID>
-   <PackageTypeCode>typeCode1</PackageTypeCode>
-   <PartyReportingIDs>Manager-001</PartyReportingIDs>
-   <ServiceAvailabilityCode>Available</ServiceAvailabilityCode>
-   <PackageCost>cost?</PackageCost>
-   <AssessmentApplicability>
-      <Description>Description for AssessmentApplicability</Description>
-      <AssessmentTypeCode>ABILITY</AssessmentTypeCode>
-      <AssessmentTypeCode>KNOWLEDGE</AssessmentTypeCode>
-      <AssessedCompetency>
-         <CompetencyName>CompetencyName One</CompetencyName>
-      </AssessedCompetency>
-      <JobCategoryCode listID="SOC" listAgencyID="BLS" listAgencyName="Bureau of Labor Statistics" listName="Standard Occupational Classification System" listVersionID="2010" name="Computer Programmer" languageID="en-US" listURI="http://www.bls.gov/soc/2010" listSchemeURI="http://bls.gov/soc">15-1131</JobCategoryCode>
-      <JobCategoryCode listID="ISCO" listAgencyID="ILO" listAgencyName="International Labour Organization" listName="International Standard Classification of Occupations" listVersionID="ISCO-08" name="Software and applications developers and analysts" languageID="en-US">251</JobCategoryCode>
-      <JobCategoryCode listID="NOC" listAgencyID="ILO" listAgencyName="Government of Canada" listName="National Occupational Classification" listVersionID="2011" name="Computer Programmer" languageID="fr-CA">2174</JobCategoryCode>
-      <CareerLevelCode name="name">Mid-Career</CareerLevelCode>
-   </AssessmentApplicability>
-   <AssessmentAdministration>
-      <Description>This is an online test.</Description>
-      <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
-      <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-      <TestDuration property="prop 1">value of mt</TestDuration>
-      <AssessmentDeliveryCode/>
-      <AssessmentDeliveryCode schedulingRequiredIndicator="true">Code1</AssessmentDeliveryCode>
-   </AssessmentAdministration>
-   <AssessmentFulfillment>
-      <Description>Description of Fulfillment</Description>
-      <EffectivePeriodDescription property="prop 1">value of mt</EffectivePeriodDescription>
-      <ScoreProfileName>Profile1</ScoreProfileName>
-      <ScoreProfileName>Profile2</ScoreProfileName>
-      <ReportLanguageCode>en-US</ReportLanguageCode>
-      <ReportLanguageCode>fr-CA</ReportLanguageCode>
-      <UserArea>{}</UserArea>
-   </AssessmentFulfillment>
-</AssessmentPackage>
+<AssessmentCatalog>
+   <DocumentID>documentId_01</DocumentID>
+   <AlternateDocumentID>alternateId-01</AlternateDocumentID>
+   <AlternateDocumentID>alternateId-02</AlternateDocumentID>
+   <AlternateDocumentID>alternateId-03</AlternateDocumentID>
+   <DocumentSequence>1</DocumentSequence>
+   <CustomerParty>
+      <PartyTaxID>Amazing Software, Inc.</PartyTaxID>
+      <PartyName>CustomerParty</PartyName>
+      <Communication>
+         <ChannelCode>Telephone</ChannelCode>
+         <DialNumber>888-555-9876</DialNumber>
+      </Communication>
+      <PersonContact>
+         <PersonName>
+            <FormattedName>Vijay Patel</FormattedName>
+            <LegalName>Patel</LegalName>
+         </PersonName>
+      </PersonContact>
+      <UserArea/>
+   </CustomerParty>
+   <SupplierParty>
+      <PartyTaxID>Assessment World</PartyTaxID>
+      <PartyName>SupplierParty</PartyName>
+      <Communication>
+         <ChannelCode>Telephone</ChannelCode>
+         <DialNumber>800-555-1234</DialNumber>
+      </Communication>
+      <PersonContact>
+         <PersonName>
+            <FormattedName>Johanna Smith</FormattedName>
+         </PersonName>
+      </PersonContact>
+      <UserArea/>
+   </SupplierParty>
+   <RequesterParty>
+      <PartyTaxID>Software Engineering Placement, Inc.</PartyTaxID>
+      <PartyName>RequestorParty</PartyName>
+      <PersonContact>
+         <PersonName>
+            <FormattedName>Lynn Jones</FormattedName>
+         </PersonName>
+      </PersonContact>
+      <UserArea/>
+   </RequesterParty>
+   <AssessmentPackage>
+      <ID>package-001</ID>
+      <Name>Package1 Name</Name>
+      <Description>Package Description</Description>
+      <ParentGroupID>Hiring Manager</ParentGroupID>
+      <PackageTypeCode>typeCode1</PackageTypeCode>
+      <PartyReportingIDs>Manager-001</PartyReportingIDs>
+      <ServiceAvailabilityCode>Available</ServiceAvailabilityCode>
+      <PackageCost>cost?</PackageCost>
+      <AssessmentApplicability>
+         <Description>Description for AssessmentApplicability</Description>
+         <AssessmentTypeCode>ABILITY</AssessmentTypeCode>
+         <AssessmentTypeCode>KNOWLEDGE</AssessmentTypeCode>
+         <AssessedCompetency>
+            <CompetencyName>CompetencyName One</CompetencyName>
+         </AssessedCompetency>
+         <JobCategoryCode listID="SOC" listAgencyID="BLS" listAgencyName="Bureau of Labor Statistics" listName="Standard Occupational Classification System" listVersionID="2010" name="Computer Programmer" languageID="en-US" listURI="http://www.bls.gov/soc/2010" listSchemeURI="http://bls.gov/soc">15-1131</JobCategoryCode>
+         <JobCategoryCode listID="ISCO" listAgencyID="ILO" listAgencyName="International Labour Organization" listName="International Standard Classification of Occupations" listVersionID="ISCO-08" name="Software and applications developers and analysts" languageID="en-US">251</JobCategoryCode>
+         <JobCategoryCode listID="NOC" listAgencyID="ILO" listAgencyName="Government of Canada" listName="National Occupational Classification" listVersionID="2011" name="Computer Programmer" languageID="fr-CA">2174</JobCategoryCode>
+         <CareerLevelCode name="name">Mid-Career</CareerLevelCode>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <Description>This is an online test.</Description>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration property="prop 1">value of mt</TestDuration>
+         <AssessmentDeliveryCode/>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">Code1</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>Description of Fulfillment</Description>
+         <EffectivePeriodDescription property="prop 1">value of mt</EffectivePeriodDescription>
+         <ScoreProfileName>Profile1</ScoreProfileName>
+         <ScoreProfileName>Profile2</ScoreProfileName>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+         <ReportLanguageCode>fr-CA</ReportLanguageCode>
+         <UserArea>{}</UserArea>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+</AssessmentCatalog>
