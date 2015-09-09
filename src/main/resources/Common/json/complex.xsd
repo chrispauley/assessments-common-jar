@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation>
+			Name: complex.xsd
+			Status: 4.0 Release
+			Date this
+			version:
+			2015-Sep-09
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="base.xsd" />
+	<xsd:include schemaLocation="codelist/language.xsd" />
+	<xsd:include schemaLocation="codelist/unit.xsd" />
+
+
+	<xsd:element name="BaseNoun" type="BaseNounType" />
+
+	<xsd:complexType name="BaseNounType">
+		<xsd:sequence>
+			<xsd:element name="documentId" type="IdentifierType"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="alternateIds" type="IdentifierType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="CommunicationItem" type="CommunicationItemType" />
+	<xsd:complexType name="CommunicationItemType">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string" minOccurs="0" />
+			<xsd:element name="useCode" type="CodeType" minOccurs="0" />
+			<xsd:element name="preference" type="xsd:integer"
+				minOccurs="0" />
+			<xsd:element name="availablePeriod" type="DateTimePeriodType"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="EmailType">
+		<xsd:sequence>
+			<xsd:element name="address" type="xsd:string" minOccurs="1"
+				maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="WebType">
+		<xsd:sequence>
+			<xsd:element name="url" type="xsd:anyURI" minOccurs="1"
+				maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>	
+
+	<xsd:complexType name="PhoneType">
+		<xsd:sequence>
+			<xsd:element name="channelCode" type="CodeType"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="countryDialingCode" type="CodeType"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="areaDialingCode" type="CodeType"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="dialNumber" type="xsd:string"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="phoneExtension" type="xsd:string"
+				minOccurs="0" maxOccurs="1" />
+			<xsd:element name="access" type="xsd:string" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="formattedNumber" type="CodeType"
+				minOccurs="1" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="AddressType">
+		<xsd:sequence>
+			<xsd:element name="ID" type="xsd:string" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:sequence>
+				<xsd:element name="line" type="xsd:string" minOccurs="0"
+					maxOccurs="unbounded" />
+				<xsd:element name="extendedLine" type="xsd:string"
+					minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+			<xsd:element name="city" type="xsd:string" minOccurs="0" />
+			<xsd:element name="countryCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="countrySubDivisionName" type="xsd:string"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="postalCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="postOfficeBox" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+		<xsd:attribute name="type" type="xsd:normalizedString" />
+	</xsd:complexType>
+
+	<xsd:complexType name="CommunicationType">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:sequence>
+				<xsd:element name="address" type="AddressType" minOccurs="0"
+				maxOccurs="unbounded" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element name="phone" type="PhoneType"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element name="email" type="EmailType"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element name="web" type="WebType"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="type" type="xsd:normalizedString" />
+	</xsd:complexType>
+	
+	<xsd:element name="PersonName" type="PersonNameType">
+		<xsd:annotation>
+			<xsd:documentation>
+				Person Name. Details. A component for capturing
+				summary or fine-grain data
+				comprising a person's name.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="PersonNameType">
+		<xsd:sequence>
+			<xsd:element name="formatted" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="legal" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="given" type="xsd:string"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="preferred" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="middle" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="family" type="xsd:string"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="formerFamily" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="preferredSalutationCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="generationAffixCode" type="xsd:string"
+				minOccurs="0" />
+			<xsd:element name="qualificationAffixCode" type="xsd:string"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="titleAffixCode" type="xsd:string"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="initials" type="xsd:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+</xsd:schema>

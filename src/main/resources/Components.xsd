@@ -631,6 +631,7 @@
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
+	
 	<xsd:complexType name="MeasureTextType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:string">

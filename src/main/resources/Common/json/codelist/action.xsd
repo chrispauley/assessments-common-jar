@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation>
+			Name: action.xsd
+			Status: 4.0 Release
+			Date this
+			version: 2015-Aug-20
+		</xsd:documentation>
+	</xsd:annotation>
+	
+	<xsd:simpleType name="ActionCodeList">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating the gender of a person. This set of enumerations is parrallel to those specified within ISO 5218 - Representation of Human Sexes (0 - Not Known; 1 - Male; 2 - Female; 9 - Not specified). However, the text values have been substituted for the numeric codes for greater clarity.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="create"/>
+			<xsd:enumeration value="update"/>
+			<xsd:enumeration value="delete"/>
+			<xsd:enumeration value="replace"/>
+			<xsd:enumeration value="merge"/>
+		</xsd:restriction>
+	</xsd:simpleType>	
+</xsd:schema>

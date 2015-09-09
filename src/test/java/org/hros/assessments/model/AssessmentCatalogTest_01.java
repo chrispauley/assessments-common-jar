@@ -39,6 +39,7 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		return ac;
 	}
 
+
 	private PartyType createCustomerParty() {
 		PartyType pt = new PartyType();
 		pt.setPartyName("CustomerParty");
@@ -296,11 +297,12 @@ public class AssessmentCatalogTest_01 extends TestCase {
 	}
 
 	public void testShowJSON() {
-		AssessmentCatalogType ac = this.createAssessmentCatalogType();
-		AssessmentCatalogHelper.showJSON(ac);
+		AssessmentCatalog ac =  new AssessmentCatalog(this.createAssessmentCatalogType());
+		AssessmentCatalogHelper.showJSON2(ac);
 		assertTrue(true);
 	}
 
+	
 	public void testRead_XML() {
 		AssessmentCatalogHelper helper = new AssessmentCatalogHelper();
 		AssessmentCatalogType ac = helper.readXML(FILENAME + ".xml");

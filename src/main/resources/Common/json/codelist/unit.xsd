@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:annotation>
+		<xsd:documentation>
+			Name: action.xsd
+			Status: 4.0 Release
+			Date this
+			version: 2015-Sep-09
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:complexType name="UnitCode">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:normalizedString">
+				<xsd:attribute name="name" type="xsd:normalizedString"
+					use="optional" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>

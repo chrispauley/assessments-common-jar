@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="CodeLists.xsd" />
+	<xsd:include schemaLocation="Components.xsd" />
+	<xsd:annotation>
+		<xsd:documentation>
+			Name: Fields.xsd
+			Status: 4.0 Release
+			Date this
+			version: 2015-Aug-20
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:element name="AccomodationTypeCode" type="CodeType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.hr-xml.org"
+				xml:lang="en">A code identifying a type of assistance or technology
+				required to accomodate a disability. This is a value from an
+				external code list. For an example, see AccommodationsNeededType
+				within /References/CodeLists/PESCCodeLists.xsd
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="RaceCode" type="CodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code classifying a person on the basis of their
+				race. Race classifications may be relevant under, and set by,
+				government labor or fair employment practice regulations. Race also
+				may be relevant to identification of a person. There is no precise
+				or recognized set of race classifications with an anthropological
+				basis. OED race n: "A group of persons...connected by common descent
+				or origin;" "One of the great divisions of mankind, having certain
+				physical peculiarities in common."
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="EthnicityCode" type="CodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code classifying a person on the basis of their
+				ethnicity. Ethnicity pertains to having common racial, cultural,
+				religious, or linguistic characteristics. Ethnicity classifications
+				may be relevant under government labor or fair employment practice
+				regulations. For example, under U.S. record keeping rules for
+				federal contractors employers may require reporting of data with
+				respect to whether or not a person is of "Hispanic or Latino"
+				ethnicity, a classification which encompass persons of Mexican,
+				Puerto Rican, Cuban, Central or South American, or other Spanish
+				culture or origin, regardless of race.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="TestLocationID" type="IdentifierType">
+		<xsd:annotation>
+			<xsd:documentation>An identifier for the location of a testing site
+				or test center where a test was taken. A test center name.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="MilitaryStatusCode" type="StatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code classifying a person's current or past
+				military status.
+				Depending on the use case and applicable law, employers
+				may need to track a variety of different information regarding a
+				person's current or
+				military status. Under applicable law, current or prior military personnel
+				may
+				be entitled to certain employment preferences.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:complexType name="StatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation>An effective dated status code.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="CodeType">
+				<xsd:attributeGroup ref="EffectiveDateAttributeGroup" />
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="NationalityCode" type="CodeType">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying a person's status for belonging
+				to
+				a particular nation by origin, birth, or naturalization.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="PrimaryLanguageCode" type="LanguageCodeEnumType">
+		<xsd:annotation>
+			<xsd:documentation>The primary or preferred language associated with
+				a person or work environment.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="BirthDate" type="FormattedDateTimeType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.hr-xml.org"
+				xml:lang="en">The date on which the associated person was
+				born.Sometimes
+				used as a "facet" identifier (one that
+				taken with other facts is used
+				to identify a person).
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+
+	<xsd:simpleType name="ChannelCodeContentType">
+		<xsd:annotation>
+			<xsd:documentation />
+		</xsd:annotation>
+		<xsd:union memberTypes="ChannelCodeEnumType xsd:normalizedString" />
+	</xsd:simpleType>
+	<xsd:simpleType name="ChannelCodeEnumType">
+		<xsd:annotation>
+			<xsd:documentation />
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Telephone" />
+			<xsd:enumeration value="MobileTelephone" />
+			<xsd:enumeration value="Fax" />
+			<xsd:enumeration value="Email" />
+			<xsd:enumeration value="InstantMessage" />
+			<xsd:enumeration value="Web" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:element name="DisabilityTypeCode" type="CodeType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.hr-xml.org"
+				xml:lang="en">
+				A value from an external code list classifying the type of
+				disability.
+				Examples:
+				1. DisabilityConditionType as defined by
+				PESC.org
+				2. U.S. Office of
+				Special Education Programs (OSEP) Primary
+				and Secondary Disability
+				Codes
+				3. "Total," "Partial," and "Residual"
+				as broad classifications
+				of disability
+				in certain contexts
+				(Acord.org).
+				Because of possible requirements to classify a
+				disability in multiple ways,
+				implementers
+				may want to consider if
+				DisabilityTypeCode should be a repeatable in
+				the context where it
+				is
+				used. The particular classification scheme would be identified
+				using
+				the listID attribute.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="FormattedDateTime" type="FormattedDateTimeType" />
+	<xsd:simpleType name="FormattedDateTimeType">
+		<xsd:annotation>
+			<xsd:documentation>This is formatted representation of a date, which
+				may be specified as a date, date/time, year, or year/month.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union memberTypes="DateType YearMonthDateType YearDateType DateTimeType" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="YearDateType">
+		<xsd:restriction base="xsd:gYear" />
+	</xsd:simpleType>
+	<xsd:simpleType name="YearMonthDateType">
+		<xsd:restriction base="xsd:gYearMonth" />
+	</xsd:simpleType>
+	<xsd:simpleType name="DateType">
+		<xsd:restriction base="xsd:date" />
+	</xsd:simpleType>
+	<xsd:simpleType name="DateTimeType">
+		<xsd:restriction base="xsd:dateTime" />
+	</xsd:simpleType>
+
+	<xsd:element name="DisabilityIndicator" type="EffectiveDatedIndicatorType">
+		<xsd:annotation>
+			<xsd:documentation>True indicates that the related person is
+				considered disabled.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:complexType name="EffectiveDatedIndicatorType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator with optional effective date meta
+				data.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="IdentifierType">
+				<xsd:attributeGroup ref="EffectiveDateAttributeGroup" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:attributeGroup name="EffectiveDateAttributeGroup">
+		<xsd:annotation>
+			<xsd:documentation>HR-XML's 3.0 architecture makes a distinction
+				between effective-date meta data and effective dating that is an
+				integral part of the data model for the particular component. For
+				example, a License typically has as an integral part of its data
+				model, a start date and end date during which it is effective. This
+				might be expressed using StartDate and EndDate components. Where
+				there is the need to provide “effective dating” metadata for a
+				component the standard approach to be used across the 3.0 library
+				will be use EffectiveDateAttributeGroup. For example, a PersonName
+				does not include effective dating as an integral part of its data
+				model, but effective date meta date may be necessary for accurate
+				processing or handling of a PersonName. Note also in some cases, a
+				component that has effective dating as part of its data model may
+				also have effective datng meta data. For example, EmploymentHistory
+				includes dating relevant to the tenure of a person at an employer
+				and within a position. Effective dating meta data (using the
+				EffectiveDateAttributeGroup) also could be valuable on
+				EmploymentHistory to distinquish among different versions of the
+				same persons history.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="validFrom" type="FormattedDateTimeType"
+			use="optional" />
+		<xsd:attribute name="validTo" type="FormattedDateTimeType"
+			use="optional" />
+	</xsd:attributeGroup>
+
+	<xsd:complexType name="CodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:normalizedString">
+				<xsd:attribute name="listID" type="xsd:normalizedString"
+					use="optional" />
+				<xsd:attribute name="listAgencyID" type="xsd:normalizedString"
+					use="optional" />
+				<xsd:attribute name="listAgencyName" type="xsd:string"
+					use="optional" />
+				<xsd:attribute name="listName" type="xsd:string" use="optional" />
+				<xsd:attribute name="listVersionID" type="xsd:normalizedString"
+					use="optional" />
+				<xsd:attribute name="name" type="xsd:string" use="optional" />
+				<xsd:attribute name="languageID" type="xsd:language"
+					use="optional" />
+				<xsd:attribute name="listURI" type="xsd:anyURI" use="optional" />
+				<xsd:attribute name="listSchemeURI" type="xsd:anyURI"
+					use="optional" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:attributeGroup name="CodeListAttributeGroup">
+		<xsd:attribute name="listID" type="xsd:normalizedString"
+			use="optional" />
+		<xsd:attribute name="listAgencyID" type="xsd:normalizedString"
+			use="optional" />
+		<xsd:attribute name="listAgencyName" type="xsd:string"
+			use="optional" />
+		<xsd:attribute name="listName" type="xsd:string" use="optional" />
+		<xsd:attribute name="listVersionID" type="xsd:normalizedString"
+			use="optional" />
+		<xsd:attribute name="name" type="xsd:string" use="optional" />
+		<xsd:attribute name="languageID" type="xsd:string" use="optional" />
+		<xsd:attribute name="listURI" type="xsd:anyURI" use="optional" />
+		<xsd:attribute name="listSchemeURI" type="xsd:anyURI"
+			use="optional" />
+	</xsd:attributeGroup>
+</xsd:schema>
