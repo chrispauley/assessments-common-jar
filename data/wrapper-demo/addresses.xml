@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addresses>
+    <address>
+        <street>1 Some Street</street>
+    </address>
+    <address>
+        <street>2 Another Road</street>
+    </address>
+</addresses>

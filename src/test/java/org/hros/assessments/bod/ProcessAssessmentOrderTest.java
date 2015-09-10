@@ -1,4 +1,4 @@
-package org.hros.assessments.model;
+package org.hros.assessments.bod;
 
 import java.math.BigInteger;
 import java.text.DateFormat;

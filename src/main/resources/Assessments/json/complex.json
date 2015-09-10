@@ -1,0 +1,31 @@
+{
+  "LoginInformationType": {
+    "title": "LoginInformationType",
+    "description": "Contains information to enable a user to gain access to a system.",
+    "type": "object",
+    "properties": {
+      "UserID": {
+        "type": "string",
+        "description": "Username or userId."
+      },
+      "AccessCredentials": {
+        "array": {
+          "AccessCredential": {
+            "name": {
+              "type": "string",
+              "description": "Indication of type of token."
+            },
+            "value": {
+              "type": "string",
+              "description": "Actual token or password."
+            },
+            "listName": {
+              "type": "string",
+              "description": "Authenticating scheme identifier."
+            }
+          }
+        }
+      }
+    }
+  }
+}

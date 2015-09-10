@@ -210,7 +210,6 @@
 								<include>AssessmentCatalog.xsd</include>
 								<include>AssessmentReport.xsd</include>
 								<include>AssessmentOrder.xsd</include>
-								<include>ProcessAssessmentOrderJSON.xsd</include>
 								<include>Components.xsd</include>
 							</schemaIncludes>
 							<bindingDirectory>src/main/resources</bindingDirectory>
@@ -218,7 +217,7 @@
 								<include>Assessments.xjb</include>
 							</bindingIncludes>
 							<generatePackage>org.hros.assessments.model</generatePackage>
-							<generateDirectory>${project.build.directory}/generated-sources</generateDirectory>
+							<generateDirectory>${project.build.directory}/gensrcs-assessments</generateDirectory>
 							<clearOutPutDir>false</clearOutPutDir>
 							<extension>true</extension>
 							<args>
@@ -250,13 +249,14 @@
 								<include>country.xsd</include>
 								<include>language.xsd</include>
 								<include>currency.xsd</include>
+								<include>payRateIntervalCodeList.xsd</include>								
 							</schemaIncludes>
 							<bindingDirectory>src/main/resources/Common/json/codelist</bindingDirectory>
 							<bindingIncludes>
 								<include>codelist.xjb</include>
 							</bindingIncludes>
 							<generatePackage>org.hros.common.model</generatePackage>
-							<generateDirectory>${project.build.directory}/common-gen-sources</generateDirectory>
+							<generateDirectory>${project.build.directory}/gensrcs-common-codelist</generateDirectory>
 							<clearOutPutDir>false</clearOutPutDir>
 						</configuration>
 					</execution>
@@ -269,15 +269,14 @@
 							<schemaDirectory>src/main/resources/Common/json</schemaDirectory>
 							<schemaIncludes>
 								<include>base.xsd</include>
-<!-- 								<include>complex.xsd</include> -->
-<!-- 								<include>vcard.xsd</include> -->
+								<include>complex.xsd</include>
 							</schemaIncludes>
 							<bindingDirectory>src/main/resources/Common/json</bindingDirectory>
 							<bindingIncludes>
 								<include>common.xjb</include>
 							</bindingIncludes>
 							<generatePackage>org.hros.common.model</generatePackage>
-							<generateDirectory>${project.build.directory}/common-sources</generateDirectory>
+							<generateDirectory>${project.build.directory}/gensrcs-common</generateDirectory>
 							<clearOutPutDir>false</clearOutPutDir>
 						</configuration>
 					</execution>					

@@ -1,4 +1,4 @@
-package org.hros.assessments.model;
+package org.hros.assessments.bod;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -8,6 +8,7 @@ import junit.framework.TestCase;
 
 import org.eclipse.persistence.jaxb.MarshallerProperties;
 import org.hros.assessments.model.BODType;
+import org.hros.assessments.model.UserAreaType;
 
 public class BOD_Test extends TestCase {
 

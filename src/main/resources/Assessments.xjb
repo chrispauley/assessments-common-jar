@@ -3,14 +3,12 @@ xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
 jxb:extensionBindingPrefixes="xjc"> -->
-<jxb:bindings
+<jxb:bindings version="2.1"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
 xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
 xmlns:annox="http://annox.dev.java.net"
-jxb:extensionBindingPrefixes="xjc annox"
-version="2.1">
-
+jxb:extensionBindingPrefixes="xjc annox">
 
 	<jxb:bindings >
 		<jxb:globalBindings typesafeEnumMaxMembers="300"
@@ -30,7 +28,7 @@ version="2.1">
 			<jxb:bindings node="//xsd:complexType[@name='AssessmentReportType']">
 					<annox:annotateClass>@javax.xml.bind.annotation.XmlRootElement(name="AssessmentReport")</annox:annotateClass>
 			</jxb:bindings>
-	</jxb:bindings>		
+	</jxb:bindings>	
 
 
 </jxb:bindings>

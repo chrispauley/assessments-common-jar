@@ -14,7 +14,7 @@
 	<xsd:include schemaLocation="base.xsd" />
 	<xsd:include schemaLocation="codelist/language.xsd" />
 	<xsd:include schemaLocation="codelist/unit.xsd" />
-
+	<xsd:include schemaLocation="codelist/payRateIntervalCodeList.xsd" />
 
 	<xsd:element name="BaseNoun" type="BaseNounType" />
 
@@ -45,13 +45,13 @@
 				maxOccurs="1" />
 		</xsd:sequence>
 	</xsd:complexType>
-	
+
 	<xsd:complexType name="WebType">
 		<xsd:sequence>
 			<xsd:element name="url" type="xsd:anyURI" minOccurs="1"
 				maxOccurs="1" />
 		</xsd:sequence>
-	</xsd:complexType>	
+	</xsd:complexType>
 
 	<xsd:complexType name="PhoneType">
 		<xsd:sequence>
@@ -99,26 +99,26 @@
 		<xsd:sequence>
 			<xsd:choice>
 				<xsd:sequence>
-				<xsd:element name="address" type="AddressType" minOccurs="0"
-				maxOccurs="unbounded" />
-				</xsd:sequence>
-				<xsd:sequence>
-					<xsd:element name="phone" type="PhoneType"
+					<xsd:element name="address" type="AddressType"
 						minOccurs="0" maxOccurs="unbounded" />
 				</xsd:sequence>
 				<xsd:sequence>
-					<xsd:element name="email" type="EmailType"
-						minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="phone" type="PhoneType" minOccurs="0"
+						maxOccurs="unbounded" />
 				</xsd:sequence>
 				<xsd:sequence>
-					<xsd:element name="web" type="WebType"
-						minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="email" type="EmailType" minOccurs="0"
+						maxOccurs="unbounded" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element name="web" type="WebType" minOccurs="0"
+						maxOccurs="unbounded" />
 				</xsd:sequence>
 			</xsd:choice>
 		</xsd:sequence>
 		<xsd:attribute name="type" type="xsd:normalizedString" />
 	</xsd:complexType>
-	
+
 	<xsd:element name="PersonName" type="PersonNameType">
 		<xsd:annotation>
 			<xsd:documentation>
@@ -128,20 +128,19 @@
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
+
 	<xsd:complexType name="PersonNameType">
 		<xsd:sequence>
 			<xsd:element name="formatted" type="xsd:string"
 				minOccurs="0" />
-			<xsd:element name="legal" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="given" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="legal" type="xsd:string" minOccurs="0" />
+			<xsd:element name="given" type="xsd:string" minOccurs="0"
+				maxOccurs="unbounded" />
 			<xsd:element name="preferred" type="xsd:string"
 				minOccurs="0" />
-			<xsd:element name="middle" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="family" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="middle" type="xsd:string" minOccurs="0" />
+			<xsd:element name="family" type="xsd:string" minOccurs="0"
+				maxOccurs="unbounded" />
 			<xsd:element name="formerFamily" type="xsd:string"
 				minOccurs="0" />
 			<xsd:element name="preferredSalutationCode" type="xsd:string"
@@ -152,10 +151,219 @@
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="titleAffixCode" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="initials" type="xsd:string"
+			<xsd:element name="initials" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="SpecifiedPerson" type="SpecifiedPersonType" />
+	<xsd:complexType name="SpecifiedPersonType">
+		<xsd:annotation>
+			<xsd:documentation source="http://www.hr-xml.org"
+				xml:lang="en">Contains information to identify a person associated with
+				the interaction or entity.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="id" type="IdentifierType" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element name="name" type="PersonNameType" minOccurs="0" />
+			<xsd:element name="roleCode" type="CodeType" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element name="communication" type="CommunicationType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- <xsd:element name="PersonContact" type="PersonContactType"/> -->
+	<!-- <xsd:complexType name="PersonContactType"> -->
+	<!-- <xsd:sequence> -->
+	<!-- <xsd:element name="id" type="IdentifierType" minOccurs="0"/> -->
+	<!-- <xsd:element name="name" minOccurs="0"/> -->
+	<!-- <xsd:element ref="RoleName" minOccurs="0" maxOccurs="unbounded"/> -->
+	<!-- <xsd:element ref="Communication" minOccurs="0" maxOccurs="unbounded"/> -->
+	<!-- <xsd:element ref="UserArea" minOccurs="0"/> -->
+	<!-- </xsd:sequence> -->
+	<!-- <xsd:attribute name="contactTypeCode" type="oa:StringType"/> -->
+	<!-- </xsd:complexType> -->
+
+	<!-- @TODO PersonContactType is missing RoleName, Communications -->
+	<xsd:complexType name="PersonContactType">
+		<xsd:annotation>
+			<xsd:documentation>Contains information about contact person.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="SpecifiedPersonType">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="CommentType">
+		<xsd:annotation>
+			<xsd:documentation>A comment to provide additional unstructured
+				information concerning the related entity.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="type" type="xsd:string" minOccurs="0" />
+			<xsd:element name="author" type="xsd:string" minOccurs="0" />
+			<xsd:element name="datetime" type="DateTimeType"
 				minOccurs="0" />
+			<xsd:element name="status" type="xsd:string" minOccurs="0" />
+			<xsd:element name="note" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="LanguageCodeList"
+			use="optional" />
+	</xsd:complexType>
+
+	<xsd:complexType name="Comment">
+		<xsd:annotation>
+			<xsd:documentation>A comment to provide additional unstructured
+				information concerning the related entity.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:sequence>
+					<xsd:element name="value" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element name="comment" type="CommentType"
+						minOccurs="0" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element name="comments" type="CommentType"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PayRateType">
+		<xsd:annotation>
+			<xsd:documentation>Associates billing and/or pay rate information with time worked information reported on an entity.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+ 			<xsd:element name="value" type="EntityType" minOccurs="0"/>
+			<xsd:element name="amount" type="AmountType" minOccurs="1" />
+			<xsd:element name="intervalCode" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+<!-- This breaks jaxb -->
+<!-- 	<xsd:complexType name="PayRateType"> -->
+<!-- 		<xsd:annotation> -->
+<!-- 			<xsd:documentation>Associates billing and/or pay rate information with time worked information reported on an entity. -->
+<!-- 			</xsd:documentation> -->
+<!-- 		</xsd:annotation>	 -->
+<!-- 		<xsd:complexContent> -->
+<!-- 			<xsd:extension base="EntityType"> -->
+<!-- 				<xsd:sequence> -->
+<!-- 			<xsd:element name="amount" type="AmountType" minOccurs="1" /> -->
+<!-- 			<xsd:element name="intervalCode" type="xsd:string" minOccurs="0" /> -->
+<!-- 				</xsd:sequence> -->
+<!-- 			</xsd:extension> -->
+<!-- 		</xsd:complexContent> -->
+<!-- 	</xsd:complexType> -->
+
+<!-- TODO ResponsibleType -->
+<!-- TODO Responsible -->
+
+	<xsd:element name="Party" type="PartyType" />
+	
+	<xsd:complexType name="PartyType">
+		<xsd:complexContent>
+			<xsd:extension base="BasePartyType">
+				<xsd:sequence>
+					<xsd:element name="value" type="EntityType"
+						minOccurs="0" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="BasePartyType">
+		<xsd:sequence>
+			<xsd:element name="id" type="IdentifierType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="legalID" type="IdentifierType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="taxID" type="IdentifierType"
+				minOccurs="0" />
+			<xsd:element name="name" type="xsd:string" />
+<!-- 			<xsd:element name="PartyReportingIDs" type="IdentifierType" -->
+<!-- 				minOccurs="0" maxOccurs="unbounded" /> -->
+			<xsd:element name="communications" type="CommunicationType"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="personContacts" type="PersonContactType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<!-- <xsd:attribute name="agencyRoleCode" type="AgencyRoleCodeContentType" 
+			use="optional"/> -->
+	</xsd:complexType>
+	
+	<xsd:complexType name="StaffingReferenceIdsType">
+		<xsd:annotation>
+			<xsd:documentation>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+ 			<xsd:element name="assignmentId" type="IdentifierType" minOccurs="0"/>
+			<xsd:element name="orderId" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="rfqId" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="resourceId" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="actionId" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="masterOrderId" type="IdentifierType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+		
+	<xsd:complexType name="CostAllocationType">
+		<xsd:annotation>
+			<xsd:documentation>Contains an identifier of an account, department, 
+			or other entity to which an item should be allocated.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+ 			<xsd:element name="percentage" type="IdentifierType" minOccurs="0"/>
+			<xsd:element name="department" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="location" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="costCenter" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="job" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="account" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="project" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="shift" type="IdentifierType" minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 	
 	
+<!-- 	TODO WorkAllocationType -->
+
+	<xsd:complexType name="ResourceClassification">
+		<xsd:annotation>
+			<xsd:documentation>Holds customer specific properties of an entity
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+ 			<xsd:element name="managerName" type="xsd:string" minOccurs="0"/>
+ 			<xsd:element name="supervisorName" type="xsd:string" minOccurs="0"/>
+ 			<xsd:element name="contactName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="department" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="location" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="costCenter" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="job" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="account" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="project" type="IdentifierType" minOccurs="0" />
+			<xsd:element name="shift" type="IdentifierType" minOccurs="0" />
+ 			<xsd:element name="externalOrderNumber" type="xsd:string" minOccurs="0"/>
+ 			<xsd:element name="externalReqNumber" type="xsd:string" minOccurs="0"/>
+ 			<xsd:element name="referenceNumber" type="xsd:string" minOccurs="0"/>
+ 			<xsd:element name="purchaseOrderNumber" type="xsd:string" minOccurs="0"/>
+ 			<xsd:element name="purchaseOrderLineItem" type="xsd:string" minOccurs="0"/>
+ 			<xsd:element name="costAllocations" type="CostAllocationType" minOccurs="0" maxOccurs="unbounded"/>
+<!--  			<xsd:element name="workAllocationTypes" type="WorkAllocationType" minOccurs="0" maxOccurs="unbounded"/> -->
+		</xsd:sequence>
+	</xsd:complexType>
+
 </xsd:schema>
