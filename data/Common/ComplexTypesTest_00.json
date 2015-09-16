@@ -1,0 +1,57 @@
+{
+   "Address" : {
+      "type" : "home",
+      "line" : [ "1 First Street" ],
+      "city" : "Hometown",
+      "countryCode" : "US",
+      "postalCode" : "02134"
+   },
+   "BaseNoun" : {
+      "documentId" : {
+         "value" : "testIdentifierTypeValue"
+      }
+   },
+   "CommunicationItem" : {
+      "name" : "HOME",
+      "useCode" : {
+         "name" : "phone",
+         "value" : "888-555-0123"
+      },
+      "preference" : 1
+   },
+   "Communication" : {
+      "type" : "type??",
+      "address" : [ {
+         "type" : "home",
+         "line" : [ "1 First Street" ],
+         "city" : "Hometown",
+         "countryCode" : "US",
+         "postalCode" : "02134"
+      } ]
+   },
+   "Email" : {
+      "address" : "sample@example.com"
+   },
+   "Phone" : {
+      "formattedNumber" : "888-555-1221"
+   },
+   "Web" : {
+      "url" : "http://website.com"
+   },
+   "PersonName" : {
+      "formatted" : "The Formatted Name, III",
+      "legal" : "Name",
+      "given" : "TheGivenName",
+      "preferred" : "Al",
+      "middle" : "Albert",
+      "family" : "Family",
+      "formerFamily" : "Formatted",
+      "preferredSalutationCode" : {
+         "value" : "Your Highness"
+      },
+      "generationAffixCode" : {
+         "value" : "III"
+      },
+      "initials" : "TFN"
+   }
+}
