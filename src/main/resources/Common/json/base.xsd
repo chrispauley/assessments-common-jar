@@ -168,6 +168,7 @@
 		YearType YearMonthType DateTimePeriodType DatePeriodType YearMonthPeriodType 
 		YearPeriodType FormattedDateTimeType PeriodType EntityType Localization EffectiveTimePeriod -->
 
+	
 	<xsd:complexType name="DateTimePeriodType">
 		<xsd:attribute name="start" type="DateTimeType" use="required"></xsd:attribute>
 		<xsd:attribute name="end" type="DateTimeType" use="required"></xsd:attribute>
@@ -188,6 +189,7 @@
 		<xsd:attribute name="end" type="YearType" use="required"></xsd:attribute>
 	</xsd:complexType>
 	
+	<xsd:element name="FormattedDateTime" type="FormattedDateTimeType"></xsd:element>
 	<xsd:simpleType name="FormattedDateTimeType">
 		<xsd:annotation>
 			<xsd:documentation>This is formatted representation of a date, which

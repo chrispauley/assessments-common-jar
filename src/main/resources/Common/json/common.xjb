@@ -5,7 +5,7 @@
 
     <!-- Raise theEnumMemberSizeCap limit -->
     <jxb:bindings >
-       <jxb:globalBindings typesafeEnumMaxMembers="300"/>
+       <jxb:globalBindings typesafeEnumMaxMembers="300" generateElementClass="true"/>
    </jxb:bindings>
  
    <!-- <jxb:bindings schemaLocation="language.xsd">
