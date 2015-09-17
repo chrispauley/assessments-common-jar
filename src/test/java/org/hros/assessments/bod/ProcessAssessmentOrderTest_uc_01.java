@@ -1,14 +1,18 @@
 package org.hros.assessments.bod;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.math.BigInteger;
 
-import org.hros.assessments.model.ApplicationAreaType;
+import javax.xml.bind.JAXBException;
+
+import org.hros.assessments.model.AssessmentCatalogType;
 import org.hros.assessments.model.AssessmentOrderType;
 import org.hros.assessments.model.AssessmentSubjectType;
-import org.hros.assessments.model.DataAreaType;
 import org.hros.assessments.model.IdentifierType;
 import org.hros.assessments.model.PartyType;
-import org.hros.assessments.model.ProcessAssessmentOrder;
+import org.hros.common.model.Serializer;
 
 import junit.framework.TestCase;
 
@@ -17,19 +21,30 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 	public ProcessAssessmentOrderTest_uc_01(String name) {
 		super(name);
 	}
-	private ProcessAssessmentOrder createAssessmentOrderType() {
-		ProcessAssessmentOrder pao = new ProcessAssessmentOrder();
-		pao.setLanguageCode("en-US");
-		pao.setReleaseID("4.0");
-		pao.setSystemEnvironmentCode("dev");
-		
-		ApplicationAreaType aat = new ApplicationAreaType();		
-		aat.setBODID("bodId");
-		pao.setApplicationArea(aat);
-		 
-		// 
-		DataAreaType da = new DataAreaType();
-		pao.setDataArea(da);
+	
+	public void testAssessmentOrder() {
+		try {
+			AssessmentOrderType ac = this.createAssessmentOrderType();
+			
+
+			Serializer.marshalJSON(ac, System.out);
+			String filename = "./data/Assessments/" + ProcessAssessmentOrderTest_uc_01.class.getSimpleName() + ".json";
+			File file = new File(filename);
+			FileOutputStream fos = new FileOutputStream(file);
+			Serializer.marshalJSON(ac, fos);
+			fos.close();
+			
+			String filename2 = "./data/Assessments/" + ProcessAssessmentOrderTest_uc_01.class.getSimpleName() + ".xml";
+			File file2 = new File(filename2);
+			FileOutputStream fos2 = new FileOutputStream(file2);
+			Serializer.marshal(ac, fos2);
+			fos.close();
+		} catch (JAXBException | IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private AssessmentOrderType createAssessmentOrderType() {
 		
 		AssessmentOrderType ao = new AssessmentOrderType();
 		
@@ -49,13 +64,11 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 		ao.getComparisonGroupID().add(this.createIdentifierType("new_hire"));
 		
 		ao.setAssessmentRequesterName("Chris Pauley");
-		ao.setRedirectURL("http://hropen.org");
+		//ao.setRedirectURL("http://hropen.org");
 		
 		ao.setAssessmentSubject(this.createAssessmentSubject());
-		da.setAssessmentOrder(ao);
 		
-		
-		return pao;
+		return ao;
 	}
 	
 	private AssessmentSubjectType createAssessmentSubject(){
@@ -75,48 +88,5 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 		it.setValue(value);
 		return it;
 	}
-
-
-    public void testProcessAssessmentOrderType_Save()
-    {
-    	ProcessAssessmentOrder pao = this.createAssessmentOrderType();
-    	ProcessAssessmentOrderHelper.writeProcessOrderTypeXML(pao, "test01.xml");
-    	System.out.println("\n====JSON====");
-    	ProcessAssessmentOrderHelper.writeProcessOrderTypeJSON(pao, "test01.json");
-        assertTrue(true);
-    }
-	
-    public void testShowXML()
-    {
-    	ProcessAssessmentOrder pao = this.createAssessmentOrderType();
-    	ProcessAssessmentOrderHelper.showProcessAssessmentOrderTypeXML(pao);
-        assertTrue(true);
-    }
-	
-
-    public void testShowJSON()
-    {
-    	ProcessAssessmentOrder pao = this.createAssessmentOrderType();
-    	ProcessAssessmentOrderHelper.showProcessAssessmentOrderTypeJSON(pao);
-        assertTrue(true);
-    } 
-    
-    public void testReadXML()
-    {
-    	ProcessAssessmentOrderHelper helper = new ProcessAssessmentOrderHelper();
-    	String filename = "test01.xml";
-    	ProcessAssessmentOrder pao = helper.readProcessAssessmentOrderXML(filename);
-    	ProcessAssessmentOrderHelper.showProcessAssessmentOrderTypeXML(pao);
-        assertTrue(true);
-    }
-    
-    public void testReadJSON()
-    {
-    	ProcessAssessmentOrderHelper helper = new ProcessAssessmentOrderHelper();
-    	String filename = "test01.json";
-    	ProcessAssessmentOrder pao = helper.readProcessAssessmentOrderJSON(filename);
-    	ProcessAssessmentOrderHelper.showProcessAssessmentOrderTypeJSON(pao);
-        assertTrue(true);
-    }
     
 }

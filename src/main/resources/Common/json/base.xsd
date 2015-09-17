@@ -103,7 +103,7 @@
 	<xsd:complexType name="MeasureTextType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:string">
-				<xsd:attribute name="property" type="xsd:string"></xsd:attribute>
+				<xsd:attribute name="unitCode" type="xsd:string"></xsd:attribute>
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>

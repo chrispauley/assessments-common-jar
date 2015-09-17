@@ -58,7 +58,7 @@
          "ProctoredAssessmentIndicator" : false,
          "TimeEnforcedIndicator" : true,
          "TestDuration" : {
-            "property" : "minutes",
+            "unitCode" : "minutes",
             "value" : "10"
          },
          "AssessmentDeliveryCode" : [ {
@@ -115,7 +115,7 @@
          "ProctoredAssessmentIndicator" : false,
          "TimeEnforcedIndicator" : true,
          "TestDuration" : {
-            "property" : "minutes",
+            "unitCode" : "minutes",
             "value" : "10"
          },
          "AssessmentDeliveryCode" : [ {
@@ -171,7 +171,7 @@
          "ProctoredAssessmentIndicator" : false,
          "TimeEnforcedIndicator" : true,
          "TestDuration" : {
-            "property" : "minutes",
+            "unitCode" : "minutes",
             "value" : "10"
          },
          "AssessmentDeliveryCode" : [ {

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SupplierParty>
+   <PartyTaxID>Healthcare SKA Assessments, Inc.</PartyTaxID>
+</SupplierParty><AssessmentPackage>
+   <ID>package_001</ID>
+   <Name>Healthcare Record Keeping Assessment</Name>
+   <Description>skills</Description>
+   <PackageCost>15.00 US</PackageCost>
+   <AssessmentApplicability>
+      <AssessedCompetency>
+         <CompetencyName>Record Keeping</CompetencyName>
+      </AssessedCompetency>
+   </AssessmentApplicability>
+   <AssessmentAdministration>
+      <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+      <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+      <TestDuration unitCode="minutes">5</TestDuration>
+      <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+   </AssessmentAdministration>
+   <AssessmentFulfillment>
+      <Description>A URL will be sent to the AssesmentRequestor upon order.</Description>
+      <ReportLanguageCode>en-US</ReportLanguageCode>
+   </AssessmentFulfillment>
+</AssessmentPackage><AssessmentPackage>
+   <ID>package_002</ID>
+   <Name>Healthcare Scheduling Assessment</Name>
+   <Description>skills</Description>
+   <PackageCost>45.00 US</PackageCost>
+   <AssessmentApplicability>
+      <AssessedCompetency>
+         <CompetencyName>Scheduling</CompetencyName>
+      </AssessedCompetency>
+   </AssessmentApplicability>
+   <AssessmentAdministration>
+      <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+      <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+      <TestDuration unitCode="minutes">15</TestDuration>
+      <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+   </AssessmentAdministration>
+   <AssessmentFulfillment>
+      <Description>A URL will be sent to the AssesmentRequestor upon order.</Description>
+      <ScoreProfileName>Online Test Profile</ScoreProfileName>
+      <ReportLanguageCode>en-US</ReportLanguageCode>
+   </AssessmentFulfillment>
+</AssessmentPackage>

@@ -158,7 +158,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		a.setProctoredAssessmentIndicator(Boolean.FALSE);
 		a.setTimeEnforcedIndicator(Boolean.TRUE);
 		MeasureTextType mt = new MeasureTextType();
-		mt.setProperty("minutes");
+		mt.setUnitCode("minutes");
 		mt.setValue("10");
 		a.setTestDuration(mt);
 		AssessmentDeliveryCodeType adc = new AssessmentDeliveryCodeType();
@@ -178,7 +178,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		a.setProctoredAssessmentIndicator(Boolean.FALSE);
 		a.setTimeEnforcedIndicator(Boolean.TRUE);
 		MeasureTextType mt = new MeasureTextType();
-		mt.setProperty("minutes");
+		mt.setUnitCode("minutes");
 		mt.setValue("10");
 		a.setTestDuration(mt);
 		AssessmentDeliveryCodeType adc = new AssessmentDeliveryCodeType();

@@ -40,7 +40,7 @@
       <Description>This is a time enforced assessment</Description>
       <ProctoredAssessmentIndicator>false</ProctoredAssessmentIndicator>
       <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-      <TestDuration property="minutes">10</TestDuration>
+      <TestDuration unitCode="minutes">10</TestDuration>
       <AssessmentDeliveryCode schedulingRequiredIndicator="false">online</AssessmentDeliveryCode>
       <AssessmentDeliveryCode schedulingRequiredIndicator="true">fax</AssessmentDeliveryCode>
    </AssessmentAdministration>
@@ -80,7 +80,7 @@
       <Description>This is a time enforced assessment</Description>
       <ProctoredAssessmentIndicator>false</ProctoredAssessmentIndicator>
       <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-      <TestDuration property="minutes">10</TestDuration>
+      <TestDuration unitCode="minutes">10</TestDuration>
       <AssessmentDeliveryCode schedulingRequiredIndicator="false">online</AssessmentDeliveryCode>
       <AssessmentDeliveryCode schedulingRequiredIndicator="true">fax</AssessmentDeliveryCode>
    </AssessmentAdministration>
@@ -121,7 +121,7 @@
    <AssessmentAdministration>
       <ProctoredAssessmentIndicator>false</ProctoredAssessmentIndicator>
       <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-      <TestDuration property="minutes">10</TestDuration>
+      <TestDuration unitCode="minutes">10</TestDuration>
       <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
       <AssessmentDeliveryCode schedulingRequiredIndicator="true">fax</AssessmentDeliveryCode>
    </AssessmentAdministration>

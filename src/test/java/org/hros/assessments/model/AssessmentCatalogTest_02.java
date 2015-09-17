@@ -47,7 +47,7 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		af.getDescription().add("Description of Fulfillment");
 		
 		MeasureTextType mt = new MeasureTextType();
-		mt.setProperty("prop 1");
+		mt.setUnitCode("prop 1");
 		mt.setValue("value of mt");
 		af.getEffectivePeriodDescription().add(mt);
 		
@@ -68,7 +68,7 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		a.setProctoredAssessmentIndicator(Boolean.TRUE);
 		a.setTimeEnforcedIndicator(Boolean.TRUE);
 		MeasureTextType mt = new MeasureTextType();
-		mt.setProperty("prop 1");
+		mt.setUnitCode("prop 1");
 		mt.setValue("value of mt");
 		a.setTestDuration(mt);
 		a.getAssessmentDeliveryCode().add(new AssessmentDeliveryCodeType());

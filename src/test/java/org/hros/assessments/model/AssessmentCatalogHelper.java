@@ -51,19 +51,19 @@ public class AssessmentCatalogHelper {
 			e.printStackTrace();
 		}
 	}
-	public static void showJSON2(AssessmentCatalog ac) {
-		JAXBContext context;
-		try {
-			context = JAXBContext.newInstance(AssessmentCatalogType.class);
-			Marshaller m = context.createMarshaller();
-			m.setProperty(MarshallerProperties.MEDIA_TYPE, "application/json");
-//			m.setProperty("eclipslink.json.include-root", true);
-			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			m.marshal(ac, System.out);
-		} catch (JAXBException e) {
-			e.printStackTrace();
-		}
-	}
+//	public static void showJSON2(AssessmentCatalog ac) {
+//		JAXBContext context;
+//		try {
+//			context = JAXBContext.newInstance(AssessmentCatalogType.class);
+//			Marshaller m = context.createMarshaller();
+//			m.setProperty(MarshallerProperties.MEDIA_TYPE, "application/json");
+////			m.setProperty("eclipslink.json.include-root", true);
+//			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+//			m.marshal(ac, System.out);
+//		} catch (JAXBException e) {
+//			e.printStackTrace();
+//		}
+//	}
 	public static void showJSON(AssessmentCatalogType ac) {
 		JAXBContext context;
 		try {

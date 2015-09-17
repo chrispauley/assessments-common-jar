@@ -49,7 +49,7 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 		a.setProctoredAssessmentIndicator(Boolean.TRUE);
 		a.setTimeEnforcedIndicator(Boolean.TRUE);
 		MeasureTextType mt = new MeasureTextType();
-		mt.setProperty("minutes");
+		mt.setUnitCode("minutes");
 		mt.setValue("5");
 		a.setTestDuration(mt);
 		AssessmentDeliveryCodeType adc = new AssessmentDeliveryCodeType();
