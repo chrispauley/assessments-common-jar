@@ -158,10 +158,10 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 
 	private PartyType createPartyType(String partyName, String value) {
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
+		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-		pt.setPartyTaxID(id);
+		pt.setTaxID(id);
 		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}

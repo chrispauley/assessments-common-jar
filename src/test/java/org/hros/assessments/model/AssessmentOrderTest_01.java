@@ -77,64 +77,67 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private PartyType createRequestorParty(String partyName, String string2) {
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
-		pt.getPartyReportingIDs().add(createIdentifier("partyReportingID"));
-		pt.getCommunication().add(createRequestorPartyCommunication());
-		pt.getCommunication().add(this.createCommunicationABIE_MobilePhone());
+		pt.setName(partyName);
+		//pt.getPartyReportingIDs().add(createIdentifier("partyReportingID"));
+		pt.getCommunications().add(createRequestorPartyCommunication());
+		pt.getCommunications().add(this.createCommunication_MobilePhone());
 		return pt;
 	}
 
-	private CommunicationABIEType createRequestorPartyCommunication() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setUseCode(UseCodeType.BUSINESS);
-		com.setDialNumber("+01 (215)-555-0123");
+	private CommunicationType createRequestorPartyCommunication() {
+		CommunicationType com = new CommunicationType();
+		com.setType("business");
+		com.getPhone().add(createPhoneType("+01 (215)-555-0123"));
 		return com;
+	}
+
+	private PhoneType createPhoneType(String phone) {
+		PhoneType pt = new PhoneType();
+		pt.setFormattedNumber(phone);
+		return pt;
 	}
 
 	private PartyType createSupplierParty(String contactName, String salutation, String partyName) {
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
-		pt.getPersonContact().add(createSupplierContact(contactName, salutation));
-		pt.getPartyReportingIDs().add(createIdentifier("partyReportingID"));
-		pt.getCommunication().add(createSupplierPartyCommunication());
+		pt.setName(partyName);
+		pt.getPersonContacts().add(createSupplierContact(contactName));
+//		pt.getPartyReportingIDs().add(createIdentifier("partyReportingID"));
+		pt.getCommunications().add(createSupplierPartyCommunication());
 		return pt;
 	}
 
-	private PersonContactType createSupplierContact(String contactName, String salutation) {
+	private PersonContactType createSupplierContact(String contactName) {
 		PersonContactType pc = new PersonContactType();
-		pc.setPersonName(createPersonName(contactName, salutation));
+		pc.setName(createPersonName(contactName));
 		return pc;
 	}
 
-	private PersonNameType createPersonName(String fullname, String salutation) {
+	private PersonNameType createPersonName(String fullname) {
 		PersonNameType pn = new PersonNameType();
-		pn.setFormattedName(fullname);
-		pn.setPreferredSalutationCode(salutation);
+		pn.setFormatted(fullname);
 		return pn;
 	}
 
-	private CommunicationABIEType createSupplierPartyCommunication() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setSequence(BigInteger.valueOf(1));
-		com.setUseCode(UseCodeType.BUSINESS);
-		com.setDialNumber("+01 (800)-555-9876");
+	private CommunicationType createSupplierPartyCommunication() {
+		CommunicationType com = new CommunicationType();
+		com.setType("business");
+		com.getPhone().add(createPhoneType("+01 (800)-555-9876"));
 		return com;
 	}
 
 	private PartyType createCustomerParty(String string, String partyName) {
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
-		pt.getPartyReportingIDs().add(createIdentifier("partyReportingID"));
-		pt.getCommunication().add(createCustomerPartyCommunication());
-		pt.getCommunication().add(this.createCommunicationABIE_MobilePhone());
+		pt.setName(partyName);
+//		pt.getPartyReportingIDs().add(createIdentifier("partyReportingID"));
+		pt.getCommunications().add(this.createSupplierPartyCommunication());
+		pt.getCommunications().add(this.createCommunication_WorkPhone());
 		return pt;
 	}
 
-	private CommunicationABIEType createCustomerPartyCommunication() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setSequence(BigInteger.valueOf(1));
-		com.setUseCode(UseCodeType.PERSONAL);
-		com.setDialNumber("+01 (215)-555-0123");
+	private CommunicationType createCustomerPartyCommunication() {
+		CommunicationType com = new CommunicationType();
+		com.setType("personal");
+		com.getPhone().add(this.createPhoneType("+01 (609)-555-0123"));
 		return com;
 	}
 
@@ -143,35 +146,22 @@ public class AssessmentOrderTest_01 extends TestCase {
 		as.setPersonName("Chris Pauley");
 		as.setSubjectID(createIdentifier("candidate_001"));
 		as.getPersonLegalID().add(this.createIdentifier("legal_id"));
-		as.getCommunication().add(createCommunicationABIE_HomePhone());
-		as.getCommunication().add(
-				createCommunicationABIE_WorkPhone("(800)555-1234"));
-		as.getCommunication().add(createCommunicationABIE_MobilePhone());
-		as.getCommunication().add(createCommunicationABIE_IM_Address());
-		as.getCommunication().add(createCommunicationABIE_Work_Address());
+		as.getCommunication().add(createCommunication_HomePhone());
 		return as;
 	}
 
-	private CommunicationABIEType createCommunicationABIE_Work_Address() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setAddress(createWorkAddress());
-		com.setSequence(BigInteger.valueOf(5));
-		return com;
-	}
 
-	private AddressBaseType createWorkAddress() {
-		AddressBaseType ab = new AddressBaseType();
+	private AddressType createWorkAddress() {
+		AddressType ab = new AddressType();
 		// ab.getAddressLine().add(createSequencedTextType(1, "Line 1"));
 		// ab.getAddressLine().add(createSequencedTextType(2, "Line 2"));
 		// ab.getAddressLine().add(createSequencedTextType(3, "Line 3"));
-		ab.setLineOne("This is Line One");
-		ab.setLineTwo("Line two");
-		ab.setBuildingName("Blg 1");
-		ab.setCityName("Philadelphia");
+		ab.setType("work");
+		ab.getLine().add("The Working Co.");
+		ab.getLine().add("12 Broad Street");
+		ab.setCity("Philadelphia");
 		ab.setCountryCode("US");
 		ab.setPostalCode("19020-2222");
-		ab.setStreetName("Broad Street");
-		ab.setType("Delivery Address");
 		return ab;
 	}
 
@@ -182,40 +172,31 @@ public class AssessmentOrderTest_01 extends TestCase {
 		return st;
 	}
 
-	private CommunicationABIEType createCommunicationABIE_IM_Address() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.INSTANT_MESSAGE);
-		com.setAccess("chris.candidate");
-		com.setUseCode(UseCodeType.PERSONAL);
-		com.setSequence(BigInteger.valueOf(4));
+	private CommunicationType createCommunication_IM_Address() {
+		CommunicationType com = new CommunicationType();
+		com.setType("instant message");
+		com.getPhone().add(this.createPhoneType("888-555-2121"));
 		return com;
 	}
 
-	private CommunicationABIEType createCommunicationABIE_HomePhone() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
-		com.setDialNumber("(215)555-1234");
-		com.setUseCode(UseCodeType.PERSONAL);
-		// com.setSequence(BigInteger.valueOf(1));
+	private CommunicationType createCommunication_HomePhone() {
+		CommunicationType com = new CommunicationType();
+		com.setType("home");
+		com.getPhone().add(this.createPhoneType("908-555-2121"));
 		return com;
 	}
 
-	private CommunicationABIEType createCommunicationABIE_WorkPhone(
-			String dialNumber) {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
-		com.setDialNumber(dialNumber);
-		com.setUseCode(UseCodeType.BUSINESS);
-		// com.setSequence(BigInteger.valueOf(2));
+	private CommunicationType createCommunication_WorkPhone() {
+		CommunicationType com = new CommunicationType();
+		com.setType("work");
+		com.getPhone().add(this.createPhoneType("888-555-2121"));
 		return com;
 	}
 
-	private CommunicationABIEType createCommunicationABIE_MobilePhone() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.MOBILE_TELEPHONE);
-		com.setDialNumber("(215)555-5678");
-		com.setUseCode(UseCodeType.PERSONAL);
-		// com.setSequence(BigInteger.valueOf(3));
+	private CommunicationType createCommunication_MobilePhone() {
+		CommunicationType com = new CommunicationType();
+		com.setType("mobile");
+		com.getPhone().add(this.createPhoneType("555-9191"));
 		return com;
 	}
 

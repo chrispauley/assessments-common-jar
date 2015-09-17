@@ -1,0 +1,30 @@
+{
+   "AssessmentReport" : {
+      "documentID" : "doc_01",
+      "alternateDocumentID" : [ "Step_03_ShowAssessmentReportStatus_7", "AssessmentsWorkGroup_StepByStepTest_01" ],
+      "SupplierParty" : {
+         "name" : "Healthcare SKA Assessments, Inc."
+      },
+      "AssessmentSubject" : {
+         "PersonName" : "John Smith"
+      },
+      "AssessmentResult" : {
+         "PackageID" : "packageId_01",
+         "AssessmentOverallResult" : {
+            "PassedIndicator" : true,
+            "AssessedCompetency" : {
+               "CompetencyName" : "Record Keeping"
+            },
+            "Score" : {
+               "ScoreNumeric" : [ {
+                  "scoreNumericCode" : 100
+               } ]
+            }
+         },
+         "AssessmentStatus" : {
+            "AssessmentStatusCode" : "OrderComplete",
+            "Description" : [ "All done. Here are the results." ]
+         }
+      }
+   }
+}

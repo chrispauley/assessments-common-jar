@@ -5,12 +5,34 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xsd:annotation>
 		<xsd:documentation> 
        Name: CodeLists.xsd 
-       Status:  3.3 Release
-       Date this version: 2013-Sep-27 
+       Status:  4.0 
+       Date this version: 2015-09-17
        </xsd:documentation>
 	</xsd:annotation>
 	
-
+	<xsd:simpleType name="AssessmentStatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation>
+       A set of codes indicating the status of an assessment
+       The name of the assessment status. 
+       </xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="OrderAcknowledged"/>
+			<xsd:enumeration value="TestPendingScheduling"/>
+			<xsd:enumeration value="TestScheduled"/>
+			<xsd:enumeration value="CompletedTestPendingScoring"/>
+			<xsd:enumeration value="ScoredTestPendingReview"/>
+			<xsd:enumeration value="SubjectDeclinedTest"/>
+			<xsd:enumeration value="OrderComplete"/>
+			<xsd:enumeration value="OrderInProgress"/>
+			<xsd:enumeration value="OrderCancelled"/>
+			<xsd:enumeration value="OrderExpired"/>
+			<xsd:enumeration value="OrderReviewRequired"/>
+			<xsd:enumeration value="Deferred"/>
+			<xsd:enumeration value="Error"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	
 	<xsd:element name="UseCode" type="UseCodeType" />
 
@@ -51,7 +73,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>	
-	
+	<!-- 
 	<xsd:simpleType name="LanguageCodeEnumType">
 		<xsd:annotation>
 			<xsd:documentation>This list is based on Internet Engineering Task
@@ -309,7 +331,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 			<xsd:enumeration value="zh" />
 			<xsd:enumeration value="zu" />
 		</xsd:restriction>
-	</xsd:simpleType>	
+	</xsd:simpleType>	 -->
 	
 	
 			<xsd:simpleType name="CountryCodeEnumType">

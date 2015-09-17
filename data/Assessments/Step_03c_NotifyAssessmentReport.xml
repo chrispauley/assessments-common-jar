@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentReport>
+   <documentID>doc_01</documentID>
+   <alternateDocumentID>Step_03c_NotifyAssessmentReport</alternateDocumentID>
+   <alternateDocumentID>AssessmentsWorkGroup_StepByStepTest_01</alternateDocumentID>
+   <SupplierParty>
+      <name>Healthcare SKA Assessments, Inc.</name>
+   </SupplierParty>
+   <AssessmentSubject>
+      <SubjectID schemeName="CandidateId">candidateId:20150917_22</SubjectID>
+      <PersonName>John Smith</PersonName>
+      <Communication type="cell">
+         <phone>
+            <formattedNumber>(908)555-0984</formattedNumber>
+         </phone>
+      </Communication>
+      <Communication type="email">
+         <email>
+            <address>smithj@yahoo.com</address>
+         </email>
+      </Communication>
+   </AssessmentSubject>
+   <AssessmentResult>
+      <PackageID>packageId_01</PackageID>
+      <AssessmentStatus>
+         <AssessmentStatusCode>OrderComplete</AssessmentStatusCode>
+         <Description>Assessment is completed. You may view the report.</Description>
+      </AssessmentStatus>
+   </AssessmentResult>
+</AssessmentReport>

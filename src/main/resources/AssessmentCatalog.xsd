@@ -2,20 +2,21 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<xsd:include schemaLocation="Components.xsd" />
 	<xsd:include schemaLocation="Fields.xsd" />
-<!-- 	<xsd:include schemaLocation="ProcessAssessmentOrder.xsd" /> -->
+	<xsd:include schemaLocation="./Common/json/complex.xsd" />
+	
 <!-- 	<xsd:element name="AssessmentCatalog" type="AssessmentCatalogType" /> -->
 	<xsd:complexType name="AssessmentCatalogType">
 		<xsd:sequence>
-			<xsd:element name="DocumentID" type="xsd:string" />
-			<xsd:element name="AlternateDocumentID" type="xsd:string"
+			<xsd:element name="documentID" type="xsd:string" />
+			<xsd:element name="alternateDocumentID" type="xsd:string"
 				maxOccurs="unbounded" />
-			<xsd:element name="DocumentSequence" type="xsd:integer" />
+			<xsd:element name="documentSequence" type="xsd:integer" />
 			<xsd:element name="CustomerParty" type="PartyType" />
 			<xsd:element name="SupplierParty" type="PartyType" />
 			<xsd:element name="RequesterParty" type="PartyType" />
 			<xsd:element name="AssessmentPackage" type="AssessmentPackageType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 		<xsd:attribute name="majorVersionID" type="xsd:string" use="optional" />
@@ -25,7 +26,7 @@
 		<xsd:attribute name="languageCode" type="xsd:string" use="optional" default="en" />
 	</xsd:complexType>
  
-	<xsd:element name="AssessmentPackage" type="AssessmentPackageType" />
+<!-- 	<xsd:element name="assessmentPackage" type="AssessmentPackageType" /> -->
 	<xsd:complexType name="AssessmentPackageType">
 		<xsd:complexContent>
 			<xsd:extension base="PackageBaseType">

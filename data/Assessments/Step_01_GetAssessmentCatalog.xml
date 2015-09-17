@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentCatalog>
+   <alternateDocumentID>AssessmentsWorkGroup_StepByStepTest_01</alternateDocumentID>
+   <alternateDocumentID>Step_01_GetAssessmentCatalog</alternateDocumentID>
+   <AssessmentPackage>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <CompetencyName>Record Keeping</CompetencyName>
+         </AssessedCompetency>
+         <AssessedCompetency>
+            <CompetencyName>Scheduling</CompetencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+   </AssessmentPackage>
+</AssessmentCatalog>

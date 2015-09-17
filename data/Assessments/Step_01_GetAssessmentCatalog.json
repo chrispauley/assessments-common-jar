@@ -1,0 +1,14 @@
+{
+   "AssessmentCatalog" : {
+      "alternateDocumentID" : [ "AssessmentsWorkGroup_StepByStepTest_01", "Step_01_GetAssessmentCatalog" ],
+      "AssessmentPackage" : [ {
+         "AssessmentApplicability" : {
+            "AssessedCompetency" : [ {
+               "CompetencyName" : "Record Keeping"
+            }, {
+               "CompetencyName" : "Scheduling"
+            } ]
+         }
+      } ]
+   }
+}

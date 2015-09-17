@@ -2,159 +2,8 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<xsd:include schemaLocation="CodeLists.xsd" />
 	<xsd:include schemaLocation="Fields.xsd" />
-
-<!-- This is in common -->
-	<xsd:complexType name="CommunicationABIEType">
-		<xsd:sequence>
-			<xsd:element name="ChannelCode" type="ChannelCodeEnumType"
-				minOccurs="0" />
-			<xsd:element name="UseCode" type="UseCodeType" minOccurs="0" />
-			<xsd:choice>
-				<xsd:sequence>
-					<xsd:element name="CountryDialing" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="AreaDialing" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="DialNumber" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="Extension" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="Access" type="xsd:string" minOccurs="0" />
-				</xsd:sequence>
-				<xsd:element name="Address" type="AddressBaseType"
-					minOccurs="0" />
-				<xsd:sequence>
-					<xsd:element name="URI" type="URIType" minOccurs="0" />
-					<xsd:element name="HTMLPreferredIndicator" type="IndicatorType"
-						minOccurs="0" />
-				</xsd:sequence>
-				<xsd:element name="Text" type="xsd:string" minOccurs="0"
-					maxOccurs="unbounded" />
-			</xsd:choice>
-			<xsd:element name="UserArea" type="UserAreaType"
-				minOccurs="0" />
-		</xsd:sequence>
-		<xsd:attribute name="sequence" type="xsd:positiveInteger" />
-		<xsd:attribute name="preferredIndicator" type="IndicatorType" />
-		<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup"/> -->
-	</xsd:complexType>
-
-	<xsd:complexType name="PersonContactType">
-		<xsd:sequence>
-			<xsd:element name="PersonID" type="IdentifierType"
-				minOccurs="0" />
-			<xsd:element name="PersonName" type="PersonNameType"
-				minOccurs="0" />
-			<!-- <xsd:element ref="RoleName" minOccurs="0" maxOccurs="unbounded"/> -->
-			<xsd:element name="Communication" type="CommunicationABIEType"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="UserArea" type="UserAreaType"
-				minOccurs="0" />
-		</xsd:sequence>
-		<xsd:attribute name="contactTypeCode" type="xsd:string" />
-	</xsd:complexType>
-
-	<xsd:element name="PersonName" type="PersonNameType">
-		<xsd:annotation>
-			<xsd:documentation>
-				Person Name. Details. A component for capturing
-				summary or fine-grain data
-				comprising a person's name.
-			</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="PersonNameBaseType">
-		<xsd:sequence>
-			<xsd:element name="FormattedName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="LegalName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="GivenName" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PreferredName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="MiddleName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="FamilyName" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="FormerFamilyName" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="PreferredSalutationCode" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="GenerationAffixCode" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="QualificationAffixCode" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="TitleAffixCode" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PersonNameInitials" type="xsd:string"
-				minOccurs="0" />
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="PersonNameType">
-		<xsd:annotation>
-			<xsd:documentation>
-
-				Various uses and options are supported.
-
-				The person
-				name model is intended to be useful across many cultural
-				contexts.
-				The ordering and presentation of given names and family
-				names may
-				vary by
-				cultural custom.
-
-				A person name can be represented as a
-				formatted string "Mr. John L
-				Smith III, Phd" or
-				represented as
-				discretely fielded data or both.
-
-				An option to present a name in an
-				alternative "alphabet" or script is
-				supported. For
-				example the same
-				name might be presented using Roman,
-				Kanji, Arabic, or
-				other character
-				sets. Note the term "script" versus
-				"character set" is used so as not
-				to confuse this issue with concepts such as "character encoding".
-
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-			<xsd:extension base="PersonNameBaseType">
-				<xsd:sequence>
-					<xsd:element name="AlternateScriptPersonName"
-						minOccurs="0" maxOccurs="unbounded" />
-					<xsd:element name="UserArea" minOccurs="0" />
-				</xsd:sequence>
-				<xsd:attribute name="scriptCode" type="xsd:string"
-					use="optional" />
-				<!-- <xsd:attributeGroup name="EffectiveDateAttributeGroup"/> -->
-				<!-- <xsd:attribute name="nameTypeCode" type="NameTypeCodeContentType" 
-					use="optional"/> -->
-				<!-- <xsd:attribute name="legalNameIndicator" type="oa:IndicatorType" 
-					use="optional"> -->
-				<!-- <xsd:annotation> -->
-				<!-- <xsd:documentation>Indicates whether or not the PersonName represents -->
-				<!-- a "legal" or "official" name. Note that in some business contexts, 
-					a legal name is a formatted name. For example, -->
-				<!-- the exact way that a person's name is represented within contracts 
-					and legal documents. Note that -->
-				<!-- for this second use, LegalName is optionally available within PersonName. 
-					The legalNameIndicator -->
-				<!-- is used when there is the need to distinquish the entire collection 
-					of information as -->
-				<!-- a legalName. This second use case may be less common the first, 
-					but both are supported.</xsd:documentation> -->
-				<!-- </xsd:annotation> -->
-				<!-- </xsd:attribute> -->
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
+	<xsd:include schemaLocation="./Common/json/complex.xsd" />
+	<xsd:include schemaLocation="./Common/json/codelist/language.xsd" />
 
 	<xsd:complexType name="SequencedTextType">
 		<xsd:simpleContent>
@@ -164,115 +13,6 @@
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
-
-<!-- This is in common -->
-	<!-- <xsd:element name="Address" type="AddressBaseType"/> -->
-	<xsd:complexType name="AddressBaseType">
-		<xsd:annotation>
-			<xsd:documentation>Address BaseType provides the information about
-				the address or semantic address of an associated entity.
-				Based on
-				OAGIS AddressBaseType.
-				Exception:CountryCode uses the HR country code
-				list.
-				Example values are:
-				"Residence Address" Residence Address is a
-				primary, legal address that is
-				related to a party. For a person, the
-				Home Residence Address is used
-				by an employer for payroll, taxation,
-				and benefit program
-				eligibility.
-				"Postal Address" Set of precise and
-				complete information on the basis of
-				which an item can be forwarded
-				and delivered to an addressee. An
-				address will be considered a postal
-				address only if it is explicitly
-				collected as such.
-				"Delivery Address"
-				Delivery Address is an address which is to be used to
-				physically
-				deliver the related object.
-				"Bill To" An address to which invoices
-				are sent.
-				"Accounts Receivable" An address to which payments are set.
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element name="ID" type="xsd:string" minOccurs="0"
-				maxOccurs="unbounded" />
-			<xsd:element name="FormatCode" type="xsd:normalizedString"
-				minOccurs="0" />
-			<!-- <xsd:element name="AttentionOfName" type="NameType" minOccurs="0" 
-				maxOccurs="unbounded"/> -->
-			<!-- <xsd:element name="CareOfName" type="NameType" minOccurs="0" maxOccurs="unbounded"/> -->
-			<xsd:choice>
-				<xsd:element name="AddressLine" type="SequencedTextType"
-					minOccurs="0" maxOccurs="unbounded" />
-				<xsd:sequence>
-					<xsd:element name="LineOne" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="LineTwo" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="LineThree" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="LineFour" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="LineFive" type="xsd:string"
-						minOccurs="0" />
-				</xsd:sequence>
-				<xsd:sequence>
-					<xsd:element name="BuildingNumber" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="BuildingName" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="StreetName" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="Unit" type="xsd:string" minOccurs="0" />
-					<xsd:element name="Floor" type="xsd:string" minOccurs="0" />
-					<xsd:element name="PostOfficeBox" type="xsd:string"
-						minOccurs="0" />
-					<xsd:element name="DeliveryPointCode" type="xsd:string"
-						minOccurs="0" maxOccurs="unbounded" />
-				</xsd:sequence>
-			</xsd:choice>
-			<xsd:element name="CitySubDivisionName" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="CityName" type="xsd:string" minOccurs="0" />
-			<xsd:element name="CountrySubDivisionCode" type="xsd:string"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="CountryCode" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="PostalCode" type="xsd:string"
-				minOccurs="0" />
-			<xsd:element name="Status" type="xsd:string" minOccurs="0" />
-			<xsd:element name="Preference" type="xsd:string"
-				minOccurs="0" />
-		</xsd:sequence>
-		<!-- <xsd:attribute name="languageCode" type="LanguageCodeContentType" 
-			use="optional"/> -->
-		<xsd:attribute name="type" type="xsd:normalizedString" />
-	</xsd:complexType>
-	<!-- <xsd:complexType name="AddressType"> -->
-	<!-- <xsd:complexContent> -->
-	<!-- <xsd:extension base="AddressBaseType"> -->
-	<!-- <xsd:sequence> -->
-	<!-- <xsd:element ref="UserArea" minOccurs="0"/> -->
-	<!-- </xsd:sequence> -->
-	<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup"/> -->
-	<!-- <xsd:attribute name="currentAddressIndicator" type="oa:IndicatorType"/> -->
-	<!-- </xsd:extension> -->
-	<!-- </xsd:complexContent> -->
-	<!-- </xsd:complexType> -->
-
-	<!-- <xsd:group name="DocumentIDGroup"> -->
-	<!-- <xsd:sequence> -->
-	<!-- <xsd:element name="DocumentID" type="IdentifierType" /> -->
-	<!-- <xsd:element name="AlternateDocumentID" minOccurs="0" -->
-	<!-- maxOccurs="unbounded" /> -->
-	<!-- </xsd:sequence> -->
-	<!-- </xsd:group> -->
 
 
 	<xsd:complexType name="PackageBaseType">
@@ -444,7 +184,8 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<!-- <xsd:element ref="AssessmentStatus" minOccurs="0" /> -->
+			<xsd:element name="AssessmentStatus" type="AssessmentStatusType"
+				minOccurs="0" />
 			<!-- <xsd:element ref="AccessPoint" minOccurs="0" maxOccurs="unbounded" 
 				/> -->
 			<!-- <xsd:element ref="Attachment" minOccurs="0" maxOccurs="unbounded" 
@@ -455,6 +196,35 @@
 		<!-- <xsd:attribute name="languageCode" type="LanguageCodeContentType" 
 			/> -->
 		<!-- <xsd:attributeGroup ref="EffectiveDateAttributeGroup" /> -->
+	</xsd:complexType>
+
+	<xsd:complexType name="AssessmentStatusType">
+		<xsd:annotation>
+			<xsd:documentation>Contains information about the current
+				disposition of an order for a test or assessment.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AssessmentStatusCode" type="AssessmentStatusCodeType"
+				minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A code classifying the status of an order.
+						As used within HR-XML's Assessment specifications,
+						this is a closed list. Implementers are expected to support the
+						list without extension or restriction.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Description" minOccurs="0" type="xsd:string"
+				maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Provides additional explanation of the
+						assessment status.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="UserArea" type="UserAreaType"
+				minOccurs="0" />
+		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="AssessmentScoreType">
@@ -522,7 +292,7 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="ID" type="xsd:string" minOccurs="0" />
-			<xsd:element name="AssessmentCommunication" type="CommunicationABIEType"
+			<xsd:element name="AssessmentCommunication" type="CommunicationType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>This is the communications means an assessment
@@ -586,7 +356,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Communication" type="CommunicationABIEType"
+			<xsd:element name="Communication" type="CommunicationType"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation source="http://www.hr-xml.org"
@@ -601,7 +371,7 @@
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="NationalityCode" type="CodeType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PrimaryLanguageCode" type="LanguageCodeEnumType"
+			<xsd:element name="PrimaryLanguageCode" type="LanguageCodeList"
 				minOccurs="0" />
 			<xsd:element name="BirthDate" type="FormattedDateTimeType"
 				minOccurs="0" />
@@ -632,15 +402,7 @@
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
-	
-<!-- 	In Common/base.xsd -->
-	<xsd:complexType name="MeasureTextType">
-		<xsd:simpleContent>
-			<xsd:extension base="xsd:string">
-				<xsd:attribute name="unitCode" type="xsd:string"></xsd:attribute>
-			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
+
 
 	<xsd:element name="AssessmentFulfillment" type="AssessmentFulfillmentType" />
 	<xsd:complexType name="AssessmentFulfillmentType">
@@ -660,7 +422,7 @@
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="ScoreProfileName" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ReportLanguageCode" type="LanguageCodeEnumType"
+			<xsd:element name="ReportLanguageCode" type="LanguageCodeList"
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
@@ -810,48 +572,36 @@
 	</xsd:complexType>
 
 	<!-- This is in common -->
-	<xsd:complexType name="IdentifierType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">UNCEFACT
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:simpleContent>
-			<xsd:extension base="xsd:normalizedString">
-				<xsd:attribute name="schemeID" type="xsd:normalizedString"
-					use="optional">
-				</xsd:attribute>
-				<xsd:attribute name="schemeName" type="xsd:string"
-					use="optional">
-				</xsd:attribute>
-				<xsd:attribute name="schemeAgencyID" type="xsd:normalizedString"
-					use="optional">
-				</xsd:attribute>
-				<xsd:attribute name="schemeAgencyName" type="xsd:string"
-					use="optional">
-				</xsd:attribute>
-				<xsd:attribute name="schemeVersionID" type="xsd:normalizedString"
-					use="optional">
-				</xsd:attribute>
-				<xsd:attribute name="schemeDataURI" type="xsd:anyURI"
-					use="optional">
-				</xsd:attribute>
-				<xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional">
-				</xsd:attribute>
-			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-
-    <!-- This is in common -->
-	<xsd:simpleType name="IndicatorType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en">
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:boolean">
-			<xsd:pattern value="false" />
-			<xsd:pattern value="true" />
-		</xsd:restriction>
-	</xsd:simpleType>
+	<!-- <xsd:complexType name="IdentifierType"> -->
+	<!-- <xsd:annotation> -->
+	<!-- <xsd:documentation xml:lang="en">UNCEFACT -->
+	<!-- </xsd:documentation> -->
+	<!-- </xsd:annotation> -->
+	<!-- <xsd:simpleContent> -->
+	<!-- <xsd:extension base="xsd:normalizedString"> -->
+	<!-- <xsd:attribute name="schemeID" type="xsd:normalizedString" -->
+	<!-- use="optional"> -->
+	<!-- </xsd:attribute> -->
+	<!-- <xsd:attribute name="schemeName" type="xsd:string" -->
+	<!-- use="optional"> -->
+	<!-- </xsd:attribute> -->
+	<!-- <xsd:attribute name="schemeAgencyID" type="xsd:normalizedString" -->
+	<!-- use="optional"> -->
+	<!-- </xsd:attribute> -->
+	<!-- <xsd:attribute name="schemeAgencyName" type="xsd:string" -->
+	<!-- use="optional"> -->
+	<!-- </xsd:attribute> -->
+	<!-- <xsd:attribute name="schemeVersionID" type="xsd:normalizedString" -->
+	<!-- use="optional"> -->
+	<!-- </xsd:attribute> -->
+	<!-- <xsd:attribute name="schemeDataURI" type="xsd:anyURI" -->
+	<!-- use="optional"> -->
+	<!-- </xsd:attribute> -->
+	<!-- <xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional"> -->
+	<!-- </xsd:attribute> -->
+	<!-- </xsd:extension> -->
+	<!-- </xsd:simpleContent> -->
+	<!-- </xsd:complexType> -->
 
 	<xsd:complexType name="UserAreaType">
 		<xsd:sequence>
@@ -861,7 +611,7 @@
 	</xsd:complexType>
 
 
-	
+
 	<!-- @TODO move to common -->
 	<xsd:complexType name="LoginInformationType">
 		<xsd:annotation>
@@ -904,7 +654,7 @@
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	
+
 	<!-- @TODO move to common -->
 	<xsd:complexType name="AccessCredentialType">
 		<xsd:annotation>
@@ -988,7 +738,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AssessmentLanguageCode" type="LanguageCodeEnumType"
+			<xsd:element name="AssessmentLanguageCode" type="LanguageCodeList"
 				minOccurs="0" />
 			<xsd:element name="TestDate" type="FormattedDateTimeType"
 				minOccurs="0" maxOccurs="unbounded" />
@@ -1021,37 +771,5 @@
 				maxOccurs="unbounded" />
 		</xsd:sequence>
 	</xsd:group>
-
-<!-- This is in common -->
-	<xsd:complexType name="PartyType">
-		<xsd:complexContent>
-			<xsd:extension base="BasePartyType">
-				<xsd:sequence>
-					<xsd:element name="UserArea" type="UserAreaType"
-						minOccurs="0" />
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="BasePartyType">
-		<xsd:sequence>
-			<xsd:element name="PartyID" type="IdentifierType"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PartyLegalID" type="IdentifierType"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PartyTaxID" type="IdentifierType"
-				minOccurs="0" />
-			<xsd:element name="PartyName" type="xsd:string" />
-			<xsd:element name="PartyReportingIDs" type="IdentifierType"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="Communication" type="CommunicationABIEType"
-				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PersonContact" type="PersonContactType"
-				minOccurs="0" maxOccurs="unbounded" />
-		</xsd:sequence>
-		<!-- <xsd:attribute name="agencyRoleCode" type="AgencyRoleCodeContentType" 
-			use="optional"/> -->
-	</xsd:complexType>
-
 
 </xsd:schema>

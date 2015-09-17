@@ -1,0 +1,19 @@
+{
+   "AssessmentReport" : {
+      "documentID" : "doc_01",
+      "alternateDocumentID" : [ "Step_03_ShowAssessmentReportStatus_0", "AssessmentsWorkGroup_StepByStepTest_01" ],
+      "SupplierParty" : {
+         "name" : "Healthcare SKA Assessments, Inc."
+      },
+      "AssessmentSubject" : {
+         "PersonName" : "John Smith"
+      },
+      "AssessmentResult" : {
+         "PackageID" : "packageId_01",
+         "AssessmentStatus" : {
+            "AssessmentStatusCode" : "Error",
+            "Description" : [ "Document not found." ]
+         }
+      }
+   }
+}

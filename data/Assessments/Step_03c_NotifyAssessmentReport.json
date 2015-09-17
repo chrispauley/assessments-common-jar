@@ -1,0 +1,34 @@
+{
+   "AssessmentReport" : {
+      "documentID" : "doc_01",
+      "alternateDocumentID" : [ "Step_03c_NotifyAssessmentReport", "AssessmentsWorkGroup_StepByStepTest_01" ],
+      "SupplierParty" : {
+         "name" : "Healthcare SKA Assessments, Inc."
+      },
+      "AssessmentSubject" : {
+         "SubjectID" : {
+            "schemeName" : "CandidateId",
+            "value" : "candidateId:20150917_22"
+         },
+         "PersonName" : "John Smith",
+         "Communication" : [ {
+            "type" : "cell",
+            "phone" : [ {
+               "formattedNumber" : "(908)555-0984"
+            } ]
+         }, {
+            "type" : "email",
+            "email" : [ {
+               "address" : "smithj@yahoo.com"
+            } ]
+         } ]
+      },
+      "AssessmentResult" : {
+         "PackageID" : "packageId_01",
+         "AssessmentStatus" : {
+            "AssessmentStatusCode" : "OrderComplete",
+            "Description" : [ "Assessment is completed. You may view the report." ]
+         }
+      }
+   }
+}

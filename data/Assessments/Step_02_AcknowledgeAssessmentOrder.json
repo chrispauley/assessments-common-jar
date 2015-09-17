@@ -1,0 +1,39 @@
+{
+   "AssessmentOrder" : {
+      "documentID" : "doc_01",
+      "alternateDocumentID" : [ "Step_02_AcknowledgeAssessmentOrder", "AssessmentsWorkGroup_StepByStepTest_01" ],
+      "documentSequence" : 1,
+      "SupplierParty" : {
+         "name" : "Healthcare SKA Assessments, Inc."
+      },
+      "RequesterParty" : {
+         "name" : "Healthcare Staffing, Associates"
+      },
+      "packageID" : {
+         "value" : "packageId_01"
+      },
+      "comparisonGroupID" : [ {
+         "value" : "new_hire"
+      } ],
+      "AssessmentSubject" : {
+         "SubjectID" : {
+            "schemeName" : "CandidateId",
+            "value" : "candidateId:20150917_22"
+         },
+         "PersonName" : "John Smith",
+         "Communication" : [ {
+            "type" : "cell",
+            "phone" : [ {
+               "formattedNumber" : "(908)555-0984"
+            } ]
+         } ]
+      },
+      "redirectURL" : {
+         "validFrom" : "today",
+         "validTo" : "next_week",
+         "URI" : "https//hc-assessments.com/assessments/v1/test?packageId=packageId_01&amp;documentID=doc_01&amp;token=3JAJLEYYYZ",
+         "StatusCode" : "200",
+         "Message" : "Click here to start the test."
+      }
+   }
+}

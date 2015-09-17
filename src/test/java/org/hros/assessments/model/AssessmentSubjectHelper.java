@@ -25,62 +25,62 @@ public class AssessmentSubjectHelper {
 	}
 	
 
-	private static CommunicationABIEType createCommunicationABIE_IM_Address() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.INSTANT_MESSAGE);
-		com.setAccess("chris.candidate");
-		com.setUseCode(UseCodeType.PERSONAL);
-		com.setSequence(BigInteger.valueOf(4));
+	private static CommunicationType createCommunicationABIE_IM_Address() {
+		CommunicationType com = new CommunicationType();
+//		com.setChannelCode(ChannelCodeEnumType.INSTANT_MESSAGE);
+//		com.setAccess("chris.candidate");
+//		com.setUseCode(UseCodeType.PERSONAL);
+//		com.setSequence(BigInteger.valueOf(4));
 		return com;
 	}
 
-	private static CommunicationABIEType createCommunicationABIE_HomePhone() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
-		com.setDialNumber("(215)555-1234");
-		com.setUseCode(UseCodeType.PERSONAL);
+	private static CommunicationType createCommunicationABIE_HomePhone() {
+		CommunicationType com = new CommunicationType();
+//		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
+//		com.setDialNumber("(215)555-1234");
+//		com.setUseCode(UseCodeType.PERSONAL);
 		// com.setSequence(BigInteger.valueOf(1));
 		return com;
 	}
 
-	private static CommunicationABIEType createCommunicationABIE_WorkPhone(
+	private static CommunicationType createCommunicationABIE_WorkPhone(
 			String dialNumber) {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
-		com.setDialNumber(dialNumber);
-		com.setUseCode(UseCodeType.BUSINESS);
+		CommunicationType com = new CommunicationType();
+//		com.setChannelCode(ChannelCodeEnumType.TELEPHONE);
+//		com.setDialNumber(dialNumber);
+//		com.setUseCode(UseCodeType.BUSINESS);
 		// com.setSequence(BigInteger.valueOf(2));
 		return com;
 	}
 	
-	private static CommunicationABIEType createCommunicationABIE_Work_Address() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setAddress(createWorkAddress());
-		com.setSequence(BigInteger.valueOf(5));
+	private static CommunicationType createCommunicationABIE_Work_Address() {
+		CommunicationType com = new CommunicationType();
+//		com.setAddress(createWorkAddress());
+//		com.setSequence(BigInteger.valueOf(5));
 		return com;
 	}
 	
-	private static AddressBaseType createWorkAddress() {
-		AddressBaseType ab = new AddressBaseType();
+	private static AddressType createWorkAddress() {
+		AddressType ab = new AddressType();
 		// ab.getAddressLine().add(createSequencedTextType(1, "Line 1"));
 		// ab.getAddressLine().add(createSequencedTextType(2, "Line 2"));
 		// ab.getAddressLine().add(createSequencedTextType(3, "Line 3"));
-		ab.setLineOne("This is Line One");
-		ab.setLineTwo("Line two");
-		ab.setBuildingName("Blg 1");
-		ab.setCityName("Philadelphia");
-		ab.setCountryCode("US");
-		ab.setPostalCode("19020-2222");
-		ab.setStreetName("Broad Street");
-		ab.setType("Delivery Address");
+//		ab.setLineOne("This is Line One");
+//		ab.setLineTwo("Line two");
+//		ab.setBuildingName("Blg 1");
+//		ab.setCityName("Philadelphia");
+//		ab.setCountryCode("US");
+//		ab.setPostalCode("19020-2222");
+//		ab.setStreetName("Broad Street");
+//		ab.setType("Delivery Address");
 		return ab;
 	}
 
-	private static CommunicationABIEType createCommunicationABIE_MobilePhone() {
-		CommunicationABIEType com = new CommunicationABIEType();
-		com.setChannelCode(ChannelCodeEnumType.MOBILE_TELEPHONE);
-		com.setDialNumber("(215)555-5678");
-		com.setUseCode(UseCodeType.PERSONAL);
+	private static CommunicationType createCommunicationABIE_MobilePhone() {
+		CommunicationType com = new CommunicationType();
+//		com.setChannelCode(ChannelCodeEnumType.MOBILE_TELEPHONE);
+//		com.setDialNumber("(215)555-5678");
+//		com.setUseCode(UseCodeType.PERSONAL);
 		// com.setSequence(BigInteger.valueOf(3));
 		return com;
 	}

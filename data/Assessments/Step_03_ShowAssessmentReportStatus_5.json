@@ -1,0 +1,19 @@
+{
+   "AssessmentReport" : {
+      "documentID" : "doc_01",
+      "alternateDocumentID" : [ "Step_03_ShowAssessmentReportStatus_5", "AssessmentsWorkGroup_StepByStepTest_01" ],
+      "SupplierParty" : {
+         "name" : "Healthcare SKA Assessments, Inc."
+      },
+      "AssessmentSubject" : {
+         "PersonName" : "John Smith"
+      },
+      "AssessmentResult" : {
+         "PackageID" : "packageId_01",
+         "AssessmentStatus" : {
+            "AssessmentStatusCode" : "CompletedTestPendingScoring",
+            "Description" : [ "The test was completed. Waiting for the scoring." ]
+         }
+      }
+   }
+}

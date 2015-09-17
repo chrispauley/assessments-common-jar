@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentOrder>
+   <documentID>doc_01</documentID>
+   <alternateDocumentID>Step_02_ProcessAssessmentOrder</alternateDocumentID>
+   <alternateDocumentID>AssessmentsWorkGroup_StepByStepTest_01</alternateDocumentID>
+   <documentSequence>1</documentSequence>
+   <SupplierParty>
+      <name>Healthcare SKA Assessments, Inc.</name>
+   </SupplierParty>
+   <RequesterParty>
+      <name>Healthcare Staffing, Associates</name>
+   </RequesterParty>
+   <packageID>packageId_01</packageID>
+   <comparisonGroupID>new_hire</comparisonGroupID>
+   <AssessmentSubject>
+      <SubjectID schemeName="CandidateId">candidateId:20150917_22</SubjectID>
+      <PersonName>John Smith</PersonName>
+      <Communication type="cell">
+         <phone>
+            <formattedNumber>(908)555-0984</formattedNumber>
+         </phone>
+      </Communication>
+      <Communication type="email">
+         <email>
+            <address>smithj@yahoo.com</address>
+         </email>
+      </Communication>
+   </AssessmentSubject>
+</AssessmentOrder>

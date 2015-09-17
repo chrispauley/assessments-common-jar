@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentOrder>
+   <documentID>doc_01</documentID>
+   <alternateDocumentID>Step_02_AcknowledgeAssessmentOrder</alternateDocumentID>
+   <alternateDocumentID>AssessmentsWorkGroup_StepByStepTest_01</alternateDocumentID>
+   <documentSequence>1</documentSequence>
+   <SupplierParty>
+      <name>Healthcare SKA Assessments, Inc.</name>
+   </SupplierParty>
+   <RequesterParty>
+      <name>Healthcare Staffing, Associates</name>
+   </RequesterParty>
+   <packageID>packageId_01</packageID>
+   <comparisonGroupID>new_hire</comparisonGroupID>
+   <AssessmentSubject>
+      <SubjectID schemeName="CandidateId">candidateId:20150917_22</SubjectID>
+      <PersonName>John Smith</PersonName>
+      <Communication type="cell">
+         <phone>
+            <formattedNumber>(908)555-0984</formattedNumber>
+         </phone>
+      </Communication>
+   </AssessmentSubject>
+   <redirectURL validFrom="today" validTo="next_week">
+      <URI>https//hc-assessments.com/assessments/v1/test?packageId=packageId_01&amp;amp;documentID=doc_01&amp;amp;token=3JAJLEYYYZ</URI>
+      <StatusCode>200</StatusCode>
+      <Message>Click here to start the test.</Message>
+   </redirectURL>
+</AssessmentOrder>

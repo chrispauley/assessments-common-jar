@@ -1,12 +1,12 @@
 {
    "AssessmentCatalog" : {
       "SupplierParty" : {
-         "PartyTaxID" : {
+         "taxID" : {
             "value" : "Healthcare SKA Assessments, Inc."
          }
       },
       "AssessmentPackage" : [ {
-         "ID" : [ "package_001" ],
+         "ID" : [ "packageId_01" ],
          "Name" : "Healthcare Record Keeping Assessment",
          "Description" : [ "skills" ],
          "PackageCost" : "15.00 US",

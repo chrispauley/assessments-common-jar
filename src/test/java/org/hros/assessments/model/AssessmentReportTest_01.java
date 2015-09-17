@@ -6,7 +6,6 @@ import java.math.BigInteger;
 import org.hros.assessments.model.IdentifierType;
 import org.hros.assessments.model.PartyType;
 
-
 import junit.framework.TestCase;
 
 public class AssessmentReportTest_01 extends TestCase {
@@ -47,10 +46,10 @@ public class AssessmentReportTest_01 extends TestCase {
 
 	private PartyType createPartyType(String partyName, String value) {
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
+		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-		// pt.setPartyTaxID(id);
+		pt.setTaxID(id);
 		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}

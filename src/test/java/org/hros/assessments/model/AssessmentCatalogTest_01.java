@@ -32,7 +32,7 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ac.getAlternateDocumentID().add("alternateId-03");
 		ac.setDocumentSequence(BigInteger.valueOf(1));
 		ac.setCustomerParty(this.createCustomerParty());
-		ac.setSupplierParty(this.createSupplierParty());
+		ac.setSupplierParty(createSupplierParty());
 		ac.setRequesterParty(this.createRequestorParty());
 		ac.getAssessmentPackage().add(
 				this.createAssessmentPackage("Package1 Name", "cost?"));
@@ -42,77 +42,76 @@ public class AssessmentCatalogTest_01 extends TestCase {
 
 	private PartyType createCustomerParty() {
 		PartyType pt = new PartyType();
-		pt.setPartyName("CustomerParty");
-		IdentifierType id = new IdentifierType();
-		id.setValue("Amazing Software, Inc.");
-		pt.setPartyTaxID(id);
-		pt.setUserArea(new UserAreaType());
-		pt.getPersonContact().add(createCustomerPersonContact());
-		pt.getCommunication().add(this.createCustomerCommunicationType());
+//		pt.setPartyName("CustomerParty");
+//		IdentifierType id = new IdentifierType();
+//		id.setValue("Amazing Software, Inc.");
+//		pt.setPartyTaxID(id);
+//		pt.setUserArea(new UserAreaType());
+//		pt.getPersonContact().add(createCustomerPersonContact());
+//		pt.getCommunication().add(this.createCustomerCommunicationType());
 		return pt;
 	}
 
-	private CommunicationABIEType createCustomerCommunicationType() {
-		CommunicationABIEType ct = new CommunicationABIEType();
-		ct.setChannelCode(ChannelCodeEnumType.TELEPHONE);
-		ct.setDialNumber("888-555-9876");
+	private CommunicationType createCustomerCommunicationType() {
+		CommunicationType ct = new CommunicationType();
+		ct.setType("phone");
 		return ct;
 	}
 
 	private PersonContactType createCustomerPersonContact() {
 		PersonContactType pc = new PersonContactType();
 		PersonNameType pn = new PersonNameType();
-		pn.setLegalName("Patel");
-		pn.setFormattedName("Vijay Patel");
-		pc.setPersonName(pn);
+		pn.setLegal("Patel");
+		pn.setFormatted("Vijay Patel");
+		pc.setName(pn);
 		return pc;
 	}
 
 	private PartyType createRequestorParty() {
 		PartyType pt = new PartyType();
-		pt.setPartyName("RequestorParty");
-		IdentifierType id = new IdentifierType();
-		id.setValue("Software Engineering Placement, Inc.");
-		pt.setPartyTaxID(id);
-		pt.setUserArea(new UserAreaType());
-		pt.getPersonContact().add(createRequestorPersonContact());
+//		pt.setPartyName("RequestorParty");
+//		IdentifierType id = new IdentifierType();
+//		id.setValue("Software Engineering Placement, Inc.");
+//		pt.setPartyTaxID(id);
+//		pt.setUserArea(new UserAreaType());
+//		pt.getPersonContact().add(createRequestorPersonContact());
 		return pt;
 	}
 
 	private PersonContactType createRequestorPersonContact() {
 		PersonContactType pc = new PersonContactType();
-		PersonNameType pn = new PersonNameType();
-		pn.setFormattedName("Lynn Jones");
-		pc.setPersonName(pn);
+//		PersonNameType pn = new PersonNameType();
+//		pn.setFormattedName("Lynn Jones");
+//		pc.setPersonName(pn);
 		return pc;
 	}
 
 	private PartyType createSupplierParty() {
 		PartyType pt = new PartyType();
-		pt.setPartyName("SupplierParty");
-		IdentifierType id = new IdentifierType();
-		id.setValue("Assessment World");
-		pt.setPartyTaxID(id);
-		pt.setUserArea(new UserAreaType());
-		pt.getPersonContact().add(createSupplierPersonContact());
-		pt.getCommunication().add(createSupplierCommunicationType());
+//		pt.setPartyName("SupplierParty");
+//		IdentifierType id = new IdentifierType();
+//		id.setValue("Assessment World");
+//		pt.setPartyTaxID(id);
+//		pt.setUserArea(new UserAreaType());
+//		pt.getPersonContact().add(createSupplierPersonContact());
+//		pt.getCommunication().add(createSupplierCommunicationType());
 		return pt;
 	}
 
-	private CommunicationABIEType createSupplierCommunicationType() {
-		CommunicationABIEType ct = new CommunicationABIEType();
-		ct.setChannelCode(ChannelCodeEnumType.TELEPHONE);
-		ct.setDialNumber("800-555-1234");
-		return ct;
-	}
+//	private CommunicationABIEType createSupplierCommunicationType() {
+//		CommunicationABIEType ct = new CommunicationABIEType();
+//		ct.setChannelCode(ChannelCodeEnumType.TELEPHONE);
+//		ct.setDialNumber("800-555-1234");
+//		return ct;
+//	}
 
-	private PersonContactType createSupplierPersonContact() {
-		PersonContactType pc = new PersonContactType();
-		PersonNameType pn = new PersonNameType();
-		pn.setFormattedName("Johanna Smith");
-		pc.setPersonName(pn);
-		return pc;
-	}
+//	private PersonContactType createSupplierPersonContact() {
+//		PersonContactType pc = new PersonContactType();
+//		PersonNameType pn = new PersonNameType();
+//		pn.setFormattedName("Johanna Smith");
+//		pc.setPersonName(pn);
+//		return pc;
+//	}
 
 	private AssessmentFulfillmentType createAssessmentFulfillment() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
@@ -126,8 +125,8 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		af.getScoreProfileName().add("Profile1");
 		af.getScoreProfileName().add("Profile2");
 
-		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
-		af.getReportLanguageCode().add(LanguageCodeEnumType.FR_CA);
+		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
+		af.getReportLanguageCode().add(LanguageCodeList.FR_CA);
 		af.setUserArea(new UserAreaType());
 		af.getUserArea().getAny().add("{}");
 
@@ -265,20 +264,20 @@ public class AssessmentCatalogTest_01 extends TestCase {
 
 	private PartyType createPartyType(String partyName, String value) {
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
+		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
 		// pt.setPartyTaxID(id);
 		// pt.setUserArea(new UserAreaType());
-		pt.getPersonContact().add(createPersonContact());
+		pt.getPersonContacts().add(createPersonContact());
 		return pt;
 	}
 
 	private PersonContactType createPersonContact() {
 		PersonContactType pc = new PersonContactType();
 		PersonNameType pn = new PersonNameType();
-		pn.setFormattedName("Formatted Person Name");
-		pc.setPersonName(pn);
+		pn.setFormatted("Formatted Person Name");
+		pc.setName(pn);
 		return pc;
 	}
 

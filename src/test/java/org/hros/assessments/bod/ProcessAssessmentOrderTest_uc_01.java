@@ -25,7 +25,6 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 	public void testAssessmentOrder() {
 		try {
 			AssessmentOrderType ac = this.createAssessmentOrderType();
-			
 
 			Serializer.marshalJSON(ac, System.out);
 			String filename = "./data/Assessments/" + ProcessAssessmentOrderTest_uc_01.class.getSimpleName() + ".json";
@@ -49,16 +48,16 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 		AssessmentOrderType ao = new AssessmentOrderType();
 		
 		
-		ao.setDocumentID(new IdentifierType());
+		ao.setDocumentID("");
 		ao.setDocumentSequence(BigInteger.valueOf(1));
 		ao.setMajorVersionID("4.0");
 		PartyType requestorParty = this.createPartyType("RequestorPartyName");
-		requestorParty.getPartyID().add(this.createIdentifierType("requestorID"));
+		requestorParty.getId().add(this.createIdentifierType("requestorID"));
 		ao.setRequesterParty(requestorParty);
 		
 		PartyType supplierParty = this.createPartyType("SupplierPartyName");
-		supplierParty.getPartyID().add(this.createIdentifierType("supplierID"));
-		ao.setSupplierParty(supplierParty);
+		supplierParty.getId().add(this.createIdentifierType("supplierID"));
+		
 		
 		ao.setPackageID(this.createIdentifierType("packageId_01"));
 		ao.getComparisonGroupID().add(this.createIdentifierType("new_hire"));
@@ -80,7 +79,7 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 	
 	private PartyType createPartyType(String partyName){
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
+		pt.setName(partyName);
 		return pt;
 	}
 	private IdentifierType createIdentifierType(String value){

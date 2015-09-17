@@ -66,7 +66,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		aa.getJobCategoryCode().add(addRetailJobCategoryCode("Job Industry","Retail"));
 		aa.getApplicableRegion().add(this.createJurisdictionTypeFR());
 		aa.getApplicableRegion().add(this.createJurisdictionTypeUS());
-		aa.getAvailableLanguageCode().add(LanguageCodeEnumType.EN_US);
+		aa.getAvailableLanguageCode().add(LanguageCodeList.EN_US);
 		return aa;
 	}
 
@@ -111,7 +111,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		aa.getJobCategoryCode().add(addSOCJobCategoryCode("","Professional"));
 		aa.setCareerLevelCode(createCareerLevelCode("name", "Executive"));
 		aa.getApplicableRegion().add(createJurisdictionTypeMX());
-		aa.getAvailableLanguageCode().add(LanguageCodeEnumType.ES);		
+		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);		
 		return aa;
 	}
 
@@ -136,20 +136,20 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 	private AssessmentFulfillmentType createAssessmentFulfillment_pkg1() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
 		af.getScoreProfileName().add("PET Profile 1");
-		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
+		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
 		return af;
 	}
 
 	private AssessmentFulfillmentType createAssessmentFulfillment_pkg2() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
 		af.getScoreProfileName().add("PET Profile 1");
-		af.getReportLanguageCode().add(LanguageCodeEnumType.FR_FR);
+		af.getReportLanguageCode().add(LanguageCodeList.FR_FR);
 		return af;
 	}
 	private AssessmentFulfillmentType createAssessmentFulfillment_pkg3() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
 		af.getScoreProfileName().add("SureHire Result Profile");
-		af.getReportLanguageCode().add(LanguageCodeEnumType.FR_FR);
+		af.getReportLanguageCode().add(LanguageCodeList.FR_FR);
 		return af;
 	}
 	
@@ -201,7 +201,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		aa.getJobCategoryCode().add(addSOCJobCategoryCode("","Professional"));
 		aa.setCareerLevelCode(createCareerLevelCode("name", "Executive"));
 		aa.getApplicableRegion().add(createJurisdictionTypeMX());
-		aa.getAvailableLanguageCode().add(LanguageCodeEnumType.ES);
+		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);
 		return aa;
 	}
 
@@ -314,10 +314,10 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 
 	private PartyType createPartyType(String partyName, String value) {
 		PartyType pt = new PartyType();
-		pt.setPartyName(partyName);
+//		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-		pt.setPartyTaxID(id);
+		pt.setTaxID(id);
 		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}

@@ -5,22 +5,22 @@
 	<xsd:include schemaLocation="Components.xsd" />
 	<xsd:include schemaLocation="CodeLists.xsd" />
 	<xsd:include schemaLocation="Fields.xsd" />
+	<xsd:include schemaLocation="./Common/json/complex.xsd" />
 		
-	<xsd:element name="AssessmentReport" type="AssessmentReportType">
-
-	</xsd:element>
+	<xsd:element name="assessmentReport" type="AssessmentReportType"/>
 	
 	<xsd:complexType name="AssessmentReportType">
 		<xsd:sequence>
-			<xsd:element name="DocumentID" type="xsd:string" />
-			<xsd:element name="AlternateDocumentID" type="xsd:string" maxOccurs="unbounded" />
-			<xsd:element name="DocumentSequence" type="xsd:integer" />
+			<xsd:element name="documentID" type="xsd:string" />
+			<xsd:element name="alternateDocumentID" type="xsd:string"
+				maxOccurs="unbounded" />
+			<xsd:element name="documentSequence" type="xsd:integer" />
 			<xsd:element name="CustomerParty" type="PartyType" />
 			<xsd:element name="SupplierParty" type="PartyType" />
 			<xsd:element name="RequesterParty" type="PartyType" />
 			<xsd:element name="AssessmentSubject" type="AssessmentSubjectType" />
 			<xsd:element name="AssessmentResult" type="AssessmentResultType" />
-			<xsd:element name="UserArea" type="UserAreaType" minOccurs="0"/>		
+			<xsd:element name="userArea" type="UserAreaType" minOccurs="0"/>		
 		</xsd:sequence>
 		
 		<xsd:attribute name="majorVersionID" type="xsd:string" use="optional" />

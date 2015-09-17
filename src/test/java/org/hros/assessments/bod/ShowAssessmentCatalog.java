@@ -13,14 +13,12 @@ import org.hros.assessments.model.AssessmentDeliveryCodeType;
 import org.hros.assessments.model.AssessmentFulfillmentType;
 import org.hros.assessments.model.AssessmentPackageType;
 import org.hros.assessments.model.IdentifierType;
-import org.hros.assessments.model.LanguageCodeEnumType;
+import org.hros.assessments.model.LanguageCodeList;
 import org.hros.assessments.model.MeasureTextType;
 import org.hros.assessments.model.PartyType;
-import org.hros.assessments.model.PersonContactType;
-import org.hros.assessments.model.PersonNameType;
 import org.hros.assessments.model.SpecifiedCompetencyType;
 import org.hros.common.model.Serializer;
- 
+
 import junit.framework.TestCase;
 
 public class ShowAssessmentCatalog extends TestCase {
@@ -28,7 +26,12 @@ public class ShowAssessmentCatalog extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 	}
-
+	private final String FILENAME = "Step_01_ShowShowAssessmentCatalog";
+	private final String DOCUMENT_ID = "doc_01";
+	private final String SUPPLIER_PARTY = "Healthcare SKA Assessments, Inc.";
+	private final String PACKAGE_ID = "packageId_01";
+	private final String SUBJECT_NAME = "John Smith";
+	
 	public void testShowAssessmentCatalog(){
 		
 		try {
@@ -38,13 +41,13 @@ public class ShowAssessmentCatalog extends TestCase {
 			ac.getAssessmentPackage().add(createAssessmentPackageOne());
 			ac.getAssessmentPackage().add(createAssessmentPackageTwo());
 			Serializer.marshalJSON(ac, System.out);
-			String filename = "./data/Assessments/" + ShowAssessmentCatalog.class.getSimpleName() + ".json";
+			String filename = "./data/Assessments/" + FILENAME + ".json";
 			File file = new File(filename);
 			FileOutputStream fos = new FileOutputStream(file);
 			Serializer.marshalJSON(ac, fos);
 			fos.close();
 			
-			String filename2 = "./data/Assessments/" + ShowAssessmentCatalog.class.getSimpleName() + ".xml";
+			String filename2 = "./data/Assessments/" + FILENAME + ".xml";
 			File file2 = new File(filename2);
 			FileOutputStream fos2 = new FileOutputStream(file2);
 			Serializer.marshal(ac, fos2);
@@ -58,7 +61,7 @@ public class ShowAssessmentCatalog extends TestCase {
 	private PartyType createSupplierParty() {
 		PartyType pt = new PartyType();
 //		pt.setPartyName("Healthcare SKA Assessments, Inc.");
-		pt.setPartyTaxID(createIdentifier("Healthcare SKA Assessments, Inc."));
+		pt.setTaxID(createIdentifier(SUPPLIER_PARTY));
 		return pt;
 	}
 
@@ -71,7 +74,7 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentPackageType createAssessmentPackageOne() {
 		AssessmentPackageType ap = new AssessmentPackageType();
-		ap.getID().add("package_001");
+		ap.getID().add(PACKAGE_ID);
 		ap.setPackageCost("15.00 US");
 		ap.setName("Healthcare Record Keeping Assessment");
 		ap.getDescription().add("skills");
@@ -84,7 +87,7 @@ public class ShowAssessmentCatalog extends TestCase {
 	private AssessmentFulfillmentType createAssessmentFullfillment_PkgOne() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
 		af.getDescription().add("A URL will be sent to the AssesmentRequestor upon order.");
-		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
+		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
 		return af;
 	}
 
@@ -161,7 +164,7 @@ public class ShowAssessmentCatalog extends TestCase {
 	private AssessmentFulfillmentType createAssessmentFullfillment_PkgTwo() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
 		af.getDescription().add("A URL will be sent to the AssesmentRequestor upon order.");
-		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
+		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
 		af.getScoreProfileName().add("Online Test Profile");
 		return af;
 	}

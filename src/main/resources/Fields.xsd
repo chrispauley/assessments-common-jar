@@ -12,6 +12,7 @@
 			version: 2015-Aug-20
 		</xsd:documentation>
 	</xsd:annotation>
+	<xsd:include schemaLocation="./Common/json/codelist/language.xsd" />
 
 	<xsd:element name="AccomodationTypeCode" type="CodeType">
 		<xsd:annotation>
@@ -66,12 +67,16 @@
 		<xsd:annotation>
 			<xsd:documentation>A code classifying a person's current or past
 				military status.
-				Depending on the use case and applicable law, employers
-				may need to track a variety of different information regarding a
+				Depending on the use case and applicable law,
+				employers
+				may need to track a variety of different information
+				regarding a
 				person's current or
-				military status. Under applicable law, current or prior military personnel
+				military status. Under applicable law,
+				current or prior military personnel
 				may
-				be entitled to certain employment preferences.
+				be entitled to certain
+				employment preferences.
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -97,7 +102,7 @@
 		</xsd:annotation>
 	</xsd:element>
 
-	<xsd:element name="PrimaryLanguageCode" type="LanguageCodeEnumType">
+	<xsd:element name="PrimaryLanguageCode" type="LanguageCodeList">
 		<xsd:annotation>
 			<xsd:documentation>The primary or preferred language associated with
 				a person or work environment.
@@ -107,12 +112,10 @@
 
 	<xsd:element name="BirthDate" type="FormattedDateTimeType">
 		<xsd:annotation>
-			<xsd:documentation source="http://www.hr-xml.org"
-				xml:lang="en">The date on which the associated person was
-				born.Sometimes
-				used as a "facet" identifier (one that
-				taken with other facts is used
-				to identify a person).
+			<xsd:documentation>The date on which the associated person was
+				born.
+				Sometimes used as a "facet" identifier (one that taken with other
+				facts is used to identify a person).
 			</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -170,28 +173,30 @@
 		</xsd:annotation>
 	</xsd:element>
 
-	<xsd:element name="FormattedDateTime" type="FormattedDateTimeType" />
-	<xsd:simpleType name="FormattedDateTimeType">
-		<xsd:annotation>
-			<xsd:documentation>This is formatted representation of a date, which
-				may be specified as a date, date/time, year, or year/month.
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:union memberTypes="DateType YearMonthDateType YearDateType DateTimeType" />
-	</xsd:simpleType>
+	<!-- <xsd:element name="FormattedDateTime" type="FormattedDateTimeType" 
+		/> -->
+	<!-- <xsd:simpleType name="FormattedDateTimeType"> -->
+	<!-- <xsd:annotation> -->
+	<!-- <xsd:documentation>This is formatted representation of a date, which -->
+	<!-- may be specified as a date, date/time, year, or year/month. -->
+	<!-- </xsd:documentation> -->
+	<!-- </xsd:annotation> -->
+	<!-- <xsd:union memberTypes="DateType YearMonthDateType YearDateType DateTimeType" 
+		/> -->
+	<!-- </xsd:simpleType> -->
 
-	<xsd:simpleType name="YearDateType">
-		<xsd:restriction base="xsd:gYear" />
-	</xsd:simpleType>
-	<xsd:simpleType name="YearMonthDateType">
-		<xsd:restriction base="xsd:gYearMonth" />
-	</xsd:simpleType>
-	<xsd:simpleType name="DateType">
-		<xsd:restriction base="xsd:date" />
-	</xsd:simpleType>
-	<xsd:simpleType name="DateTimeType">
-		<xsd:restriction base="xsd:dateTime" />
-	</xsd:simpleType>
+	<!-- <xsd:simpleType name="YearDateType"> -->
+	<!-- <xsd:restriction base="xsd:gYear" /> -->
+	<!-- </xsd:simpleType> -->
+	<!-- <xsd:simpleType name="YearMonthDateType"> -->
+	<!-- <xsd:restriction base="xsd:gYearMonth" /> -->
+	<!-- </xsd:simpleType> -->
+	<!-- <xsd:simpleType name="DateType"> -->
+	<!-- <xsd:restriction base="xsd:date" /> -->
+	<!-- </xsd:simpleType> -->
+	<!-- <xsd:simpleType name="DateTimeType"> -->
+	<!-- <xsd:restriction base="xsd:dateTime" /> -->
+	<!-- </xsd:simpleType> -->
 
 	<xsd:element name="DisabilityIndicator" type="EffectiveDatedIndicatorType">
 		<xsd:annotation>
@@ -243,27 +248,28 @@
 			use="optional" />
 	</xsd:attributeGroup>
 
-	<xsd:complexType name="CodeType">
-		<xsd:simpleContent>
-			<xsd:extension base="xsd:normalizedString">
-				<xsd:attribute name="listID" type="xsd:normalizedString"
-					use="optional" />
-				<xsd:attribute name="listAgencyID" type="xsd:normalizedString"
-					use="optional" />
-				<xsd:attribute name="listAgencyName" type="xsd:string"
-					use="optional" />
-				<xsd:attribute name="listName" type="xsd:string" use="optional" />
-				<xsd:attribute name="listVersionID" type="xsd:normalizedString"
-					use="optional" />
-				<xsd:attribute name="name" type="xsd:string" use="optional" />
-				<xsd:attribute name="languageID" type="xsd:language"
-					use="optional" />
-				<xsd:attribute name="listURI" type="xsd:anyURI" use="optional" />
-				<xsd:attribute name="listSchemeURI" type="xsd:anyURI"
-					use="optional" />
-			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
+	<!-- <xsd:complexType name="CodeType"> -->
+	<!-- <xsd:simpleContent> -->
+	<!-- <xsd:extension base="xsd:normalizedString"> -->
+	<!-- <xsd:attribute name="listID" type="xsd:normalizedString" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listAgencyID" type="xsd:normalizedString" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listAgencyName" type="xsd:string" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listName" type="xsd:string" use="optional" /> -->
+	<!-- <xsd:attribute name="listVersionID" type="xsd:normalizedString" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="name" type="xsd:string" use="optional" /> -->
+	<!-- <xsd:attribute name="languageID" type="xsd:language" -->
+	<!-- use="optional" /> -->
+	<!-- <xsd:attribute name="listURI" type="xsd:anyURI" use="optional" /> -->
+	<!-- <xsd:attribute name="listSchemeURI" type="xsd:anyURI" -->
+	<!-- use="optional" /> -->
+	<!-- </xsd:extension> -->
+	<!-- </xsd:simpleContent> -->
+	<!-- </xsd:complexType> -->
+
 	<xsd:attributeGroup name="CodeListAttributeGroup">
 		<xsd:attribute name="listID" type="xsd:normalizedString"
 			use="optional" />

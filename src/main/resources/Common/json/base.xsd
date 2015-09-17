@@ -163,11 +163,6 @@
 		<xsd:attribute name="altitude" type="xsd:decimal"></xsd:attribute>
 	</xsd:complexType>
 
-	<!-- DateType TimeType DateTimeType DurationType IdentifierType MeasureType 
-		NameType NumberType OrdinalType PercentType RateType RatioType TextType GeoType 
-		YearType YearMonthType DateTimePeriodType DatePeriodType YearMonthPeriodType 
-		YearPeriodType FormattedDateTimeType PeriodType EntityType Localization EffectiveTimePeriod -->
-
 	
 	<xsd:complexType name="DateTimePeriodType">
 		<xsd:attribute name="start" type="DateTimeType" use="required"></xsd:attribute>
@@ -199,6 +194,7 @@
 		<xsd:union memberTypes="DateType DateTimeType YearType YearMonthType" />
 	</xsd:simpleType>
 
+
 	<xsd:complexType name="PeriodType">
 		<xsd:annotation>
 			<xsd:documentation>This is formatted representation of a date, which
@@ -210,23 +206,23 @@
 		<xsd:sequence>
 			<xsd:choice>
 				<xsd:sequence>
-					<xsd:element name="value0" type="FormattedDateTimeType"
+					<xsd:element name="FormattedDateTimeType" type="FormattedDateTimeType"
 						minOccurs="0" />
 				</xsd:sequence>
 				<xsd:sequence>
-					<xsd:element name="value1" type="DateTimePeriodType"
+					<xsd:element name="DateTimePeriodType" type="DateTimePeriodType"
 						minOccurs="0" />
 				</xsd:sequence>
 				<xsd:sequence>
-					<xsd:element name="value2" type="DatePeriodType"
+					<xsd:element name="DatePeriodType" type="DatePeriodType"
 						minOccurs="0" />
 				</xsd:sequence>
 				<xsd:sequence>
-					<xsd:element name="value3" type="YearMonthPeriodType"
+					<xsd:element name="YearMonthPeriodType" type="YearMonthPeriodType"
 						minOccurs="0" />
 				</xsd:sequence>
 				<xsd:sequence>
-					<xsd:element name="value4" type="YearPeriodType"
+					<xsd:element name="YearPeriodType" type="YearPeriodType"
 						minOccurs="0" />
 				</xsd:sequence>
 			</xsd:choice>
@@ -253,6 +249,7 @@
 		<xsd:restriction base="xsd:time" />
 	</xsd:simpleType>
 
+<!-- Not correct -->
 	<xsd:complexType name="DurationType">
 		<xsd:sequence>
 			<xsd:choice>

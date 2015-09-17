@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssessmentCatalog>
    <SupplierParty>
-      <PartyTaxID>Healthcare SKA Assessments, Inc.</PartyTaxID>
+      <taxID>Healthcare SKA Assessments, Inc.</taxID>
    </SupplierParty>
    <AssessmentPackage>
-      <ID>package_001</ID>
+      <ID>packageId_01</ID>
       <Name>Healthcare Record Keeping Assessment</Name>
       <Description>skills</Description>
       <PackageCost>15.00 US</PackageCost>
