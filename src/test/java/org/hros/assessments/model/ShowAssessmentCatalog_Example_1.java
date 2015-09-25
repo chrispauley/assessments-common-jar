@@ -40,7 +40,7 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 	private AssessmentFulfillmentType createAssessmentFulfillment() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
 		af.getScoreProfileName().add("EAS1");
-		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
+		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
 		return af;
 	}
 
@@ -67,14 +67,14 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
 		aa.getAssessedCompetency().add(createSpecifiedCompetencyType());
 		aa.getJobCategoryCode().add(addSOCJobCategoryCode("Functional Area","Sales"));
-		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Level"));
+//		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Level"));
 		
 		aa.getApplicableRegion().add(createJurisdictionTypeUS());
 		aa.getApplicableRegion().add(createJurisdictionTypeCA());
 		aa.getApplicableRegion().add(createJurisdictionTypeMX());
-		aa.getAvailableLanguageCode().add(LanguageCodeEnumType.EN_US);
-		aa.getAvailableLanguageCode().add(LanguageCodeEnumType.FR_CA);
-		aa.getAvailableLanguageCode().add(LanguageCodeEnumType.ES);
+		aa.getAvailableLanguageCode().add(LanguageCodeList.EN_US);
+		aa.getAvailableLanguageCode().add(LanguageCodeList.FR_CA);
+		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);
 		return aa;
 	}
 
@@ -158,7 +158,7 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 
 	private PartyType createPartyType(String partyName, String value) {
 		PartyType pt = new PartyType();
-		pt.setName(partyName);
+//		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
 		pt.setTaxID(id);

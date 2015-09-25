@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Handlebars Conditionals and Loops Template Example</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../handlebars-v3.0.3.js"></script>
+        <script type="text/javascript">
+         $("document").ready(function() {
+            var template = $("#itemTemplate").html();
+            // Handlebars compiles the template into a callable function
+            var renderer = Handlebars.compile(template);
+            // call the compiled function with the template data
+            var result = renderer({});
+            
+            $("#container").html(result);
+         });
+        </script>
+    </head>
+    <body>
+        <script type="text/x-handlebars-template" id="itemTemplate">
+            {{#each employees}}
+            <div class="itemTemplateWrapper">
+                {{! This is a handlebars comment and it is totally ignored }}
+                <div>{{name}}</div>
+                <div>{{title}}</div>
+                <div>{{email}}</div>
+                <div>{{phone}}</div>
+                {{#if fulltime}}
+                    <div>Full-time employee</div>
+                {{else}}
+                    <div>Part-time employee</div>
+                {{/if}}                
+            </div>
+            {{/each}}
+        </script>
+        <h1>Template - handlebars</h1>
+        <h3>Handlebars has support for basic logic built in.</h3>
+
+        <!-- This is the container where the templates will be instantiated -->
+        <div id="container"></div>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -17,7 +17,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private AssessmentOrderType createAssessmentOrderType() {
 		AssessmentOrderType ac = new AssessmentOrderType();
-		ac.setDocumentID(this.createIdentifier("documentId_01"));
+		ac.setDocumentID("documentId_01");
 
 		ac.setDocumentSequence(BigInteger.valueOf(1));
 		ac.setPackageID(createPackageId("package_123"));
@@ -60,7 +60,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private LoginInformationType createLoginInformation() {
 		LoginInformationType li = new LoginInformationType();
-		li.setUserID("User_01");
+		li.setUserId("User_01");
 		li.getAccessCredential().add(createAccessCredentials());
 		return li;
 	}

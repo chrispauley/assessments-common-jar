@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentCatalog>
+   <SupplierParty>
+      <taxID>Healthcare SKA Assessments, Inc.</taxID>
+   </SupplierParty>
+   <AssessmentPackage>
+      <ID>packageId_01</ID>
+      <Name>Medical Billing Process</Name>
+      <Description>skills</Description>
+      <PackageCost>85.00 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID></competencyID>
+            <competencyName>Record Keeping</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">25</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A URL will be sent to the AssesmentRequestor upon order.</Description>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+   <AssessmentPackage>
+      <ID>packageId_02</ID>
+      <Name>ICD-10 Medical Coding and Billing</Name>
+      <Description>skills</Description>
+      <PackageCost>45.00 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID></competencyID>
+            <competencyName>Medical Coding and Billing</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">15</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A URL will be sent to the AssesmentRequestor upon order.</Description>
+         <ScoreProfileName>Online Test Profile</ScoreProfileName>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+   <AssessmentPackage>
+      <ID>packageId_03</ID>
+      <Name>package 3</Name>
+      <Description>skills</Description>
+      <PackageCost>$65 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID>001</competencyID>
+            <competencyName>Record Keeping</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">25</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A redirectURL available upon order.</Description>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+   <AssessmentPackage>
+      <ID>packageId_04</ID>
+      <Name>package 4</Name>
+      <Description>skills</Description>
+      <PackageCost>$75 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID>001</competencyID>
+            <competencyName>Record Keeping</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">25</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A redirectURL available upon order.</Description>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+   <AssessmentPackage>
+      <ID>packageId_05</ID>
+      <Name>package 5</Name>
+      <Description>skills</Description>
+      <PackageCost>$65 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID>001</competencyID>
+            <competencyName>Record Keeping</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">25</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A redirectURL available upon order.</Description>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+   <AssessmentPackage>
+      <ID>packageId_06</ID>
+      <Name>package 6</Name>
+      <Description>skills</Description>
+      <PackageCost>$76 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID>001</competencyID>
+            <competencyName>Record Keeping</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">25</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A redirectURL available upon order.</Description>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+   <AssessmentPackage>
+      <ID>packageId_07</ID>
+      <Name>package 7</Name>
+      <Description>skills</Description>
+      <PackageCost>$67 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID>001</competencyID>
+            <competencyName>Record Keeping</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">25</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A redirectURL available upon order.</Description>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+   <AssessmentPackage>
+      <ID>packageId_08</ID>
+      <Name>package 8</Name>
+      <Description>skills</Description>
+      <PackageCost>$78 US</PackageCost>
+      <AssessmentApplicability>
+         <AssessedCompetency>
+            <competencyID>001</competencyID>
+            <competencyName>Record Keeping</competencyName>
+         </AssessedCompetency>
+      </AssessmentApplicability>
+      <AssessmentAdministration>
+         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
+         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
+         <TestDuration unitCode="minutes">25</TestDuration>
+         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
+      </AssessmentAdministration>
+      <AssessmentFulfillment>
+         <Description>A redirectURL available upon order.</Description>
+         <ReportLanguageCode>en-US</ReportLanguageCode>
+      </AssessmentFulfillment>
+   </AssessmentPackage>
+</AssessmentCatalog>

@@ -54,8 +54,8 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		af.getScoreProfileName().add("Profile1");
 		af.getScoreProfileName().add("Profile2");
 		
-		af.getReportLanguageCode().add(LanguageCodeEnumType.EN_US);
-		af.getReportLanguageCode().add(LanguageCodeEnumType.FR_CA);
+		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
+		af.getReportLanguageCode().add(LanguageCodeList.FR_CA);
 		af.setUserArea(new UserAreaType());
 		af.getUserArea().getAny().add("{}");
 		
@@ -90,10 +90,9 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		aa.getJobCategoryCode().add(addISCOJobCategoryCode("Software and applications developers and analysts","251"));
 		aa.getJobCategoryCode().add(addNOCJobCategoryCode("Computer Programmer","2174"));
 		
-		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Career"));
+//		aa.setCareerLevelCode(createCareerLevelCode());
 		return aa;
 	}
-
 
 
 	private CodeType createCareerLevelCode(String name, String value) {

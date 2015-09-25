@@ -109,7 +109,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		aa.getAssessedCompetency().add(createSpecifiedCompetencyType_Three());
 		aa.getAssessedCompetency().add(this.createSpecifiedCompetencyType_Four());
 		aa.getJobCategoryCode().add(addSOCJobCategoryCode("","Professional"));
-		aa.setCareerLevelCode(createCareerLevelCode("name", "Executive"));
+//		aa.setCareerLevelCode(this.createCareerLevelCode("", "Executive"));
 		aa.getApplicableRegion().add(createJurisdictionTypeMX());
 		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);		
 		return aa;
@@ -198,8 +198,8 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.SKILL);
 		aa.getAssessedCompetency().add(createSpecifiedCompetencyType_One());
 		aa.getAssessedCompetency().add(createSpecifiedCompetencyType_Two());	
-		aa.getJobCategoryCode().add(addSOCJobCategoryCode("","Professional"));
-		aa.setCareerLevelCode(createCareerLevelCode("name", "Executive"));
+//		aa.getJobCategoryCode().add(addSOCJobCategoryCode("Professional"));
+//		aa.setCareerLevelCode(createCareerLevelCode("Executive"));
 		aa.getApplicableRegion().add(createJurisdictionTypeMX());
 		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);
 		return aa;
@@ -227,7 +227,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 		jt.setCountryCode(CountryCodeEnumType.MX);
 		return jt;
 	}
-	private CodeType createCareerLevelCode(String name, String value) {
+	private CodeType createCareerLevelCode(String value) {
 		CodeType ct = new CodeType();
 //		ct.setName(name);
 		ct.setValue(value);

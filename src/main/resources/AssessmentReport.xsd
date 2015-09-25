@@ -30,8 +30,5 @@
 		<xsd:attribute name="languageCode" type="xsd:string" use="optional" default="en" />
 
 	</xsd:complexType>
-	
-
-
 
 </xsd:schema>

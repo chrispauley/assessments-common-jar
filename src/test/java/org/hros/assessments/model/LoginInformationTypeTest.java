@@ -24,7 +24,7 @@ public class LoginInformationTypeTest extends TestCase {
 
 	private LoginInformationType createLoginInformationType() {
 		LoginInformationType li = new LoginInformationType();
-		li.setUserID("candidate1");
+		li.setUserId("candidate1");
 		li.getAccessCredential().add(createAccessCredentialType());
 //		li.getAccessCredential().add(createAccessCredentialTypeVerbose());
 		li.getAccessCredential().add(createAccessCredential_MAC_Key());

@@ -34,6 +34,27 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 		</xsd:restriction>
 	</xsd:simpleType>
 	
+<!-- 	Not part of 3.x specification -->
+	<xsd:simpleType name="CareerLevelCodeType">
+		<xsd:annotation>
+			<xsd:documentation>
+       A code classifying the level of a candidate based 
+       on career experience. Student, Entry Level, 
+       Recent Graduate, Mid-Career, 
+       Manager, Experienced Non-Manager, Senior Executive
+       </xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Student"/>
+			<xsd:enumeration value="EntryLevel"/>
+			<xsd:enumeration value="RecentGraduate"/>
+			<xsd:enumeration value="MidCareer"/>
+			<xsd:enumeration value="Manager"/>
+			<xsd:enumeration value="ExperiencedNonManager"/>
+			<xsd:enumeration value="SeniorExecutive"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
 	<xsd:element name="UseCode" type="UseCodeType" />
 
 	<xsd:simpleType name="UseCodeType">

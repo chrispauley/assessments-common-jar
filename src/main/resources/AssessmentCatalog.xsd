@@ -26,7 +26,6 @@
 		<xsd:attribute name="languageCode" type="xsd:string" use="optional" default="en" />
 	</xsd:complexType>
  
-<!-- 	<xsd:element name="assessmentPackage" type="AssessmentPackageType" /> -->
 	<xsd:complexType name="AssessmentPackageType">
 		<xsd:complexContent>
 			<xsd:extension base="PackageBaseType">

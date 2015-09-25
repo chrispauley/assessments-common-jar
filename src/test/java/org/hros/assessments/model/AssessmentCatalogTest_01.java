@@ -166,7 +166,7 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		aa.getJobCategoryCode().add(
 				addNOCJobCategoryCode("Computer Programmer", "2174"));
 
-		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Career"));
+//		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Career"));
 		return aa;
 	}
 

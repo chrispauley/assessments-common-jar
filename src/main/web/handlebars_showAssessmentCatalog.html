@@ -16,7 +16,7 @@
 
 				var ptRenderer = Handlebars.compile(partyTemplate);
 				var pkgRenderer = Handlebars.compile(packageTemplate);
-				$.getJSON("../../../data/SampleAssessmentCatalog_01.json", function(data) {
+				$.getJSON("../../../data/Assessments/Step_01_ShowShowAssessmentCatalog.json", function(data) {
 					console.log("getJSON");
 					var ac = data;
 					var supplierPartyResult = ptRenderer(ac.AssessmentCatalog.SupplierParty);
@@ -39,7 +39,7 @@
         <script type="text/x-handlebars-template" id="displayPartyType">
 			<div class="col-xs-4">
 			<div><span>TypeParty: </span><span>{{PartyName}}</span></div>
-			<div><span>PartyTaxID: </span><span>{{PartyTaxID.value}}</span></div>
+			<div><span>taxId: </span><span>{{taxID.value}}</span></div>
 			{{#each PersonContact}}
 			<div><span>PersonContact: </span><span>{{PersonName.FormattedName}}</span></div>
 			{{/each}}
@@ -51,13 +51,43 @@
 		</script> 
         <script type="text/x-handlebars-template" id="displayPackageTemplate">
 			{{#each AssessmentPackage}}
-			<div class="row">
-		 <div class="col-xs-4">	{{#each AssessmentPackage.ID}}<p> {{AssessmentPackage.ID}}</p> {{/each}}</div>
-			<div><span>Name: </span><span>{{Name}}</span></div>
-			<div><span>Description: </span><span>{{Description}}</span></div>
-			</div> 
+				{{#each AssessmentPackage.ID}}<p> {{AssessmentPackage.ID}}</p> {{/each}}
+				<div><h3><span>Name: </span><span>{{Name}}</span></h3></div>
+			<div><span>Description: </span><span>{{Description}}</span></div>			<div class="row">
+				
+     		 <div class="clearfix col-xs-4">	
+			<div><h4><span>AssessmentAdministration.Description: </span><span>{{AssessmentAdministration.Description}}</span></h4>
+				<br/>
+				<span>ProctoredAssessmentIndicator: </span><span>{{AssessmentAdministration.ProctoredAssessmentIndicator}}</span>
+				<br/>
+				<span>TimeEnforcedIndicator: </span><span>{{AssessmentAdministration.TimeEnforcedIndicator}}</span>
+				<br/>
+				<span>TestDuration: </span><span>{{AssessmentAdministration.TestDuration.value}} {{AssessmentAdministration.TestDuration.unitCode}}</span>
+				</div>
+			</div>
+			
+			
+			  <div class="col-xs-4">
+			  	<div><h4><span>AssessmentApplicability.AssessedCompetency: </span></h4>
+			  		{{#each AssessmentApplicability.AssessedCompetency}}<span>{{CompetencyName}} </span>{{/each}}
+			  		
+			  		</div>
+			  	
+			  </div> <!-- col-xs-4 -->
+			
+				<div class="col-xs-4">
+			  	<div><h4><span>AssessmentFulfillment: </span></h4>
+			  		<span>{{AssessmentFulfillment.Description}} </span>
+			  		<span>{{AssessmentFulfillment.ReportLanguageCode}} </span>
+			  		<span>{{AssessmentFulfillment.ScoreProfileName}} </span>
+			  		
+			  		</div>
+			  	
+			  </div> <!-- col-xs-4 -->
+			</div> <!-- row -->
 			{{/each}} 
 		</script>
+		
         <h1>ShowAssessmentCatalog</h1>
         <h3>This example displays the json data</h3>
 

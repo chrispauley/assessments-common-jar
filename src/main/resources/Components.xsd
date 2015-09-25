@@ -314,7 +314,7 @@
 	<xsd:element name="AssessmentSubject" type="AssessmentSubjectType" />
 	<xsd:complexType name="AssessmentSubjectType">
 		<xsd:sequence>
-			<xsd:element name="SubjectID" type="IdentifierType"
+			<xsd:element name="subjectID" type="IdentifierType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The test taker or person who takes the
@@ -351,8 +351,7 @@
 			<xsd:element name="PersonName" type="xsd:string"
 				minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation source="http://www.hr-xml.org"
-						xml:lang="en">The name of the person subject to the assessment.
+					<xsd:documentation>The name of the person subject to the assessment.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
@@ -456,14 +455,14 @@
 			</xsd:element>
 			<xsd:element name="JobCategoryCode" type="CodeType"
 				minOccurs="0" maxOccurs="unbounded">
-				<!-- JobCatgegoryType iis in codelists -->
+				<!-- JobCatgegoryType is in codelists -->
 				<xsd:annotation>
 					<xsd:documentation>A code used to classify the job category (or
 						categories) to which the assessment applies.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="CareerLevelCode" type="CodeType"
+			<xsd:element name="CareerLevelCode" type="CareerLevelCodeType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>A code classifying the level of a candiate based
@@ -484,10 +483,11 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AvailableLanguageCode" minOccurs="0"
+			<xsd:element name="AvailableLanguageCode" type="LanguageCodeList" minOccurs="0"
 				maxOccurs="unbounded" />
 		</xsd:sequence>
 	</xsd:complexType>
+	
 	<xsd:simpleType name="AssessmentTypeCodeEnumType">
 		<xsd:annotation>
 			<xsd:documentation>A set of codes broadly classifying the type of
@@ -511,13 +511,13 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="CompetencyID" type="IdentifierType"
+			<xsd:element name="competencyID" type="IdentifierType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="CompetencyName" type="xsd:string"
+			<xsd:element name="competencyName" type="xsd:string"
 				minOccurs="0" />
-			<xsd:element name="ProficiencyLevel" type="BaseScoreType"
+			<xsd:element name="proficiencyLevel" type="BaseScoreType"
 				minOccurs="0" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -571,38 +571,6 @@
 		</xsd:complexContent>
 	</xsd:complexType>
 
-	<!-- This is in common -->
-	<!-- <xsd:complexType name="IdentifierType"> -->
-	<!-- <xsd:annotation> -->
-	<!-- <xsd:documentation xml:lang="en">UNCEFACT -->
-	<!-- </xsd:documentation> -->
-	<!-- </xsd:annotation> -->
-	<!-- <xsd:simpleContent> -->
-	<!-- <xsd:extension base="xsd:normalizedString"> -->
-	<!-- <xsd:attribute name="schemeID" type="xsd:normalizedString" -->
-	<!-- use="optional"> -->
-	<!-- </xsd:attribute> -->
-	<!-- <xsd:attribute name="schemeName" type="xsd:string" -->
-	<!-- use="optional"> -->
-	<!-- </xsd:attribute> -->
-	<!-- <xsd:attribute name="schemeAgencyID" type="xsd:normalizedString" -->
-	<!-- use="optional"> -->
-	<!-- </xsd:attribute> -->
-	<!-- <xsd:attribute name="schemeAgencyName" type="xsd:string" -->
-	<!-- use="optional"> -->
-	<!-- </xsd:attribute> -->
-	<!-- <xsd:attribute name="schemeVersionID" type="xsd:normalizedString" -->
-	<!-- use="optional"> -->
-	<!-- </xsd:attribute> -->
-	<!-- <xsd:attribute name="schemeDataURI" type="xsd:anyURI" -->
-	<!-- use="optional"> -->
-	<!-- </xsd:attribute> -->
-	<!-- <xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional"> -->
-	<!-- </xsd:attribute> -->
-	<!-- </xsd:extension> -->
-	<!-- </xsd:simpleContent> -->
-	<!-- </xsd:complexType> -->
-
 	<xsd:complexType name="UserAreaType">
 		<xsd:sequence>
 			<xsd:any namespace="##any" processContents="lax" minOccurs="0"
@@ -634,12 +602,12 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="UserID" type="xsd:string" minOccurs="0">
+			<xsd:element name="userId" type="xsd:string" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>A user name or ID.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AccessCredential" type="AccessCredentialType"
+			<xsd:element name="accessCredential" type="AccessCredentialType"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation source="http://www.hr-xml.org"
@@ -658,8 +626,7 @@
 	<!-- @TODO move to common -->
 	<xsd:complexType name="AccessCredentialType">
 		<xsd:annotation>
-			<xsd:documentation source="http://www.hr-xml.org"
-				xml:lang="en">
+			<xsd:documentation>
 				This is typically used in pre-provisioning a partner system
 				with user
 				account information rather than in actual authentication
@@ -676,9 +643,9 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="AccessCredentialTypeCode" type="CodeType"
+			<xsd:element name="accessCredentialTypeCode" type="CodeType"
 				minOccurs="0" />
-			<xsd:element name="AccessCredentialValue" type="xsd:string"
+			<xsd:element name="accessCredentialValue" type="xsd:string"
 				minOccurs="0" />
 			<xsd:element name="UserArea" type="UserAreaType"
 				minOccurs="0" />
@@ -686,7 +653,7 @@
 	</xsd:complexType>
 
 	<!-- @TODO move to common -->
-	<xsd:element name="RedirectURL" type="RedirectURLType">
+	<xsd:element name="redirectURL" type="RedirectURLType">
 		<xsd:annotation>
 			<xsd:documentation source="http://www.openapplications.org/platform/1">The RedirectURL can be
 				used to indicate a URL to which the Requesting application can be
@@ -701,11 +668,11 @@
 	<xsd:complexType name="RedirectURLType">
 		<xsd:sequence>
 			<xsd:element name="URI" type="URIType" minOccurs="0" />
-			<xsd:element name="TimeOut" type="xsd:positiveInteger"
+			<xsd:element name="timeOut" type="xsd:positiveInteger"
 				minOccurs="0" />
-			<xsd:element name="StatusCode" type="xsd:string"
+			<xsd:element name="statusCode" type="xsd:string"
 				minOccurs="0" />
-			<xsd:element name="Message" type="xsd:string" minOccurs="0" />
+			<xsd:element name="message" type="xsd:string" minOccurs="0" />
 		</xsd:sequence>
 		<xsd:attributeGroup ref="EffectiveDateAttributeGroup" />
 	</xsd:complexType>
