@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssessmentOrder majorVersionID="4.0">
+   <documentId></documentId>
+   <documentSequence>1</documentSequence>
+   <requesterParty>
+      <id>requestorID</id>
+      <name>RequestorPartyName</name>
+   </requesterParty>
+   <packageId>packageId_01</packageId>
+   <comparisonGroupId>new_hire</comparisonGroupId>
+   <assessmentRequesterName>Chris Pauley</assessmentRequesterName>
+   <assessmentSubject>
+      <personName>Joe Smith</personName>
+   </assessmentSubject>
+</AssessmentOrder>

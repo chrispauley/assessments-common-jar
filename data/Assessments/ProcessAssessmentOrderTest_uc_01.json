@@ -1,0 +1,23 @@
+{
+   "AssessmentOrder" : {
+      "majorVersionID" : "4.0",
+      "documentId" : "",
+      "documentSequence" : 1,
+      "requesterParty" : {
+         "id" : [ {
+            "value" : "requestorID"
+         } ],
+         "name" : "RequestorPartyName"
+      },
+      "packageId" : {
+         "value" : "packageId_01"
+      },
+      "comparisonGroupId" : [ {
+         "value" : "new_hire"
+      } ],
+      "assessmentRequesterName" : "Chris Pauley",
+      "assessmentSubject" : {
+         "personName" : "Joe Smith"
+      }
+   }
+}

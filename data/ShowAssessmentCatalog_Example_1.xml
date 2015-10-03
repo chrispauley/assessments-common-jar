@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DocumentID>AW_UseCase_003</DocumentID><AlternateDocumentID>ShowAssessmentCatalog_Example_1</AlternateDocumentID><AlternateDocumentID>usecase_003</AlternateDocumentID><DocumentSequence>2</DocumentSequence><SupplierParty>
-   <PartyTaxID>PSI_Example_Only</PartyTaxID>
-   <PartyName>SupplierParty</PartyName>
-</SupplierParty><AssessmentPackage>
-   <ID>EAS1</ID>
-   <Name>Employee Aptitude Survey Test #1 - Verbal Comprehension</Name>
-   <Description>Employee Aptitude Survey Test #1 - Verbal Comprehension measures the ability to understand written words and the ideas associated with them. The test taker selects the synonym for a designated word from the four possibilities presented. This test is comprised of 30 multiple choice items and has a 5 minute time limit. It is designed to assess verbal ability.</Description>
-   <ParentGroupID>EAS</ParentGroupID>
-   <AssessmentApplicability>
-      <AssessedCompetency>
-         <CompetencyID>A2</CompetencyID>
-         <CompetencyName>Verbal Comprehension</CompetencyName>
-      </AssessedCompetency>
-      <JobCategoryCode listID="Functional Area">Sales</JobCategoryCode>
-      <CareerLevelCode>Mid-Level</CareerLevelCode>
-      <ApplicableRegion>
-         <CountryCode>US</CountryCode>
-      </ApplicableRegion>
-      <ApplicableRegion>
-         <CountryCode>CA</CountryCode>
-      </ApplicableRegion>
-      <ApplicableRegion>
-         <CountryCode>MX</CountryCode>
-      </ApplicableRegion>
-      <AvailableLanguageCode>EN_US</AvailableLanguageCode>
-      <AvailableLanguageCode>FR_CA</AvailableLanguageCode>
-      <AvailableLanguageCode>ES</AvailableLanguageCode>
-   </AssessmentApplicability>
-   <AssessmentAdministration>
-      <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
-      <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-      <TestDuration property="minutes">5</TestDuration>
-      <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
-      <AssessmentDeliveryCode schedulingRequiredIndicator="true">telephone</AssessmentDeliveryCode>
-   </AssessmentAdministration>
-   <AssessmentFulfillment>
-      <ScoreProfileName>EAS1</ScoreProfileName>
-      <ReportLanguageCode>en-US</ReportLanguageCode>
-   </AssessmentFulfillment>
-</AssessmentPackage>
+<AssessmentCatalog>
+   <documentID>AW_UseCase_003</documentID>
+   <alternateDocumentIds>ShowAssessmentCatalog_Example_1</alternateDocumentIds>
+   <alternateDocumentIds>usecase_003</alternateDocumentIds>
+   <documentSequence>2</documentSequence>
+   <supplierParty>
+      <taxId>PSI_Example_Only</taxId>
+   </supplierParty>
+   <assessmentPackages>
+      <ID>EAS1</ID>
+      <name>Employee Aptitude Survey Test #1 - Verbal Comprehension</name>
+      <description>Employee Aptitude Survey Test #1 - Verbal Comprehension measures the ability to understand written words and the ideas associated with them. The test taker selects the synonym for a designated word from the four possibilities presented. This test is comprised of 30 multiple choice items and has a 5 minute time limit. It is designed to assess verbal ability.</description>
+      <parentGroupIds>EAS</parentGroupIds>
+      <assessmentApplicability>
+         <assessedCompetencies>
+            <competencyIds>A2</competencyIds>
+            <competencyName>Verbal Comprehension</competencyName>
+         </assessedCompetencies>
+         <jobCategoryCodes listID="Functional Area">Sales</jobCategoryCodes>
+         <applicableRegions>
+            <countryCode>US</countryCode>
+         </applicableRegions>
+         <applicableRegions>
+            <countryCode>CA</countryCode>
+         </applicableRegions>
+         <applicableRegions>
+            <countryCode>MX</countryCode>
+         </applicableRegions>
+         <availableLanguageCodes>en-US</availableLanguageCodes>
+         <availableLanguageCodes>fr-CA</availableLanguageCodes>
+         <availableLanguageCodes>es</availableLanguageCodes>
+      </assessmentApplicability>
+      <assessmentAdministration>
+         <proctoredAssessmentIndicator>true</proctoredAssessmentIndicator>
+         <timeEnforcedIndicator>true</timeEnforcedIndicator>
+         <testDuration unitCode="minutes">5</testDuration>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">online</assessmentDeliveryCode>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">telephone</assessmentDeliveryCode>
+      </assessmentAdministration>
+      <assessmentFulfillment>
+         <scoreProfileNames>EAS1</scoreProfileNames>
+         <reportLanguageCodes>en-US</reportLanguageCodes>
+      </assessmentFulfillment>
+   </assessmentPackages>
+</AssessmentCatalog>

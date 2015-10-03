@@ -1,27 +1,27 @@
 {
    "AssessmentOrder" : {
-      "documentID" : "doc_01",
-      "alternateDocumentID" : [ "Step_02_ProcessAssessmentOrder", "AssessmentsWorkGroup_StepByStepTest_01" ],
+      "documentId" : "doc_01",
+      "alternateDocumentIds" : [ "Step_02_ProcessAssessmentOrder", "AssessmentsWorkGroup_StepByStepTest_01" ],
       "documentSequence" : 1,
-      "SupplierParty" : {
+      "supplierParty" : {
          "name" : "Healthcare SKA Assessments, Inc."
       },
-      "RequesterParty" : {
+      "requesterParty" : {
          "name" : "Healthcare Staffing, Associates"
       },
-      "packageID" : {
+      "packageId" : {
          "value" : "packageId_01"
       },
-      "comparisonGroupID" : [ {
+      "comparisonGroupId" : [ {
          "value" : "new_hire"
       } ],
-      "AssessmentSubject" : {
-         "SubjectID" : {
+      "assessmentSubject" : {
+         "subjectId" : {
             "schemeName" : "CandidateId",
             "value" : "candidateId:20150917_22"
          },
-         "PersonName" : "John Smith",
-         "Communication" : [ {
+         "personName" : "John Smith",
+         "communications" : [ {
             "type" : "cell",
             "phone" : [ {
                "formattedNumber" : "(908)555-0984"

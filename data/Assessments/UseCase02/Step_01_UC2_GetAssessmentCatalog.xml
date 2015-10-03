@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssessmentCatalog>
-   <alternateDocumentID>AssessmentsWorkGroup_StepByStepTest_02</alternateDocumentID>
-   <alternateDocumentID>Step_01_UC2_GetAssessmentCatalog</alternateDocumentID>
-   <AssessmentPackage>
-      <AssessmentApplicability>
-         <AssessedCompetency>
-            <CompetencyName>Medical Billing Process</CompetencyName>
-         </AssessedCompetency>
-      </AssessmentApplicability>
-   </AssessmentPackage>
+   <alternateDocumentIds>AssessmentsWorkGroup_StepByStepTest_02</alternateDocumentIds>
+   <alternateDocumentIds>Step_01_UC2_GetAssessmentCatalog</alternateDocumentIds>
+   <assessmentPackages>
+      <assessmentApplicability>
+         <assessedCompetencies>
+            <competencyName>Medical Billing Process</competencyName>
+         </assessedCompetencies>
+      </assessmentApplicability>
+   </assessmentPackages>
 </AssessmentCatalog>

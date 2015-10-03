@@ -1,242 +1,242 @@
 {
    "AssessmentCatalog" : {
-      "SupplierParty" : {
-         "taxID" : {
+      "supplierParty" : {
+         "taxId" : {
             "value" : "Healthcare SKA Assessments, Inc."
          }
       },
-      "AssessmentPackage" : [ {
+      "assessmentPackages" : [ {
          "ID" : [ "packageId_01" ],
-         "Name" : "Medical Billing Process",
-         "Description" : [ "skills" ],
-         "PackageCost" : "85.00 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "Medical Billing Process",
+         "description" : [ "skills" ],
+         "packageCost" : "85.00 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : ""
                } ],
                "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "25"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "packageId_02" ],
-         "Name" : "ICD-10 Medical Coding and Billing",
-         "Description" : [ "skills" ],
-         "PackageCost" : "45.00 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "ICD-10 Medical Coding and Billing",
+         "description" : [ "skills" ],
+         "packageCost" : "45.00 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : ""
                } ],
                "competencyName" : "Medical Coding and Billing"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "15"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
-            "ScoreProfileName" : [ "Online Test Profile" ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
+            "scoreProfileNames" : [ "Online Test Profile" ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "packageId_03" ],
-         "Name" : "package 3",
-         "Description" : [ "skills" ],
-         "PackageCost" : "$65 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "package 3",
+         "description" : [ "skills" ],
+         "packageCost" : "$65 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : "001"
                } ],
                "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "25"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A redirectURL available upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A redirectURL available upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "packageId_04" ],
-         "Name" : "package 4",
-         "Description" : [ "skills" ],
-         "PackageCost" : "$75 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "package 4",
+         "description" : [ "skills" ],
+         "packageCost" : "$75 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : "001"
                } ],
                "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "25"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A redirectURL available upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A redirectURL available upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "packageId_05" ],
-         "Name" : "package 5",
-         "Description" : [ "skills" ],
-         "PackageCost" : "$65 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "package 5",
+         "description" : [ "skills" ],
+         "packageCost" : "$65 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : "001"
                } ],
                "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "25"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A redirectURL available upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A redirectURL available upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "packageId_06" ],
-         "Name" : "package 6",
-         "Description" : [ "skills" ],
-         "PackageCost" : "$76 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "package 6",
+         "description" : [ "skills" ],
+         "packageCost" : "$76 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : "001"
                } ],
                "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "25"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A redirectURL available upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A redirectURL available upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "packageId_07" ],
-         "Name" : "package 7",
-         "Description" : [ "skills" ],
-         "PackageCost" : "$67 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "package 7",
+         "description" : [ "skills" ],
+         "packageCost" : "$67 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : "001"
                } ],
                "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "25"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A redirectURL available upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A redirectURL available upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "packageId_08" ],
-         "Name" : "package 8",
-         "Description" : [ "skills" ],
-         "PackageCost" : "$78 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "competencyID" : [ {
+         "name" : "package 8",
+         "description" : [ "skills" ],
+         "packageCost" : "$78 US",
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ {
                   "value" : "001"
                } ],
                "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "25"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A redirectURL available upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A redirectURL available upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       } ]
    }

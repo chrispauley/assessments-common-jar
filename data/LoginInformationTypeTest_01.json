@@ -1,23 +1,27 @@
 {
-   "LoginInformation" : {
-      "UserID" : "candidate1",
-      "AccessCredentials" : [ {
-         "AccessCredential" : {
-            "name" : "password",
-            "value" : "value_goes_here"
-         }
-      }, {
-         "AccessCredential" : {
-            "listName" : "oAuth2",
-            "name" : "MAC",
-            "value" : "14197230929s0df90s09d"
-         }
-      }, {
-         "AccessCredential" : {
-            "listName" : "oAuth2",
-            "name" : "Bearer",
-            "value" : "abcdef"
-         }
-      } ]
-   }
+   "userId" : "candidate1",
+   "accessCredentials" : [ {
+      "accessCredentialTypeCode" : {
+         "name" : "password",
+         "value" : "value_goes_here"
+      }
+   }, {
+      "accessCredentialTypeCode" : {
+         "listName" : "oAuth2",
+         "name" : "MAC",
+         "value" : "14197230929s0df90s09d"
+      }
+   }, {
+      "accessCredentialTypeCode" : {
+         "listName" : "oAuth2",
+         "name" : "Bearer",
+         "value" : "abcdef"
+      }
+   }, {
+      "accessCredentialTypeCode" : {
+         "listAgencyID" : "",
+         "name" : "RedirectURL",
+         "value" : "http://www.ats-company.com/app/v1/assessmentorder?orderID=1234&access_token=k3k4uyahg3"
+      }
+   } ]
 }

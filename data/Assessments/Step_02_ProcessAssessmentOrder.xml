@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssessmentOrder>
-   <documentID>doc_01</documentID>
-   <alternateDocumentID>Step_02_ProcessAssessmentOrder</alternateDocumentID>
-   <alternateDocumentID>AssessmentsWorkGroup_StepByStepTest_01</alternateDocumentID>
+   <documentId>doc_01</documentId>
+   <alternateDocumentIds>Step_02_ProcessAssessmentOrder</alternateDocumentIds>
+   <alternateDocumentIds>AssessmentsWorkGroup_StepByStepTest_01</alternateDocumentIds>
    <documentSequence>1</documentSequence>
-   <SupplierParty>
+   <supplierParty>
       <name>Healthcare SKA Assessments, Inc.</name>
-   </SupplierParty>
-   <RequesterParty>
+   </supplierParty>
+   <requesterParty>
       <name>Healthcare Staffing, Associates</name>
-   </RequesterParty>
-   <packageID>packageId_01</packageID>
-   <comparisonGroupID>new_hire</comparisonGroupID>
-   <AssessmentSubject>
-      <SubjectID schemeName="CandidateId">candidateId:20150917_22</SubjectID>
-      <PersonName>John Smith</PersonName>
-      <Communication type="cell">
+   </requesterParty>
+   <packageId>packageId_01</packageId>
+   <comparisonGroupId>new_hire</comparisonGroupId>
+   <assessmentSubject>
+      <subjectId schemeName="CandidateId">candidateId:20150917_22</subjectId>
+      <personName>John Smith</personName>
+      <communications type="cell">
          <phone>
             <formattedNumber>(908)555-0984</formattedNumber>
          </phone>
-      </Communication>
-      <Communication type="email">
+      </communications>
+      <communications type="email">
          <email>
             <address>smithj@yahoo.com</address>
          </email>
-      </Communication>
-   </AssessmentSubject>
+      </communications>
+   </assessmentSubject>
 </AssessmentOrder>

@@ -1,17 +1,41 @@
 {
    "AssessmentReport" : {
       "languageCode" : "en-US",
-      "DocumentID" : "documentId_01",
-      "AlternateDocumentID" : [ "AssessmentOrder: 20150820_001" ],
-      "DocumentSequence" : 1,
-      "CustomerParty" : {
-         "PartyName" : "CustomerParty"
+      "documentId" : "documentId_01",
+      "alternateDocumentIds" : [ "AssessmentOrder: 20150820_001" ],
+      "documentSequence" : 1,
+      "customerParty" : {
+         "taxId" : {
+            "value" : "customer name"
+         },
+         "name" : "CustomerParty"
       },
-      "SupplierParty" : {
-         "PartyName" : "SupplierParty"
+      "supplierParty" : {
+         "taxId" : {
+            "value" : "supplier name"
+         },
+         "name" : "SupplierParty"
       },
-      "RequesterParty" : {
-         "PartyName" : "RequestorParty"
+      "requesterParty" : {
+         "taxId" : {
+            "value" : "Requestor Name"
+         },
+         "name" : "RequestorParty"
+      },
+      "assessmentSubject" : {
+         "subjectId" : {
+            "value" : "candidate_001"
+         },
+         "personLegalIds" : [ {
+            "value" : "legal_id"
+         } ],
+         "personName" : "Chris Pauley",
+         "communications" : [ {
+         }, {
+         }, {
+         }, {
+         }, {
+         } ]
       }
    }
 }

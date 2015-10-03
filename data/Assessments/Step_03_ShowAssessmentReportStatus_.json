@@ -1,0 +1,19 @@
+{
+   "AssessmentReport" : {
+      "documentId" : "doc_01",
+      "alternateDocumentIds" : [ "Step_03_ShowAssessmentReportStatus_" ],
+      "supplierParty" : {
+         "name" : "Healthcare SKA Assessments, Inc."
+      },
+      "assessmentSubject" : {
+         "personName" : "John Smith"
+      },
+      "assessmentResult" : {
+         "packageId" : "packageId_01",
+         "assessmentStatus" : {
+            "assessmentStatusCode" : "OrderAcknowledged",
+            "description" : [ "Client has not completed the test." ]
+         }
+      }
+   }
+}

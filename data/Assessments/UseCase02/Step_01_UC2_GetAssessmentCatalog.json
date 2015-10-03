@@ -1,10 +1,10 @@
 {
    "AssessmentCatalog" : {
-      "alternateDocumentID" : [ "AssessmentsWorkGroup_StepByStepTest_02", "Step_01_UC2_GetAssessmentCatalog" ],
-      "AssessmentPackage" : [ {
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [ {
-               "CompetencyName" : "Medical Billing Process"
+      "alternateDocumentIds" : [ "AssessmentsWorkGroup_StepByStepTest_02", "Step_01_UC2_GetAssessmentCatalog" ],
+      "assessmentPackages" : [ {
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyName" : "Medical Billing Process"
             } ]
          }
       } ]

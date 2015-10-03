@@ -1,140 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssessmentCatalog>
    <documentID>AW_UseCase_004</documentID>
-   <alternateDocumentID>ProcessAssessmentCatalog_Example_1</alternateDocumentID>
-   <alternateDocumentID>usecase_004</alternateDocumentID>
+   <alternateDocumentIds>ProcessAssessmentCatalog_Example_1</alternateDocumentIds>
+   <alternateDocumentIds>usecase_004</alternateDocumentIds>
    <documentSequence>2</documentSequence>
-   <SupplierParty>
-      <taxID>PSI_Example_Only</taxID>
-   </SupplierParty>
-   <AssessmentPackage>
+   <supplierParty>
+      <taxId>PSI_Example_Only</taxId>
+   </supplierParty>
+   <assessmentPackages>
       <ID>EAS1</ID>
-      <Name>Employee Aptitude Survey Test #1 - Verbal Comprehension</Name>
-      <Description>Employee Aptitude Survey Test #1 - Verbal Comprehension measures the ability to understand written words and the ideas associated with them. The test taker selects the synonym for a designated word from the four possibilities presented. This test is comprised of 30 multiple choice items and has a 5 minute time limit. It is designed to assess verbal ability.</Description>
-      <ParentGroupID>EAS</ParentGroupID>
-      <AssessmentApplicability>
-         <Description>skills</Description>
-         <AssessmentTypeCode>SKILL</AssessmentTypeCode>
-         <AssessedCompetency>
-            <CompetencyID>A1</CompetencyID>
-            <CompetencyID>A2</CompetencyID>
-            <CompetencyName>Verbal Comprehension</CompetencyName>
-            <ProficiencyLevel>
-               <ScoreNumeric minimumScoreNumeric="0" maximumScoreNumeric="100">
+      <name>Employee Aptitude Survey Test #1 - Verbal Comprehension</name>
+      <description>Employee Aptitude Survey Test #1 - Verbal Comprehension measures the ability to understand written words and the ideas associated with them. The test taker selects the synonym for a designated word from the four possibilities presented. This test is comprised of 30 multiple choice items and has a 5 minute time limit. It is designed to assess verbal ability.</description>
+      <parentGroupIds>EAS</parentGroupIds>
+      <assessmentApplicability>
+         <descriptions>skills</descriptions>
+         <assessmentTypeCodes>SKILL</assessmentTypeCodes>
+         <assessedCompetencies>
+            <competencyIds>A1</competencyIds>
+            <competencyIds>A2</competencyIds>
+            <competencyName>Verbal Comprehension</competencyName>
+            <proficiencyLevel>
+               <scoreNumeric minimumScoreNumeric="0" maximumScoreNumeric="100">
                   <scoreNumericCode>70</scoreNumericCode>
                   <interval>100</interval>
-               </ScoreNumeric>
-            </ProficiencyLevel>
-         </AssessedCompetency>
-         <AssessedCompetency>
-            <CompetencyID>E1</CompetencyID>
-            <CompetencyID>E2</CompetencyID>
-            <CompetencyName>Verbal Comprehension</CompetencyName>
-            <ProficiencyLevel>
-               <ScoreText>Mid-Level</ScoreText>
-            </ProficiencyLevel>
-         </AssessedCompetency>
-         <JobCategoryCode>Professional</JobCategoryCode>
-         <CareerLevelCode>Executive</CareerLevelCode>
-         <ApplicableRegion>
-            <CountryCode>MX</CountryCode>
-         </ApplicableRegion>
-         <AvailableLanguageCode>ES</AvailableLanguageCode>
-      </AssessmentApplicability>
-      <AssessmentAdministration>
-         <Description>This is a time enforced assessment</Description>
-         <ProctoredAssessmentIndicator>false</ProctoredAssessmentIndicator>
-         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-         <TestDuration unitCode="minutes">10</TestDuration>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="false">online</AssessmentDeliveryCode>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="true">fax</AssessmentDeliveryCode>
-      </AssessmentAdministration>
-      <AssessmentFulfillment>
-         <ScoreProfileName>PET Profile 1</ScoreProfileName>
-         <ReportLanguageCode>en-US</ReportLanguageCode>
-      </AssessmentFulfillment>
-   </AssessmentPackage>
-   <AssessmentPackage>
+               </scoreNumeric>
+            </proficiencyLevel>
+         </assessedCompetencies>
+         <assessedCompetencies>
+            <competencyIds>E1</competencyIds>
+            <competencyIds>E2</competencyIds>
+            <competencyName>Verbal Comprehension</competencyName>
+            <proficiencyLevel>
+               <scoreText>Mid-Level</scoreText>
+            </proficiencyLevel>
+         </assessedCompetencies>
+         <applicableRegions>
+            <countryCode>MX</countryCode>
+         </applicableRegions>
+         <availableLanguageCodes>es</availableLanguageCodes>
+      </assessmentApplicability>
+      <assessmentAdministration>
+         <description>This is a time enforced assessment</description>
+         <proctoredAssessmentIndicator>false</proctoredAssessmentIndicator>
+         <timeEnforcedIndicator>true</timeEnforcedIndicator>
+         <testDuration unitCode="minutes">10</testDuration>
+         <assessmentDeliveryCode schedulingRequiredIndicator="false">online</assessmentDeliveryCode>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">fax</assessmentDeliveryCode>
+      </assessmentAdministration>
+      <assessmentFulfillment>
+         <scoreProfileNames>PET Profile 1</scoreProfileNames>
+         <reportLanguageCodes>en-US</reportLanguageCodes>
+      </assessmentFulfillment>
+   </assessmentPackages>
+   <assessmentPackages>
       <ID>PET</ID>
-      <Name>Professional Employment Test</Name>
-      <Description>The Professional Employment Test (PET) is designed to assess the cognitive abilities that are important for the successfulperformance of work behaviors in professional occupations. It is comprised of 40 multiple choice items with an 80 minute time limit. Questions on the PET focus upon data interpretation, reasoning, quantitative problem solving, and reading comprehension. The PET is intended for use in the selection of personnel for professional, administrative, and managerial occupations.</Description>
-      <AssessmentApplicability>
-         <AssessedCompetency>
-            <CompetencyID>C1</CompetencyID>
-            <CompetencyID>C2</CompetencyID>
-            <CompetencyName>Verbal Comprehension</CompetencyName>
-            <ProficiencyLevel>
-               <ScoreText>Mid-Level</ScoreText>
-            </ProficiencyLevel>
-         </AssessedCompetency>
-         <AssessedCompetency>
-            <CompetencyID>E1</CompetencyID>
-            <CompetencyID>E2</CompetencyID>
-            <CompetencyName>Quantitative Problem Solving</CompetencyName>
-            <ProficiencyLevel>
-               <ScoreText>Mid-Level</ScoreText>
-            </ProficiencyLevel>
-         </AssessedCompetency>
-         <JobCategoryCode>Professional</JobCategoryCode>
-         <CareerLevelCode>Executive</CareerLevelCode>
-         <ApplicableRegion>
-            <CountryCode>MX</CountryCode>
-         </ApplicableRegion>
-         <AvailableLanguageCode>ES</AvailableLanguageCode>
-      </AssessmentApplicability>
-      <AssessmentAdministration>
-         <Description>This is a time enforced assessment</Description>
-         <ProctoredAssessmentIndicator>false</ProctoredAssessmentIndicator>
-         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-         <TestDuration unitCode="minutes">10</TestDuration>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="false">online</AssessmentDeliveryCode>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="true">fax</AssessmentDeliveryCode>
-      </AssessmentAdministration>
-      <AssessmentFulfillment>
-         <ScoreProfileName>PET Profile 1</ScoreProfileName>
-         <ReportLanguageCode>fr-FR</ReportLanguageCode>
-      </AssessmentFulfillment>
-   </AssessmentPackage>
-   <AssessmentPackage>
+      <name>Professional Employment Test</name>
+      <description>The Professional Employment Test (PET) is designed to assess the cognitive abilities that are important for the successfulperformance of work behaviors in professional occupations. It is comprised of 40 multiple choice items with an 80 minute time limit. Questions on the PET focus upon data interpretation, reasoning, quantitative problem solving, and reading comprehension. The PET is intended for use in the selection of personnel for professional, administrative, and managerial occupations.</description>
+      <assessmentApplicability>
+         <assessedCompetencies>
+            <competencyIds>C1</competencyIds>
+            <competencyIds>C2</competencyIds>
+            <competencyName>Verbal Comprehension</competencyName>
+            <proficiencyLevel>
+               <scoreText>Mid-Level</scoreText>
+            </proficiencyLevel>
+         </assessedCompetencies>
+         <assessedCompetencies>
+            <competencyIds>E1</competencyIds>
+            <competencyIds>E2</competencyIds>
+            <competencyName>Quantitative Problem Solving</competencyName>
+            <proficiencyLevel>
+               <scoreText>Mid-Level</scoreText>
+            </proficiencyLevel>
+         </assessedCompetencies>
+         <jobCategoryCodes>Professional</jobCategoryCodes>
+         <applicableRegions>
+            <countryCode>MX</countryCode>
+         </applicableRegions>
+         <availableLanguageCodes>es</availableLanguageCodes>
+      </assessmentApplicability>
+      <assessmentAdministration>
+         <description>This is a time enforced assessment</description>
+         <proctoredAssessmentIndicator>false</proctoredAssessmentIndicator>
+         <timeEnforcedIndicator>true</timeEnforcedIndicator>
+         <testDuration unitCode="minutes">10</testDuration>
+         <assessmentDeliveryCode schedulingRequiredIndicator="false">online</assessmentDeliveryCode>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">fax</assessmentDeliveryCode>
+      </assessmentAdministration>
+      <assessmentFulfillment>
+         <scoreProfileNames>PET Profile 1</scoreProfileNames>
+         <reportLanguageCodes>fr-FR</reportLanguageCodes>
+      </assessmentFulfillment>
+   </assessmentPackages>
+   <assessmentPackages>
       <ID>SureHire</ID>
-      <Name>SureHire</Name>
-      <Description>SureHire® is an instrument that is specifically designed to measure the competencies necessary for job success in a retail environment. Comprised of 50 multiple-choice items, it can becompleted by most applicants in 25 minutes or less. SureHire® affordsa broad understanding of potential employees by assessing both problemsolving skills (such as making change and following written procedures)as well as attitudes toward work and customer service.</Description>
-      <AssessmentApplicability>
-         <AssessedCompetency>
-            <CompetencyID>C1</CompetencyID>
-            <CompetencyID>C2</CompetencyID>
-            <CompetencyName>Verbal Comprehension</CompetencyName>
-            <ProficiencyLevel>
-               <ScoreText>Mid-Level</ScoreText>
-            </ProficiencyLevel>
-         </AssessedCompetency>
-         <AssessedCompetency>
-            <CompetencyID>F1</CompetencyID>
-            <CompetencyName>Problem Solving</CompetencyName>
-         </AssessedCompetency>
-         <AssessedCompetency>
-            <CompetencyID>G1</CompetencyID>
-            <CompetencyName>Work Orientation</CompetencyName>
-         </AssessedCompetency>
-         <JobCategoryCode listID="Job Industry">Retail</JobCategoryCode>
-         <ApplicableRegion>
-            <CountryCode>FR</CountryCode>
-         </ApplicableRegion>
-         <ApplicableRegion>
-            <CountryCode>US</CountryCode>
-         </ApplicableRegion>
-         <AvailableLanguageCode>EN_US</AvailableLanguageCode>
-      </AssessmentApplicability>
-      <AssessmentAdministration>
-         <ProctoredAssessmentIndicator>false</ProctoredAssessmentIndicator>
-         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-         <TestDuration unitCode="minutes">10</TestDuration>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="true">fax</AssessmentDeliveryCode>
-      </AssessmentAdministration>
-      <AssessmentFulfillment>
-         <ScoreProfileName>SureHire Result Profile</ScoreProfileName>
-         <ReportLanguageCode>fr-FR</ReportLanguageCode>
-      </AssessmentFulfillment>
-   </AssessmentPackage>
+      <name>SureHire</name>
+      <description>SureHire® is an instrument that is specifically designed to measure the competencies necessary for job success in a retail environment. Comprised of 50 multiple-choice items, it can becompleted by most applicants in 25 minutes or less. SureHire® affordsa broad understanding of potential employees by assessing both problemsolving skills (such as making change and following written procedures)as well as attitudes toward work and customer service.</description>
+      <assessmentApplicability>
+         <assessedCompetencies>
+            <competencyIds>C1</competencyIds>
+            <competencyIds>C2</competencyIds>
+            <competencyName>Verbal Comprehension</competencyName>
+            <proficiencyLevel>
+               <scoreText>Mid-Level</scoreText>
+            </proficiencyLevel>
+         </assessedCompetencies>
+         <assessedCompetencies>
+            <competencyIds>F1</competencyIds>
+            <competencyName>Problem Solving</competencyName>
+         </assessedCompetencies>
+         <assessedCompetencies>
+            <competencyIds>G1</competencyIds>
+            <competencyName>Work Orientation</competencyName>
+         </assessedCompetencies>
+         <jobCategoryCodes listID="Job Industry">Retail</jobCategoryCodes>
+         <applicableRegions>
+            <countryCode>FR</countryCode>
+         </applicableRegions>
+         <applicableRegions>
+            <countryCode>US</countryCode>
+         </applicableRegions>
+         <availableLanguageCodes>en-US</availableLanguageCodes>
+      </assessmentApplicability>
+      <assessmentAdministration>
+         <proctoredAssessmentIndicator>false</proctoredAssessmentIndicator>
+         <timeEnforcedIndicator>true</timeEnforcedIndicator>
+         <testDuration unitCode="minutes">10</testDuration>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">online</assessmentDeliveryCode>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">fax</assessmentDeliveryCode>
+      </assessmentAdministration>
+      <assessmentFulfillment>
+         <scoreProfileNames>SureHire Result Profile</scoreProfileNames>
+         <reportLanguageCodes>fr-FR</reportLanguageCodes>
+      </assessmentFulfillment>
+   </assessmentPackages>
 </AssessmentCatalog>

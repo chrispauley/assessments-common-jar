@@ -1,62 +1,64 @@
 {
    "AssessmentCatalog" : {
-      "SupplierParty" : {
+      "supplierParty" : {
          "taxID" : {
             "value" : "Healthcare SKA Assessments, Inc."
          }
       },
-      "AssessmentPackage" : [ {
+      "assessmentPackages" : [ {
          "ID" : [ "packageId_01" ],
-         "Name" : "Healthcare Record Keeping Assessment",
-         "Description" : [ "skills" ],
+         "name" : "Healthcare Record Keeping Assessment",
+         "description" : [ "skills" ],
          "PackageCost" : "15.00 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [  {
-               "CompetencyName" : "Record Keeping"
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ null ],
+               "competencyName" : "Record Keeping"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "5"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       }, {
          "ID" : [ "package_002" ],
-         "Name" : "Healthcare Scheduling Assessment",
-         "Description" : [ "skills" ],
+         "name" : "Healthcare Scheduling Assessment",
+         "description" : [ "skills" ],
          "PackageCost" : "45.00 US",
-         "AssessmentApplicability" : {
-            "AssessedCompetency" : [  {
-               "CompetencyName" : "Scheduling"
+         "assessmentApplicability" : {
+            "assessedCompetencies" : [ {
+               "competencyIds" : [ null ],
+               "competencyName" : "Scheduling"
             } ]
          },
-         "AssessmentAdministration" : {
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
+         "assessmentAdministration" : {
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
                "unitCode" : "minutes",
                "value" : "15"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
                "schedulingRequiredIndicator" : true,
                "value" : "online"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
-            "ScoreProfileName" : [ "Online Test Profile" ],
-            "ReportLanguageCode" : [ "en-US" ]
+         "assessmentFulfillment" : {
+            "descriptions" : [ "A URL will be sent to the AssesmentRequestor upon order." ],
+            "scoreProfileNames" : [ "Online Test Profile" ],
+            "reportLanguageCodes" : [ "en-US" ]
          }
       } ]
    }

@@ -1,72 +1,30 @@
 {
    "AssessmentCatalog" : {
-      "DocumentID" : "documentId_01",
-      "AlternateDocumentID" : [ "alternateId-01", "alternateId-02", "alternateId-03" ],
-      "DocumentSequence" : 1,
-      "CustomerParty" : {
-         "PartyTaxID" : {
-            "value" : "Amazing Software, Inc."
-         },
-         "PartyName" : "CustomerParty",
-         "Communication" : [ {
-            "ChannelCode" : "Telephone",
-            "DialNumber" : "888-555-9876"
-         } ],
-         "PersonContact" : [ {
-            "PersonName" : {
-               "FormattedName" : "Vijay Patel",
-               "LegalName" : "Patel"
-            }
-         } ],
-         "UserArea" : {
-         }
+      "documentID" : "documentId_01",
+      "alternateDocumentIds" : [ "alternateId-01", "alternateId-02", "alternateId-03" ],
+      "documentSequence" : 1,
+      "customerParty" : {
       },
-      "SupplierParty" : {
-         "PartyTaxID" : {
-            "value" : "Assessment World"
-         },
-         "PartyName" : "SupplierParty",
-         "Communication" : [ {
-            "ChannelCode" : "Telephone",
-            "DialNumber" : "800-555-1234"
-         } ],
-         "PersonContact" : [ {
-            "PersonName" : {
-               "FormattedName" : "Johanna Smith"
-            }
-         } ],
-         "UserArea" : {
-         }
+      "supplierParty" : {
       },
-      "RequesterParty" : {
-         "PartyTaxID" : {
-            "value" : "Software Engineering Placement, Inc."
-         },
-         "PartyName" : "RequestorParty",
-         "PersonContact" : [ {
-            "PersonName" : {
-               "FormattedName" : "Lynn Jones"
-            }
-         } ],
-         "UserArea" : {
-         }
+      "requesterParty" : {
       },
-      "AssessmentPackage" : [ {
+      "assessmentPackages" : [ {
          "ID" : [ "package-001" ],
-         "Name" : "Package1 Name",
-         "Description" : [ "Package Description" ],
-         "ParentGroupID" : [ "Hiring Manager" ],
-         "PackageTypeCode" : [ "typeCode1" ],
-         "PartyReportingIDs" : [ "Manager-001" ],
-         "ServiceAvailabilityCode" : "Available",
-         "PackageCost" : "cost?",
-         "AssessmentApplicability" : {
-            "Description" : [ "Description for AssessmentApplicability" ],
-            "AssessmentTypeCode" : [ "ABILITY", "KNOWLEDGE" ],
-            "AssessedCompetency" : [ {
-               "CompetencyName" : "CompetencyName One"
+         "name" : "Package1 Name",
+         "description" : [ "Package Description" ],
+         "parentGroupIds" : [ "Hiring Manager" ],
+         "packageTypeCode" : [ "typeCode1" ],
+         "partyReportingIds" : [ "Manager-001" ],
+         "serviceAvailabilityCode" : "Available",
+         "packageCost" : "cost?",
+         "assessmentApplicability" : {
+            "descriptions" : [ "Description for AssessmentApplicability" ],
+            "assessmentTypeCodes" : [ "ABILITY", "KNOWLEDGE" ],
+            "assessedCompetencies" : [ {
+               "competencyName" : "CompetencyName One"
             } ],
-            "JobCategoryCode" : [ {
+            "jobCategoryCodes" : [ {
                "listID" : "SOC",
                "listAgencyID" : "BLS",
                "listAgencyName" : "Bureau of Labor Statistics",
@@ -95,35 +53,31 @@
                "name" : "Computer Programmer",
                "languageID" : "fr-CA",
                "value" : "2174"
-            } ],
-            "CareerLevelCode" : {
-               "name" : "name",
-               "value" : "Mid-Career"
-            }
+            } ]
          },
-         "AssessmentAdministration" : {
-            "Description" : [ "This is an online test." ],
-            "ProctoredAssessmentIndicator" : true,
-            "TimeEnforcedIndicator" : true,
-            "TestDuration" : {
-               "property" : "prop 1",
+         "assessmentAdministration" : {
+            "description" : [ "This is an online test." ],
+            "proctoredAssessmentIndicator" : true,
+            "timeEnforcedIndicator" : true,
+            "testDuration" : {
+               "unitCode" : "prop 1",
                "value" : "value of mt"
             },
-            "AssessmentDeliveryCode" : [ {
+            "assessmentDeliveryCode" : [ {
             }, {
                "schedulingRequiredIndicator" : true,
                "value" : "Code1"
             } ]
          },
-         "AssessmentFulfillment" : {
-            "Description" : [ "Description of Fulfillment" ],
-            "EffectivePeriodDescription" : [ {
-               "property" : "prop 1",
+         "assessmentFulfillment" : {
+            "descriptions" : [ "Description of Fulfillment" ],
+            "effectivePeriodDescriptions" : [ {
+               "unitCode" : "prop 1",
                "value" : "value of mt"
             } ],
-            "ScoreProfileName" : [ "Profile1", "Profile2" ],
-            "ReportLanguageCode" : [ "en-US", "fr-CA" ],
-            "UserArea" : "{}" 
+            "scoreProfileNames" : [ "Profile1", "Profile2" ],
+            "reportLanguageCodes" : [ "en-US", "fr-CA" ],
+            "userArea" : "{}" 
          }
       } ]
    }

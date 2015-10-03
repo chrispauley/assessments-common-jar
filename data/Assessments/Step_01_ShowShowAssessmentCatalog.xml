@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssessmentCatalog>
-   <SupplierParty>
+   <supplierParty>
       <taxID>Healthcare SKA Assessments, Inc.</taxID>
-   </SupplierParty>
-   <AssessmentPackage>
+   </supplierParty>
+   <assessmentPackages>
       <ID>packageId_01</ID>
-      <Name>Healthcare Record Keeping Assessment</Name>
-      <Description>skills</Description>
+      <name>Healthcare Record Keeping Assessment</name>
+      <description>skills</description>
       <PackageCost>15.00 US</PackageCost>
-      <AssessmentApplicability>
-         <AssessedCompetency>
-            <CompetencyName>Record Keeping</CompetencyName>
-         </AssessedCompetency>
-      </AssessmentApplicability>
-      <AssessmentAdministration>
-         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
-         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-         <TestDuration unitCode="minutes">5</TestDuration>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
-      </AssessmentAdministration>
-      <AssessmentFulfillment>
-         <Description>A URL will be sent to the AssesmentRequestor upon order.</Description>
-         <ReportLanguageCode>en-US</ReportLanguageCode>
-      </AssessmentFulfillment>
-   </AssessmentPackage>
-   <AssessmentPackage>
+      <assessmentApplicability>
+         <assessedCompetencies>
+            <competencyIds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <competencyName>Record Keeping</competencyName>
+         </assessedCompetencies>
+      </assessmentApplicability>
+      <assessmentAdministration>
+         <proctoredAssessmentIndicator>true</proctoredAssessmentIndicator>
+         <timeEnforcedIndicator>true</timeEnforcedIndicator>
+         <testDuration unitCode="minutes">5</testDuration>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">online</assessmentDeliveryCode>
+      </assessmentAdministration>
+      <assessmentFulfillment>
+         <descriptions>A URL will be sent to the AssesmentRequestor upon order.</descriptions>
+         <reportLanguageCodes>en-US</reportLanguageCodes>
+      </assessmentFulfillment>
+   </assessmentPackages>
+   <assessmentPackages>
       <ID>package_002</ID>
-      <Name>Healthcare Scheduling Assessment</Name>
-      <Description>skills</Description>
+      <name>Healthcare Scheduling Assessment</name>
+      <description>skills</description>
       <PackageCost>45.00 US</PackageCost>
-      <AssessmentApplicability>
-         <AssessedCompetency>
-            <CompetencyName>Scheduling</CompetencyName>
-         </AssessedCompetency>
-      </AssessmentApplicability>
-      <AssessmentAdministration>
-         <ProctoredAssessmentIndicator>true</ProctoredAssessmentIndicator>
-         <TimeEnforcedIndicator>true</TimeEnforcedIndicator>
-         <TestDuration unitCode="minutes">15</TestDuration>
-         <AssessmentDeliveryCode schedulingRequiredIndicator="true">online</AssessmentDeliveryCode>
-      </AssessmentAdministration>
-      <AssessmentFulfillment>
-         <Description>A URL will be sent to the AssesmentRequestor upon order.</Description>
-         <ScoreProfileName>Online Test Profile</ScoreProfileName>
-         <ReportLanguageCode>en-US</ReportLanguageCode>
-      </AssessmentFulfillment>
-   </AssessmentPackage>
+      <assessmentApplicability>
+         <assessedCompetencies>
+            <competencyIds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <competencyName>Scheduling</competencyName>
+         </assessedCompetencies>
+      </assessmentApplicability>
+      <assessmentAdministration>
+         <proctoredAssessmentIndicator>true</proctoredAssessmentIndicator>
+         <timeEnforcedIndicator>true</timeEnforcedIndicator>
+         <testDuration unitCode="minutes">15</testDuration>
+         <assessmentDeliveryCode schedulingRequiredIndicator="true">online</assessmentDeliveryCode>
+      </assessmentAdministration>
+      <assessmentFulfillment>
+         <descriptions>A URL will be sent to the AssesmentRequestor upon order.</descriptions>
+         <scoreProfileNames>Online Test Profile</scoreProfileNames>
+         <reportLanguageCodes>en-US</reportLanguageCodes>
+      </assessmentFulfillment>
+   </assessmentPackages>
 </AssessmentCatalog>

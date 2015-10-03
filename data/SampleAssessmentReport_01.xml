@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AssessmentReport languageCode="en-US">
-   <DocumentID>documentId_01</DocumentID>
-   <AlternateDocumentID>AssessmentOrder: 20150820_001</AlternateDocumentID>
-   <DocumentSequence>1</DocumentSequence>
-   <CustomerParty>
-      <PartyName>CustomerParty</PartyName>
-   </CustomerParty>
-   <SupplierParty>
-      <PartyName>SupplierParty</PartyName>
-   </SupplierParty>
-   <RequesterParty>
-      <PartyName>RequestorParty</PartyName>
-   </RequesterParty>
+   <documentId>documentId_01</documentId>
+   <alternateDocumentIds>AssessmentOrder: 20150820_001</alternateDocumentIds>
+   <documentSequence>1</documentSequence>
+   <customerParty>
+      <taxId>customer name</taxId>
+      <name>CustomerParty</name>
+   </customerParty>
+   <supplierParty>
+      <taxId>supplier name</taxId>
+      <name>SupplierParty</name>
+   </supplierParty>
+   <requesterParty>
+      <taxId>Requestor Name</taxId>
+      <name>RequestorParty</name>
+   </requesterParty>
+   <assessmentSubject>
+      <subjectId>candidate_001</subjectId>
+      <personLegalIds>legal_id</personLegalIds>
+      <personName>Chris Pauley</personName>
+      <communications/>
+      <communications/>
+      <communications/>
+      <communications/>
+      <communications/>
+   </assessmentSubject>
 </AssessmentReport>
