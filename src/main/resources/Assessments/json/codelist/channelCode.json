@@ -1,0 +1,12 @@
+{
+	"title": "ChannelCodeContentType",
+	"description": "Action values code list",
+	"enum": [
+		"Telephone",
+		"MobileTelephone",
+		"Fax",
+		"Email",
+		"InstantMessage",
+		"Web"
+	]
+}

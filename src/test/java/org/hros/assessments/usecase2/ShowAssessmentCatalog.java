@@ -67,25 +67,25 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	}
 	private void createPackages(AssessmentCatalogType ac) {
-		ac.getAssessmentPackage().add(createAssessmentPackageOne());
-		ac.getAssessmentPackage().add(createAssessmentPackageTwo());
+		ac.getAssessmentPackages().add(createAssessmentPackageOne());
+		ac.getAssessmentPackages().add(createAssessmentPackageTwo());
 
-		ac.getAssessmentPackage().add(
+		ac.getAssessmentPackages().add(
 				AssessmentPackageHelper.createAssessmentPackage(
 						PACKAGE_ID_03, "$65 US", "package 3", "pkg3 text"));
-		ac.getAssessmentPackage().add(
+		ac.getAssessmentPackages().add(
 				AssessmentPackageHelper.createAssessmentPackage(
 						PACKAGE_ID_04, "$75 US", "package 4", "pkg4 text"));
-		ac.getAssessmentPackage().add(
+		ac.getAssessmentPackages().add(
 				AssessmentPackageHelper.createAssessmentPackage(
 						PACKAGE_ID_05, "$65 US", "package 5", "pkg5 text"));
-		ac.getAssessmentPackage().add(
+		ac.getAssessmentPackages().add(
 				AssessmentPackageHelper.createAssessmentPackage(
 						PACKAGE_ID_06, "$76 US", "package 6", "pkg6 text"));
-		ac.getAssessmentPackage().add(
+		ac.getAssessmentPackages().add(
 				AssessmentPackageHelper.createAssessmentPackage(
 						PACKAGE_ID_07, "$67 US", "package 7", "pkg7 text"));
-		ac.getAssessmentPackage().add(
+		ac.getAssessmentPackages().add(
 				AssessmentPackageHelper.createAssessmentPackage(
 						PACKAGE_ID_08, "$78 US", "package 8", "pkg8 text"));
 	}
@@ -93,7 +93,7 @@ public class ShowAssessmentCatalog extends TestCase {
 	private PartyType createSupplierParty() {
 		PartyType pt = new PartyType();
 		// pt.setPartyName("Healthcare SKA Assessments, Inc.");
-		pt.setTaxID(createIdentifier(SUPPLIER_PARTY));
+		pt.setTaxId(createIdentifier(SUPPLIER_PARTY));
 		return pt;
 	}
 
@@ -117,9 +117,9 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentFulfillmentType createAssessmentFullfillment_PkgOne() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getDescription().add(
+		af.getDescriptions().add(
 				"A URL will be sent to the AssesmentRequestor upon order.");
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
 		return af;
 	}
 
@@ -142,7 +142,7 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(
+		aa.getAssessedCompetencies().add(
 				createSpecifiedCompetency("Record Keeping"));
 		return aa;
 	}
@@ -150,7 +150,7 @@ public class ShowAssessmentCatalog extends TestCase {
 	private SpecifiedCompetencyType createSpecifiedCompetency(String cName) {
 		SpecifiedCompetencyType c = new SpecifiedCompetencyType();
 		c.setCompetencyName(cName);
-		c.getCompetencyID().add(createCompetencyIdentifierId(""));
+		c.getCompetencyIds().add(createCompetencyIdentifierId(""));
 		return c;
 	}
 
@@ -174,7 +174,7 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityTypeTwo() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(
+		aa.getAssessedCompetencies().add(
 				createSpecifiedCompetency("Medical Coding and Billing"));
 		return aa;
 	}
@@ -199,10 +199,10 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentFulfillmentType createAssessmentFullfillment_PkgTwo() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getDescription().add(
+		af.getDescriptions().add(
 				"A URL will be sent to the AssesmentRequestor upon order.");
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
-		af.getScoreProfileName().add("Online Test Profile");
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
+		af.getScoreProfileNames().add("Online Test Profile");
 		return af;
 	}
 }

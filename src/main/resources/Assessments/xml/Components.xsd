@@ -2,8 +2,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<xsd:include schemaLocation="CodeLists.xsd" />
 	<xsd:include schemaLocation="Fields.xsd" />
-	<xsd:include schemaLocation="./Common/json/complex.xsd" />
-	<xsd:include schemaLocation="./Common/json/codelist/language.xsd" />
+	<xsd:include schemaLocation="../../Common/xml/complex.xsd" />
 
 	<xsd:complexType name="SequencedTextType">
 		<xsd:simpleContent>
@@ -40,16 +39,16 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Name" type="xsd:string" minOccurs="0">
+			<xsd:element name="name" type="xsd:string" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The name or terse descriptive label by which the
 						package is referred.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Description" type="xsd:string"
+			<xsd:element name="description" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ParentGroupID" type="xsd:string"
+			<xsd:element name="parentGroupIds" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>A reference from a child package to one or more
@@ -62,9 +61,9 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="PackageTypeCode" type="xsd:string"
+			<xsd:element name="packageTypeCode" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PartyReportingIDs" type="xsd:string"
+			<xsd:element name="partyReportingIds" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>This is a repeating ID set used to pass along
@@ -95,31 +94,31 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ServiceAvailabilityCode" type="ServiceAvailabilityCodeEnumType"
+			<xsd:element name="serviceAvailabilityCode" type="ServiceAvailabilityCodeEnumType"
 				minOccurs="0" />
-			<xsd:element name="PackageCost" type="xsd:string"
+			<xsd:element name="packageCost" type="xsd:string"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="AssessmentAdministrationType">
 		<xsd:sequence>
-			<xsd:element name="Description" type="xsd:string"
+			<xsd:element name="description" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ProctoredAssessmentIndicator" type="xsd:boolean"
+			<xsd:element name="proctoredAssessmentIndicator" type="xsd:boolean"
 				minOccurs="0" />
-			<xsd:element name="TimeEnforcedIndicator" type="xsd:boolean"
+			<xsd:element name="timeEnforcedIndicator" type="xsd:boolean"
 				minOccurs="0" />
-			<xsd:element name="TestDuration" type="MeasureTextType"
+			<xsd:element name="testDuration" type="MeasureTextType"
 				minOccurs="0" />
-			<xsd:element name="AssessmentDeliveryCode" type="AssessmentDeliveryCodeType"
+			<xsd:element name="assessmentDeliveryCode" type="AssessmentDeliveryCodeType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:element name="AssessmentResult" type="AssessmentResultType" />
+<!-- 	<xsd:element name="AssessmentResult" type="AssessmentResultType" /> -->
 	<xsd:complexType name="AssessmentResultType">
 		<xsd:annotation>
 			<xsd:documentation source="http://www.hr-xml.org"
@@ -139,7 +138,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="PackageID" type="xsd:string"
+			<xsd:element name="packageId" type="xsd:string"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>This is a reference to the Package ID that was
@@ -147,7 +146,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Name" type="xsd:string" minOccurs="0">
+			<xsd:element name="name" type="xsd:string" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>This is a place to put any formal name or
 						identifier for the result. This might be a pass-through value tied
@@ -156,7 +155,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AssessmentProfileID" type="IdentifierType"
+			<xsd:element name="assessmentProfileId" type="IdentifierType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Uniquely distinquishes the normative group
@@ -167,11 +166,11 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AssessmentOverallResult" type="AssessmentScoreType"
+			<xsd:element name="assessmentOverallResult" type="AssessmentScoreType"
 				minOccurs="0" />
-			<xsd:element name="AssessmentDetailedResult" type="AssessmentScoreType"
+			<xsd:element name="assessmentDetailedResult" type="AssessmentScoreType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="TestInstance" type="TestInstanceType"
+			<xsd:element name="testInstance" type="TestInstanceType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>This is a set of Metadata regarding the test
@@ -184,13 +183,13 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AssessmentStatus" type="AssessmentStatusType"
+			<xsd:element name="assessmentStatus" type="AssessmentStatusType"
 				minOccurs="0" />
 			<!-- <xsd:element ref="AccessPoint" minOccurs="0" maxOccurs="unbounded" 
 				/> -->
 			<!-- <xsd:element ref="Attachment" minOccurs="0" maxOccurs="unbounded" 
 				/> -->
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 		<!-- <xsd:attribute name="languageCode" type="LanguageCodeContentType" 
@@ -205,7 +204,7 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="AssessmentStatusCode" type="AssessmentStatusCodeType"
+			<xsd:element name="assessmentStatusCode" type="AssessmentStatusCodeType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>A code classifying the status of an order.
@@ -215,14 +214,14 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Description" minOccurs="0" type="xsd:string"
+			<xsd:element name="description" minOccurs="0" type="xsd:string"
 				maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Provides additional explanation of the
 						assessment status.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -230,14 +229,14 @@
 	<xsd:complexType name="AssessmentScoreType">
 		<xsd:sequence>
 			<xsd:element name="ID" type="xsd:string" minOccurs="0" />
-			<xsd:element name="PassedIndicator" type="IndicatorType"
+			<xsd:element name="passedIndicator" type="IndicatorType"
 				minOccurs="0" />
-			<xsd:element name="Description" type="xsd:string"
+			<xsd:element name="description" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="AssessedCompetency" type="SpecifiedCompetencyType"
+			<xsd:element name="assessedCompetency" type="SpecifiedCompetencyType"
 				minOccurs="0" />
-			<xsd:element name="Score" type="ScoreType" minOccurs="0" />
-			<xsd:element name="BandID" type="IdentifierType"
+			<xsd:element name="score" type="ScoreType" minOccurs="0" />
+			<xsd:element name="bandId" type="IdentifierType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>An identifier of a "band," a place on a
@@ -245,9 +244,9 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Comment" type="xsd:string" minOccurs="0"
+			<xsd:element name="comment" type="xsd:string" minOccurs="0"
 				maxOccurs="unbounded" />
-			<xsd:element name="AdditionalItem" type="AdditionalItemType"
+			<xsd:element name="additionalItem" type="AdditionalItemType"
 				minOccurs="0" maxOccurs="unbounded" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -263,13 +262,13 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="ID" type="xsd:string" minOccurs="0" />
-			<xsd:element name="Sequence" type="xsd:positiveInteger"
+			<xsd:element name="sequence" type="xsd:positiveInteger"
 				minOccurs="0" />
-			<xsd:element name="Name" type="xsd:string" minOccurs="0" />
-			<xsd:element name="TypeCode" type="CodeType" minOccurs="0"
+			<xsd:element name="name" type="xsd:string" minOccurs="0" />
+			<xsd:element name="typeCode" type="CodeType" minOccurs="0"
 				maxOccurs="unbounded" />
-			<xsd:element name="Content" type="xsd:string" minOccurs="0" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="content" type="xsd:string" minOccurs="0" />
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -292,7 +291,7 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="ID" type="xsd:string" minOccurs="0" />
-			<xsd:element name="AssessmentCommunication" type="CommunicationType"
+			<xsd:element name="assessmentCommunication" type="CommunicationType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>This is the communications means an assessment
@@ -301,20 +300,20 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AccessCredentials" type="LoginInformationType"
+			<xsd:element name="accessCredentials" type="LoginInformationType"
 				minOccurs="0" />
-			<xsd:element name="Description" type="xsd:string"
+			<xsd:element name="description" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 		<xsd:attributeGroup ref="EffectiveDateAttributeGroup" />
 	</xsd:complexType>
 
-	<xsd:element name="AssessmentSubject" type="AssessmentSubjectType" />
+<!-- 	<xsd:element name="AssessmentSubject" type="AssessmentSubjectType" /> -->
 	<xsd:complexType name="AssessmentSubjectType">
 		<xsd:sequence>
-			<xsd:element name="subjectID" type="IdentifierType"
+			<xsd:element name="subjectId" type="IdentifierType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The test taker or person who takes the
@@ -325,7 +324,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="PersonLegalID" type="IdentifierType"
+			<xsd:element name="personLegalIds" type="IdentifierType"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation source="http://www.hr-xml.org"
@@ -348,14 +347,14 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="PersonName" type="xsd:string"
+			<xsd:element name="personName" type="xsd:string"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The name of the person subject to the assessment.
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Communication" type="CommunicationType"
+			<xsd:element name="communications" type="CommunicationType"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation source="http://www.hr-xml.org"
@@ -364,35 +363,36 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="RaceCode" type="CodeType" minOccurs="0"
+			<xsd:element name="raceCodes" type="CodeType" minOccurs="0"
 				maxOccurs="unbounded" />
-			<xsd:element name="EthnicityCode" type="CodeType"
+			<xsd:element name="ethnicityCode" type="CodeType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="NationalityCode" type="CodeType"
+			<xsd:element name="nationalityCodes" type="CodeType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="PrimaryLanguageCode" type="LanguageCodeList"
+			<xsd:element name="primaryLanguageCode" type="LanguageCodeList"
 				minOccurs="0" />
-			<xsd:element name="BirthDate" type="FormattedDateTimeType"
+			<xsd:element name="birthDate" type="FormattedDateTimeType"
 				minOccurs="0" />
-			<xsd:element name="AgeMeasure" type="MeasureType"
+			<xsd:element name="ageMeasure" type="MeasureType"
 				minOccurs="0" />
-			<xsd:element name="GenderCode" type="GenderCodeEnumType"
+			<xsd:element name="genderCode" type="GenderCodeEnumType"
 				minOccurs="0" />
-			<xsd:element name="DisabilityIndicator" type="EffectiveDatedIndicatorType"
+			<xsd:element name="disabilityIndicator" type="EffectiveDatedIndicatorType"
 				minOccurs="0" />
-			<xsd:element name="DisabilityTypeCode" minOccurs="0"
+			<xsd:element name="disabilityTypeCodes" minOccurs="0"
 				maxOccurs="unbounded" />
-			<xsd:element name="AccomodationTypeCode" type="CodeType"
+			<xsd:element name="accomodationTypeCodes" type="CodeType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="MilitaryStatusCode" type="StatusCodeType"
+			<xsd:element name="militaryStatusCodes" type="StatusCodeType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="InternalCandidateIndicator" type="IndicatorType"
+			<xsd:element name="internalCandidateIndicator" type="IndicatorType"
 				minOccurs="0" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 
+<!-- Move to codeLists?? -->
 	<xsd:complexType name="AssessmentDeliveryCodeType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:string">
@@ -403,7 +403,7 @@
 	</xsd:complexType>
 
 
-	<xsd:element name="AssessmentFulfillment" type="AssessmentFulfillmentType" />
+<!-- 	<xsd:element name="AssessmentFulfillment" type="AssessmentFulfillmentType" /> -->
 	<xsd:complexType name="AssessmentFulfillmentType">
 		<xsd:annotation>
 			<xsd:documentation>A set of information describing options and
@@ -415,26 +415,26 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="Description" type="xsd:string"
+			<xsd:element name="descriptions" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="EffectivePeriodDescription" type="MeasureTextType"
+			<xsd:element name="effectivePeriodDescriptions" type="MeasureTextType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ScoreProfileName" type="xsd:string"
+			<xsd:element name="scoreProfileNames" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ReportLanguageCode" type="LanguageCodeList"
+			<xsd:element name="reportLanguageCodes" type="LanguageCodeList"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 
 
-	<xsd:element name="AssessmentApplicability" type="AssessmentApplicabilityType" />
+<!-- 	<xsd:element name="AssessmentApplicability" type="AssessmentApplicabilityType" /> -->
 	<xsd:complexType name="AssessmentApplicabilityType">
 		<xsd:sequence>
-			<xsd:element name="Description" type="xsd:string"
+			<xsd:element name="descriptions" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="AssessmentTypeCode" minOccurs="0"
+			<xsd:element name="assessmentTypeCodes" minOccurs="0"
 				maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>A set of codes broadly classifying the type of
@@ -445,7 +445,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AssessedCompetency" type="SpecifiedCompetencyType"
+			<xsd:element name="assessedCompetencies" type="SpecifiedCompetencyType"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Provides information about what competencies are
@@ -453,7 +453,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="JobCategoryCode" type="CodeType"
+			<xsd:element name="jobCategoryCodes" type="CodeType"
 				minOccurs="0" maxOccurs="unbounded">
 				<!-- JobCatgegoryType is in codelists -->
 				<xsd:annotation>
@@ -462,7 +462,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="CareerLevelCode" type="CareerLevelCodeType"
+			<xsd:element name="careerLevelCode" type="CareerLevelCodeType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>A code classifying the level of a candiate based
@@ -471,7 +471,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ApplicableRegion" type="JurisdictionType"
+			<xsd:element name="applicableRegions" type="JurisdictionType"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>A set of information broadly describing the
@@ -483,25 +483,10 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AvailableLanguageCode" type="LanguageCodeList" minOccurs="0"
+			<xsd:element name="availableLanguageCodes" type="LanguageCodeList" minOccurs="0"
 				maxOccurs="unbounded" />
 		</xsd:sequence>
 	</xsd:complexType>
-	
-	<xsd:simpleType name="AssessmentTypeCodeEnumType">
-		<xsd:annotation>
-			<xsd:documentation>A set of codes broadly classifying the type of
-				assessment or the principal target of what is assessed.
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="xsd:normalizedString">
-			<xsd:enumeration value="Knowledge" />
-			<xsd:enumeration value="Skill" />
-			<xsd:enumeration value="Ability" />
-			<xsd:enumeration value="Psychometric" />
-			<xsd:enumeration value="CertificationOrLicense" />
-		</xsd:restriction>
-	</xsd:simpleType>
 
 	<xsd:complexType name="SpecifiedCompetencyType">
 		<xsd:annotation>
@@ -511,7 +496,7 @@
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="competencyID" type="IdentifierType"
+			<xsd:element name="competencyIds" type="IdentifierType"
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="competencyName" type="xsd:string"
 				minOccurs="0" />
@@ -524,16 +509,16 @@
 
 	<xsd:complexType name="BaseScoreType">
 		<xsd:sequence>
-			<xsd:element name="ScoreNumeric" type="ScoreNumericType"
+			<xsd:element name="scoreNumeric" type="ScoreNumericType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="ScoreText" type="xsd:string"
+			<xsd:element name="scoreText" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:element name="ScoreNumeric" type="ScoreNumericType" />
+<!-- 	<xsd:element name="ScoreNumeric" type="ScoreNumericType" /> -->
 	<xsd:complexType name="ScoreNumericType">
 		<xsd:annotation>
 			<xsd:documentation>
@@ -607,7 +592,7 @@
 					<xsd:documentation>A user name or ID.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="accessCredential" type="AccessCredentialType"
+			<xsd:element name="accessCredentials" type="AccessCredentialType"
 				minOccurs="0" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation source="http://www.hr-xml.org"
@@ -647,7 +632,7 @@
 				minOccurs="0" />
 			<xsd:element name="accessCredentialValue" type="xsd:string"
 				minOccurs="0" />
-			<xsd:element name="UserArea" type="UserAreaType"
+			<xsd:element name="userArea" type="UserAreaType"
 				minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -679,10 +664,10 @@
 
 	<xsd:complexType name="JurisdictionType">
 		<xsd:sequence>
-			<xsd:element name="CountryCode" type="CountryCodeEnumType"
+			<xsd:element name="countryCode" type="CountryCodeEnumType"
 				minOccurs="0" />
-			<xsd:element name="CityName" minOccurs="0" />
-			<xsd:element name="CountrySubDivisionCode" minOccurs="0"
+			<xsd:element name="cityName" minOccurs="0" />
+			<xsd:element name="countrySubDivisionCodes" minOccurs="0"
 				maxOccurs="unbounded" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -694,9 +679,9 @@
 
 	<xsd:complexType name="TestInstanceType">
 		<xsd:sequence>
-			<xsd:element name="TestInstanceID" type="IdentifierType"
+			<xsd:element name="testInstanceId" type="IdentifierType"
 				minOccurs="0" />
-			<xsd:element name="VersionID" type="IdentifierType"
+			<xsd:element name="versionId" type="IdentifierType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The version of the test instrument associated
@@ -705,11 +690,11 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="AssessmentLanguageCode" type="LanguageCodeList"
+			<xsd:element name="assessmentLanguageCode" type="LanguageCodeList"
 				minOccurs="0" />
-			<xsd:element name="TestDate" type="FormattedDateTimeType"
+			<xsd:element name="testDate" type="FormattedDateTimeType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="TestScoreIssuedDate" type="FormattedDateTimeType"
+			<xsd:element name="testScoreIssuedDate" type="FormattedDateTimeType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The date a test score was issued. This might
@@ -719,7 +704,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="TestLocationID" type="IdentifierType"
+			<xsd:element name="testLocationId" type="IdentifierType"
 				minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>An identifier for the location of a testing site
@@ -733,8 +718,8 @@
 
 	<xsd:group name="DocumentIDGroup">
 		<xsd:sequence>
-			<xsd:element name="DocumentID" type="IdentifierType" />
-			<xsd:element name="AlternateDocumentID" minOccurs="0"
+			<xsd:element name="documentId" type="IdentifierType" />
+			<xsd:element name="alternateDocumentIds" minOccurs="0"
 				maxOccurs="unbounded" />
 		</xsd:sequence>
 	</xsd:group>

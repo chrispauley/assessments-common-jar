@@ -4,13 +4,14 @@
     "description": "Contains information to enable a user to gain access to a system.",
     "type": "object",
     "properties": {
-      "UserID": {
+      "userId": {
         "type": "string",
         "description": "Username or userId."
       },
-      "AccessCredentials": {
+      "accessCredentials": {
+        "description": "Array of accessCredential objects.",
         "array": {
-          "AccessCredential": {
+          "accessCredential": {
             "name": {
               "type": "string",
               "description": "Indication of type of token."

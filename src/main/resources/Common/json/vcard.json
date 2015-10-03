@@ -1,0 +1,443 @@
+﻿{
+	"title": "HROpen vCard",
+	"description": "HROpen Implementation of vCard specification(RFC 6350)",
+
+	"Repeatable": {
+		"title": "Repeatable",
+		"description": "Used to hold properties for types which can appear multiple times.",
+		"type": "object",
+		"properties": {
+			"pid": { "$ref": "base.json#/IdentifierType" },
+			"altid": { "$ref": "base.json#/IdentifierType" },
+			"type": { "type": "string" },
+			"pref": { "type": "integer" },
+			"value": { "type": "string" }
+		},
+		"required": [ "value" ]
+	},
+	"MultiItem": {
+		"title": "MultiItem",
+		"description": "Collection of repeatable items",
+		"type": "array",
+		"items": { "$ref": "#/Repeatable" },
+		"minItems": 1
+	},
+	"MultiUriItem": {
+		"title": "MultiItem",
+		"description": "Collection of repeatable items",
+		"type": "array",
+		"items": {
+			"type": "object",
+			"allOf": [
+				{ "$ref": "#/Repeatable" }
+			],
+			"properties": {
+				"value": {
+					"type": "string",
+					"format": "uri"
+				}
+			}
+		},
+		"minItems": 1
+	},
+	"StringArray": {
+		"title": "StringArray",
+		"description": "Array of string values",
+		"type": "array",
+		"items": { "type": "string" },
+		"minItems": 1
+	},
+	"UriArray": {
+		"title": "StringArray",
+		"description": "Array of URI values",
+		"type": "array",
+		"items": {
+			"type": "string",
+			"format": "uri"
+		},
+		"minItems": 1
+	},
+	"PersonNameType": {
+		"title": "PersonNameType",
+		"description": "A collection of data representing a person name.",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "base.json#/Localization" }
+		],
+		"properties": {
+			"family": {
+				"description": "Also known as surname",
+				"$ref": "#/StringArray"
+			},
+			"given": { "$ref": "#/StringArray" },
+			"additional": { "$ref": "#/StringArray" },
+			"honorPrefixes": { "$ref": "#/StringArray" },
+			"honorSuffixes": { "$ref": "#/StringArray" }
+		}
+	},
+	"AddressType": {
+		"title": "AddressType",
+		"description": "To specify the components of the delivery address for the vCard object.",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "#/Repeatable" }
+		],
+		"properties": {
+			"label": {
+				"description": "Parameter to present a delivery address label for the address.",
+				"type": "string"
+			},
+			"pobox": {
+				"description": "The post office box.",
+				"type": "string"
+			},
+			"ext": {
+				"description": "The extended address (e.g. apartment or suite number).",
+				"type": "string"
+			},
+			"locality": {
+				"description": "The locality (e.g., city).",
+				"type": "string"
+			},
+			"region": {
+				"description": "The region (e.g., state or province).",
+				"type": "string"
+			},
+			"code": {
+				"description": "The postal code.",
+				"$ref": "base.json#/CodeType"
+			},
+			"country": {
+				"description": "The country name.",
+				"$ref": "codelist/country.json#"
+			}
+		}
+	},
+	"IdentificationType": {
+		"title": "IdentificationType",
+		"description": "Used to capture information associated with the identification and naming of the entity associated with the vCard.",
+		"type": "object",
+		"properties": {
+			"fn": {
+				"description": "To specify the formatted text corresponding to the name of the object the vCard represents.",
+				"$ref": "#/MultiItem"
+			},
+			"n": {
+				"description": "To specify the components of the name of the object the vCard represents.",
+				"type": "object",
+				"allOf": [
+					{ "$ref": "#/PersonNameType" }
+				],
+				"properties": {
+					"altid": { "$ref": "base.json#/IdentifierType" }
+				}
+			},
+			"nickname": {
+				"description": "To specify the text corresponding to the nickname of the object the vCard represents.",
+				"$ref": "#/StringArray"
+			},
+			"photo": {
+				"description": "To specify an image or photograph information that annotates some aspect of the object the vCard represents.",
+				"$ref": "#/MultiUriItem"
+			},
+			"bday": {
+				"description": "To specify the birth date of the object the vCard represents.",
+				"$ref": "base.json#/DateTimeType"
+			},
+			"anniversary": {
+				"description": "The date of marriage, or equivalent, of the object the vCard represents.",
+				"$ref": "base.json#/DateTimeType"
+			},
+			"gender": {
+				"description": "To specify the components of the sex and gender identity of the object the vCard represents.",
+				"type": "object",
+				"properties": {
+					"sex": {
+						"enum": [
+							"M",
+							"F",
+							"O",
+							"N",
+							"U"
+						],
+						"enumNames": [
+							"male",
+							"female",
+							"other",
+							"none or not applicable",
+							"unknown"
+						]
+					},
+					"identity": { "type": "string" }
+				},
+				"required": [ "sex" ]
+			}
+		},
+		"required": [ "fn" ]
+	},
+	"OrganizationType": {
+		"title": "OrganizationType",
+		"description": "Information associated with characteristics of the organization or organizational units of the object that the vCard represents.",
+		"type": "object",
+		"properties": {
+			"title": {
+				"description": "To specify the job title, functional position or function of the object the vCard represents.",
+				"$ref": "#/StringArray"
+			},
+			"role": {
+				"description": "To specify the function or part played in a particular situation by the object the vCard represents.",
+				"$ref": "#/StringArray"
+			},
+			"logo": {
+				"description": "To specify a graphic image of a logo associated with the object the vCard represents.",
+				"$ref": "#/UriArray"
+			},
+			"org": {
+				"description": "To specify the organizational name and units associated with the vCard.",
+				"type": "array",
+				"items": {
+					"description": "[CCITT.X520.1988]",
+					"type": "object",
+					"allOf": [
+						{ "$ref": "#/Repeatable" }
+					],
+					"properties": {
+						"unit": {
+							"type": "array",
+							"items": { "type": "string" }
+						}
+					}
+				}
+			},
+			"member": {
+				"description": "To include a member in the group this vCard represents.",
+				"$ref": "#/MultiUriItem"
+			},
+			"related": {
+				"description": "To specify a relationship between another entity and the entity represented by this vCard.",
+				"type": "array",
+				"items": {
+					"type": "object",
+					"allOf": [
+						{ "$ref": "#/Repeatable" }
+					],
+					"properties": {
+						"type": {
+							"enum": [
+								"contact",
+								"acquaintance",
+								"friend",
+								"met",
+								"co-worker",
+								"colleague",
+								"co-resident",
+								"neighbor",
+								"child",
+								"parent",
+								"sibling",
+								"spouse",
+								"kin",
+								"muse",
+								"crush",
+								"date",
+								"sweetheart",
+								"me",
+								"agent",
+								"emergency"
+							]
+						}
+					}
+				}
+			}
+		},
+		"dependancies": {
+			"member": {
+				"type": "object",
+				"properties": {
+					"kind": {
+						"enum": [ "group" ]
+					}
+				}
+			}
+		}
+	},
+	"CommunicationType": {
+		"title": "CommunicationType",
+		"description": "Information about how to communicate with the object the vCard represents.",
+		"type": "object",
+		"properties": {
+			"tel": {
+				"description": "To specify the telephone number for telephony communication with the object the jCard represents.",
+				"type": "array",
+				"items": {
+					"type": "object",
+					"allOf": [
+						{ "$ref": "#/Repeatable" }
+					],
+					"properties": {
+						"type": {
+							"enum": [
+								"text",
+								"voice",
+								"fax",
+								"cell",
+								"video",
+								"pager",
+								"textphone"
+							],
+							"enumNames": [
+								"Indicates that the telephone number supports text messages (SMS).",
+								"Indicates a voice telephone number.",
+								"Indicates a facsimile telephone number.",
+								"Indicates a cellular or mobile telephone number.",
+								"Indicates a video conferencing telephone number.",
+								"Indicates a paging device telephone number.",
+								"Indicates a telecommunication device for people with hearing or speech difficulties."
+							],
+							"default": "voice"
+						}
+					}
+				},
+				"minItems": 1
+			},
+			"email": {
+				"description": "To specify the electronic mail address for communication with the object the vCard represents.",
+				"type": "array",
+				"items": {
+					"type": "object",
+					"allOf": [
+						{ "$ref": "#/Repeatable" }
+					],
+					"properties": {
+						"value": {
+							"type": "string",
+							"format": "email"
+						}
+					}
+				},
+				"minItems": 1
+			},
+			"impp": {
+				"description": "To specify the URI for instant messaging and presence protocol communications with the object the vCard represents.",
+				"$ref": "#/MultiUriItem"
+			},
+			"lang": {
+				"description": "To specify the language(s) that may be used for contacting the entity associated with the vCard.",
+				"type": "array",
+				"items": {
+					"type": "object",
+					"allOf": [
+						{ "$ref": "#/Repeatable" }
+					],
+					"properties": {
+						"value": { "$ref": "codelist/language.json#" }
+					}
+				},
+				"minItems": 1
+			}
+		}
+	},
+	"CalendarType": {
+		"title": "CalendarType",
+		"description": "A calendar entity, such as an event [RFC2739]",
+		"type": "object",
+		"properties": {
+			"fburl": {
+				"description": "To specify the URI for a user's busy time in a vCard object.",
+				"$ref": "#/MultiUriItem"
+			},
+			"caladruri": {
+				"description": "To specify the calendar user address [RFC5545] to which a scheduling request [RFC5546] should be sent for the object represented by the vCard.",
+				"$ref": "#/MultiUriItem"
+			},
+			"caluri": {
+				"description": "To specify the URI for a calendar associated with the object represented by the vCard.",
+				"$ref": "#/MultiUriItem"
+			}
+		}
+	},
+	"vCardType": {
+		"title": "vCardType",
+		"description": "",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "#/IdentificationType" },
+			{ "$ref": "#/OrganizationType" },
+			{ "$ref": "#/CommunicationType" },
+			{ "$ref": "#/CalendarType" }
+		],
+		"properties": {
+			"source": {
+				"description": "To identify the source of directory information contained in the content type.",
+				"$ref": "#/MultiUriItem"
+			},
+			"kind": {
+				"description": "To specify the kind of object the vCard represents.",
+				"enum": [
+					"individual",
+					"org",
+					"group",
+					"location"
+				],
+				"default": "individual"
+			},
+			"adr": {
+				"description": "To specify the components of the delivery address for the vCard object.",
+				"type": "array",
+				"items": { "$ref": "#/AddressType" },
+				"minItems": 1
+			},
+			"categories": {
+				"description": "To specify application category information about the vCard.",
+				"$ref": "#/StringArray"
+			},
+			"note": {
+				"description": "To specify supplemental information or a comment that is associated with the vCard.",
+				"$ref": "#/StringArray"
+			},
+			"prodid": {
+				"description": "To specify the identifier for the product that created the vCard object.",
+				"type": "string"
+			},
+			"rev": {
+				"description": "To specify revision information about the current vCard.",
+				"$ref": "base.json#/DateTimeType"
+			},
+			"sound": {
+				"description": "To specify a digital sound content information that annotates some aspect of the vCard. By default this property is used to specify the proper pronunciation of the name property value of the vCard.",
+				"$ref": "#/MultiUriItem"
+			},
+			"uid": {
+				"description": "To specify a value that represents a globally unique identifier corresponding to the individual or resource associated with the vCard.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"clientpidmap": {
+				"description": "To give a global meaning to a local PID source identifier. A semicolon-separated pair of values. The first field is a small integer corresponding to the second field of a PID parameter instance. The second field is a URI.",
+				"$ref": "#/StringArray"
+			},
+			"url": {
+				"description": "To specify a uniform resource locator associated with the object that the vCard refers to.",
+				"$ref": "#/UriArray"
+			},
+			"version": {
+				"description": "To specify a value that represents a globally unique identifier corresponding to the individual or resource associated with the vCard.",
+				"type": "string",
+				"default": "4.0"
+			},
+			"key": {
+				"description": "To specify a public key or authentication certificate associated with the object that the vCard represents.",
+				"$ref": "#/StringArray"
+			},
+			"geo": {
+				"description": "To specify information related to the global positioning of the object the vCard represents.",
+				"type": "array",
+				"items": { "$ref": "base.json#/GeoType" }
+			},
+			"tz": {
+				"description": "To specify information related to the time zone of the object the vCard represents.",
+				"$ref": "#/StringArray"
+			}
+		},
+		"required": [ "version" ]
+	}
+}

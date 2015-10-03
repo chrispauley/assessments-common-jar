@@ -27,20 +27,20 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 	private AssessmentCatalogType createAssessmentCatalogType() {
 		AssessmentCatalogType ac = new AssessmentCatalogType();
 		ac.setDocumentID("AW_UseCase_003");
-		ac.getAlternateDocumentID().add(this.FILENAME);
-		ac.getAlternateDocumentID().add("usecase_003");
+		ac.getAlternateDocumentIds().add(this.FILENAME);
+		ac.getAlternateDocumentIds().add("usecase_003");
 		ac.setDocumentSequence(BigInteger.valueOf(2));
 		ac.setSupplierParty(this.createPartyType("SupplierParty",
 				"PSI_Example_Only"));
 		
-		ac.getAssessmentPackage().add(this.createAssessmentPackage("Employee Aptitude Survey Test #1 - Verbal Comprehension"));
+		ac.getAssessmentPackages().add(this.createAssessmentPackage("Employee Aptitude Survey Test #1 - Verbal Comprehension"));
 		return ac;
 	}
 
 	private AssessmentFulfillmentType createAssessmentFulfillment() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getScoreProfileName().add("EAS1");
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
+		af.getScoreProfileNames().add("EAS1");
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
 		return af;
 	}
 
@@ -65,16 +65,16 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(createSpecifiedCompetencyType());
-		aa.getJobCategoryCode().add(addSOCJobCategoryCode("Functional Area","Sales"));
+		aa.getAssessedCompetencies().add(createSpecifiedCompetencyType());
+		aa.getJobCategoryCodes().add(addSOCJobCategoryCode("Functional Area","Sales"));
 //		aa.setCareerLevelCode(createCareerLevelCode("name", "Mid-Level"));
 		
-		aa.getApplicableRegion().add(createJurisdictionTypeUS());
-		aa.getApplicableRegion().add(createJurisdictionTypeCA());
-		aa.getApplicableRegion().add(createJurisdictionTypeMX());
-		aa.getAvailableLanguageCode().add(LanguageCodeList.EN_US);
-		aa.getAvailableLanguageCode().add(LanguageCodeList.FR_CA);
-		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);
+		aa.getApplicableRegions().add(createJurisdictionTypeUS());
+		aa.getApplicableRegions().add(createJurisdictionTypeCA());
+		aa.getApplicableRegions().add(createJurisdictionTypeMX());
+		aa.getAvailableLanguageCodes().add(LanguageCodeList.EN_US);
+		aa.getAvailableLanguageCodes().add(LanguageCodeList.FR_CA);
+		aa.getAvailableLanguageCodes().add(LanguageCodeList.ES);
 		return aa;
 	}
 
@@ -112,7 +112,7 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 	private SpecifiedCompetencyType createSpecifiedCompetencyType() {
 		SpecifiedCompetencyType ct = new SpecifiedCompetencyType();
 		ct.setCompetencyName("Verbal Comprehension");
-		ct.getCompetencyID().add(createIdentifierType("A2"));
+		ct.getCompetencyIds().add(createIdentifierType("A2"));
 		return ct;
 	}
 
@@ -147,7 +147,7 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 				"This test is comprised of 30 multiple choice items and has a 5 " +
 		        "minute time limit. It is designed to assess verbal ability.");
 		ap.getID().add("EAS1");
-		ap.getParentGroupID().add("EAS");	
+		ap.getParentGroupIds().add("EAS");	
 		ap.setAssessmentApplicability(
 				createAssessmentApplicabilityType());
 		ap.setAssessmentAdministration(
@@ -161,7 +161,7 @@ public class ShowAssessmentCatalog_Example_1 extends TestCase {
 //		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-		pt.setTaxID(id);
+		pt.setTaxId(id);
 		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}

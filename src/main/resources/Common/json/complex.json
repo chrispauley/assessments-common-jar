@@ -1,0 +1,446 @@
+﻿{
+	"title": "HR Open Complex Types",
+	"description": "HR Open Complex Types",
+
+	"BaseNounType": {
+		"title": "BaseNounType",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "base.json#/Localization" }
+		],
+		"properties": {
+			"documentId": {
+				"description": "Provides the Identifier(s) of the document being communicated. Uniquely identifies a Document within an organization.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"alternateIds": {
+				"description": "Alternative document IDs",
+				"type": "array",
+				"items": { "$ref": "base.json#/IdentifierType" }
+			}
+		}
+	},
+
+	"CommunicationItem": {
+		"title": "CommunicationItem",
+		"description": "Common properties for communication items",
+		"type": "object",
+		"properties": {
+			"name": { 
+				"description": "Provide description for particular communication item",
+				"type": "string"
+			},
+			"useCode": { "$ref": "base.json#/CodeType" },
+			"preference": {
+				"description": "Provide priority for given communication item",
+				"type": "integer"
+			},
+			"availablePeriod": { "$ref": "base.json#/DateTimePeriodType" }
+		}
+	},
+
+	"EmailType": {
+		"title": "EmailType",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "#/CommunicationItem" }
+		],
+		"properties": {
+			"address": {
+				"description": "Actual email address",
+				"type": "string",
+				"format": "email"
+			}
+		},
+		"required": [ "address" ]
+	},
+
+	"PhoneType": {
+		"title": "PhoneType",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "#/CommunicationItem" }
+		],
+		"properties": {
+			"channelCode": {
+				"description": "Code identifying the usage of the contact point e.g. business, private, etc.",
+				"$ref": "base.json#/CodeType"
+			},
+			"countryDialingCode": {
+				"description": "The country dialing code for a communication number.",
+				"$ref": "base.json#/CodeType"
+			},
+			"areaDialingCode": {
+				"description": "The area dialing code for a communication number.",
+				"$ref": "base.json#/CodeType"
+			},
+			"dialNumber": {
+				"description": "The communication number, not including country dialing or area dialing codes.",
+				"type": "string"
+			},
+			"phoneExtension": {
+				"description": "The extension of the associated communication number.",
+				"type": "string"
+			},
+			"access": {
+				"description": "The text that permits access to the electronic network of the associated communication number such as telephone network, for example 9, *70.",
+				"type": "string"
+			},
+			"formattedNumber": {
+				"description": "Specifies details of an actual formatted number",
+				"type": "string"
+			}
+		},
+		"required": [ "formattedNumber" ]
+	},
+
+	"WebType": {
+		"title": "WebType",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "#/CommunicationItem" }
+		],
+		"properties": {
+			"url": {
+				"description": "Actual web address",
+				"type": "string",
+				"format": "uri"
+			}
+		},
+		"required": [ "url" ]
+	},
+
+	"AddressType": {
+		"title": "AddressType",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "#/CommunicationItem" }
+		],
+		"properties": {
+			"line": {
+				"description": "Street line address",
+				"type": "string"
+			},
+			"extendedLine": {
+				"description": "The extended address (e.g. apartment or suite number).",
+				"type": "string"
+			},
+			"countryCode": { "$ref": "codelist/country.json#" },
+			"countrySubDivisionCode": {
+				"description": "Qualifies the further division of the Country. These may be Districts, Regions, States, Provinces etc. A possible list of values is as specified in ISO 3166-2.",
+				"type": "string"
+			},
+			"city": { "type": "string" },
+			"postalCode": { "type": "string" },
+			"postOfficeBox": { "type": "string" }
+		},
+		"required": [ "line" ]
+	},
+
+	"CommunicationType": {
+		"title": "CommunicationType",
+		"description": "allows capture of information about a variety of communication channels (telephone, email, fax, messaging, address, etc.)",
+		"type": "object",
+		"properties": {
+			"address": {
+				"type": "array",
+				"items": { "$ref": "#/AddressType" }
+			},
+			"phone": {
+				"type": "array",
+				"items": { "$ref": "#/PhoneType" }
+			},
+			"email": {
+				"type": "array",
+				"items": { "$ref": "#/EmailType" }
+			},
+			"web": {
+				"type": "array",
+				"items": { "$ref": "#/WebType" }
+			}
+		},
+		"minProperties": 1
+	},
+
+	"PersonNameType": {
+		"title": "PersonNameType",
+		"description": "A collection of data representing a person name.",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "base.json#/Localization" }
+		],
+		"properties": {
+			"formatted": { "type": "string" },
+			"legal": { "type": "string" },
+			"given": { "type": "string" },
+			"preferred": { "type": "string" },
+			"middle": { "type": "string" },
+			"family": { "type": "string" },
+			"formerFamily": { "type": "string" },
+			"preferredSalutationCode": { "$ref": "base.json#/CodeType" },
+			"generationAffixCode": { "$ref": "base.json#/CodeType" },
+			"qualificationAffixCode": { "$ref": "base.json#/CodeType" },
+			"titleAffixCode": { "$ref": "base.json#/CodeType" },
+			"initials": { "type": "string" }
+		}
+	},
+
+	"SpecifiedPersonType": {
+		"title": "SpecifiedPersonType",
+		"description": "Contains information to identify a person associated with the interaction or entity.",
+		"type": "object",
+		"properties": {
+			"id": { "$ref": "base.json#/IdentifierType" },
+			"name": { "$ref": "#/PersonNameType" },
+			"roleCode": { "$ref": "base.json#/CodeType" },
+			"communication": { "$ref": "#/CommunicationType" }
+		}
+	},
+
+	"PersonContactType": {
+		"title": "PersonContactType",
+		"description": "Contains information about contact person.",
+		"allOf": [
+			{ "$ref": "#/SpecifiedPersonType" }
+		],
+		"type": "object",
+		"properties": {
+			"typeCode": { "type": "string" }
+		}
+	},
+
+	"CommentType": {
+		"title": "CommentType",
+		"description": "A comment to provide additional unstructured information concerning the related entity.",
+		"allOf": [
+			{ "$ref": "base.json#/Localization" }
+		],
+		"type": "object",
+		"properties": {
+			"type": { "type": "string" },
+			"author": { "type": "string" },
+			"datetime": { "$ref": "base.json#/DateTimeType" },
+			"status": { "type": "string" },
+			"note": { "type": "string" }
+		},
+		"required": [ "note" ]
+	},
+
+	"Comment": {
+		"title": "Comment",
+		"description": "A comment to provide additional unstructured information concerning the related entity.",
+		"type": "object",
+		"properties": {
+			"comment": {
+				"oneOf": [
+					{ "type": "string" },
+					{ "$ref": "#/CommentType" },
+					{
+						"type": "array",
+						"items": { "$ref": "#/CommentType" }
+					}
+				]
+			}
+		}
+	},
+
+	"PayRateType": {
+		"title": "PayRateType",
+		"description": "Associates billing and/or pay rate information with time worked information reported on an entity.",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "base.json#/EntityType" }
+		],
+		"properties": {
+			"amount": { "$ref": "base.json#/AmountType" },
+			"intervalCode": { "$ref": "codelist/payRateInterval.json#" }
+		},
+		"required": [ "amount" ]
+	},
+
+	"ResponsibleType": {
+		"title": "ResponsibleType",
+		"description": "A collection of information about the person who is the submitter/approver of the associated document.",
+		"allOf": [
+			{ "$ref": "#/Comment" }
+		],
+		"type": "object",
+		"properties": {
+			"code": { "type": "string" },
+			"person": {
+				"description": "Contains information identifying the person who has the role of submitter/approver.",
+				"$ref": "#/SpecifiedPersonType"
+			},
+			"datetime": {
+				"description": "The date the related document, report, or related entity was communicated to a receiving or approving entity.",
+				"$ref": "base.json#/FormattedDateTimeType"
+			}
+		}
+	},
+
+	"Responsible": {
+		"title": "Responsible",
+		"description": "Submitter/Approver information for an entity",
+		"type": "object",
+		"properties": {
+			"submitters": {
+				"type": "array",
+				"items": { "$ref": "#/ResponsibleType" }
+			},
+			"approvers": {
+				"type": "array",
+				"items": { "$ref": "#/ResponsibleType" }
+			}
+		}
+	},
+
+	"PartyType": {
+		"title": "PartyType",
+		"description": "A collection of information about the party who is the supplier/customer/requester of the associated entity.",
+		"type": "object",
+		"allOf": [
+			{ "$ref": "base.json#/EntityType" }
+		],
+		"properties": {
+			"legalId": {
+				"description": "A government assigned identifier to distinguish the party (organization, person, or legal entity) to a transaction.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"taxId": {
+				"description": "An identifer assigned by a government tax authority to distinguish the party (organization, person, or legal entity) to a transaction.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"communication": { "$ref": "#/CommunicationType" },
+			"personContacts": {
+				"type": "array",
+				"items": { "$ref": "#/PersonContactType" }
+			}
+		},
+		"required": [ "id" ]
+	},
+
+	"Party": {
+		"title": "Party",
+		"description": "Supplier/Customer/Requester/etc information for an entity",
+		"type": "object",
+		"properties": {
+			"party": {
+				"type": "object",
+				"properties": {
+					"supplier": { "$ref": "#/PartyType" },
+					"customer": { "$ref": "#/PartyType" },
+					"requester": { "$ref": "#/PartyType" }
+				},
+				"minProperties": 1,
+				"additionalProperties": { "$ref": "#/PartyType" }
+			}
+		}
+	},
+
+	"StaffingReferenceIdsType": {
+		"title": "StaffingReferenceIdsType",
+		"type": "object",
+		"properties": {
+			"assignmentId": {
+				"description": "An identifier for a particular engagement or assignment of a staffing resource.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"orderId": {
+				"description": "Uniquely distinquishes the order.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"rfqId": {
+				"description": "Used to specify a reference to a StaffingRFQ document.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"resourceId": { "$ref": "base.json#/IdentifierType" },
+			"quoteId": {
+				"description": "Used to specify a reference to a StaffingQuote document.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"actionId": {
+				"description": "Used to specify a reference to a StaffingAction document.",
+				"$ref": "base.json#/IdentifierType"
+			},
+			"masterOrderId": {
+				"description": "Reference to a master order or project. Used to associate multiple orders.",
+				"$ref": "base.json#/IdentifierType"
+			}
+		}
+	},
+
+	"CostAllocationType": {
+		"type": "array",
+		"items": {
+			"title": "CostAllocationType",
+			"description": "Contains an identifier of an account, department, or other entity to which an item should be allocated.",
+			"type": "object",
+			"properties": {
+				"percentage": { "$ref": "base.json#/PercentType" },
+				"department": { "$ref": "base.json#/EntityType" },
+				"location": { "$ref": "base.json#/EntityType" },
+				"costCenter": { "$ref": "base.json#/EntityType" },
+				"job": { "$ref": "base.json#/EntityType" },
+				"account": { "$ref": "base.json#/EntityType" },
+				"project": { "$ref": "base.json#/EntityType" },
+				"shift": { "$ref": "base.json#/EntityType" }
+			},
+			"minProperties": 2,
+			"required": [ "percentage" ]
+		}
+	},
+
+	"WorkAllocationType": {
+		"title": "WorkAllocationType",
+		"description": "Contains piece of work rate table per type of work or quantity limits",
+		"oneOf": [
+			{
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"typeCode": { "type": "string" },
+						"payRate": { "$ref": "#/PayRateType" }
+					},
+					"required": [ "typeCode", "payRate" ]
+				}
+			},
+			{
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"quantityLimit": { "type": "number" },
+						"payRate": { "$ref": "#/PayRateType" }
+					},
+					"required": [ "quantityLimit", "payRate" ]
+				}
+			}
+		]
+	},
+
+	"ResourceClassification": {
+		"title": "ResourceClassification",
+		"description": "Holds customer specific properties of an entity",
+		"type": "object",
+		"properties": {
+			"managerName": { "type": "string" },
+			"supervisorName": { "type": "string" },
+			"contactName": { "type": "string" },
+			"department": { "$ref": "base.json#/EntityType" },
+			"location": { "$ref": "base.json#/EntityType" },
+			"costCenter": { "$ref": "base.json#/EntityType" },
+			"job": { "$ref": "base.json#/EntityType" },
+			"account": { "$ref": "base.json#/EntityType" },
+			"project": { "$ref": "base.json#/EntityType" },
+			"shift": { "$ref": "base.json#/EntityType" },
+			"externalOrderNumber": { "type": "string" },
+			"externalReqNumber": { "type": "string" },
+			"referenceNumber": { "type": "string" },
+			"purchaseOrderNumber": { "type": "string" },
+			"purchaseOrderLineItem": { "type": "string" },
+			"costAllocation": { "$ref": "#/CostAllocationType" },
+			"workAllocation": { "$ref": "#/WorkAllocationType" }
+		}
+	}
+}

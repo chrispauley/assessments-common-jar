@@ -27,8 +27,8 @@ public class AssessmentCatalogTest_02 extends TestCase {
 	private AssessmentCatalogType createAssessmentCatalogType() {
 		AssessmentCatalogType ac = new AssessmentCatalogType();
 		ac.setDocumentID("documentId_02");
-		ac.getAlternateDocumentID().add("alternateId-04");
-		ac.getAlternateDocumentID().add("alternateId-05");
+		ac.getAlternateDocumentIds().add("alternateId-04");
+		ac.getAlternateDocumentIds().add("alternateId-05");
 		ac.setDocumentSequence(BigInteger.valueOf(1));
 		ac.setCustomerParty(this.createPartyType("CustomerParty",
 				"customer name"));
@@ -37,25 +37,25 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		ac.setRequesterParty(this.createPartyType("RequestorParty",
 				"Requestor Name"));
 		
-		ac.getAssessmentPackage().add(this.createAssessmentPackage("Package2 Name",
+		ac.getAssessmentPackages().add(this.createAssessmentPackage("Package2 Name",
 				"$250.00"));
 		return ac;
 	}
 
 	private AssessmentFulfillmentType createAssessmentFulfillment() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getDescription().add("Description of Fulfillment");
+		af.getDescriptions().add("Description of Fulfillment");
 		
 		MeasureTextType mt = new MeasureTextType();
 		mt.setUnitCode("prop 1");
 		mt.setValue("value of mt");
-		af.getEffectivePeriodDescription().add(mt);
+		af.getEffectivePeriodDescriptions().add(mt);
 		
-		af.getScoreProfileName().add("Profile1");
-		af.getScoreProfileName().add("Profile2");
+		af.getScoreProfileNames().add("Profile1");
+		af.getScoreProfileNames().add("Profile2");
 		
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
-		af.getReportLanguageCode().add(LanguageCodeList.FR_CA);
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
+		af.getReportLanguageCodes().add(LanguageCodeList.FR_CA);
 		af.setUserArea(new UserAreaType());
 		af.getUserArea().getAny().add("{}");
 		
@@ -81,14 +81,14 @@ public class AssessmentCatalogTest_02 extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getDescription().add("Description for AssessmentApplicability");
-		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.ABILITY);
-		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.KNOWLEDGE);
-		aa.getAssessedCompetency().add(createSpecifiedCompetencyType());
+		aa.getDescriptions().add("Description for AssessmentApplicability");
+		aa.getAssessmentTypeCodes().add(AssessmentTypeCodeEnumType.ABILITY);
+		aa.getAssessmentTypeCodes().add(AssessmentTypeCodeEnumType.KNOWLEDGE);
+		aa.getAssessedCompetencies().add(createSpecifiedCompetencyType());
 		
-		aa.getJobCategoryCode().add(addSOCJobCategoryCode("Computer Programmer","15-1131"));
-		aa.getJobCategoryCode().add(addISCOJobCategoryCode("Software and applications developers and analysts","251"));
-		aa.getJobCategoryCode().add(addNOCJobCategoryCode("Computer Programmer","2174"));
+		aa.getJobCategoryCodes().add(addSOCJobCategoryCode("Computer Programmer","15-1131"));
+		aa.getJobCategoryCodes().add(addISCOJobCategoryCode("Software and applications developers and analysts","251"));
+		aa.getJobCategoryCodes().add(addNOCJobCategoryCode("Computer Programmer","2174"));
 		
 //		aa.setCareerLevelCode(createCareerLevelCode());
 		return aa;
@@ -178,8 +178,8 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		ap.getDescription().add("Package Description");
 		ap.getID().add("package-002");
 		ap.getPackageTypeCode().add("typeCode1");
-		ap.getParentGroupID().add("Hiring Manager");
-		ap.getPartyReportingIDs().add("Manager-001");
+		ap.getParentGroupId().add("Hiring Manager");
+		ap.getPartyReportingIds().add("Manager-001");
 		ap.setAssessmentApplicability(
 				createAssessmentApplicabilityType());
 		ap.setAssessmentAdministration(

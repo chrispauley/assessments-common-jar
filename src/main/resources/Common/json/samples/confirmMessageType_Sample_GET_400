@@ -1,0 +1,66 @@
+{
+	"confirmMessage": {
+		"confirmMessageID": {
+			"idValue": "69fe0381-ed80-45ef-b4c7-41e2db362b91"
+		},
+		"createDateTime": "2013-06-24T15:30:01-06:00",
+		"requestReceiptDateTime": "2013-06-24T15:30:00-06:00",
+		"protocolStatusCode": {
+			"codeValue": "400"
+		},
+		"protocolCode": {
+			"codeValue": "http"
+		},
+		"requestID": {
+			"idValue": "1070fdc4-0222-410d-9398-c51e9176299d"
+		},
+		"requestStatusCode": {
+			"codeValue": "failed"
+		},
+		"requestMethodCode": {
+			"codeValue": "GET"
+		},
+		"sessionID": {
+			"idValue": "1312321321312321",
+			"schemeName": "sessionID",
+			"schemeAgencyName": “SystemA”
+		},
+		"requestETag": "A1231234324",
+		"processingStatusCode": {
+			"codeValue": "completed"
+		},
+		"requestLink": {
+			"href": "/hr/v1/associates/A3242342342134?$select=address",
+			"rel": "related",
+			"method": "GET"
+		},
+		"resourceMessages": [
+			{
+				"resourceMessageID": {
+					"idValue": "1"
+				},
+				"resourceStatusCode": {
+					"codeValue": "failed"
+				},
+				"processMessages": [
+					{
+						"processMessageID": {
+							"idValue": "1"
+						},
+						"messageTypeCode": {
+							"codeValue": "error"
+						},
+						"developerMessage": {
+							"codeValue": "10003",
+							"messageTxt": "Unexpected parameter, 'select' in the URI Query Component. "
+						},
+						"userMessage": {
+							"codeValue": "30000",
+							"messageTxt": "Server did not   understand the request."
+						}
+					}
+				]
+			}
+		]
+	}
+}

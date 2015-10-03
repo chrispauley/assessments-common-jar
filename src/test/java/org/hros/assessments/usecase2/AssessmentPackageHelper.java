@@ -29,14 +29,14 @@ public class AssessmentPackageHelper {
 
 	static public AssessmentApplicabilityType createAssessmentApplicabilityType() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(createSpecifiedCompetency("Record Keeping", "001"));		
+		aa.getAssessedCompetencies().add(createSpecifiedCompetency("Record Keeping", "001"));		
 		return aa;
 	}
 
 	static public SpecifiedCompetencyType createSpecifiedCompetency(String cName, String competencyId) {
 		SpecifiedCompetencyType c = new SpecifiedCompetencyType();
 		c.setCompetencyName(cName);
-		c.getCompetencyID().add(createCompetencyIdentifierId(competencyId));
+		c.getCompetencyIds().add(createCompetencyIdentifierId(competencyId));
 		return c;
 	}
 	
@@ -64,8 +64,8 @@ public class AssessmentPackageHelper {
 	
 	static public AssessmentFulfillmentType createAssessmentFullfillment(String message) {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getDescription().add(message);
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
+		af.getDescriptions().add(message);
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
 		return af;
 	}
 	

@@ -28,9 +28,9 @@ public class GetAssessmentCatalog extends TestCase {
 		
 		try {
 			AssessmentCatalogType ac = new AssessmentCatalogType();
-			ac.getAlternateDocumentID().add(ALT_ID);
-			ac.getAlternateDocumentID().add(FILENAME);
-			ac.getAssessmentPackage().add(createAssessmentPackage());
+			ac.getAlternateDocumentIds().add(ALT_ID);
+			ac.getAlternateDocumentIds().add(FILENAME);
+			ac.getAssessmentPackages().add(createAssessmentPackage());
 			Serializer.marshalJSON(ac, System.out);
 			String filename = FILE_PATH + FILENAME + ".json";
 			File file = new File(filename);
@@ -57,7 +57,7 @@ public class GetAssessmentCatalog extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(createSpecifiedCompetency(SPECIFIED_COMPETENCY));
+		aa.getAssessedCompetencies().add(createSpecifiedCompetency(SPECIFIED_COMPETENCY));
 		return aa;
 	}
 

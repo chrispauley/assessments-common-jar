@@ -63,9 +63,9 @@ public class NotifyAssessmentReport extends TestCase {
 	private AssessmentReportType createReport() {
 		AssessmentReportType ar = new AssessmentReportType();
 
-		ar.setDocumentID(DOCUMENT_ID);
-		ar.getAlternateDocumentID().add(FILENAME);
-		ar.getAlternateDocumentID().add(ALT_ID);
+		ar.setDocumentId(DOCUMENT_ID);
+		ar.getAlternateDocumentIds().add(FILENAME);
+		ar.getAlternateDocumentIds().add(ALT_ID);
 		ar.setSupplierParty(createPartyType(SUPPLIER_PARTY));
 		ar.setAssessmentSubject(createAssessmentSubject());
 		ar.setAssessmentResult(createAssessmentResult());
@@ -73,7 +73,7 @@ public class NotifyAssessmentReport extends TestCase {
 	}
 	private AssessmentResultType createAssessmentResult() {
 		AssessmentResultType ar = new AssessmentResultType();
-		ar.setPackageID(PACKAGE_ID);
+		ar.setPackageId(PACKAGE_ID);
 		ar.setAssessmentStatus(createAssessmentStatus());
 		return ar;
 	}
@@ -88,10 +88,10 @@ public class NotifyAssessmentReport extends TestCase {
 	private AssessmentSubjectType createAssessmentSubject(){
 		AssessmentSubjectType ast = new AssessmentSubjectType();
 		ast.setPersonName(SUBJECT_NAME);
-		ast.setSubjectID(createIdentifierType(SUBJECT_ID));
-		ast.getSubjectID().setSchemeName("CandidateId");
-		ast.getCommunication().add(createCommunicationType("cell", SUBJECT_PHONE));
-		ast.getCommunication().add(createCommunicationTypeEmail("email", SUBJECT_EMAIL));
+		ast.setSubjectId(createIdentifierType(SUBJECT_ID));
+		ast.getSubjectId().setSchemeName("CandidateId");
+		ast.getCommunications().add(createCommunicationType("cell", SUBJECT_PHONE));
+		ast.getCommunications().add(createCommunicationTypeEmail("email", SUBJECT_EMAIL));
 		return ast;
 	}
 	

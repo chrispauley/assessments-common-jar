@@ -7,14 +7,14 @@ public class AssessmentSubjectHelper {
 	public static AssessmentSubjectType CreateAssessmentSubject() {
 		AssessmentSubjectType as = new AssessmentSubjectType();
 		as.setPersonName("Chris Pauley");
-		as.setSubjectID(createIdentifier("candidate_001"));
-		as.getPersonLegalID().add(createIdentifier("legal_id"));
-		as.getCommunication().add(createCommunicationABIE_HomePhone());
-		as.getCommunication().add(
+		as.setSubjectId(createIdentifier("candidate_001"));
+		as.getPersonLegalIds().add(createIdentifier("legal_id"));
+		as.getCommunications().add(createCommunicationABIE_HomePhone());
+		as.getCommunications().add(
 				createCommunicationABIE_WorkPhone("(800)555-1234"));
-		as.getCommunication().add(createCommunicationABIE_MobilePhone());
-		as.getCommunication().add(createCommunicationABIE_IM_Address());
-		as.getCommunication().add(createCommunicationABIE_Work_Address());
+		as.getCommunications().add(createCommunicationABIE_MobilePhone());
+		as.getCommunications().add(createCommunicationABIE_IM_Address());
+		as.getCommunications().add(createCommunicationABIE_Work_Address());
 		return as;
 	}
 	

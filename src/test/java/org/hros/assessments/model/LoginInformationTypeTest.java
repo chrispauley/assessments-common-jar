@@ -25,11 +25,11 @@ public class LoginInformationTypeTest extends TestCase {
 	private LoginInformationType createLoginInformationType() {
 		LoginInformationType li = new LoginInformationType();
 		li.setUserId("candidate1");
-		li.getAccessCredential().add(createAccessCredentialType());
+		li.getAccessCredentials().add(createAccessCredentialType());
 //		li.getAccessCredential().add(createAccessCredentialTypeVerbose());
-		li.getAccessCredential().add(createAccessCredential_MAC_Key());
-		li.getAccessCredential().add(createAccessCredential_Bearer_Key());
-		li.getAccessCredential().add(createAccessViaURL());
+		li.getAccessCredentials().add(createAccessCredential_MAC_Key());
+		li.getAccessCredentials().add(createAccessCredential_Bearer_Key());
+		li.getAccessCredentials().add(createAccessViaURL());
 		return li;
 	}
 	

@@ -4,35 +4,41 @@
 	<xsd:include schemaLocation="Components.xsd" />
 	<xsd:include schemaLocation="CodeLists.xsd" />
 	<xsd:include schemaLocation="Fields.xsd" />
-	<xsd:include schemaLocation="./Common/json/complex.xsd" />
+	<xsd:include schemaLocation="../../Common/xml/complex.xsd" />
 
 
 	<xsd:element name="assessmentOrder" type="AssessmentOrderType" />
 	<xsd:complexType name="AssessmentOrderType">
 		<xsd:sequence>
-			<xsd:element name="documentID" type="xsd:string" />
-			<xsd:element name="alternateDocumentID" type="xsd:string"
+			<xsd:element name="documentId" type="xsd:string" />
+			<xsd:element name="alternateDocumentIds" type="xsd:string"
 				maxOccurs="unbounded" />
 			<xsd:element name="documentSequence" type="xsd:integer" />
-			<xsd:element name="CustomerParty" type="PartyType" />
-			<xsd:element name="SupplierParty" type="PartyType" />
-			<xsd:element name="RequesterParty" type="PartyType" />
-			<xsd:element name="InvitationByPartyCode" type="InvitationByPartyCodeEnumType"
+			<xsd:element name="customerParty" type="PartyType" />
+			<xsd:element name="supplierParty" type="PartyType" />
+			<xsd:element name="requesterParty" type="PartyType" />
+			<xsd:element name="invitationByPartyCode" type="InvitationByPartyCodeEnumType"
 				minOccurs="0" />
-			<xsd:element name="packageID" type="IdentifierType" />
-			<xsd:element name="comparisonGroupID" type="IdentifierType"
+			<xsd:element name="packageId" type="IdentifierType" />
+			
+			<xsd:element name="comparisonGroupId" type="IdentifierType"
 				minOccurs="0" maxOccurs="unbounded" />
 
-			<xsd:element name="AssessmentRequesterName" type="xsd:string"
+			<xsd:element name="assessmentRequesterName" type="xsd:string"
 				minOccurs="0" />
-			<xsd:element name="AssessmentSubject" type="AssessmentSubjectType"
+				
+			<xsd:element name="assessmentSubject" type="AssessmentSubjectType"
 				minOccurs="0" />
-			<xsd:element name="AssessmentLanguageCode" type="LanguageCodeList"
+				
+			<xsd:element name="assessmentLanguageCode" type="LanguageCodeList"
 				minOccurs="0" maxOccurs="unbounded" />
+				
 			<xsd:element name="assessmentResultLanguageCode" type="LanguageCodeList"
 				minOccurs="0" maxOccurs="unbounded" />
+				
 			<xsd:element name="assessmentAccess" type="AssessmentAccessType"
 				minOccurs="0" maxOccurs="unbounded" />
+				
 			<xsd:element name="testLocationID" type="IdentifierType" minOccurs="0"/>
 			<xsd:element name="redirectURL" type="RedirectURLType" minOccurs="0" />
 			<xsd:element name="userArea" type="UserAreaType"
@@ -50,7 +56,5 @@
 		<xsd:attribute name="languageCode" type="xsd:string"
 			use="optional" default="en" />
 	</xsd:complexType>
-
-
 
 </xsd:schema>

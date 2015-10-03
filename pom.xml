@@ -204,15 +204,16 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-
-							<schemaDirectory>src/main/resources</schemaDirectory>
+							<schemaDirectory>src/main/resources/Assessments/xml</schemaDirectory>
 							<schemaIncludes>
 								<include>AssessmentCatalog.xsd</include>
 								<include>AssessmentReport.xsd</include>
 								<include>AssessmentOrder.xsd</include>
 								<include>Components.xsd</include>
+								<include>CodeLists.xsd</include>
+								<include>Fields.xsd</include>
 							</schemaIncludes>
-							<bindingDirectory>src/main/resources</bindingDirectory>
+							<bindingDirectory>src/main/resources/Assessments/xml</bindingDirectory>
 							<bindingIncludes>
 								<include>Assessments.xjb</include>
 							</bindingIncludes>
@@ -243,7 +244,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<schemaDirectory>src/main/resources/Common/json/codelist</schemaDirectory>
+							<schemaDirectory>src/main/resources/Common/xml/codelist</schemaDirectory>
 							<schemaIncludes>
 								<include>action.xsd</include>
 								<include>country.xsd</include>
@@ -251,7 +252,7 @@
 								<include>currency.xsd</include>
 								<!-- <include>payRateIntervalCodeList.xsd</include> -->
 							</schemaIncludes>
-							<bindingDirectory>src/main/resources/Common/json/codelist</bindingDirectory>
+							<bindingDirectory>src/main/resources/Common/xml/codelist</bindingDirectory>
 							<bindingIncludes>
 								<include>codelist.xjb</include>
 							</bindingIncludes>
@@ -266,12 +267,12 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<schemaDirectory>src/main/resources/Common/json</schemaDirectory>
+							<schemaDirectory>src/main/resources/Common/xml</schemaDirectory>
 							<schemaIncludes>
 								<include>base.xsd</include>
 								<include>complex.xsd</include>
 							</schemaIncludes>
-							<bindingDirectory>src/main/resources/Common/json</bindingDirectory>
+							<bindingDirectory>src/main/resources/Common/xml</bindingDirectory>
 							<bindingIncludes>
 								<include>common.xjb</include>
 							</bindingIncludes>

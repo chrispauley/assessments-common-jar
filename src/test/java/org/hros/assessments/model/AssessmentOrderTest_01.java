@@ -17,10 +17,10 @@ public class AssessmentOrderTest_01 extends TestCase {
 
 	private AssessmentOrderType createAssessmentOrderType() {
 		AssessmentOrderType ac = new AssessmentOrderType();
-		ac.setDocumentID("documentId_01");
+		ac.setDocumentId("documentId_01");
 
 		ac.setDocumentSequence(BigInteger.valueOf(1));
-		ac.setPackageID(createPackageId("package_123"));
+		ac.setPackageId(createPackageId("package_123"));
 		ac.setCustomerParty(this.createCustomerParty("CustomerParty",
 				"customer name"));
 		ac.setSupplierParty(this.createSupplierParty("John Jones", "Mr.",
@@ -61,7 +61,7 @@ public class AssessmentOrderTest_01 extends TestCase {
 	private LoginInformationType createLoginInformation() {
 		LoginInformationType li = new LoginInformationType();
 		li.setUserId("User_01");
-		li.getAccessCredential().add(createAccessCredentials());
+		li.getAccessCredentials().add(createAccessCredentials());
 		return li;
 	}
 
@@ -144,9 +144,9 @@ public class AssessmentOrderTest_01 extends TestCase {
 	private AssessmentSubjectType createAssessmentSubject() {
 		AssessmentSubjectType as = new AssessmentSubjectType();
 		as.setPersonName("Chris Pauley");
-		as.setSubjectID(createIdentifier("candidate_001"));
-		as.getPersonLegalID().add(this.createIdentifier("legal_id"));
-		as.getCommunication().add(createCommunication_HomePhone());
+		as.setSubjectId(createIdentifier("candidate_001"));
+		as.getPersonLegalIds().add(this.createIdentifier("legal_id"));
+		as.getCommunications().add(createCommunication_HomePhone());
 		return as;
 	}
 

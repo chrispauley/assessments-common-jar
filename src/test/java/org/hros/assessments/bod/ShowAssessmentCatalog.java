@@ -38,8 +38,8 @@ public class ShowAssessmentCatalog extends TestCase {
 			AssessmentCatalogType ac = new AssessmentCatalogType();
 			ac.setSupplierParty(createSupplierParty());
 			
-			ac.getAssessmentPackage().add(createAssessmentPackageOne());
-			ac.getAssessmentPackage().add(createAssessmentPackageTwo());
+			ac.getAssessmentPackages().add(createAssessmentPackageOne());
+			ac.getAssessmentPackages().add(createAssessmentPackageTwo());
 			Serializer.marshalJSON(ac, System.out);
 			String filename = "./data/Assessments/" + FILENAME + ".json";
 			File file = new File(filename);
@@ -61,7 +61,7 @@ public class ShowAssessmentCatalog extends TestCase {
 	private PartyType createSupplierParty() {
 		PartyType pt = new PartyType();
 //		pt.setPartyName("Healthcare SKA Assessments, Inc.");
-		pt.setTaxID(createIdentifier(SUPPLIER_PARTY));
+		pt.setTaxId(createIdentifier(SUPPLIER_PARTY));
 		return pt;
 	}
 
@@ -86,8 +86,8 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentFulfillmentType createAssessmentFullfillment_PkgOne() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getDescription().add("A URL will be sent to the AssesmentRequestor upon order.");
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
+		af.getDescriptions().add("A URL will be sent to the AssesmentRequestor upon order.");
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
 		return af;
 	}
 
@@ -109,14 +109,14 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(createSpecifiedCompetency("Record Keeping"));		
+		aa.getAssessedCompetencies().add(createSpecifiedCompetency("Record Keeping"));		
 		return aa;
 	}
 
 	private SpecifiedCompetencyType createSpecifiedCompetency(String cName) {
 		SpecifiedCompetencyType c = new SpecifiedCompetencyType();
 		c.setCompetencyName(cName);
-		c.getCompetencyID().add(createCompetencyIdentifierId());
+		c.getCompetencyIds().add(createCompetencyIdentifierId());
 		return c;
 	}
 	
@@ -140,7 +140,7 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityTypeTwo() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(createSpecifiedCompetency("Scheduling"));		
+		aa.getAssessedCompetencies().add(createSpecifiedCompetency("Scheduling"));		
 		return aa;
 	}
 	
@@ -163,9 +163,9 @@ public class ShowAssessmentCatalog extends TestCase {
 
 	private AssessmentFulfillmentType createAssessmentFullfillment_PkgTwo() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getDescription().add("A URL will be sent to the AssesmentRequestor upon order.");
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
-		af.getScoreProfileName().add("Online Test Profile");
+		af.getDescriptions().add("A URL will be sent to the AssesmentRequestor upon order.");
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
+		af.getScoreProfileNames().add("Online Test Profile");
 		return af;
 	}
 }

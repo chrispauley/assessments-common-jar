@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
 elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="../../Common/xml/complex.xsd" />
 	<xsd:annotation>
 		<xsd:documentation> 
        Name: CodeLists.xsd 
@@ -34,6 +34,22 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 		</xsd:restriction>
 	</xsd:simpleType>
 	
+	
+	<xsd:simpleType name="AssessmentTypeCodeEnumType">
+		<xsd:annotation>
+			<xsd:documentation>A set of codes broadly classifying the type of
+				assessment or the principal target of what is assessed.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="Knowledge" />
+			<xsd:enumeration value="Skill" />
+			<xsd:enumeration value="Ability" />
+			<xsd:enumeration value="Psychometric" />
+			<xsd:enumeration value="CertificationOrLicense" />
+		</xsd:restriction>
+	</xsd:simpleType>	
+	
 <!-- 	Not part of 3.x specification -->
 	<xsd:simpleType name="CareerLevelCodeType">
 		<xsd:annotation>
@@ -55,7 +71,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 		</xsd:restriction>
 	</xsd:simpleType>
 	
-	<xsd:element name="UseCode" type="UseCodeType" />
+<!-- 	<xsd:element name="UseCode" type="UseCodeType" /> -->
 
 	<xsd:simpleType name="UseCodeType">
 		<xsd:annotation>
@@ -85,6 +101,18 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 			<xsd:enumeration value="NotSpecified"/>
 		</xsd:restriction>
 	</xsd:simpleType>	
+	
+<!-- 	May not be needed -->
+	<xsd:complexType name="JobCategoryCodeType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator with optional effective date meta
+				data.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="CodeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>	
 	
 	<xsd:complexType name="MeasureType">
 		<xsd:simpleContent>
@@ -355,7 +383,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified">
 	</xsd:simpleType>	 -->
 	
 	
-			<xsd:simpleType name="CountryCodeEnumType">
+	<xsd:simpleType name="CountryCodeEnumType">
 		<xsd:annotation>
 			<xsd:documentation source="http://www.iana.org/domains/root/db/">Two-letter codes from the ISO 3166 standard as implemented by The Internet Assigned Numbers Authority.</xsd:documentation>
 		</xsd:annotation>

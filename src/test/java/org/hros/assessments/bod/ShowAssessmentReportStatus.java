@@ -46,9 +46,9 @@ public class ShowAssessmentReportStatus extends TestCase {
 	private void createReport(int counter, AssessmentStatusCodeType as) {
 		AssessmentReportType ar = new AssessmentReportType();
 
-		ar.setDocumentID(DOCUMENT_ID);
-		ar.getAlternateDocumentID().add(FILENAME + counter);
-		ar.getAlternateDocumentID().add(ALT_ID);
+		ar.setDocumentId(DOCUMENT_ID);
+		ar.getAlternateDocumentIds().add(FILENAME + counter);
+		ar.getAlternateDocumentIds().add(ALT_ID);
 		ar.setSupplierParty(createPartyType(SUPPLIER_PARTY));
 		ar.setAssessmentSubject(createAssessmentSubject());
 		ar.setAssessmentResult(createAssessmentResult(as));
@@ -71,7 +71,7 @@ public class ShowAssessmentReportStatus extends TestCase {
 	private AssessmentResultType createAssessmentResult(
 			AssessmentStatusCodeType as) {
 		AssessmentResultType ar = new AssessmentResultType();
-		ar.setPackageID(PACKAGE_ID);
+		ar.setPackageId(PACKAGE_ID);
 		ar.setAssessmentStatus(createAssessmentStatus(as));
 
 		if (as.equals(AssessmentStatusCodeType.ORDER_COMPLETE)) {
@@ -146,8 +146,8 @@ public class ShowAssessmentReportStatus extends TestCase {
 	public void testShowAssessmentReportStatus() {
 		AssessmentReportType ar = new AssessmentReportType();
 
-		ar.setDocumentID(DOCUMENT_ID);
-		ar.getAlternateDocumentID().add(FILENAME);
+		ar.setDocumentId(DOCUMENT_ID);
+		ar.getAlternateDocumentIds().add(FILENAME);
 		ar.setSupplierParty(createPartyType(SUPPLIER_PARTY));
 		ar.setAssessmentSubject(createAssessmentSubject());
 		ar.setAssessmentResult(createAssessmentResult());
@@ -179,7 +179,7 @@ public class ShowAssessmentReportStatus extends TestCase {
 
 	private AssessmentResultType createAssessmentResult() {
 		AssessmentResultType ar = new AssessmentResultType();
-		ar.setPackageID(PACKAGE_ID);
+		ar.setPackageId(PACKAGE_ID);
 		ar.setAssessmentStatus(createAssessmentStatus());
 		return ar;
 	}

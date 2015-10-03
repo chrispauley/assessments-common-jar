@@ -48,7 +48,7 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 		AssessmentOrderType ao = new AssessmentOrderType();
 		
 		
-		ao.setDocumentID("");
+		ao.setDocumentId("");
 		ao.setDocumentSequence(BigInteger.valueOf(1));
 		ao.setMajorVersionID("4.0");
 		PartyType requestorParty = this.createPartyType("RequestorPartyName");
@@ -59,8 +59,8 @@ public class ProcessAssessmentOrderTest_uc_01 extends TestCase {
 		supplierParty.getId().add(this.createIdentifierType("supplierID"));
 		
 		
-		ao.setPackageID(this.createIdentifierType("packageId_01"));
-		ao.getComparisonGroupID().add(this.createIdentifierType("new_hire"));
+		ao.setPackageId(this.createIdentifierType("packageId_01"));
+		ao.getComparisonGroupId().add(this.createIdentifierType("new_hire"));
 		
 		ao.setAssessmentRequesterName("Chris Pauley");
 		//ao.setRedirectURL("http://hropen.org");

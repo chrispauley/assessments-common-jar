@@ -1,0 +1,24 @@
+{
+	"title": "HR Open Standards",
+	"description": "HROS Core schema meta-schema",
+	"allOf": [
+		{ "$ref": "http://json-schema.org/draft-04/schema#" }
+	],
+	"type": "object",
+	"properties": {
+		"enumNames": {
+			"type": "array",
+			"items": { "type": "string" }
+		},
+		"version": {
+			"type": "string",
+			"pattern": "^\d+(\.\d+){1,3}$"
+		}
+	},
+	"not": {
+		"type": "object",
+		"properties": {
+			"id": { "type": "string" }
+		}
+	}
+}

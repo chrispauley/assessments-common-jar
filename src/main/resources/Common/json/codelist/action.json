@@ -1,0 +1,11 @@
+﻿{
+	"title": "ActionCodeList",
+	"description": "Action values code list",
+	"enum": [
+		"create",
+		"update",
+		"delete",
+		"replace",
+		"merge"
+	]
+}

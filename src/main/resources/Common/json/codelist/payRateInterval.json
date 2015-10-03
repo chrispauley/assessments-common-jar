@@ -1,0 +1,21 @@
+﻿{
+	"title": "PayRateIntervalCodeList",
+	"description": "An interval of time or other basis used to express a rate of pay or remuneration. OED: Interval, n.  2. a. The space of time intervening between two points of time; any intervening time.",
+	"enum": [
+		"Hour",
+		"Day",
+		"Week",
+		"TwoWeeks",
+		"FourWeeks",
+		"HalfMonth",
+		"Month",
+		"TwoMonths",
+		"Quarter",
+		"SeasonalTerm",
+		"HalfYear",
+		"Year",
+		"QuarterTo Date",
+		"YearToDate",
+		"Once"
+	]
+}

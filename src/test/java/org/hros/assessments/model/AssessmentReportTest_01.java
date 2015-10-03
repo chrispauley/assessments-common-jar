@@ -18,8 +18,8 @@ public class AssessmentReportTest_01 extends TestCase {
 
 	private AssessmentReportType createAssessmentReportType() {
 		AssessmentReportType ar = new AssessmentReportType();
-		ar.setDocumentID("documentId_01");
-		ar.getAlternateDocumentID().add("AssessmentOrder: 20150820_001");
+		ar.setDocumentId("documentId_01");
+		ar.getAlternateDocumentIds().add("AssessmentOrder: 20150820_001");
 		
 		ar.setDocumentSequence(BigInteger.valueOf(1));
 		ar.setCustomerParty(this.createPartyType("CustomerParty",
@@ -39,8 +39,8 @@ public class AssessmentReportTest_01 extends TestCase {
 	private AssessmentSubjectType createAssessmentSubject() {
 		AssessmentSubjectType as = new AssessmentSubjectType();
 		as.setPersonName("Chris Pauley");
-		as.setSubjectID(new IdentifierType());
-		as.getSubjectID().setValue("subject_id");
+		as.setSubjectId(new IdentifierType());
+		as.getSubjectId().setValue("subject_id");
 		return as;
 	}
 
@@ -49,7 +49,7 @@ public class AssessmentReportTest_01 extends TestCase {
 		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-		pt.setTaxID(id);
+		pt.setTaxId(id);
 		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}

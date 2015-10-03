@@ -1,0 +1,321 @@
+﻿{
+	"title": "HROpen Base Data Types",
+	"description": "HROpen Base Data Types",
+
+	"AmountType": {
+		"title": "AmountType",
+		"description": "An amount is anumber of monetary units specified in a currency.",
+		"type": "object",
+		"properties": {
+			"value": { "type": "number" },
+			"currency": { "$ref": "codelist/currency.json#" }
+		},
+		"required": [ "value" ]
+	},
+
+	"BinaryObjectType": {
+		"title": "BinaryObjectType",
+		"description": "A binary object is a sequence of binary digits(bits).",
+		"type": "object",
+		"properties": {
+			"value": { "type": "string" },
+			"encoding": {
+				"enum": [
+					"7bit",
+					"8bit",
+					"binary",
+					"quoted-printable",
+					"base64",
+					"ietf-token",
+					"x-token"
+				]
+			},
+			"mimeType": { "type": "string" },
+			"filename": { "type": "string" }
+		},
+		"required": [ "value" ]
+	},
+
+	"CodeType": {
+		"title": "CodeType",
+		"description": "A code is a character string of letters, numbers, special characters (except escape sequences), and symbols. It represents a definitive value, a method, or a property description in an abbreviated or language-independent form that is part of a finite list of allowed values.",
+		"type": "string"
+	},
+
+	"DateType": {
+		"title": "DateType",
+		"description": "Date representation according ISO 8601 standard",
+		"type": "string",
+		"format": "date"
+	},
+
+	"TimeType": {
+		"title": "TimeType",
+		"description": "Time point according ISO 8601 standard",
+		"type": "string",
+		"format": "time"
+	},
+
+	"DateTimeType": {
+		"title": "DateTimeType",
+		"description": "DateTime representation according ISO 8601 standard",
+		"type": "string",
+		"format": "date-time"
+	},
+
+	"DurationType": {
+		"title": "DurationType",
+		"description": "A duration is the specification of a length of time without a fixed start or end time.",
+		"oneOf": [
+			{
+				"description": "Decimal value in seconds",
+				"type": "number"
+			},
+			{
+				"description": "ISO8601 time duration format",
+				"type": "string",
+				"pattern": "^(-|)P(?:\\d+(?:(\\.(?!.*[a-zA-Z][0-9].*))\\d+)?Y)?(?:\\d+(?:(\\.(?!.*[a-zA-Z][0-9].*))\\d+)?M)?(?:\\d+(?:(\\.(?!.*[a-zA-Z][0-9].*))\\d+)?W)?(?:\\d+(?:(\\.(?!.*[a-zA-Z][0-9].*))\\d+)?D)?(?:T(?:\\d+(?:(\\.(?!.*[a-zA-Z][0-9].*))\\d+)?H)?(?:\\d+(?:(\\.(?!.*[a-zA-Z][0-9].*))\\d+)?M)?(?:\\d+(?:(\\.(?!.*[a-zA-Z][0-9].*))\\d+)?S)?)?$"
+			}
+		]
+	},
+
+	"IdentifierType": {
+		"title": "IdentifierType",
+		"description": "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.",
+		"type": "string"
+	},
+
+	"IndicatorType": {
+		"title": "IndicatorType",
+		"description": "An indicator is a list of two mutually exclusive boolean values that express the only possible states of a property.",
+		"type": "boolean"
+	},
+
+	"MeasureType": {
+		"title": "MeasureType",
+		"description": "A measure is a numeric value determined by measuring an object along with the specified unit of measure.",
+		"type": "object",
+		"properties": {
+			"value": { "type": "number" },
+			"unitCode": { "$ref": "codelist/unit.json#" }
+		},
+		"required": [ "value" ]
+	},
+
+	"NameType": {
+		"title": "NameType",
+		"description": "A name is a word or phrase that constitutes the distinctive designation of a person, place, thing or concept.",
+		"type": "object",
+		"properties": {
+			"value": { "type": "string" },
+			"languageCode": { "$ref": "codelist/language.json#" }
+		}
+	},
+
+	"NumberType": {
+		"title": "NumberType",
+		"description": "A mathematical number that is assigned or is determined by calculation.",
+		"type": "number"
+	},
+
+	"OrdinalType": {
+		"title": "OrdinalType",
+		"description": "An ordinal number is an assigned mathematical number that represents order or sequence.",
+		"type": "integer"
+	},
+
+	"PercentType": {
+		"title": "PercentType",
+		"description": "A percent is a value representing a fraction of one hundred, expressed as a quotient.",
+		"type": "number"
+	},
+
+	"QuantityType": {
+		"title": "QuantityType",
+		"description": "A quantity is a counted number of non-monetary units, possibly including fractions.",
+		"type": "object",
+		"properties": {
+			"value": { "type": "number" },
+			"unitCode": { "$ref": "codelist/unit.json#" }
+		},
+		"required": [ "value" ]
+	},
+
+	"RateType": {
+		"title": "RateType",
+		"description": "Used to represent the numerical quotient resulting from a comparison of two independent things such as a quantity measured with respect to another measured quantity.",
+		"type": "object",
+		"properties": {
+			"value": { "type": "number" },
+			"multiplier": { "type": "number" },
+			"unitCode": { "$ref": "codelist/unit.json#" },
+			"currencyCode": { "$ref": "codelist/currency.json#" },
+			"baseMultiplier": { "type": "number" },
+			"baseUnitCode": { "$ref": "codelist/unit.json#" },
+			"baseCurrencyCode": { "$ref": "codelist/currency.json#" }
+		},
+		"required": [ "value" ]
+	},
+
+	"RatioType": {
+		"title": "RatioType",
+		"description": "NOTES: Do we really need this or just use number",
+		"type": "number"
+	},
+
+	"TextType": {
+		"title": "TextType",
+		"description": "Text is a character string such as a finite set of characters generally in the form of words of a language. NOTES: Creates nesting, where we can do better. If we decide to keep at least should not enforce its usage",
+		"type": "object",
+		"properties": {
+			"value": { "type": "string" },
+			"languageCode": { "$ref": "codelist/language.json#" }
+		}
+	},
+
+	"GeoType": {
+		"title": "GeoType",
+		"description": "A geographical coordinate",
+		"type": "object",
+		"properties": {
+			"latitude": { "type": "number" },
+			"longitude": { "type": "number" },
+			"altitude": {
+				"description": "In metres above sea level.",
+				"type": "number"
+			}
+		},
+		"required": [ "latitude", "longitude" ]
+	},
+
+	"YearType": {
+		"title": "YearType",
+		"type": "string",
+		"pattern": "^[1-9]\\d{3}$"
+	},
+
+	"YearMonthType": {
+		"title": "YearMonthType",
+		"type": "string",
+		"pattern": "^([0-9]{4})-(1[0-2]|0[1-9])$"
+	},
+
+	"DateTimePeriodType": {
+		"title": "DateTimePeriodType",
+		"type": "object",
+		"properties": {
+			"start": { "$ref": "#/DateTimeType" },
+			"end": { "$ref": "#/DateTimeType" }
+		},
+		"additionalProperties": false,
+		"required": [
+			"start",
+			"end"
+		]
+	},
+
+	"DatePeriodType": {
+		"title": "DatePeriodType",
+		"type": "object",
+		"properties": {
+			"start": { "$ref": "#/DateType" },
+			"end": { "$ref": "#/DateType" }
+		},
+		"additionalProperties": false,
+		"required": [
+			"start",
+			"end"
+		]
+	},
+
+	"YearMonthPeriodType": {
+		"title": "YearMonthPeriodType",
+		"type": "object",
+		"properties": {
+			"start": { "$ref": "#/YearMonthType" },
+			"end": { "$ref": "#/YearMonthType" }
+		},
+		"additionalProperties": false,
+		"required": [
+			"start",
+			"end"
+		]
+	},
+
+	"YearPeriodType": {
+		"title": "YearPeriodType",
+		"type": "object",
+		"properties": {
+			"start": { "$ref": "#/YearType" },
+			"end": { "$ref": "#/YearType" }
+		},
+		"additionalProperties": false,
+		"required": [
+			"start",
+			"end"
+		]
+	},
+
+	"FormattedDateTimeType": {
+		"title": "FormattedDateTimeType",
+		"description": "This is formatted representation of a date, which may be specified as a date, date/time, year, or year/month.",
+		"anyOf": [
+			{ "$ref": "#/DateType" },
+			{ "$ref": "#/DateTimeType" },
+			{ "$ref": "#/YearType" },
+			{ "$ref": "#/YearMonthType" }
+		]
+	},
+
+	"PeriodType": {
+		"title": "PeriodType",
+		"description": "Single date/timespan/month/year or period between two dates/months/years.",
+		"anyOf": [
+			{ "$ref": "#/FormattedDateTimeType" },
+			{ "$ref": "#/DateTimePeriodType" },
+			{ "$ref": "#/DatePeriodType" },
+			{ "$ref": "#/YearMonthPeriodType" },
+			{ "$ref": "#/YearPeriodType" }
+		]
+	},
+
+	"EntityType": {
+		"title": "EntityType",
+		"description": "Describe entity with id, name and code",
+		"type": "object",
+		"properties": {
+			"id": {
+				"description": "Recommended usage: unique descriptor which can't be expressed as enumeration",
+				"$ref": "#/IdentifierType"
+			},
+			"name": {
+				"description": "Recommended usage: free text description for that entity",
+				"type": "string"
+			},
+			"code": {
+				"description": "Recommended usage: descriptor which can be expressed as enumeration",
+				"$ref": "#/CodeType"
+			}
+		},
+		"minProperties": 1
+	},
+
+	"Localization": {
+		"title": "Localization",
+		"description": "Can be used for any entity to specify localization language code",
+		"type": "object",
+		"properties": {
+			"language": { "$ref": "codelist/language.json#" }
+		}
+	},
+
+	"EffectiveTimePeriod": {
+		"title": "EffectiveTimePeriod",
+		"description": "A time period in which an associated object is effective.",
+		"type": "object",
+		"properties": {
+			"validFrom": { "$ref": "#/DateTimeType" },
+			"validTo": { "$ref": "#/DateTimeType" }
+		}
+	}
+}

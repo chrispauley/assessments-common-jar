@@ -68,17 +68,17 @@ public class AcknowledgeAssessmentOrderTest extends TestCase {
 
 		AssessmentOrderType ao = new AssessmentOrderType();
 		
-		ao.setDocumentID(DOCUMENT_ID);
-		ao.getAlternateDocumentID().add(FILENAME);
-		ao.getAlternateDocumentID().add(ALT_ID);
+		ao.setDocumentId(DOCUMENT_ID);
+		ao.getAlternateDocumentIds().add(FILENAME);
+		ao.getAlternateDocumentIds().add(ALT_ID);
 		ao.setDocumentSequence(BigInteger.valueOf(1));
 //		ao.setMajorVersionID("4.0");
 		ao.setRequesterParty(createPartyType(REQUESTOR_PARTY));
 		
 		ao.setSupplierParty(createPartyType(SUPPLIER_PARTY));
 		
-		ao.setPackageID(createIdentifierType(PACKAGE_ID));
-		ao.getComparisonGroupID().add(this.createIdentifierType("new_hire"));
+		ao.setPackageId(createIdentifierType(PACKAGE_ID));
+		ao.getComparisonGroupId().add(this.createIdentifierType("new_hire"));
 		
 		ao.setAssessmentSubject(this.createAssessmentSubject());
 		
@@ -99,9 +99,9 @@ public class AcknowledgeAssessmentOrderTest extends TestCase {
 	private AssessmentSubjectType createAssessmentSubject(){
 		AssessmentSubjectType ast = new AssessmentSubjectType();
 		ast.setPersonName(SUBJECT_NAME);
-		ast.setSubjectID(createIdentifierType(SUBJECT_ID));
-		ast.getSubjectID().setSchemeName("CandidateId");
-		ast.getCommunication().add(createCommunicationType("cell", SUBJECT_PHONE));
+		ast.setSubjectId(createIdentifierType(SUBJECT_ID));
+		ast.getSubjectId().setSchemeName("CandidateId");
+		ast.getCommunications().add(createCommunicationType("cell", SUBJECT_PHONE));
 		return ast;
 	}
 	

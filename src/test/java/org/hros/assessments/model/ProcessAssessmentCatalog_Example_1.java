@@ -27,14 +27,14 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 	private AssessmentCatalogType createAssessmentCatalogType() {
 		AssessmentCatalogType ac = new AssessmentCatalogType();
 		ac.setDocumentID("AW_UseCase_004");
-		ac.getAlternateDocumentID().add(this.FILENAME);
-		ac.getAlternateDocumentID().add("usecase_004");
+		ac.getAlternateDocumentIds().add(this.FILENAME);
+		ac.getAlternateDocumentIds().add("usecase_004");
 		ac.setDocumentSequence(BigInteger.valueOf(2));
 		ac.setSupplierParty(this.createPartyType("SupplierParty",
 				"PSI_Example_Only"));
-		ac.getAssessmentPackage().add(this.createAssessmentPackageEAS1("Employee Aptitude Survey Test #1 - Verbal Comprehension"));
-		ac.getAssessmentPackage().add(this.createAssessmentPackagePET("Professional Employment Test"));
-		ac.getAssessmentPackage().add(this.createAssessmentPackageSureHire("SureHire"));		
+		ac.getAssessmentPackages().add(this.createAssessmentPackageEAS1("Employee Aptitude Survey Test #1 - Verbal Comprehension"));
+		ac.getAssessmentPackages().add(this.createAssessmentPackagePET("Professional Employment Test"));
+		ac.getAssessmentPackages().add(this.createAssessmentPackageSureHire("SureHire"));		
 		return ac;
 	}
 	
@@ -60,27 +60,27 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType_pkg3() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(createSpecifiedCompetencyType_Three());
-		aa.getAssessedCompetency().add(this.createSpecifiedCompetencyType_Five());
-		aa.getAssessedCompetency().add(this.createSpecifiedCompetencyType_SIX());
-		aa.getJobCategoryCode().add(addRetailJobCategoryCode("Job Industry","Retail"));
-		aa.getApplicableRegion().add(this.createJurisdictionTypeFR());
-		aa.getApplicableRegion().add(this.createJurisdictionTypeUS());
-		aa.getAvailableLanguageCode().add(LanguageCodeList.EN_US);
+		aa.getAssessedCompetencies().add(createSpecifiedCompetencyType_Three());
+		aa.getAssessedCompetencies().add(this.createSpecifiedCompetencyType_Five());
+		aa.getAssessedCompetencies().add(this.createSpecifiedCompetencyType_SIX());
+		aa.getJobCategoryCodes().add(addRetailJobCategoryCode("Job Industry","Retail"));
+		aa.getApplicableRegions().add(this.createJurisdictionTypeFR());
+		aa.getApplicableRegions().add(this.createJurisdictionTypeUS());
+		aa.getAvailableLanguageCodes().add(LanguageCodeList.EN_US);
 		return aa;
 	}
 
 	private SpecifiedCompetencyType createSpecifiedCompetencyType_Five() {
 		SpecifiedCompetencyType sc = new SpecifiedCompetencyType();
 		sc.setCompetencyName("Problem Solving");
-		sc.getCompetencyID().add(this.createIdentifierType("F1"));
+		sc.getCompetencyIds().add(this.createIdentifierType("F1"));
 		return sc;
 	}
 
 	private SpecifiedCompetencyType createSpecifiedCompetencyType_SIX() {
 		SpecifiedCompetencyType sc = new SpecifiedCompetencyType();
 		sc.setCompetencyName("Work Orientation");
-		sc.getCompetencyID().add(this.createIdentifierType("G1"));
+		sc.getCompetencyIds().add(this.createIdentifierType("G1"));
 		return sc;
 	}	
 
@@ -106,20 +106,20 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 	
 	private AssessmentApplicabilityType createAssessmentApplicabilityType_pkg2() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getAssessedCompetency().add(createSpecifiedCompetencyType_Three());
-		aa.getAssessedCompetency().add(this.createSpecifiedCompetencyType_Four());
-		aa.getJobCategoryCode().add(addSOCJobCategoryCode("","Professional"));
+		aa.getAssessedCompetencies().add(createSpecifiedCompetencyType_Three());
+		aa.getAssessedCompetencies().add(this.createSpecifiedCompetencyType_Four());
+		aa.getJobCategoryCodes().add(addSOCJobCategoryCode("","Professional"));
 //		aa.setCareerLevelCode(this.createCareerLevelCode("", "Executive"));
-		aa.getApplicableRegion().add(createJurisdictionTypeMX());
-		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);		
+		aa.getApplicableRegions().add(createJurisdictionTypeMX());
+		aa.getAvailableLanguageCodes().add(LanguageCodeList.ES);		
 		return aa;
 	}
 
 	private SpecifiedCompetencyType createSpecifiedCompetencyType_Three() {
 		SpecifiedCompetencyType sc = new SpecifiedCompetencyType();
 		sc.setCompetencyName("Verbal Comprehension");
-		sc.getCompetencyID().add(this.createIdentifierType("C1"));
-		sc.getCompetencyID().add(this.createIdentifierType("C2"));
+		sc.getCompetencyIds().add(this.createIdentifierType("C1"));
+		sc.getCompetencyIds().add(this.createIdentifierType("C2"));
 		sc.setProficiencyLevel(this.createBaseScoreType_2());
 		return sc;
 	}
@@ -127,29 +127,29 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 	private SpecifiedCompetencyType createSpecifiedCompetencyType_Four() {
 		SpecifiedCompetencyType sc = new SpecifiedCompetencyType();
 		sc.setCompetencyName("Quantitative Problem Solving");
-		sc.getCompetencyID().add(this.createIdentifierType("E1"));
-		sc.getCompetencyID().add(this.createIdentifierType("E2"));
+		sc.getCompetencyIds().add(this.createIdentifierType("E1"));
+		sc.getCompetencyIds().add(this.createIdentifierType("E2"));
 		sc.setProficiencyLevel(this.createBaseScoreType_2());
 		return sc;
 	}
 
 	private AssessmentFulfillmentType createAssessmentFulfillment_pkg1() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getScoreProfileName().add("PET Profile 1");
-		af.getReportLanguageCode().add(LanguageCodeList.EN_US);
+		af.getScoreProfileNames().add("PET Profile 1");
+		af.getReportLanguageCodes().add(LanguageCodeList.EN_US);
 		return af;
 	}
 
 	private AssessmentFulfillmentType createAssessmentFulfillment_pkg2() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getScoreProfileName().add("PET Profile 1");
-		af.getReportLanguageCode().add(LanguageCodeList.FR_FR);
+		af.getScoreProfileNames().add("PET Profile 1");
+		af.getReportLanguageCodes().add(LanguageCodeList.FR_FR);
 		return af;
 	}
 	private AssessmentFulfillmentType createAssessmentFulfillment_pkg3() {
 		AssessmentFulfillmentType af = new AssessmentFulfillmentType();
-		af.getScoreProfileName().add("SureHire Result Profile");
-		af.getReportLanguageCode().add(LanguageCodeList.FR_FR);
+		af.getScoreProfileNames().add("SureHire Result Profile");
+		af.getReportLanguageCodes().add(LanguageCodeList.FR_FR);
 		return af;
 	}
 	
@@ -194,14 +194,14 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 
 	private AssessmentApplicabilityType createAssessmentApplicabilityType_pkg1() {
 		AssessmentApplicabilityType aa = new AssessmentApplicabilityType();
-		aa.getDescription().add("skills");
-		aa.getAssessmentTypeCode().add(AssessmentTypeCodeEnumType.SKILL);
-		aa.getAssessedCompetency().add(createSpecifiedCompetencyType_One());
-		aa.getAssessedCompetency().add(createSpecifiedCompetencyType_Two());	
+		aa.getDescriptions().add("skills");
+		aa.getAssessmentTypeCodes().add(AssessmentTypeCodeEnumType.SKILL);
+		aa.getAssessedCompetencies().add(createSpecifiedCompetencyType_One());
+		aa.getAssessedCompetencies().add(createSpecifiedCompetencyType_Two());	
 //		aa.getJobCategoryCode().add(addSOCJobCategoryCode("Professional"));
 //		aa.setCareerLevelCode(createCareerLevelCode("Executive"));
-		aa.getApplicableRegion().add(createJurisdictionTypeMX());
-		aa.getAvailableLanguageCode().add(LanguageCodeList.ES);
+		aa.getApplicableRegions().add(createJurisdictionTypeMX());
+		aa.getAvailableLanguageCodes().add(LanguageCodeList.ES);
 		return aa;
 	}
 
@@ -250,8 +250,8 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 	private SpecifiedCompetencyType createSpecifiedCompetencyType_Two() {
 		SpecifiedCompetencyType ct = new SpecifiedCompetencyType();
 		ct.setCompetencyName("Verbal Comprehension");
-		ct.getCompetencyID().add(createIdentifierType("E1"));
-		ct.getCompetencyID().add(createIdentifierType("E2"));
+		ct.getCompetencyIds().add(createIdentifierType("E1"));
+		ct.getCompetencyIds().add(createIdentifierType("E2"));
 		ct.setProficiencyLevel(createBaseScoreType_2());
 		return ct;
 	}
@@ -265,8 +265,8 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 	private SpecifiedCompetencyType createSpecifiedCompetencyType_One() {
 		SpecifiedCompetencyType ct = new SpecifiedCompetencyType();
 		ct.setCompetencyName("Verbal Comprehension");
-		ct.getCompetencyID().add(createIdentifierType("A1"));
-		ct.getCompetencyID().add(createIdentifierType("A2"));
+		ct.getCompetencyIds().add(createIdentifierType("A1"));
+		ct.getCompetencyIds().add(createIdentifierType("A2"));
 		ct.setProficiencyLevel(createBaseScoreType());
 		return ct;
 	}
@@ -302,7 +302,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 				"This test is comprised of 30 multiple choice items and has a 5 " +
 		        "minute time limit. It is designed to assess verbal ability.");
 		ap.getID().add("EAS1");
-		ap.getParentGroupID().add("EAS");
+		ap.getParentGroupIds().add("EAS");
 		
 		ap.setAssessmentApplicability(
 				createAssessmentApplicabilityType_pkg1());
@@ -317,7 +317,7 @@ public class ProcessAssessmentCatalog_Example_1 extends TestCase {
 //		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-		pt.setTaxID(id);
+		pt.setTaxId(id);
 		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}

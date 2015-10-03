@@ -1,0 +1,26 @@
+{
+	"title": "JobCategoryCode",
+	"description": "A code classifying the type or category of job.",
+	"type": "object",
+	"allOf": [
+			{ "$ref": "base.json#/CodeType" }
+		],
+	"properties", {
+	   "listId": { 
+	       "description": "List ",
+	       "type": "string"
+	   },
+	   "listAgencyId": { 
+	       "description": "List ",
+	       "type": "string"
+	   },
+	   "listURI": { 
+	       "description": "List ",
+	       "type": "string"
+	   },
+	   "listVersionId": { 
+	       "description": "List ",
+	       "type": "string"
+	   }	   	   
+	}	
+}

@@ -312,9 +312,9 @@
 		<xsd:sequence>
 			<xsd:element name="id" type="IdentifierType" minOccurs="0"
 				maxOccurs="unbounded" />
-			<xsd:element name="legalID" type="IdentifierType"
+			<xsd:element name="legalId" type="IdentifierType"
 				minOccurs="0" maxOccurs="unbounded" />
-			<xsd:element name="taxID" type="IdentifierType"
+			<xsd:element name="taxId" type="IdentifierType"
 				minOccurs="0" />
 			<xsd:element name="name" type="xsd:string" />
 			<!-- <xsd:element name="PartyReportingIDs" type="IdentifierType" -->
