@@ -15,10 +15,36 @@
 	<xsd:include schemaLocation="codelist/language.xsd" />
 	<xsd:include schemaLocation="codelist/unit.xsd" />
 
+	<xsd:element name="baseTypes" type="BaseTypeTest" />
+	<xsd:complexType name="BaseTypeTest">
+		<xsd:sequence>
+			<xsd:element name="amountType" type="AmountType" minOccurs="0"/>
+			<xsd:element name="binaryObjectType" type="BinaryObjectType" />
+			<xsd:element name="codeType" type="CodeType" />
+			<xsd:element name="identifierType" type="IdentifierType" />
+			<xsd:element name="numberType" type="NumberType" />
+			<xsd:element name="nameType" type="NameType" />
+
+<!-- 			<xsd:element name="localization" type="Localization" /> -->
+<!-- 			<xsd:element name="CommunicationItem" type="CommunicationItemType" /> -->
+<!-- 			<xsd:element name="Party" type="BasePartyType" /> -->
+<!-- 			<xsd:element name="Communication" type="CommunicationType" /> -->
+<!-- 			<xsd:element name="PayRate" type="PayRateType" /> -->
+<!-- 			<xsd:element name="CostAllocation" type="CostAllocationType" /> -->
+<!-- 			<xsd:element name="Email" type="EmailType" /> -->
+<!-- 			<xsd:element name="Phone" type="PhoneType" /> -->
+<!-- 			<xsd:element name="Web" type="WebType" /> -->
+<!-- 			<xsd:element name="Resource" type="ResourceClassification" /> -->
+<!-- 			<xsd:element name="PersonName" type="PersonNameType" /> -->
+<!-- 			<xsd:element name="PersonContact" type="PersonContactType" /> -->
+<!-- 			<xsd:element name="SpecifiedPerson" type="SpecifiedPersonType" /> -->
+		</xsd:sequence>
+	</xsd:complexType>
+
 	<xsd:complexType name="AmountType">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:decimal">
-				<xsd:attribute name="currencyID" type="CurrencyCodeList"
+				<xsd:attribute name="currency" type="CurrencyCodeList"
 					use="required">
 				</xsd:attribute>
 			</xsd:extension>

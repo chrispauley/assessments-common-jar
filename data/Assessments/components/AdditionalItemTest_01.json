@@ -1,0 +1,11 @@
+{
+   "ID" : "ThisIsTheID",
+   "sequence" : 1,
+   "name" : "AdditionalItemName",
+   "typeCode" : [ {
+      "value" : "TypeOne"
+   }, {
+      "value" : "TypeTwo"
+   } ],
+   "content" : "The content of AdditionalItemType"
+}

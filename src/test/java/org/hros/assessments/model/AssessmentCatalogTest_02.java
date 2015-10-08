@@ -178,7 +178,7 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		ap.getDescription().add("Package Description");
 		ap.getID().add("package-002");
 		ap.getPackageTypeCode().add("typeCode1");
-		ap.getParentGroupId().add("Hiring Manager");
+		ap.getParentGroupIds().add("Hiring Manager");
 		ap.getPartyReportingIds().add("Manager-001");
 		ap.setAssessmentApplicability(
 				createAssessmentApplicabilityType());
@@ -193,7 +193,7 @@ public class AssessmentCatalogTest_02 extends TestCase {
 		pt.setName(partyName);
 		IdentifierType id = new IdentifierType();
 		id.setValue(value);
-		pt.setTaxID(id);
+		pt.setTaxId(id);
 		// pt.setUserArea(new UserAreaType());
 		return pt;
 	}

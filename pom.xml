@@ -92,7 +92,11 @@
 			<artifactId>jaxb2-basics-runtime</artifactId>
 			<version>${jaxb2-basics.version}</version>
 		</dependency>
-
+		<dependency>
+		    <groupId>com.github.fge</groupId>
+		    <artifactId>json-schema-validator</artifactId>
+		    <version>2.0.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

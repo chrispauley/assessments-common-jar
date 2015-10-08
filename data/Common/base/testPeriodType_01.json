@@ -1,0 +1,19 @@
+{
+   "FormattedDateTimeType" : "A month from now...",
+   "DateTimePeriodType" : {
+      "start" : "2015-10-06T16:42:24.637-04:00",
+      "end" : "2015-10-06T16:42:24.644-04:00"
+   },
+   "DatePeriodType" : {
+      "start" : "2014-11-10+00:04",
+      "end" : "2015-01-10+00:04"
+   },
+   "YearMonthPeriodType" : {
+      "start" : "2014-11",
+      "end" : "2015-01"
+   },
+   "YearPeriodType" : {
+      "start" : "2014",
+      "end" : "2015"
+   }
+}

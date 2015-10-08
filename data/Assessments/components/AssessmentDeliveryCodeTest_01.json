@@ -1,0 +1,5 @@
+{
+   "type" : "AssessmentDeliveryCodeType",
+   "schedulingRequiredIndicator" : true,
+   "value" : "CodeTypevalueGoesHere"
+}

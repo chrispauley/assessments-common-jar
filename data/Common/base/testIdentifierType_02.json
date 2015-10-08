@@ -1,0 +1,5 @@
+{
+   "schemeName" : "schemaName",
+   "schemeDataURI" : "http://hros.org/schemas/IdentifierType.json",
+   "value" : "identifierValue"
+}

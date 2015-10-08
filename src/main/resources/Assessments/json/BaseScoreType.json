@@ -1,0 +1,21 @@
+{
+    "BaseScoreType": {
+        "title": "BaseScoreType",
+        "description": "",
+        "type": "object",
+        "properties": {
+            "scoreNumeric": {
+                "description": "",
+                "type": {
+                	"$ref": "ScoreNumericType.json"
+                }
+            },
+            "scoreText": {
+                "description": "",
+                "type": {
+                	"$ref": "ScoreTextType.json"
+                }
+            }
+        }
+    }
+}

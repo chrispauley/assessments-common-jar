@@ -121,8 +121,7 @@
 <!-- 	<xsd:element name="AssessmentResult" type="AssessmentResultType" /> -->
 	<xsd:complexType name="AssessmentResultType">
 		<xsd:annotation>
-			<xsd:documentation source="http://www.hr-xml.org"
-				xml:lang="en">Contains various scoring details and related metadata to
+			<xsd:documentation>Contains various scoring details and related metadata to
 				interpret the scores.
 			</xsd:documentation>
 		</xsd:annotation>
@@ -158,7 +157,7 @@
 			<xsd:element name="assessmentProfileId" type="IdentifierType"
 				minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Uniquely distinquishes the normative group
+					<xsd:documentation>Uniquely distinguishes the normative group
 						associate with the score(s). In the case of pre-hire and
 						promotional assessments, this might be a Position ID or other
 						identifier that could be used as a key in identifying the group of
@@ -168,7 +167,7 @@
 			</xsd:element>
 			<xsd:element name="assessmentOverallResult" type="AssessmentScoreType"
 				minOccurs="0" />
-			<xsd:element name="assessmentDetailedResult" type="AssessmentScoreType"
+			<xsd:element name="assessmentDetailedResults" type="AssessmentScoreType"
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="testInstance" type="TestInstanceType"
 				minOccurs="0">
@@ -265,7 +264,7 @@
 			<xsd:element name="sequence" type="xsd:positiveInteger"
 				minOccurs="0" />
 			<xsd:element name="name" type="xsd:string" minOccurs="0" />
-			<xsd:element name="typeCode" type="CodeType" minOccurs="0"
+			<xsd:element name="typeCodes" type="CodeType" minOccurs="0"
 				maxOccurs="unbounded" />
 			<xsd:element name="content" type="xsd:string" minOccurs="0" />
 			<xsd:element name="userArea" type="UserAreaType"
@@ -395,7 +394,7 @@
 <!-- Move to codeLists?? -->
 	<xsd:complexType name="AssessmentDeliveryCodeType">
 		<xsd:simpleContent>
-			<xsd:extension base="xsd:string">
+			<xsd:extension base="CodeType">
 				<xsd:attribute name="schedulingRequiredIndicator"
 					type="xsd:boolean" />
 			</xsd:extension>

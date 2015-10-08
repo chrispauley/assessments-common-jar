@@ -1,0 +1,15 @@
+{
+   "descriptions" : [ "Description one", "Description two", "Description Three" ],
+   "effectivePeriodDescriptions" : [ {
+      "unitCode" : "units",
+      "value" : "valueGoesHere"
+   }, {
+      "unitCode" : "hour",
+      "value" : "1"
+   }, {
+      "unitCode" : "minutes",
+      "value" : "35"
+   } ],
+   "scoreProfileNames" : [ "ScoreProfileNameGoesHere", "Profile_001" ],
+   "reportLanguageCodes" : [ "en-US", "en-CA" ]
+}

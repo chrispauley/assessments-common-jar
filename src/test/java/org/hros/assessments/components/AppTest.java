@@ -1,4 +1,4 @@
-package org.hros.assessments.common;
+package org.hros.assessments.components;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

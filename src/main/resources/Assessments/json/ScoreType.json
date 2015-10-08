@@ -1,0 +1,18 @@
+{
+    "ScoreType": {
+        "title": "ScoreType",
+        "description": "",
+        "type": "object",
+        "allOf": {
+            "$ref": "BaseScoreType"
+        },
+        "properties": {
+            "validFrom": {
+                "$ref": "./Common/base.json#FormattedDateTimeType"
+            },
+            "validTo": {
+                "$ref": "./Common/base.json#FormattedDateTimeType"
+            }
+        }
+    }
+}

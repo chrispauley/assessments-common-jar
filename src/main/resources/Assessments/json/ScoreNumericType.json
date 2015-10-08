@@ -1,0 +1,25 @@
+{
+    "ScoreNumericType": {
+        "title": "ScoreNumericType",
+        "description": "",
+        "type": "object",
+        "properties": {
+            "scoreNumericCode": {
+                "description": "",
+                "type": "number"
+            },
+            "interval": {
+                "description": "",
+                "type": "number"
+            },
+            "minimumScoreNumeric": {
+                "description": "",
+                "type": "number"
+            },
+            "maximumScoreNumeric": {
+                "description": "",
+                "type": "number"
+            }
+        }
+    }
+}
