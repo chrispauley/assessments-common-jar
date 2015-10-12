@@ -4,7 +4,6 @@
 	<xsd:include schemaLocation="Fields.xsd" />
 	<xsd:include schemaLocation="../../Common/xml/complex.xsd" />
 	
-<!-- 	<xsd:element name="AssessmentCatalog" type="AssessmentCatalogType" /> -->
 	<xsd:complexType name="AssessmentCatalogType">
 		<xsd:sequence>
 			<xsd:element name="documentID" type="xsd:string" />

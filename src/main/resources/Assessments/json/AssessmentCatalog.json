@@ -1,0 +1,41 @@
+{
+    "title": "AssessmentCatalog",
+    "description": "Represents a version 4 AssessmentCatalog for HROS.",
+    "type": "object",
+    "properties": {
+        "documentId": {
+            "type": "string"
+        },
+        "alternateDocumentIds": {
+            "description": "Alternate identifiers to associate with the assessment.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "documentSequence": {
+            "type": "integer"
+        },
+        "customerParty": {
+            "type": {
+                "$ref": "../Common/complex.json#PartyType"
+            }
+        },
+        "supplierParty": {
+            "type": {
+                "$ref": "../Common/complex.json#PartyType"
+            }
+        },
+        "requesterParty": {
+            "type": {
+                "$ref": "../Common/complex.json#PartyType"
+            }
+        },
+        "assessmentPackages": {
+            "type": "array",
+            "items": {
+                "$ref": "BasePackageType.json"
+            }
+        }
+    }
+}

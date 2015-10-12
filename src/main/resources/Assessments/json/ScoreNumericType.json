@@ -1,7 +1,7 @@
 {
     "ScoreNumericType": {
         "title": "ScoreNumericType",
-        "description": "",
+        "description": "A numeric measurement of abilities, capacity to learn, in the assessment of personality, or in other measurable characteristics.",
         "type": "object",
         "properties": {
             "scoreNumericCode": {

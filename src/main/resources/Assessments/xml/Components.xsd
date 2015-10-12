@@ -4,15 +4,6 @@
 	<xsd:include schemaLocation="Fields.xsd" />
 	<xsd:include schemaLocation="../../Common/xml/complex.xsd" />
 
-	<xsd:complexType name="SequencedTextType">
-		<xsd:simpleContent>
-			<xsd:extension base="xsd:string">
-				<xsd:attribute name="sequence" type="xsd:integer" />
-				<xsd:attribute name="sequenceName" type="xsd:string" />
-			</xsd:extension>
-		</xsd:simpleContent>
-	</xsd:complexType>
-
 
 	<xsd:complexType name="PackageBaseType">
 		<xsd:annotation>
@@ -46,7 +37,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="description" type="xsd:string"
+			<xsd:element name="descriptions" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="parentGroupIds" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded">
@@ -61,7 +52,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="packageTypeCode" type="xsd:string"
+			<xsd:element name="packageTypeCodes" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded" />
 			<xsd:element name="partyReportingIds" type="xsd:string"
 				minOccurs="0" maxOccurs="unbounded">
@@ -554,6 +545,16 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+
+	<xsd:complexType name="SequencedTextType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="sequence" type="xsd:integer" />
+				<xsd:attribute name="sequenceName" type="xsd:string" />
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
 
 	<xsd:complexType name="UserAreaType">
 		<xsd:sequence>
