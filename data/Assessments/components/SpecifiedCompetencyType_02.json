@@ -1,0 +1,13 @@
+{
+   "competencyIds" : [ {
+      "value" : "CID_001"
+   }, {
+      "value" : "CID_002"
+   }, {
+      "value" : "CID_006"
+   } ],
+   "competencyName" : "Competency Name",
+   "proficiencyLevel" : {
+      "scoreText" : [ "base score type text" ]
+   }
+}

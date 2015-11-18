@@ -1,0 +1,8 @@
+{
+   "scoreNumeric" : [ {
+      "minimumScoreNumeric" : 40,
+      "maximumScoreNumeric" : 100,
+      "scoreNumericCode" : 80
+   } ],
+   "scoreText" : [ "this is numeric test score example..." ]
+}

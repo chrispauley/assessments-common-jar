@@ -1,0 +1,6 @@
+{
+   "type" : "ScoreType",
+   "validFrom" : "2015-11",
+   "validTo" : "2015-12",
+   "scoreText" : [ "This is the text score type" ]
+}

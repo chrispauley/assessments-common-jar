@@ -1,0 +1,34 @@
+{
+   "ID" : "scoreIdentifier",
+   "passedIndicator" : true,
+   "description" : [ "description one", "description two" ],
+   "assessedCompetency" : {
+      "competencyIds" : [ {
+         "value" : "CID_001"
+      } ],
+      "competencyName" : "Competency Name",
+      "proficiencyLevel" : {
+         "scoreText" : [ "base score type text" ]
+      }
+   },
+   "score" : {
+      "scoreNumeric" : [ {
+         "interval" : 100
+      } ]
+   },
+   "bandId" : {
+      "value" : "one"
+   },
+   "comment" : [ "comment one", "comment two" ],
+   "additionalItem" : [ {
+      "ID" : "ThisIsTheID",
+      "sequence" : 1,
+      "name" : "AdditionalItemName",
+      "typeCodes" : [ {
+         "value" : "TypeOne"
+      }, {
+         "value" : "TypeTwo"
+      } ],
+      "content" : "The content of AdditionalItemType"
+   } ]
+}

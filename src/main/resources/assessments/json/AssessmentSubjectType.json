@@ -1,0 +1,125 @@
+{
+  "title": "AssessmentSubjectType",
+  "description": "Type object to contain either numeric or text scores.",
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "description": "The test taker or person who takes the assessment or is assessed.",
+      "type": {
+        "$ref": "../../common/json/base.json#/IdentifierType"
+      }
+    },
+    "personLegalIds": {
+      "description": "An array of government assigned identifiers or official identifiers.",
+      "type": "array",
+      "items": {
+        "type": {
+          "$ref": "../../common/json/base.json#/IdentifierType"
+        }
+      }
+    },
+    "personName": {
+      "description": "The name of the person subject to the assessment.",
+      "type": "string"
+    },
+    "communications": {
+      "description": "A means of contacting the assessment subject. Repeatable for each type of contact method.",
+      "type": "array",
+      "items": {
+        "type": {
+          "$ref": "../../common/json/complex.json#/CommunicationType"
+        }
+      }
+    },
+    "raceCodes": {
+      "description": "Race, as a social construct, is a categorization of humans into groups of people who share similar and distinct physical characteristics.",
+      "type": "array",
+      "items": {
+        "type": {
+          "$ref": "../../common/json/base.json#/CodeType"
+        }
+      }
+    },
+    "ethnicityCode": {
+      "description": "Ethnicity is a socially defined category of people who identify with each other based on common ancestral, social, cultural or national experience.",
+      "type": "array",
+      "items": {
+        "type": {
+          "$ref": "../../common/json/base.json#/CodeType"
+        }
+      }
+    },
+    "nationalityCodes": {
+      "description": "Nationality is the legal relationship between a person and a state.",
+      "type": "array",
+      "items": {
+        "type": {
+          "$ref": "../../common/json/base.json#/CodeType"
+        }
+      }
+    },
+    "primaryLanguageCode": {
+      "description": "The primary language of the person subject to the assessment.",
+      "type": {
+        "$ref": "../../common/json/language.json"
+      }
+    },
+    "birthDate": {
+      "description": "The birth date of the person subject to the assessment.",
+      "type": {
+        "$ref": "../../common/json/base.json#/FormattedDateTimeType"
+      }
+    }
+  },
+  "ageMeasure": {
+    "description": "The age of the person subject to the assessment.",
+    "type": {
+      "$ref": "../../common/json/base.json#/MeasureType"
+    }
+  },
+  "genderCode": {
+    "description": "The gender of the person subject to the assessment.",
+    "type": {
+      "$ref": "codelist/gender.json"
+    }
+  },
+  "disabilityIndicator": {
+    "description": "Indication of a disability for the person subject to the assessment.",
+    "type": {
+      "$ref": "../../common/json/base.json#/IndicatorType"
+    }
+  },
+  "disabilityTypeCodes": {
+    "description": "An array of disability types for the person subject to the assessment.",
+    "type": "array",
+    "items": {
+      "type": {
+        "$ref": "../../common/json/base.json#/codeType"
+      }
+    }
+  },
+  "accomodationTypeCodes": {
+    "description": "An array of accomodationTypeCodes for the person subject to the assessment.",
+    "type": "array",
+    "items": {
+      "type": {
+        "$ref": "../../common/json/base.json#/CodeType"
+      }
+    }
+  },
+  "militaryStatusCodes": {
+    "description": "A code classifying a person's current or past military status.",
+    "type": "array",
+    "items": {
+      "type": {
+        "$ref": "../../common/json/base.json#/CodeType"
+      }
+    }
+  },
+  "internalCandidateIndicator": {
+    "description": "Indication a candidate status for the person subject to the assessment.",
+    "type": {
+      "$ref": "../../common/json/base.json#/IndicatorType"
+    }
+  }
+}

@@ -33,11 +33,11 @@ public class AssessmentDeliveryCodeTest extends TestCase {
 			Serializer.marshalJSON(adc, fos);
 			fos.close();
 
-			String filename2= FILE_PATH + FILENAME + "_01.xml";
-			File file2 = new File(filename2);
-			FileOutputStream fos2 = new FileOutputStream(file2);
-			Serializer.marshal(adc, fos2);
-			fos2.close();			
+//			String filename2= FILE_PATH + FILENAME + "_01.xml";
+//			File file2 = new File(filename2);
+//			FileOutputStream fos2 = new FileOutputStream(file2);
+//			Serializer.marshal(adc, fos2);
+//			fos2.close();			
 		} catch (JAXBException | IOException e) {
 			e.printStackTrace();
 		}

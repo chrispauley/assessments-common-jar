@@ -1,0 +1,39 @@
+{
+  "title": "ExtendedIdentifierType",
+  "description": "Identifier that supports the UN/EDIFACT data element 3055 code list.",
+  "type": "object",
+  "properties": {
+    "schemeId": {
+      "description": "The identification of the identification scheme.",
+      "type": "string"
+    },
+    "schemeName": {
+      "description": "The name of the identification scheme.",
+      "type": "string"
+    },
+    "agencyId": {
+      "description": "The identification of the agency that maintains the identification scheme.",
+      "type": "string"
+    },
+    "agencyName": {
+      "description": "The name of the agency that maintains the identification scheme.",
+      "type": "string"
+    },
+    "versionId": {
+      "description": "The version of the identification scheme.",
+      "type": "string"
+    },
+    "schemeDataURI": {
+      "description": "The Uniform Resource Identifier that identifies where the identification scheme data is located.",
+      "type": "string"
+    },
+    "schemeURI": {
+      "description": "The Uniform Resource Identifier that identifies where the identification scheme is located.",
+      "type": "string"
+    },
+    "value": {
+      "description": "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.",
+      "type": "string"
+    }
+  }
+}

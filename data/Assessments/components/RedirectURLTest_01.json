@@ -1,0 +1,8 @@
+{
+   "validFrom" : "Today",
+   "validTo" : "Tomorrow",
+   "URI" : "http://www.example.com/api/v1/resource?nextAssessmentStep=2&userId=123456",
+   "timeOut" : 60000,
+   "statusCode" : "Code goes here",
+   "message" : "Message goes here."
+}

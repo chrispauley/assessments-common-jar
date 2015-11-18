@@ -110,34 +110,34 @@ public class ShowAssessmentReportStatus extends TestCase {
 			AssessmentStatusCodeType asc) {
 		AssessmentStatusType ast = new AssessmentStatusType();
 		ast.setAssessmentStatusCode(asc);
-		// ast.getDescription().add("Client has not completed the test.");
+		// ast.getDescriptions().add("Client has not completed the test.");
 		if (asc.equals(AssessmentStatusCodeType.ERROR)) {
-			ast.getDescription().add("Document not found.");
+			ast.getDescriptions().add("Document not found.");
 			return ast;
 		} else if (asc.equals(AssessmentStatusCodeType.ORDER_ACKNOWLEDGED)) {
-			ast.getDescription().add("We got your order. Thx!");
+			ast.getDescriptions().add("We got your order. Thx!");
 			return ast;
 		} else if (asc.equals(AssessmentStatusCodeType.ORDER_IN_PROGRESS)) {
-			ast.getDescription().add("Working on it...");
+			ast.getDescriptions().add("Working on it...");
 			return ast;
 		} else if (asc.equals(AssessmentStatusCodeType.TEST_PENDING_SCHEDULING)) {
-			ast.getDescription().add("Pick a time, ok?");
+			ast.getDescriptions().add("Pick a time, ok?");
 			return ast;
 		} else if (asc.equals(AssessmentStatusCodeType.TEST_SCHEDULED)) {
-			ast.getDescription().add("The test will happen on...");
+			ast.getDescriptions().add("The test will happen on...");
 			return ast;
 		} else if (asc
 				.equals(AssessmentStatusCodeType.COMPLETED_TEST_PENDING_SCORING)) {
-			ast.getDescription().add(
+			ast.getDescriptions().add(
 					"The test was completed. Waiting for the scoring.");
 			return ast;
 		} else if (asc
 				.equals(AssessmentStatusCodeType.SCORED_TEST_PENDING_REVIEW)) {
-			ast.getDescription().add(
+			ast.getDescriptions().add(
 					"The test was completed and scored. Waiting for review.");
 			return ast;
 		} else if (asc.equals(AssessmentStatusCodeType.ORDER_COMPLETE)) {
-			ast.getDescription().add("All done. Here are the results.");
+			ast.getDescriptions().add("All done. Here are the results.");
 			return ast;
 		}
 		return ast;
@@ -187,7 +187,7 @@ public class ShowAssessmentReportStatus extends TestCase {
 	private AssessmentStatusType createAssessmentStatus() {
 		AssessmentStatusType as = new AssessmentStatusType();
 		as.setAssessmentStatusCode(AssessmentStatusCodeType.ORDER_ACKNOWLEDGED);
-		as.getDescription().add("Client has not completed the test.");
+		as.getDescriptions().add("Client has not completed the test.");
 		return as;
 	}
 

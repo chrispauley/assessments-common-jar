@@ -27,6 +27,7 @@
 			<xsd:element name="ExampleComment" type="Comment" />
 			<xsd:element name="ExampleCommentType" type="CommentType" />
 			<xsd:element name="CommunicationItem" type="CommunicationItemType" />
+			<xsd:element name="Identifier" type="IdentifierType" />
 			<xsd:element name="Party" type="BasePartyType" />
 			<xsd:element name="Communication" type="CommunicationType" />
 			<xsd:element name="PayRate" type="PayRateType" />

@@ -1,0 +1,49 @@
+{
+   "agencyId" : {
+      "value" : "agencyIdValueHere"
+   },
+   "ID" : "result_id001",
+   "packageId" : "PackageId_001",
+   "name" : "Test Name",
+   "assessmentProfileId" : {
+      "value" : "Profile_101"
+   },
+   "assessmentOverallResult" : {
+      "passedIndicator" : true
+   },
+   "assessmentDetailedResults" : [ {
+      "description" : [ "Descriptions are supported." ],
+      "score" : {
+         "scoreNumeric" : [ {
+            "interval" : 100
+         } ]
+      },
+      "bandId" : {
+         "value" : "bandId_identifier."
+      },
+      "comment" : [ "Comments are supported." ],
+      "additionalItem" : [ {
+         "ID" : "ThisIsTheID",
+         "sequence" : 1,
+         "name" : "AdditionalItemName",
+         "typeCodes" : [ {
+            "value" : "TypeOne"
+         }, {
+            "value" : "TypeTwo"
+         } ],
+         "content" : "The content of AdditionalItemType"
+      } ]
+   } ],
+   "testInstance" : {
+      "testInstanceId" : {
+         "value" : "prod"
+      },
+      "versionId" : {
+         "value" : "1.1.0"
+      },
+      "testScoreIssuedDate" : "2015-10-26",
+      "testLocationId" : {
+         "value" : "locationId"
+      }
+   }
+}

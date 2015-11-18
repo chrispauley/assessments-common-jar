@@ -3,8 +3,8 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xsd:include schemaLocation="CodeLists.xsd" />
-	<xsd:include schemaLocation="../../Common/xml/base.xsd" />
-	<xsd:include schemaLocation="../../Common/xml/codelist/language.xsd" />
+	<xsd:include schemaLocation="../../common/xml/base.xsd" />
+	<xsd:include schemaLocation="../../common/xml/codelist/language.xsd" />
 
 	<xsd:annotation>
 		<xsd:documentation>

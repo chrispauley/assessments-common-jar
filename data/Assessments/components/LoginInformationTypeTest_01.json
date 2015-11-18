@@ -1,0 +1,9 @@
+{
+   "userId" : "userId_01",
+   "accessCredentials" : [ {
+      "accessCredentialTypeCode" : {
+         "value" : "login"
+      },
+      "accessCredentialValue" : "password001"
+   } ]
+}

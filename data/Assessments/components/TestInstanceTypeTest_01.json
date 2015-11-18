@@ -1,0 +1,14 @@
+{
+   "testInstanceId" : {
+      "value" : "development"
+   },
+   "versionId" : {
+      "value" : "0.0.1"
+   },
+   "assessmentLanguageCode" : "en-US",
+   "testDate" : [ "Test Date One goes here", "Test Date Two goes here" ],
+   "testScoreIssuedDate" : "2015-11-06",
+   "testLocationId" : {
+      "value" : "location identifier"
+   }
+}

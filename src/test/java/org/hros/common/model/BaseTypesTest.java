@@ -42,9 +42,33 @@ import org.hros.common.JsonValidator;
 public class BaseTypesTest extends TestCase {
 
 	static final String FILENAME = "BaseTest";
-	static final String FILE_PATH = "./data/Common/base/";		
+	static final String FILE_PATH = "./data/Common/base/";
+	static final String SCHEMA_FILE_PATH = "./src/main/resources/Common/json/base.json";
 
-	
+
+	public void testAmountTypeValidated() {
+
+		try {
+			AmountType at = new AmountType();
+			at.setCurrency(CurrencyCodeList.USD);
+			at.setValue(BigDecimal.valueOf(95.00));
+			
+			Serializer.marshalJSON(at, System.out);
+			String filename = FILE_PATH + "testAmountType_02.json";
+			File file = new File(filename);
+			FileOutputStream fos = new FileOutputStream(file);
+			Serializer.marshalJSON(at, fos);
+			fos.close();	
+			
+			if(ValidationHelper.testValidate(SCHEMA_FILE_PATH, filename)){
+				System.out.println("Success!");
+			}
+			
+		} catch (JAXBException | IOException e) {
+			e.printStackTrace();
+		}		
+		assertTrue(true);
+	}
 	
 	public void testAmountType() {
 
@@ -375,6 +399,7 @@ public class BaseTypesTest extends TestCase {
 			e.printStackTrace();
 		}
 	}
+
 	
 	public void testNumberType() {
 		try {

@@ -2,10 +2,10 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	elementFormDefault="unqualified"
 	attributeFormDefault="unqualified">
-	<xsd:include schemaLocation="Components.xsd" />
+	<xsd:include schemaLocation="AssessmentsCommon.xsd" />
 	<xsd:include schemaLocation="CodeLists.xsd" />
 	<xsd:include schemaLocation="Fields.xsd" />
-	<xsd:include schemaLocation="../../Common/xml/complex.xsd" />
+	<xsd:include schemaLocation="../../common/xml/complex.xsd" />
 		
 	<xsd:element name="assessmentReport" type="AssessmentReportType"/>
 	

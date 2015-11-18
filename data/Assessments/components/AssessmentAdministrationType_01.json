@@ -1,0 +1,16 @@
+{
+   "descriptions" : [ "testAssessmentAdministrationType", "filename is: AssessmentAdministrationType_01.json" ],
+   "proctoredAssessmentIndicator" : true,
+   "timeEnforcedIndicator" : true,
+   "testDuration" : {
+      "unitCode" : "minutes",
+      "value" : "25"
+   },
+   "assessmentDeliveryCodes" : [ {
+      "schedulingRequiredIndicator" : true,
+      "value" : "online"
+   }, {
+      "schedulingRequiredIndicator" : true,
+      "value" : "telephone"
+   } ]
+}

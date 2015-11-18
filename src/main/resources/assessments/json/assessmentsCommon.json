@@ -1,0 +1,670 @@
+{
+	"title": "HR Open Assessments Common Types",
+	"description": "HR Open Complex Types",
+	"AccessPointType": {
+		"title": "AccessPointType",
+		"description": "The access point could be the location for a report or it could be a location where the candidate or recruiter is instructed to enter additional information. The typeCode could be used to distinquish the purpose.",
+		"properties": {
+			"uri": {
+				"description": "Access point URI",
+				"type": "string",
+				"format": "URI"
+			},
+			"userId": {
+				"description": "User identifier.",
+				"type": "string"
+			},
+			"accessCredentials": {
+				"description": "Credentials object.",
+				"type": "array",
+				"items": {
+					"$ref": "#LoginInformationType"
+				}
+			},
+			"typeCode": {
+				"description": "Used to distinguish type of AccessPoint",
+				"type": {
+					"$ref": "../../common/json/base.json#/TypeCode"
+				}
+			},
+			"validFrom": {
+				"$ref": "../../common/json/base.json#/FormattedDateTimeType"
+			},
+			"validTo": {
+				"$ref": "../../common/json/base.json#/FormattedDateTimeType"
+			}
+		}
+	},
+	"AdditionalItemType": {
+		"title": "AdditionalItemType",
+		"description": "Flexible component that may be used for extensions agreed upon by trading-partners",
+		"properties": {
+			"ID": {
+				"description": "",
+				"type": "string"
+			},
+			"sequence": {
+				"description": "This is the communications means an assessment subject uses access a test or to use in scheduling a time and place to take the test.",
+				"type": "numeric"
+			},
+			"name": {
+				"description": "Credentials object.",
+				"type": "string"
+			}
+		},
+		"typeCodes": {
+			"description": "Array of type codes",
+			"type": "array",
+			"items": {
+				"$ref": "../../common/json/base.json#/TypeCode"
+			}
+		},
+		"content": {
+			"type": "string"
+		}
+	},
+	"AssessmentAccessType": {
+		"title": "AssessmentAccessType",
+		"description": "This is a set of information used to provide the assessment subject access to a test that has been ordered.",
+		"properties": {
+			"ID": {
+				"description": "",
+				"type": "string"
+			},
+			"assessmentCommunication": {
+				"description": "This is the communications means an assessment subject uses access a test or to use in scheduling a time and place to take the test.",
+				"$ref": "../../common/complex.json#CommunicationType"
+			},
+			"accessCredentials": {
+				"description": "Credentials object.",
+				"$ref": "#LoginInformationType"
+			},
+			"descriptions": {
+				"description": "Used in the previous schema.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"validFrom": {
+				"$ref": "../../common/json/base.json#/FormattedDateTimeType"
+			},
+			"validTo": {
+				"$ref": "../../common/json/base.json#/FormattedDateTimeType"
+			}
+		}
+	},
+	"AssessmentAdministrationType": {
+		"title": "AssessmentAdministrationType",
+		"description": "Provides details for the assessment test administration.",
+		"properties": {
+			"descriptions": {
+				"description": "Free form text.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				},
+				"proctoredAssessmentIndicator": {
+					"description": "Indicates proctored test.",
+					"type": "boolean"
+				},
+				"timeEnforcedIndicator": {
+					"description": "Indicates time enforcement is required.",
+					"type": "boolean"
+				},
+				"testDuration": {
+					"description": "Measured amount of time and units for the assessment.",
+					"$ref": "codelist/MeasureTextType.json"
+				},
+				"assessmentDeliveryCode": {
+					"description": "Measured amount of time and units for the assessment.",
+					"$ref": "#AssessmentDeliveryCodeType"
+				}
+			}
+		}
+	},
+	"AssessmentApplicabilityType": {
+		"title": "AssessmentApplicabilityType",
+		"description": "Provides details for the applicability of an assessment test.",
+		"properties": {
+			"descriptions": {
+				"description": "Free form text.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				},
+				"applicableRegions": {
+					"description": "A set of information broadly describing the region(s) where the assessment is applicable or available.",
+					"type": "array",
+					"items": {
+						"type": {
+							"$ref": "#JurisdictionType"
+						}
+					}
+				},
+				"assessmentTypeCodes": {
+					"description": "An array of assessment type codes for the test package.",
+					"type": "array",
+					"items": {
+						"type": {
+							"$ref": "codelist/AssessmentTypeCodes.json#AssessmentTypeCodeEnumType"
+						}
+					}
+				},
+				"assessedCompetencies": {
+					"description": "An array of assessment competencies for the test package.",
+					"type": "array",
+					"items": {
+						"type": {
+							"$ref": "#SpecifiedCompetencyType"
+						}
+					}
+				},
+				"jobCategoryCodes": {
+					"description": "An array of job category codes for the test package.",
+					"type": "array",
+					"items": {
+						"type": {
+							"$ref": "codelist/jobCategoryCodes.json"
+						}
+					}
+				},
+				"careerLevelCode": {
+					"$ref": "codelist/careerLevel.json"
+				}
+			}
+		}
+	},
+	"AssessmentDeliveryCodeType": {
+		"title": "AssessmentDeliveryCodeType",
+		"description": "Assessment Delivery CodeType",
+		"type": "object",
+		"allOf": [
+			{
+				"$ref": "../../common/base.json#/CodeType"
+			}
+		],
+		"properties": {
+			"value": {
+				"type": "string"
+			},
+			"schedulingRequiredIndicator": {
+				"type": "boolean"
+			}
+		},
+		"required": ["schedulingRequiredIndicator"]
+	},
+	"AssessmentScoreType": {
+		"title": "AssessmentScoreType",
+		"description": "",
+		"properties": {
+			"ID": {
+				"description": "This is an identifier for the assessment score.",
+				"type": "string"
+			},
+			"passedIndicator": {
+				"description": "Pass or fail indicator.",
+				"type": "boolean"
+			},
+			"bandId": {
+				"description": "An identifier of a 'band', a place on a distribution of scores.",
+				"type": {
+					"$ref": "../../common/json/base.json#/IdentifierType"
+				}
+			},
+			"comments": {
+				"description": "Free form text.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"descriptions": {
+				"description": "Free form text.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"assessedCompetency": {
+				"description": "Specified competency tested.",
+				"type": {
+					"$ref": "#SpecifiedCompetencyType"
+				}
+			},
+			"score": {
+				"description": "Specified competency tested.",
+				"type": {
+					"$ref": "#ScoreType"
+				}
+			}
+		}
+	},
+	"AssessmentFulfillmentType": {
+		"title": "AssessmentFulfillmentType",
+		"description": "A set of information describing options and characteristics relating to the way an assessment result is provided. For example, the language or available languages of the assessment report; the period for which the result is recognized as valid or reliable, the name or identity of the scoring profile used in calculating the result; etc.",
+		"properties": {
+			"descriptions": {
+				"description": "Text describing the way an assessment result is provided",
+				"type": "array",
+				"items": {
+					"type": "string"
+				},
+				"effectivePeriodDescription": {
+					"description": "The period for which the result is recognized as valid or reliable",
+					"type": "array",
+					"items": {
+						"$ref": ".../../common/json/base.json#/MeasureTextType"
+					},
+					"scoreProfileNames": {
+						"description": "Name or identity of the scoring profile used in calculating the result",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"reportLanguageCodes": {
+						"description": "",
+						"type": "array",
+						"items": {
+							"$ref": "../../common/codelist/language.json"
+						}
+					}
+				}
+			}
+		}
+	},
+	"AssessmentResultType": {
+		"title": "AssessmentResultType",
+		"description": "Contains various scoring details and related metadata to interpret the scores.",
+		"properties": {
+			"ID": {
+				"description": "This is an identifier for the result.",
+				"type": "string"
+			},
+			"packageId": {
+				"description": "This is a reference to the Package ID that was ordered.",
+				"type": "string"
+			},
+			"assessmentProfileId": {
+				"$ref": "../../common/json/base.json#/IdentifierType"
+			},
+			"assessmentOverallResult": {
+				"$ref": "AssessmentScoreType.json"
+			},
+			"assessmentDetailedResults": {
+				"description": "",
+				"type": "array",
+				"items": {
+					"$ref": "#AssessmentScoreType"
+				}
+			},
+			"testInstance": {
+				"description": "This is an identifier for the result.",
+				"type": {
+					"$ref": "#TestInstanceType"
+				}
+			},
+			"assessmentStatus": {
+				"description": "This is an identifier for the result.",
+				"type": {
+					"$ref": "codelist/assessmentStatus.json"
+				}
+			},
+			"accessPoint": {
+				"description": "@TODO create the subschema.",
+				"type": {
+					"$ref": "AccessPoint.json"
+				}
+			},
+			"attachment": {
+				"description": "@TODO create the subschema.",
+				"type": {
+					"$ref": "Attachment.json"
+				}
+			}
+		}
+	},
+	"AssessmentSubjectType": {
+		"title": "AssessmentSubjectType",
+		"description": "Type object to contain either numeric or text scores.",
+		"type": "object",
+		"properties": {
+			"subjectId": {
+				"description": "The test taker or person who takes the assessment or is assessed.",
+				"type": {
+					"$ref": "../../common/json/base.json#/IdentifierType"
+				}
+			},
+			"personLegalIds": {
+				"description": "An array of government assigned identifiers or official identifiers.",
+				"type": "array",
+				"items": {
+					"type": {
+						"$ref": "../../common/json/base.json#/IdentifierType"
+					}
+				}
+			},
+			"personName": {
+				"description": "The name of the person subject to the assessment.",
+				"type": "string"
+			},
+			"communications": {
+				"description": "A means of contacting the assessment subject. Repeatable for each type of contact method.",
+				"type": "array",
+				"items": {
+					"type": {
+						"$ref": "../../common/complex.json#CommunicationType"
+					}
+				}
+			},
+			"raceCodes": {
+				"description": "Race, as a social construct, is a categorization of humans into groups of people who share similar and distinct physical characteristics.",
+				"type": "array",
+				"items": {
+					"type": {
+						"$ref": "../../common/json/base.json#/codeType"
+					}
+				}
+			},
+			"ethnicityCode": {
+				"description": "Ethnicity is a socially defined category of people who identify with each other based on common ancestral, social, cultural or national experience.",
+				"type": "array",
+				"items": {
+					"type": {
+						"$ref": "../../common/json/base.json#/codeType"
+					}
+				}
+			},
+			"nationalityCodes": {
+				"description": "Nationality is the legal relationship between a person and a state.",
+				"type": "array",
+				"items": {
+					"type": {
+						"$ref": "../../common/json/base.json#/codeType"
+					}
+				}
+			},
+			"primaryLanguageCode": {
+				"description": "The primary language of the person subject to the assessment.",
+				"type": {
+					"$ref": "../../common/codelist/language.json"
+				}
+			},
+			"birthDate": {
+				"description": "The birth date of the person subject to the assessment.",
+				"type": {
+					"$ref": ".../../common/json/base.json#/FormattedDateTimeType"
+				}
+			}
+		},
+		"ageMeasure": {
+			"description": "The age of the person subject to the assessment.",
+			"type": {
+				"$ref": ".../../common/json/base.json#/MeasureType"
+			}
+		},
+		"genderCode": {
+			"description": "The gender of the person subject to the assessment.",
+			"type": {
+				"$ref": "codelist/gender.json"
+			}
+		},
+		"disabilityIndicator": {
+			"description": "Indication of a disability for the person subject to the assessment.",
+			"type": {
+				"$ref": ".../../common/json/base.json#/IndicatorType"
+			}
+		},
+		"disabilityTypeCodes": {
+			"description": "An array of disability types for the person subject to the assessment.",
+			"type": "array",
+			"items": {
+				"type": {
+					"$ref": "../../common/json/base.json#/codeType"
+				}
+			}
+		},
+		"accomodationTypeCodes": {
+			"description": "An array of accomodationTypeCodes for the person subject to the assessment.",
+			"type": "array",
+			"items": {
+				"type": {
+					"$ref": "../../common/json/base.json#/codeType"
+				}
+			}
+		},
+		"militaryStatusCodes": {
+			"description": "A code classifying a person's current or past military status.",
+			"type": "array",
+			"items": {
+				"type": {
+					"$ref": "../../common/json/base.json#/codeType"
+				}
+			}
+		},
+		"internalCandidateIndicator": {
+			"description": "Indication a candidate status for the person subject to the assessment.",
+			"type": {
+				"$ref": ".../../common/json/base.json#/IndicatorType"
+			}
+		}
+	},
+	"BaseScoreType": {
+		"title": "BaseScoreType",
+		"description": "Type object to contain either numeric or text scores.",
+		"type": "object",
+		"properties": {
+			"scoreNumeric": {
+				"description": "Numeric score for a test result.",
+				"type": {
+					"$ref": "#ScoreNumericType"
+				}
+			},
+			"scoreText": {
+				"description": "Text score for a test result.",
+				"type": {
+					"$ref": "#ScoreTextType"
+				}
+			}
+		}
+	},
+	"BasePackageType": {
+		"title": "BasePackageType",
+		"description": "For screening and assessment services, describes a set of component services that are marketed and can be ordered as a unit",
+		"type": "object",
+		"properties": {
+			"ID": {
+				"description": "This is the 'Package ID' that would be used to order a set of screening or assessment services.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"name": {
+				"description": "The name or terse descriptive label by which the package is referred.",
+				"type": "string"
+			},
+			"descriptions": {
+				"description": "An array of descriptions for the package.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"parentGroupIds": {
+				"description": "A reference from a child package to one or more associated parent entity.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"packageTypeCodes": {
+				"description": "Associated type codes.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"partyReportingIds": {
+				"description": "A repeating ID set used to pass along identifiers that are used for reporting, filtering, accounting, cost center identification, and similar purposes",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"serviceAvailabilityCode": {
+				"description": "",
+				"type": {
+					"enum": ["Available", "Unavailable", "TemporarilyUnavailable"]
+				}
+			}
+		}
+	},
+	"JurisdictionType": {
+		"title": "JurisdictionType",
+		"description": "Contains information to enable a user to gain access to a system.",
+		"type": "object",
+		"properties": {
+			"countryCode": {
+				"description": "Two letter ISO Country code.",
+				"type": {
+					"$ref": "../../common/codelist/country.json"
+				}
+			},
+			"cityName": {
+				"description": "City for the jurisdiction.",
+				"type": "string"
+			},
+			"countrySubDivisionCodes": {
+				"description": "Subdivision for the jurisdiction.",
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			}
+		}
+	},
+
+	"LoginInformationType": {
+		"title": "LoginInformationType",
+		"description": "Contains information to enable a user to gain access to a system.",
+		"type": "object",
+		"properties": {
+			"userId": {
+				"type": "string",
+				"description": "Username or userId."
+			},
+			"accessCredentials": {
+				"description": "Array of accessCredential objects.",
+				"array": {
+					"accessCredential": {
+						"name": {
+							"description": "Indication of type of token.",
+							"type": "string"
+						},
+						"value": {
+							"description": "Actual token or password.",
+							"type": "string"
+						},
+						"listName": {
+							"description": "Authenticating scheme identifier.",
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	},
+	"ScoreNumericType": {
+		"title": "ScoreNumericType",
+		"description": "A numeric measurement of abilities, capacity to learn, in the assessment of personality, or in other measurable characteristics.",
+		"type": "object",
+		"properties": {
+			"scoreNumericCode": {
+				"description": "",
+				"type": "number"
+			},
+			"interval": {
+				"description": "",
+				"type": "number"
+			},
+			"minimumScoreNumeric": {
+				"description": "",
+				"type": "number"
+			},
+			"maximumScoreNumeric": {
+				"description": "",
+				"type": "number"
+			}
+		}
+	},
+	"ScoreType": {
+		"title": "ScoreType",
+		"description": "",
+		"type": "object",
+		"allOf": {
+			"$ref": "BaseScoreType"
+		},
+		"properties": {
+			"validFrom": {
+				"$ref": "../../common/json/base.json#/FormattedDateTimeType"
+			},
+			"validTo": {
+				"$ref": "../../common/json/base.json#/FormattedDateTimeType"
+			}
+		}
+	},
+	"SpecifiedCompetencyType": {
+		"title": "SpecifiedCompetencyType",
+		"description": "A specified competency is a reference to a particular competency at a specified level of proficiency.",
+		"properties": {
+			"competencyIds": {
+				"description": "Array of competency identifiers.",
+				"type": "array",
+				"items": {
+					"type": {
+						"$ref": "../../common/json/base.json#/IdentifierType"
+					}
+				}
+			},
+			"name": {
+				"description": "Competency name.",
+				"type": "string"
+			},
+			"proficiencyLevel": {
+				"description": "Proficiency level expressed as a BaseScoreType",
+				"type": {
+					"$ref": "../../common/json/base.json#/BaseScoreType"
+				}
+			}
+		}
+	},
+	"TestInstanceType": {
+		"title": "TestInstanceType",
+		"description": "",
+		"properties": {
+			"testInstanceId": {
+				"$ref": ".../../common/json/base.json#/IdentifierType"
+			},
+			"versionId": {
+				"$ref": ".../../common/json/base.json#/IdentifierType"
+			},
+			"assessmentLanguageCode": {
+				"$ref": "../../common/codelist/language.json"
+			},
+			"testDate": {
+				"$ref": ".../../common/json/base.json#/FormattedDateTimeType"
+			},
+			"testScoreIssuedDate": {
+				"description": "The date a test score was issued.",
+				"type": {
+					"$ref": ".../../common/json/base.json#/FormattedDateTimeType"
+				}
+			},
+			"locationId": {
+				"$ref": ".../../common/json/base.json#/IdentifierType"
+			}
+		}
+	}
+}

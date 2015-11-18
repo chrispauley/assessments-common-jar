@@ -1,0 +1,18 @@
+{
+   "subjectId" : {
+      "value" : "subjectId001"
+   },
+   "personName" : "William Candidate",
+   "primaryLanguageCode" : "en-US",
+   "birthDate" : "01/01/1986",
+   "ageMeasure" : {
+      "unitCode" : "years",
+      "value" : 29
+   },
+   "genderCode" : "Male",
+   "disabilityIndicator" : {
+      "validFrom" : "start date",
+      "validTo" : "valid to date"
+   },
+   "internalCandidateIndicator" : true
+}

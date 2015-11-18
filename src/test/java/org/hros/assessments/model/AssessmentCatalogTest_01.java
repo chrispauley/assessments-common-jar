@@ -135,18 +135,18 @@ public class AssessmentCatalogTest_01 extends TestCase {
 
 	private AssessmentAdministrationType createAssessmentAdministrationType() {
 		AssessmentAdministrationType a = new AssessmentAdministrationType();
-		a.getDescription().add("This is an online test.");
+		a.getDescriptions().add("This is an online test.");
 		a.setProctoredAssessmentIndicator(Boolean.TRUE);
 		a.setTimeEnforcedIndicator(Boolean.TRUE);
 		MeasureTextType mt = new MeasureTextType();
 		mt.setUnitCode("prop 1");
 		mt.setValue("value of mt");
 		a.setTestDuration(mt);
-		a.getAssessmentDeliveryCode().add(new AssessmentDeliveryCodeType());
+		a.getAssessmentDeliveryCodes().add(new AssessmentDeliveryCodeType());
 		AssessmentDeliveryCodeType adc = new AssessmentDeliveryCodeType();
 		adc.setValue("Code1");
 		adc.setSchedulingRequiredIndicator(Boolean.TRUE);
-		a.getAssessmentDeliveryCode().add(adc);
+		a.getAssessmentDeliveryCodes().add(adc);
 		return a;
 	}
 
@@ -250,9 +250,9 @@ public class AssessmentCatalogTest_01 extends TestCase {
 		ap.setName(name);
 		ap.setPackageCost(cost);
 		ap.setServiceAvailabilityCode(ServiceAvailabilityCodeEnumType.AVAILABLE);
-		ap.getDescription().add("Package Description");
+		ap.getDescriptions().add("Package Description");
 		ap.getID().add("package-001");
-		ap.getPackageTypeCode().add("typeCode1");
+		ap.getPackageTypeCodes().add("typeCode1");
 		ap.getParentGroupIds().add("Hiring Manager");
 		ap.getPartyReportingIds().add("Manager-001");
 

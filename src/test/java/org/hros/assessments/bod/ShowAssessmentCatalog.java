@@ -77,7 +77,7 @@ public class ShowAssessmentCatalog extends TestCase {
 		ap.getID().add(PACKAGE_ID);
 		ap.setPackageCost("15.00 US");
 		ap.setName("Healthcare Record Keeping Assessment");
-		ap.getDescription().add("skills");
+		ap.getDescriptions().add("skills");
 		ap.setAssessmentApplicability(createAssessmentApplicabilityType());
 		ap.setAssessmentAdministration(createAssessmentAdmin_One());
 		ap.setAssessmentFulfillment(createAssessmentFullfillment_PkgOne());
@@ -96,7 +96,7 @@ public class ShowAssessmentCatalog extends TestCase {
 		aa.setTimeEnforcedIndicator(Boolean.TRUE);
 		aa.setProctoredAssessmentIndicator(Boolean.TRUE);
 		aa.setTestDuration(createMeasureType("minutes", "5"));
-		aa.getAssessmentDeliveryCode().add(createAssessmentDeliveryCode("online", Boolean.TRUE));
+		aa.getAssessmentDeliveryCodes().add(createAssessmentDeliveryCode("online", Boolean.TRUE));
 		return aa;
 	}
 
@@ -131,7 +131,7 @@ public class ShowAssessmentCatalog extends TestCase {
 		ap.getID().add("package_002");
 		ap.setPackageCost("45.00 US");
 		ap.setName("Healthcare Scheduling Assessment");
-		ap.getDescription().add("skills");
+		ap.getDescriptions().add("skills");
 		ap.setAssessmentApplicability(createAssessmentApplicabilityTypeTwo());
 		ap.setAssessmentAdministration(createAssessmentAdmin_Two());
 		ap.setAssessmentFulfillment(createAssessmentFullfillment_PkgTwo());
@@ -149,7 +149,7 @@ public class ShowAssessmentCatalog extends TestCase {
 		aa.setTimeEnforcedIndicator(Boolean.TRUE);
 		aa.setProctoredAssessmentIndicator(Boolean.TRUE);
 		aa.setTestDuration(createMeasureType("minutes", "15"));
-		aa.getAssessmentDeliveryCode().add(createAssessmentDeliveryCode("online", Boolean.TRUE));
+		aa.getAssessmentDeliveryCodes().add(createAssessmentDeliveryCode("online", Boolean.TRUE));
 		return aa;
 	}
 	

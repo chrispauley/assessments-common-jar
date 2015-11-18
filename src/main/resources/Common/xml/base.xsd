@@ -87,7 +87,38 @@
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
-
+	
+	<xsd:complexType name="ExternalIdentifierType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">UNCEFACT
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:normalizedString">
+				<xsd:attribute name="schemeId" type="xsd:normalizedString"
+					use="optional">
+				</xsd:attribute>
+				<xsd:attribute name="schemeName" type="xsd:string"
+					use="optional">
+				</xsd:attribute>
+				<xsd:attribute name="agencyId" type="xsd:normalizedString"
+					use="optional">
+				</xsd:attribute>
+				<xsd:attribute name="agencyName" type="xsd:string"
+					use="optional">
+				</xsd:attribute>
+				<xsd:attribute name="versionId" type="xsd:normalizedString"
+					use="optional">
+				</xsd:attribute>
+				<xsd:attribute name="schemeDataURI" type="xsd:anyURI"
+					use="optional">
+				</xsd:attribute>
+				<xsd:attribute name="schemeURI" type="xsd:anyURI" use="optional">
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
 	<xsd:complexType name="IdentifierType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en">UNCEFACT

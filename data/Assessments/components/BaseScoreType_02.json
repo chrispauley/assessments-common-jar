@@ -1,0 +1,6 @@
+{
+   "scoreNumeric" : [ {
+      "interval" : 100
+   } ],
+   "scoreText" : [ "this is numeric test score example..." ]
+}

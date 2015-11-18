@@ -45,8 +45,8 @@
 			<name>Maven Codehaus Repository</name>
 			<url>http://repository.codehaus.org/</url>
 		</repository>
-
 	</repositories>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -208,16 +208,16 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<schemaDirectory>src/main/resources/Assessments/xml</schemaDirectory>
+							<schemaDirectory>src/main/resources/assessments/xml</schemaDirectory>
 							<schemaIncludes>
 								<include>AssessmentCatalog.xsd</include>
 								<include>AssessmentReport.xsd</include>
 								<include>AssessmentOrder.xsd</include>
-								<include>Components.xsd</include>
+								<include>AssessmentsCommon.xsd</include>
 								<include>CodeLists.xsd</include>
 								<include>Fields.xsd</include>
 							</schemaIncludes>
-							<bindingDirectory>src/main/resources/Assessments/xml</bindingDirectory>
+							<bindingDirectory>src/main/resources/assessments/xml</bindingDirectory>
 							<bindingIncludes>
 								<include>Assessments.xjb</include>
 							</bindingIncludes>
@@ -248,7 +248,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<schemaDirectory>src/main/resources/Common/xml/codelist</schemaDirectory>
+							<schemaDirectory>src/main/resources/common/xml/codelist</schemaDirectory>
 							<schemaIncludes>
 								<include>action.xsd</include>
 								<include>country.xsd</include>
@@ -256,7 +256,7 @@
 								<include>currency.xsd</include>
 								<!-- <include>payRateIntervalCodeList.xsd</include> -->
 							</schemaIncludes>
-							<bindingDirectory>src/main/resources/Common/xml/codelist</bindingDirectory>
+							<bindingDirectory>src/main/resources/common/xml/codelist</bindingDirectory>
 							<bindingIncludes>
 								<include>codelist.xjb</include>
 							</bindingIncludes>
@@ -271,12 +271,12 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<schemaDirectory>src/main/resources/Common/xml</schemaDirectory>
+							<schemaDirectory>src/main/resources/common/xml</schemaDirectory>
 							<schemaIncludes>
 								<include>base.xsd</include>
 								<include>complex.xsd</include>
 							</schemaIncludes>
-							<bindingDirectory>src/main/resources/Common/xml</bindingDirectory>
+							<bindingDirectory>src/main/resources/common/xml</bindingDirectory>
 							<bindingIncludes>
 								<include>common.xjb</include>
 							</bindingIncludes>

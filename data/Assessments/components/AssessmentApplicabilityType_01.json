@@ -1,0 +1,28 @@
+{
+   "descriptions" : [ "testAssessmentApplicabilityType", "filename is: AssessmentApplicabilityType_01.json" ],
+   "assessmentTypeCodes" : [ "Ability" ],
+   "assessedCompetencies" : [ {
+      "competencyIds" : [ {
+         "value" : "CID_001"
+      } ],
+      "competencyName" : "Competency Name",
+      "proficiencyLevel" : {
+         "scoreText" : [ "base score type text" ]
+      }
+   } ],
+   "jobCategoryCodes" : [ {
+      "value" : "JC_001"
+   }, {
+      "value" : "JC_002"
+   } ],
+   "careerLevelCode" : "MidCareer",
+   "applicableRegions" : [ {
+      "countryCode" : "US"
+   }, {
+      "countryCode" : "MX"
+   }, {
+      "countryCode" : "CA",
+      "countrySubDivisionCodes" : [ "English Speaking Canada" ]
+   } ],
+   "availableLanguageCodes" : [ "en-US", "es" ]
+}

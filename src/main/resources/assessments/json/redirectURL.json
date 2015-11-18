@@ -1,0 +1,34 @@
+{
+  "title": "RedirectURL",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "URI": {
+      "description": "URI or URL for the redirect.",
+      "type": "string"
+    },
+    "statusCode": {
+      "description": "HTTP Status Code.",
+      "type": "string"
+    },
+    "message": {
+      "description": "Text message to be displayed to the Assessment Subject.",
+      "type": "string"
+    },
+    "timeOut": {
+      "description": "Countdown for the URL to be displayed.",
+      "type": "integer"
+    },
+    "validFrom": {
+      "description": "Start time which the redirect URL is valid.",
+      "type": "string"
+    },
+    "validTo": {
+      "description": "End time which the redirect URL is valid.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "URI"
+  ]
+}

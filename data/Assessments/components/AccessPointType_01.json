@@ -1,0 +1,13 @@
+{
+   "typeCode" : "type access point",
+   "validFrom" : "2015-11-01",
+   "validTo" : "2015-11-30",
+   "URI" : "http://test.ats-company.com/assessment/v1/test",
+   "userId" : "user001",
+   "accessCredential" : [ {
+      "accessCredentialTypeCode" : {
+         "value" : "login"
+      },
+      "accessCredentialValue" : "password001"
+   } ]
+}

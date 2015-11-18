@@ -1,0 +1,10 @@
+{
+   "schemeID" : "US-EIN",
+   "schemeName" : "US-Federal Employer Identification Number",
+   "schemeAgencyID" : "IRS",
+   "schemeAgencyName" : "Internal Revenue Service",
+   "schemeVersionID" : "1.1",
+   "schemeDataURI" : "https://www.us.gov/burearu_of_schemas/irs/",
+   "schemeURI" : "https://www.us.gov/burearu_of_schemas/irs/ein_schema.json",
+   "value" : "123456789"
+}

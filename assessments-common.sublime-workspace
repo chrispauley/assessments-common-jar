@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"dis",
+				"disabilityTypeCodes"
+			],
+			[
+				"A",
+				"AdditionalItemTest_01"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"Assessment",
+				"AssessmentCatalog"
+			],
+			[
+				"Assess",
+				"AssessedCompetency"
+			],
+			[
+				"su",
+				"supplierPartyResult"
+			],
+			[
 				"reso",
 				"resourceDirectory"
 			],
@@ -31,10 +55,54 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "lint",
+		"height": 67.0,
+		"last_filter": "Snippet:",
 		"selected_items":
 		[
+			[
+				"Snippet:",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"sublimecodeintel",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"j",
+				"Pretty JSON: JSON query with ./jq"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pretty JSON:JQ",
+				"Pretty JSON: JSON query with ./jq"
+			],
+			[
+				"pretty JSON",
+				"Pretty JSON: JSON query with ./jq"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				".jq",
+				"Pretty JSON: JSON query with ./jq"
+			],
 			[
 				"lint",
 				"SublimeLinter: Lint This View"
@@ -44,20 +112,12 @@
 				"Indent XML"
 			],
 			[
-				"pa",
-				"Package Control: Install Package"
-			],
-			[
 				"get",
 				"Package Control: Install Package"
 			],
 			[
 				"list",
 				"Package Control: List Packages"
-			],
-			[
-				"pac",
-				"Package Control: Add Channel"
 			],
 			[
 				"emm",
@@ -69,10 +129,6 @@
 			],
 			[
 				"in",
-				"Package Control: Install Package"
-			],
-			[
-				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -121,6 +177,47 @@
 	],
 	"file_history":
 	[
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/test/ajvCommonBase.js",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/test/ajvTest_01.js",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/node_modules/ajv/node_modules/json-stable-stringify/test/nested.js",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/redirectURL.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/assessmentsCommon.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentSubjectType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Common/json/ExternalIdentifierType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Common/json/complex.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Common/json/base.json",
+		"/Users/chrisp/Documents/workspace/learning_python/com/simllc/example.py",
+		"/Users/chrisp/Documents/workspace/learning_python/com/simllc/example2.py",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/project.todo",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentOrder.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentReport.json",
+		"/Users/chrisp/Documents/workspace/HROPEN/Assessments/json/assessmentsCommon.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/TestInstanceType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/SpecifiedCompetencyType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentResultType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentFulfillmentType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentAccessType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentApplicabilityType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentAdministrationType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/BasePackageType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/Assessments/json/AssessmentScoreType.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/data/Assessments/Step_01_ShowShowAssessmentCatalog.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/data/Assessments/Step_01_GetAssessmentCatalog.json",
+		"/Users/chrisp/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/Default (OSX).sublime-keymap",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/resources/4_0/Developer/BODs/NotifyAssessmentReport.xsd",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/test/assessmentDeliveryCodeTest.js",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/test/additionalItemType.js",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/testValidator.html",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/ShowCatalog_LongList.php",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/data/Assessments/UseCase02/Step_01_UC2_ShowShowAssessmentCatalog.json",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/ShowAssessmentCatalog.php",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/test/example.js",
+		"/Users/chrisp/Downloads/is-my-json-valid-master/README.md",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/ShowAssessmentCatalog_tables.html",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/handlebars_showAssessmentCatalog.html",
+		"/Users/chrisp/Downloads/Ex_Files_Bs3EssT/Exercise Files/Ch05/05_02/bootstrap/index.html",
+		"/Users/chrisp/Documents/workspace/HROS/assessments-project/assessments-common-jar/src/main/web/template_page.php",
+		"/Users/chrisp/Downloads/Ex_Files_Bs3EssT/Exercise Files/Ch04/04_01/bootstrap/index.html",
 		"/Users/chrisp/Documents/workspace/hropenstandard/docs/Assessments/org_openapplications_platform/1_2/Common/OAGi/Components/CodeLists.xsd",
 		"/Users/chrisp/Documents/workspace/hropenstandard/docs/Assessments/org_hr-xml/3_3/Developer/Common/Components.xsd",
 		"/Users/chrisp/Documents/workspace/hropenstandard/src/Assessments/org_hr-xml/4_0/Developer/Nouns/t.json",
@@ -211,7 +308,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -228,6 +325,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"id",
+			"uri",
+			"actionVerb",
+			"tv4",
+			"specifiedcompetencytype",
+			"specifiedpersontype\nspecifiedpersontype",
+			"specifiedpersontype",
+			"personnametype",
+			"PersonNameType",
+			"personname",
 			"specifiedpersontype",
 			"AssessmentOrderType",
 			"AssessmentStatusCode",
@@ -345,17 +452,7 @@
 			"AssessedCompetency",
 			"SpecifiedCompetencyType",
 			"DocumentSequence",
-			"DocumentIDGroup",
-			"DocumentSequence",
-			"CustomerParty",
-			"BasePartyType",
-			"Sat ",
-			"Fri ",
-			"Wed ",
-			"Tue ",
-			"Mon ",
-			"Thu ",
-			"AssignmentResult"
+			"DocumentIDGroup"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -387,7 +484,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -418,7 +515,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 370.0
+		"height": 46.0
 	},
 	"output.find_results":
 	{
@@ -441,6 +538,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"assessmentscommon",
+				"~/Documents/workspace/HROPEN/Assessments/json/assessmentsCommon.json"
+			]
 		],
 		"width": 0.0
 	},
@@ -470,7 +571,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 333.0,
+	"side_bar_width": 289.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

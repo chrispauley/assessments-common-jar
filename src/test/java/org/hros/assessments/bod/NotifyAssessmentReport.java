@@ -81,7 +81,7 @@ public class NotifyAssessmentReport extends TestCase {
 	private AssessmentStatusType createAssessmentStatus() {
 		AssessmentStatusType as = new AssessmentStatusType();
 		as.setAssessmentStatusCode(AssessmentStatusCodeType.ORDER_COMPLETE);
-		as.getDescription().add("Assessment is completed. You may view the report.");
+		as.getDescriptions().add("Assessment is completed. You may view the report.");
 		return as;
 	}	
 

@@ -24,7 +24,7 @@ public class ComplexTypeHelper {
 			StringWriter sw = new StringWriter();
 			marshaller.marshal(ct, sw);
 			
-			File f = new File("./data/Common/" + filename);
+			File f = new File( filename);
 			marshaller.marshal(ct, f);
 			
 			System.out.println(sw.toString());
@@ -43,7 +43,7 @@ public class ComplexTypeHelper {
 			StringWriter sw = new StringWriter();
 			marshaller.marshal(ct, sw);
 			
-			File f = new File("./data/Common/" + filename);
+			File f = new File( filename);
 			marshaller.marshal(ct, f);
 			
 			System.out.println(sw.toString());
@@ -84,7 +84,7 @@ public class ComplexTypeHelper {
 			JAXBContext context = JAXBContext.newInstance(ComplexObject.class);
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			
-			File f = new File("./data/" + filename);
+			File f = new File( filename);
 			
 			aoj = (ComplexObject) unmarshaller.unmarshal(f);
 			
@@ -103,7 +103,7 @@ public class ComplexTypeHelper {
 			unmarshaller.setProperty("eclipselink.media-type", "application/json");
 	        unmarshaller.setProperty("eclipselink.json.include-root", true);
 			
-			File f = new File("./data/" + filename);
+			File f = new File( filename);
 			
 			aoj = (ComplexObject) unmarshaller.unmarshal(f);
 			

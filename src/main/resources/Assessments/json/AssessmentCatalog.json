@@ -18,23 +18,23 @@
         },
         "customerParty": {
             "type": {
-                "$ref": "../Common/complex.json#PartyType"
+                "$ref": "../../common/complex.json#/PartyType"
             }
         },
         "supplierParty": {
             "type": {
-                "$ref": "../Common/complex.json#PartyType"
+                "$ref": "../../common/complex.json#/PartyType"
             }
         },
         "requesterParty": {
             "type": {
-                "$ref": "../Common/complex.json#PartyType"
+                "$ref": "../../common/complex.json#/PartyType"
             }
         },
         "assessmentPackages": {
             "type": "array",
             "items": {
-                "$ref": "BasePackageType.json"
+                "$ref": "assessmentsCommon.json#/BasePackageType.json"
             }
         }
     }

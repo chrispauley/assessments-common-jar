@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/chrisp/Documents/workspace/HROS/gcloud"
 		}
 	]
 }

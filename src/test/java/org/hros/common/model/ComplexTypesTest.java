@@ -12,6 +12,8 @@ import junit.framework.TestCase;
 public class ComplexTypesTest extends TestCase {
 
 	static final String FILENAME = "ComplexTypesTest";
+	static final String FILE_PATH = "./data/Common/base/";	
+	static final String SCHEMA_FILE_PATH = "./src/main/resources/Common/json/complex.json";	
 	
     public void testComplexObjectType2()
     {
@@ -30,8 +32,12 @@ public class ComplexTypesTest extends TestCase {
     	ComplexType co = this.createComplexType();
 //    	co.setValue(createComplexType());
     	ComplexTypeHelper.showJSON(co);
-    	ComplexTypeHelper.writeJson(co, FILENAME + "_00.json");
+    	String filename = "./data/Common/base/testComplexObjectType_00.json";
+    	ComplexTypeHelper.writeJson(co, filename);
     	
+		if(ValidationHelper.testValidate(SCHEMA_FILE_PATH, filename)){
+			System.out.println("Success!");
+		}
         assertTrue(true);
     }
 
@@ -43,14 +49,35 @@ public class ComplexTypesTest extends TestCase {
 		ct.setBaseNoun(createBaseNoun());
 		
 		ct.setCommunicationItem(createCommunicationItemType());
-		
+	    ct.setIdentifier(createIdentifier());
 		//ct.setResource(createResourceClassification());
 		ct.setPhone(createPhoneType());
 		ct.setEmail(createEmailType("sample@example.com"));
 		ct.setWeb(createWebType("http://website.com"));
 		ct.setCommunication(createCommunicationTypeAddress());
 		ct.setPersonName(createPersonNameTypeFull());
+		ct.setBaseParty(createBasePartyType());
 		return ct;
+	}
+
+	private IdentifierType createIdentifier() {
+		IdentifierType id = new IdentifierType();
+		id.setValue("value");
+		id.setSchemeAgencyID("IRS");
+		id.setSchemeAgencyName("Internal Revenue Service");
+		id.setSchemeDataURI("urn:to/scheme/data");
+		id.setSchemeName("EIN");
+		id.setSchemeURI("uri");
+		id.setSchemeVersionID("1.0");
+		return null;
+	}
+
+	private BasePartyType createBasePartyType() {
+		BasePartyType p = new BasePartyType();
+		p.setName("SupplierParty");
+		p.setTaxId(this.createIdentifier("taxId001"));
+		p.getCommunications().add(this.createCommunicationTypeAddress());
+		return p;
 	}
 
 	private PersonNameType createPersonNameTypeFull() {
@@ -174,6 +201,7 @@ public class ComplexTypesTest extends TestCase {
 	private BaseNounType createBaseNoun() {
 		BaseNounType bn = new BaseNounType();
 		bn.setDocumentId(createIdentifierType());
+		bn.getAlternateIds().add(createIdentifier("id01"));
 		return bn;
 	}
 
@@ -186,6 +214,7 @@ public class ComplexTypesTest extends TestCase {
 	private IdentifierType createIdentifierType() {
 		IdentifierType it = new IdentifierType();
 		it.setValue("testIdentifierTypeValue");
+		it.setSchemeName("mySchemaName");
 		return it;
 	}
 

@@ -1,0 +1,15 @@
+{
+   "validFrom" : "Today",
+   "validTo" : "Tomorrow",
+   "ID" : "ThisIsTheID",
+   "accessCredentials" : {
+      "userId" : "userId_01",
+      "accessCredentials" : [ {
+         "accessCredentialTypeCode" : {
+            "value" : "login"
+         },
+         "accessCredentialValue" : "password001"
+      } ]
+   },
+   "descriptions" : [ "This is the description", "Filename: AssessmentAccessTest_01.json" ]
+}

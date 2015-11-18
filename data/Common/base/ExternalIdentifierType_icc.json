@@ -1,0 +1,10 @@
+{
+   "schemeId" : "ICC-Members",
+   "schemeName" : "ICC Member Id",
+   "agencyId" : "ICC",
+   "agencyName" : "International Chamber of Commerce",
+   "versionId" : "1.9",
+   "schemeDataURI" : "http://www.iccwbo.org/worldwide-membership/members/schema/",
+   "schemeURI" : "http://www.iccwbo.org/worldwide-membership/",
+   "value" : "90992"
+}
